@@ -39,6 +39,7 @@ const BloguriPage = ({ params }: { params: { lang: string; country: string } }) 
 						<Image alt="cover-blog" src={BlogCover} placeholder="blur" />{" "}
 					</div>
 				</section>
+				<div className="" id="scrollTo"></div>
 				<div id="container-bloguri">
 					<PaginatedItems params={params} />
 				</div>

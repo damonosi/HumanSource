@@ -16,8 +16,11 @@ const NavigationPagination = ({ onNextPage, onPrevPage, currentPage, dataLength 
 
 	function scrollToTop() {
 		if (!isBrowser()) return;
-
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		const element = document.getElementById("scrollTo");
+		if (element) {
+			// 👇 Will scroll smoothly to the top of the next section
+			element.scrollIntoView({ behavior: "smooth" });
+		}
 	}
 	return (
 		<div className="relative mt-16 flex w-full justify-between text-gri-brand" id="container-butoane-chestionar">

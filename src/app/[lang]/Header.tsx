@@ -19,7 +19,7 @@ function NavItem({ label, href, handleCloseMenu }: INavItem) {
 		<Link className="flex items-center md:h-[60px] md:justify-center" href={href}>
 			<Typography
 				variant="small"
-				className="flex  items-center gap-1.5 p-1 font-[350]  text-gri-brand"
+				className="flex items-center gap-1.5 p-1  font-[350] text-gri-brand decoration-gri-brand   decoration-2 underline-offset-8 hover:underline"
 				onClick={handleCloseMenu}
 			>
 				{label}
@@ -55,7 +55,7 @@ const DropdownAplica = ({
 			<MenuHandler>
 				<span
 					{...triggers}
-					className="flex w-fit cursor-pointer items-center justify-start  gap-[10px] px-4 py-2 pl-1  text-center text-sm font-bold text-gri-brand    md:h-[60px] md:gap-[0.62rem]"
+					className="flex w-fit cursor-pointer  items-center justify-start gap-[10px] px-4 py-2 pl-1  text-center text-sm font-bold text-gri-brand  decoration-gri-brand   decoration-2 underline-offset-8 hover:underline    md:h-[60px] md:gap-[0.62rem]"
 				>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
                 // @ts-ignore */}
@@ -118,7 +118,7 @@ const DropdownServicii = ({
 		>
 			<MenuHandler>
 				<span
-					className="flex w-fit cursor-pointer items-center justify-start  gap-[10px] px-4 py-2 pl-1  text-center text-sm font-bold text-gri-brand    md:h-[60px] md:gap-[0.62rem]"
+					className="flex w-fit cursor-pointer items-center justify-start gap-[10px]  px-4 py-2 pl-1 text-center  text-sm font-bold text-gri-brand decoration-gri-brand   decoration-2 underline-offset-8 hover:underline    md:h-[60px] md:gap-[0.62rem]"
 					{...triggers}
 				>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 

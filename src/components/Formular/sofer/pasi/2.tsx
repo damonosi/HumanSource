@@ -1,7 +1,7 @@
 "use client";
 import FormWrapper from "../../FormWrapper";
 import experienta from "./data";
-
+import { useEffect } from "react";
 const Checkbox = ({
 	varianta,
 	value,
@@ -31,6 +31,17 @@ const Checkbox = ({
 );
 
 const Pas2Trasport = ({ register, setDisabled }: any) => {
+	useEffect(() => {
+		const isBrowser = () => typeof window !== "undefined";
+		console.log("mounted");
+		function scrollToTop() {
+			if (!isBrowser()) return;
+
+			window.scrollTo({ top: 0, behavior: "smooth" });
+			console.log("ajuns");
+		}
+		scrollToTop();
+	}, []);
 	return (
 		<FormWrapper intrebare="Ai mai lucrat ca sofer profesionist C+E?">
 			<div className="flex w-full flex-col items-start gap-5">

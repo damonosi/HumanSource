@@ -22,21 +22,12 @@ const NavigatieFormular = ({
 	next,
 	disabled,
 }: IButtonProps) => {
-	const isBrowser = () => typeof window !== "undefined";
-	function scrollToTop() {
-		if (!isBrowser()) return;
-
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	}
 	return (
 		<div className="relative flex w-full items-center justify-between px-2 py-12  md:px-16">
 			{!isFirstStep && (
 				<button
 					className={` ${stilComunButon} left-0 hover:bg-gri-brand hover:text-alb-site`}
-					onClick={() => {
-						back();
-						scrollToTop();
-					}}
+					onClick={back}
 					type="button"
 				>
 					<ArrowSmallLeftIcon strokeWidth={2} className="h-3 w-3 md:h-5 md:w-5" />
@@ -52,10 +43,7 @@ const NavigatieFormular = ({
 					className={` right-0 ${stilComunButon}   ${
 						disabled ? "cursor-not-allowed bg-gri-bg  opacity-50" : "bg-alb-site hover:bg-gri-brand hover:text-alb-site"
 					}`}
-					onClick={() => {
-						next();
-						scrollToTop();
-					}}
+					onClick={next}
 					type="button"
 					disabled={disabled}
 				>

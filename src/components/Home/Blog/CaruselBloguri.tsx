@@ -29,11 +29,11 @@ const CustomButtonGroupAsArrows = ({ next, previous }: { next: () => void; previ
 	return (
 		<>
 			<MdOutlineKeyboardArrowLeft
-				className="absolute left-0 top-1/2 mr-4 hidden h-8 w-8 cursor-pointer md:flex"
+				className="absolute left-0 top-1/2 mr-4 hidden h-8 w-8 cursor-pointer hover:scale-110 md:flex"
 				onClick={previous}
 			/>
 			<MdOutlineKeyboardArrowRight
-				className="absolute right-0 top-1/2 hidden h-8 w-8 cursor-pointer md:flex"
+				className="absolute right-0 top-1/2 hidden h-8 w-8 cursor-pointer hover:scale-110 md:flex"
 				onClick={next}
 			/>
 		</>
