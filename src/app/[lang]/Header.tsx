@@ -103,8 +103,7 @@ const DropdownServicii = ({
 	const [openMenu, setOpenMenu] = useState(false);
 
 	const triggers = {
-		onMouseEnter: () => setOpenMenu(true),
-		onMouseLeave: () => setOpenMenu(false),
+		onClick: () => setOpenMenu(!open),
 	};
 	return (
 		<Menu
