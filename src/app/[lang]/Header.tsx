@@ -54,7 +54,7 @@ const DropdownAplica = ({
 			}}
 		>
 			<MenuHandler>
-				<span
+				<button
 					{...triggers}
 					className="flex w-fit cursor-pointer items-center justify-start  gap-[10px] px-4 py-2 pl-1  text-center text-sm font-bold text-gri-brand    md:h-[60px] md:gap-[0.62rem]"
 				>
@@ -71,7 +71,7 @@ const DropdownAplica = ({
 					>
 						<path d="M0.773438 8.5L5.01608 12.7426L9.25872 8.5" stroke="#383A3C" strokeWidth="2" />
 					</svg>
-				</span>
+				</button>
 			</MenuHandler>
 			<MenuList {...triggers}>
 				<MenuItem>
@@ -119,7 +119,7 @@ const DropdownServicii = ({
 			}}
 		>
 			<MenuHandler>
-				<span
+				<button
 					className="flex w-fit cursor-pointer items-center justify-start  gap-[10px] px-4 py-2 pl-1  text-center text-sm font-bold text-gri-brand    md:h-[60px] md:gap-[0.62rem]"
 					{...triggers}
 				>
@@ -136,7 +136,7 @@ const DropdownServicii = ({
 					>
 						<path d="M0.773438 8.5L5.01608 12.7426L9.25872 8.5" stroke="#383A3C" strokeWidth="2" />
 					</svg>
-				</span>
+				</button>
 			</MenuHandler>
 			<MenuList {...triggers}>
 				<MenuItem>
