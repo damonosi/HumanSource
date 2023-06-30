@@ -40,8 +40,6 @@ const DropdownAplica = ({
 
 	const triggers = {
 		onClick: () => setOpenMenu(!open),
-		onMouseEnter: () => setOpenMenu(true),
-		onMouseLeave: () => setOpenMenu(false),
 	};
 	return (
 		<Menu
