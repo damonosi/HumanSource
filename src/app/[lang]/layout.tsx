@@ -1,5 +1,3 @@
-"use client";
-
 import Providers from "@/utils/providers";
 import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
