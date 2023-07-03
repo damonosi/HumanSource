@@ -31,14 +31,14 @@ export default function Home({ params }: { params: { lang: string; country: stri
 					className="mx-1 flex flex-col items-center  justify-center bg-alb-site pb-[80px] pt-[50px] md:mx-2 md:px-16 md:pb-36 md:pt-[100px]  "
 					id="background"
 				>
-					<ServiciiSection />
+					<ServiciiSection params={params} />
 				</div>{" "}
 				<div
 					className="mx-1 flex flex-col items-center justify-center  bg-gri-bg pb-10 md:mx-2 md:px-16  md:pb-[0px] "
 					id="background"
 				>
 					{" "}
-					<IntrebariSection />
+					<IntrebariSection params={params} />
 				</div>
 				<div
 					className="mx-1 flex flex-col items-center justify-center  rounded-b-[10px]  bg-white pb-12  md:mx-2 md:px-16 "

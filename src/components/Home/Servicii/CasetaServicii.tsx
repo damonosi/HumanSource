@@ -1,6 +1,8 @@
+import { NavItem } from "@/components/Header/Navigation";
 import { Button, Typography } from "@material-tailwind/react";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { HiOutlineUserGroup } from "react-icons/hi";
@@ -11,9 +13,11 @@ interface ICasetaServicii {
 	descriere: string;
 	textButon: string;
 	icon: string;
+	href: string;
+	params: { lang: string; country: string };
 }
 
-const CasetaServicii = ({ titlu, descriere, textButon, icon }: ICasetaServicii) => {
+const CasetaServicii = ({ titlu, descriere, textButon, icon, href, params }: ICasetaServicii) => {
 	const [hovered, setHovered] = useState(false);
 	const handleMouseEnter = () => {
 		setHovered(true);
@@ -21,6 +25,7 @@ const CasetaServicii = ({ titlu, descriere, textButon, icon }: ICasetaServicii) 
 	const handleMouseLeave = () => {
 		setHovered(false);
 	};
+	const router = useRouter();
 	return (
 		<AnimatePresence>
 			<motion.div
@@ -53,6 +58,7 @@ const CasetaServicii = ({ titlu, descriere, textButon, icon }: ICasetaServicii) 
 				</Typography>
 				<motion.div layout>
 					<Button
+						onClick={() => router.push(`${params.lang}/${href}`)}
 						className={`rounded-[8px] border border-alb-site  bg-transparent px-6 py-4 text-[#B21E23]  shadow-none hover:shadow-none ${
 							hovered && "  border-rosu-brand"
 						}`}

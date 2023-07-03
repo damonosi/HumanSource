@@ -9,7 +9,7 @@ import Ro from "@/public/imagini/header/ro.svg";
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useAppDispatch } from "@/utils/hooks/reduxHooks";
+
 
 interface Iclass {
 	className?: string;
@@ -45,7 +45,7 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 
 							router.push("/ro");
 						}}
-						className={`${language === "ro" && "font-bold"} flex items-center gap-4`}
+						className={`${language === "ro" && "font-bold"} linkUnderline relative flex items-center gap-4`}
 					>
 						<Ro className="h-5 w-5 " />
 						<span>Romana</span>
@@ -59,7 +59,7 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 
 							router.push("/it");
 						}}
-						className={`${language === "it" && "font-bold"} flex items-center gap-4`}
+						className={`${language === "it" && "font-bold "} linkUnderline relative flex items-center gap-4`}
 					>
 						<It className="h-5 w-5 " /> <span>Italiana</span>
 					</Link>

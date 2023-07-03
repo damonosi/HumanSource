@@ -18,14 +18,14 @@ const DropdownIntrebare = ({ intrebare, raspuns }: IDropdownInfo) => {
 		setShowRaspuns(!showRaspuns);
 	};
 	return (
-		<div ref={ref} className="mb-5 flex flex-col gap-5" id="container-dd">
+		<div ref={ref} className="group mb-5 flex flex-col gap-5" id="container-dd">
 			<button onClick={handleClick} className="flex items-center justify-between text-start">
 				<Typography variant="h6" className=" text-start font-[500] text-alb-site md:text-xl ">
 					{intrebare}
 				</Typography>
 
 				<div className="flex h-6 w-6 items-center justify-center " id="sageata-container">
-					<span className="text-alb-site opacity-50">{showRaspuns ? "-" : "+"}</span>
+					<span className="text-alb-site opacity-50 group-hover:scale-150">{showRaspuns ? "-" : "+"}</span>
 				</div>
 			</button>
 			<Typography
