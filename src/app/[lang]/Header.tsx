@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import Hamburger from "@/public/imagini/hamburger.svg";
 import Logo from "@/public/imagini/logo.svg";
-import { NavList } from "@/components/Home/Header/Navigation";
+import { NavList } from "@/components/Header/Navigation";
 
 export function Header({ params }: { params: { lang: string; country: string } }) {
 	const [open, setOpen] = useState(false);

@@ -141,7 +141,7 @@ export const DropdownServicii = ({
 					<NavItem
 						params={params}
 						handleCloseMenu={handleCloseMenu}
-						href={`${params.lang}/servicii/#sectiune-servicii-1`}
+						href={`/servicii/#sectiune-servicii-1`}
 						label={t("serviciiLeasing")}
 					/>
 				</MenuItem>
@@ -149,7 +149,7 @@ export const DropdownServicii = ({
 					<NavItem
 						params={params}
 						handleCloseMenu={handleCloseMenu}
-						href={`servicii/#sectiune-servicii-2`}
+						href={`/servicii/#sectiune-servicii-2`}
 						label={t("serviciiRecrutare")}
 					/>
 				</MenuItem>
@@ -157,7 +157,7 @@ export const DropdownServicii = ({
 					<NavItem
 						params={params}
 						handleCloseMenu={handleCloseMenu}
-						href={`servicii/#sectiune-servicii-3`}
+						href={`/servicii/#sectiune-servicii-3`}
 						label={t("serviciiPayroll")}
 					/>
 				</MenuItem>
