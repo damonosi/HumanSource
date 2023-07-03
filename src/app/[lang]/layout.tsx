@@ -1,3 +1,5 @@
+"use client";
+
 import Providers from "@/utils/providers";
 import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
@@ -81,15 +83,22 @@ const madera = localFont({
 export async function generateStaticParams() {
 	return locales.map((locale) => getLocalePartsFrom({ locale }));
 }
-export default function RootLayout({ children, params }: { children: React.ReactNode; params: { lang: string; country: string } }) {
+export default function RootLayout({
+	children,
+	params,
+}: {
+	children: React.ReactNode;
+	params: { lang: string; country: string };
+}) {
 	return (
 		<html id="root" lang={params.lang}>
-			<Providers>
-				<body
-					className={`${madera.variable} m-0 mx-auto flex  items-center justify-center  overflow-x-hidden bg-gri-deschis-bg font-sans text-gri-brand`}
-				>
+			<body
+				className={`${madera.variable} m-0 mx-auto flex  items-center justify-center  overflow-x-hidden bg-gri-deschis-bg font-sans text-gri-brand`}
+			>
+				<Providers>
 					<div className="relative grid w-full grid-cols-1  overflow-hidden  " id="site-container">
 						<Header params={params} />
+
 						<main className=" z-30 mt-14 flex w-full flex-col  ">
 							{children}
 							<Analytics />
@@ -97,8 +106,8 @@ export default function RootLayout({ children, params }: { children: React.React
 
 						<Footer />
 					</div>
-				</body>
-			</Providers>
+				</Providers>
+			</body>
 		</html>
 	);
 }

@@ -41,13 +41,13 @@ const NavigatieFormular = ({
 			{!isLastStep ? (
 				<button
 					className={` right-0 ${stilComunButon}   ${
-						disabled ? "cursor-not-allowed bg-gri-bg  opacity-50" : "bg-alb-site hover:bg-gri-brand hover:text-alb-site"
+						disabled ? "cursor-not-allowed   opacity-10" : "bg-alb-site hover:bg-gri-brand hover:text-alb-site"
 					}`}
 					onClick={next}
 					type="button"
 					disabled={disabled}
 				>
-					<span className={` ${disabled ? "#1d2328" : " "}      text-sm md:text-lg`}>Continua</span>{" "}
+					<span className={` ${disabled ? "text-[#1d2328]" : " "}      text-sm md:text-lg`}>Continua</span>{" "}
 					<ArrowSmallRightIcon
 						strokeWidth={2}
 						className={` ${disabled ? "text-gri-bg" : " "}  h-3 w-3 md:h-5 md:w-5 `}

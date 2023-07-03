@@ -45,7 +45,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 				id="container-alege-domeniu-titlu"
 			>
 				<Typography className="text-start text-xl font-bold md:text-3xl" variant="h3">
-					In ce domeniu vrei sa lucrezi?
+					Introdu datele firmei tale mai jos
 				</Typography>
 				<div className="flex w-full items-center justify-center gap-3 md:gap-8" id="container-carduri-alege-domeniu">
 					<button
@@ -79,7 +79,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 						disabled={disabled}
 						className={`md:px-5"  flex w-fit items-center justify-center gap-1 rounded-2xl border border-gri-brand px-2 py-2 text-center text-gri-brand md:py-4  ${
 							disabled
-								? "cursor-not-allowed border-0 bg-gri-bg text-gri-brand opacity-40"
+								? "cursor-not-allowed  text-gri-brand opacity-10"
 								: "bg-alb-site hover:bg-gri-brand hover:text-alb-site"
 						} `}
 					>

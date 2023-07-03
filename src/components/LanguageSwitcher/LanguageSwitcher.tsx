@@ -9,6 +9,8 @@ import Ro from "@/public/imagini/header/ro.svg";
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useAppDispatch } from "@/utils/hooks/reduxHooks";
+
 interface Iclass {
 	className?: string;
 	params: { lang: string; country: string };
@@ -40,6 +42,7 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 						onClick={() => {
 							setOpened(false);
 							setLanguage("ro");
+
 							router.push("/ro");
 						}}
 						className={`${language === "ro" && "font-bold"} flex items-center gap-4`}
@@ -53,6 +56,7 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 						onClick={() => {
 							setOpened(false);
 							setLanguage("it");
+
 							router.push("/it");
 						}}
 						className={`${language === "it" && "font-bold"} flex items-center gap-4`}

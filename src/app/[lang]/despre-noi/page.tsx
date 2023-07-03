@@ -1,6 +1,6 @@
 "use client";
 import Hi5 from "@/public/imagini/about/hi5.png";
-import PageTransitionWrapper from "@/utils/PageTransitionWrapper";
+
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import Link from "next/link";

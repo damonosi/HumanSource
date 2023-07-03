@@ -16,9 +16,8 @@ const Pas8Trasport = ({ register, setDisabled }: any) => {
 
 						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
-					label="Raspunsul Dumneavoastra"
+					label="Raspunsul Dumneavoastra $"
 				/>
-				$
 			</div>
 		</FormWrapper>
 	);

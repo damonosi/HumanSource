@@ -1,10 +1,12 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
 
-const CardAngajator = () => {
+const CardAngajator = ({ params }: { params: { lang: string; country: string } }) => {
+	const router = useRouter();
 	return (
 		<Card className="mt-6 h-44 w-1/2 justify-between md:h-56 md:w-60">
-			<CardHeader className="flex justify-center bg-transparent shadow-none overflow-visible">
+			<CardHeader className="flex justify-center overflow-visible bg-transparent shadow-none">
 				<div className="relative flex w-fit items-center justify-center justify-self-center rounded-full bg-rosu-brand p-2 shadow-lg ">
 					<svg width="30" height="30" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -19,19 +21,23 @@ const CardAngajator = () => {
 				<Typography variant="paragraph" className="text-brand-gri font-bold  uppercase md:text-xl md:capitalize  ">
 					Angajator
 				</Typography>
-				<Typography variant="small" className=" font-[350]">
+				<Typography variant="small" className="text-sm font-[350] md:text-base">
 					Firma care are nevoie de serviciile noastre
 				</Typography>
 			</CardBody>
 			<CardFooter className="flex justify-center p-0 md:pb-5 ">
-				<Button className="flex gap-1 bg-transparent px-1 text-rosu-brand shadow-none hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6 ">
+				<Button
+					onClick={() => router.push(`${params.lang}/formular/angajator`)}
+					className="flex gap-1 bg-transparent px-1 normal-case text-rosu-brand shadow-none hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6 "
+				>
 					Construieste-ti echipa <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />
 				</Button>
 			</CardFooter>
 		</Card>
 	);
 };
-const CardMuncitor = () => {
+const CardMuncitor = ({ params }: { params: { lang: string; country: string } }) => {
+	const router = useRouter();
 	return (
 		<Card className="mt-6  h-44 w-1/2 justify-between md:h-56 md:w-60 ">
 			<CardHeader className="flex justify-center overflow-visible bg-transparent shadow-none">
@@ -50,12 +56,15 @@ const CardMuncitor = () => {
 				<Typography variant="paragraph" className="text-brand-gri font-bold  uppercase md:text-xl md:capitalize  ">
 					Muncitor
 				</Typography>
-				<Typography variant="small" className=" font-[350]">
+				<Typography variant="small" className=" text-sm font-[350] md:text-base">
 					Iti cauti un loc de munca?
 				</Typography>
 			</CardBody>
 			<CardFooter className="flex justify-center p-0 md:pb-5 ">
-				<Button className="flex gap-1 bg-transparent px-1 text-rosu-brand shadow-none hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6 ">
+				<Button
+					onClick={() => router.push(`${params.lang}/formular/muncitor`)}
+					className="flex  gap-1 bg-transparent px-1  normal-case text-rosu-brand shadow-none hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6"
+				>
 					Locuri de munca <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />
 				</Button>
 			</CardFooter>
@@ -63,11 +72,11 @@ const CardMuncitor = () => {
 	);
 };
 
-const CarduriHero = () => {
+const CarduriHero = ({ params }: { params: { lang: string; country: string } }) => {
 	return (
 		<div id="container-carduri  " className="relative z-20  flex w-full items-center  justify-center gap-4 ">
-			<CardAngajator />
-			<CardMuncitor />
+			<CardAngajator params={params} />
+			<CardMuncitor params={params} />
 		</div>
 	);
 };
