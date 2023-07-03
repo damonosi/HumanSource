@@ -17,7 +17,7 @@ import { useForm } from "react-hook-form";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 import { getLocalePartsFrom, locales } from "i18n";
-import { ErrorMessage } from "@hookform/error-message";
+
 
 export async function generateStaticParams() {
 	return locales.map((locale) => getLocalePartsFrom({ locale }));

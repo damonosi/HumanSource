@@ -29,8 +29,8 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 	return (
 		<div ref={ref} className={`${className}  relative z-50 flex  w-72 flex-col items-start justify-center`}>
 			<div className="flex cursor-pointer items-center gap-2" onClick={() => setOpened(!open)} id="selector-limba">
-				{language === "ro" && <Ro className="h-5 w-5 rounded-[50px] " />}
-				{language === "it" && <It className="h-5 w-5  " />}
+				{language === "ro" && <Ro className="h-5 w-5   " />}
+				{language === "it" && <It className="h-5 w-5    " />}
 
 				{open ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowUp className="rotate-180 " />}
 			</div>
