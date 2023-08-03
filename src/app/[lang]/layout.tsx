@@ -91,7 +91,7 @@ export default function RootLayout({
 	return (
 		<html id="root" lang={params.lang}>
 			<body
-				className={`${madera.variable} m-0 mx-auto flex  items-center justify-center  overflow-x-hidden bg-gri-deschis-bg font-sans text-gri-brand`}
+				className={`${madera.variable}  m-0 mx-auto flex  items-center justify-center  overflow-x-hidden bg-gri-deschis-bg font-sans text-gri-brand`}
 			>
 				<Providers>
 					<div className="relative grid w-full grid-cols-1  overflow-hidden  " id="site-container">

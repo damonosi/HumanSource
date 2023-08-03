@@ -51,24 +51,23 @@ export const DropdownAplica = ({
 			}}
 		>
 			<MenuHandler>
-				<span
-					{...triggers}
-					className="linkUnderline relative flex w-fit cursor-pointer  items-center justify-start gap-[10px] px-4 py-2 pl-1  text-center text-sm font-bold text-gri-brand      md:gap-[0.62rem]"
-				>
-					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+				<div className=" relative flex h-full items-center justify-center px-4 py-2 pl-1" {...triggers}>
+					<span className="linkUnderline  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem]">
+						{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
                 // @ts-ignore */}
-					{t("aplica")}
-					<svg
-						width="10"
-						className={` ${openMenu ? "rotate-180" : ""}  `}
-						height="17"
-						viewBox="0 0 10 17"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M0.773438 8.5L5.01608 12.7426L9.25872 8.5" stroke="#383A3C" strokeWidth="2" />
-					</svg>
-				</span>
+						{t("aplica")}
+						<svg
+							width="10"
+							className={` ${openMenu ? "rotate-180" : ""}  `}
+							height="17"
+							viewBox="0 0 10 17"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M0.773438 8.5L5.01608 12.7426L9.25872 8.5" stroke="#383A3C" strokeWidth="2" />
+						</svg>
+					</span>
+				</div>
 			</MenuHandler>
 			<MenuList {...triggers}>
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
@@ -117,24 +116,23 @@ export const DropdownServicii = ({
 			}}
 		>
 			<MenuHandler>
-				<span
-					className="linkUnderline relative flex w-fit cursor-pointer items-center justify-start gap-[10px]  px-4 py-2 pl-1 text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem]"
-					{...triggers}
-				>
-					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+				<div className=" relative flex h-full items-center justify-center px-4 py-2 pl-1" {...triggers}>
+					<span className="linkUnderline  relative flex h-fit w-fit  cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem]">
+						{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
                     // @ts-ignore */}
-					{t("servicii")}
-					<svg
-						width="10"
-						className={` ${openMenu ? "rotate-180" : ""}  `}
-						height="17"
-						viewBox="0 0 10 17"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M0.773438 8.5L5.01608 12.7426L9.25872 8.5" stroke="#383A3C" strokeWidth="2" />
-					</svg>
-				</span>
+						{t("servicii")}
+						<svg
+							width="10"
+							className={` ${openMenu ? "rotate-180" : ""}  `}
+							height="17"
+							viewBox="0 0 10 17"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M0.773438 8.5L5.01608 12.7426L9.25872 8.5" stroke="#383A3C" strokeWidth="2" />
+						</svg>
+					</span>
+				</div>
 			</MenuHandler>
 			<MenuList {...triggers}>
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
