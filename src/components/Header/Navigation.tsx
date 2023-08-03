@@ -1,14 +1,17 @@
 import { useTranslation } from "@/app/i18n/client";
 import { Menu, MenuHandler, MenuItem, MenuList, Typography } from "@material-tailwind/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+
 interface INavItem {
 	label: string;
 	href: string;
 	params: { lang: string; country: string };
+	pathname: string;
 	handleCloseMenu: () => void;
 }
-export function NavItem({ label, href, params, handleCloseMenu }: INavItem) {
+export function NavItem({ label, href, params, handleCloseMenu, pathname }: INavItem) {
 	return (
 		<Link
 			className=" flex items-center visited:text-red-600 md:h-[60px] md:justify-center"
@@ -16,8 +19,9 @@ export function NavItem({ label, href, params, handleCloseMenu }: INavItem) {
 		>
 			<Typography
 				variant="small"
-				className="linkUnderline relative  flex  items-center p-1 font-[350]    text-gri-brand
-             "
+				className={` relative  flex  items-center p-1 font-[350]    text-gri-brand  ${
+					pathname === `/${params.lang}/${href}` ? "linkUnderline-forever" : "linkUnderline"
+				} `}
 				onClick={handleCloseMenu}
 			>
 				{label}
@@ -29,10 +33,14 @@ export const DropdownAplica = ({
 	t,
 	params,
 	handleCloseMenu,
+	pathname,
+	href,
 }: {
 	t: any;
 	params: { lang: string; country: string };
 	handleCloseMenu: () => void;
+	pathname: string;
+	href: string;
 }) => {
 	const [openMenu, setOpenMenu] = useState(false);
 
@@ -52,7 +60,11 @@ export const DropdownAplica = ({
 		>
 			<MenuHandler>
 				<div className=" relative flex h-full items-center justify-center px-4 py-2 pl-1" {...triggers}>
-					<span className="linkUnderline  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem]">
+					<span
+						className={`  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem] ${
+							pathname === `/${params.lang}/${href}` ? "linkUnderline-forever" : "linkUnderline"
+						}`}
+					>
 						{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
                 // @ts-ignore */}
 						{t("aplica")}
@@ -74,6 +86,7 @@ export const DropdownAplica = ({
 					<NavItem
 						handleCloseMenu={handleCloseMenu}
 						params={params}
+						pathname={pathname}
 						href={`/formular/muncitor`}
 						label={t("aplicaMuncitor")}
 					/>
@@ -81,6 +94,7 @@ export const DropdownAplica = ({
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
 					<NavItem
 						params={params}
+						pathname={pathname}
 						handleCloseMenu={handleCloseMenu}
 						href={`/formular/angajator`}
 						label={t("aplicaAngajator")}
@@ -94,10 +108,14 @@ export const DropdownServicii = ({
 	t,
 	params,
 	handleCloseMenu,
+	pathname,
+	href,
 }: {
 	t: any;
 	params: { lang: string; country: string };
 	handleCloseMenu: () => void;
+	pathname: string;
+	href: string;
 }) => {
 	const [openMenu, setOpenMenu] = useState(false);
 
@@ -117,7 +135,11 @@ export const DropdownServicii = ({
 		>
 			<MenuHandler>
 				<div className=" relative flex h-full items-center justify-center px-4 py-2 pl-1" {...triggers}>
-					<span className="linkUnderline  relative flex h-fit w-fit  cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem]">
+					<span
+						className={`  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem] ${
+							pathname === `/${params.lang}/${href}` ? "linkUnderline-forever" : "linkUnderline"
+						}`}
+					>
 						{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
                     // @ts-ignore */}
 						{t("servicii")}
@@ -137,6 +159,7 @@ export const DropdownServicii = ({
 			<MenuList {...triggers}>
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
 					<NavItem
+						pathname={pathname}
 						params={params}
 						handleCloseMenu={handleCloseMenu}
 						href={`/servicii/#sectiune-servicii-1`}
@@ -145,6 +168,7 @@ export const DropdownServicii = ({
 				</MenuItem>
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
 					<NavItem
+						pathname={pathname}
 						params={params}
 						handleCloseMenu={handleCloseMenu}
 						href={`/servicii/#sectiune-servicii-2`}
@@ -153,6 +177,7 @@ export const DropdownServicii = ({
 				</MenuItem>
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
 					<NavItem
+						pathname={pathname}
 						params={params}
 						handleCloseMenu={handleCloseMenu}
 						href={`/servicii/#sectiune-servicii-3`}
@@ -172,18 +197,37 @@ export function NavList({
 	params: { lang: string; country: string };
 }) {
 	const { t } = useTranslation(params.lang, "header");
+	const pathname = usePathname();
 	return (
 		<ul className=" flex w-full flex-col justify-end gap-3 text-gri-brand  md:h-[60px] md:flex-row md:items-center md:gap-[1.25rem]">
+			<NavItem
+				pathname={pathname}
+				handleCloseMenu={handleCloseMenu}
+				params={params}
+				href={`despre-noi`}
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+				// @ts-ignore
+				label={t("despre")}
+			/>
+			<NavItem
+				pathname={pathname}
+				handleCloseMenu={handleCloseMenu}
+				params={params}
+				href={`locuri-de-munca`}
+				label={t("munca")}
+			/>
+			<NavItem
+				pathname={pathname}
+				handleCloseMenu={handleCloseMenu}
+				params={params}
+				href={`contact`}
+				label={t("contact")}
+			/>
+			<DropdownServicii href={`servicii`} pathname={pathname} params={params} handleCloseMenu={handleCloseMenu} t={t} />
 			{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
             // @ts-ignore */}
-			<NavItem handleCloseMenu={handleCloseMenu} params={params} href={`despre-noi`} label={t("despre")} />
-			<NavItem handleCloseMenu={handleCloseMenu} params={params} href={`locuri-de-munca`} label={t("munca")} />
-			<NavItem handleCloseMenu={handleCloseMenu} params={params} href={`contact`} label={t("contact")} />
-			<DropdownServicii params={params} handleCloseMenu={handleCloseMenu} t={t} />
-			{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-            // @ts-ignore */}
-			<NavItem handleCloseMenu={handleCloseMenu} params={params} href={`blog`} label={t("blog")} />
-			<DropdownAplica params={params} handleCloseMenu={handleCloseMenu} t={t} />
+			<NavItem pathname={pathname} handleCloseMenu={handleCloseMenu} params={params} href={`blog`} label={t("blog")} />
+			<DropdownAplica href={`formular/`} pathname={pathname} params={params} handleCloseMenu={handleCloseMenu} t={t} />
 		</ul>
 	);
 }
