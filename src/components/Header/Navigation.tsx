@@ -14,7 +14,7 @@ interface INavItem {
 export function NavItem({ label, href, params, handleCloseMenu, pathname }: INavItem) {
 	return (
 		<Link
-			className=" flex items-center visited:text-red-600 md:h-[60px] md:justify-center"
+			className=" flex items-center  visited:text-red-600 md:h-[60px] md:justify-center"
 			href={`${params.lang}/${href}`}
 		>
 			<Typography
@@ -59,9 +59,12 @@ export const DropdownAplica = ({
 			}}
 		>
 			<MenuHandler>
-				<div className=" relative flex h-full items-center justify-center px-4 py-2 pl-1" {...triggers}>
+				<div
+					className=" relative flex h-full  items-center justify-start px-4 py-2 pl-1 md:justify-center"
+					{...triggers}
+				>
 					<span
-						className={`  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem] ${
+						className={`  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px]  text-center  text-sm  font-bold text-gri-brand md:gap-[0.62rem]      md:p-1 ${
 							pathname === `/${params.lang}/${href}` ? "linkUnderline-forever" : "linkUnderline"
 						}`}
 					>
@@ -81,7 +84,7 @@ export const DropdownAplica = ({
 					</span>
 				</div>
 			</MenuHandler>
-			<MenuList {...triggers}>
+			<MenuList className=" w-full md:w-fit" {...triggers}>
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
 					<NavItem
 						handleCloseMenu={handleCloseMenu}
@@ -134,9 +137,12 @@ export const DropdownServicii = ({
 			}}
 		>
 			<MenuHandler>
-				<div className=" relative flex h-full items-center justify-center px-4 py-2 pl-1" {...triggers}>
+				<div
+					className=" relative flex h-full  items-center justify-start px-4 py-2 pl-1 md:justify-center"
+					{...triggers}
+				>
 					<span
-						className={`  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px] p-1   text-center  text-sm font-bold text-gri-brand      md:gap-[0.62rem] ${
+						className={`  relative flex h-fit  w-fit cursor-pointer items-center justify-start gap-[10px]   text-center  text-sm font-bold text-gri-brand   md:gap-[0.62rem]   md:p-1 ${
 							pathname === `/${params.lang}/${href}` ? "linkUnderline-forever" : "linkUnderline"
 						}`}
 					>
@@ -156,7 +162,7 @@ export const DropdownServicii = ({
 					</span>
 				</div>
 			</MenuHandler>
-			<MenuList {...triggers}>
+			<MenuList className=" w-full md:w-fit" {...triggers}>
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
 					<NavItem
 						pathname={pathname}
