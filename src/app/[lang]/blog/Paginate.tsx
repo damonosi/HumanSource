@@ -20,15 +20,7 @@ const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginati
 				const newDate = new Date(dateCreated);
 				const formattedDate = `${newDate.getDate()} /  ${newDate.getMonth()} / ${newDate.getFullYear()} `;
 				return (
-					<CardBlogSecundar
-						key={id}
-						id={id}
-						formattedDate={formattedDate}
-						slug={slug}
-						title={title}
-						photo={photo}
-						params={params}
-					/>
+					<CardBlogSecundar key={id} id={id} formattedDate={formattedDate} slug={slug} title={title} photo={photo} />
 				);
 			})}
 		</div>
