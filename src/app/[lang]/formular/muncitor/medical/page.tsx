@@ -14,12 +14,10 @@ import NavigatieFormular from "@/components/Formular/NavigatieFormular";
 import { useMultistepForm } from "@/components/Formular/useMultistepForm";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
-import { getLocalePartsFrom, locales } from "i18n";
+
 import { useForm } from "react-hook-form";
 
-export async function generateStaticParams() {
-	return locales.map((locale) => getLocalePartsFrom({ locale }));
-}
+
 
 const FormularMedic = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
