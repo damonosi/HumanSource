@@ -29,15 +29,15 @@ const ButonSolicitaOferta = () => {
 	);
 };
 
-const ServiciiPage = () => {
+const ServiciiPage = ({ params }: { params: { lang: string; country: string } }) => {
 	return (
 		<section className=" bg-[#E5E5E5] px-4 pb-28  md:px-[70px] ">
 			<div className="container mx-auto flex flex-col ">
 				<Breadcrumbs>
-					<Link className="text-gri-brand" href="/">
+					<Link className="text-gri-brand" href={`/${params.lang}`}>
 						Home
 					</Link>
-					<Link className="text-red-600" href="/servicii">
+					<Link className="text-red-600" href={`/${params.lang}/servicii`}>
 						Servicii
 					</Link>
 				</Breadcrumbs>
@@ -69,9 +69,9 @@ const ServiciiPage = () => {
 							<Image alt="cover-servicii" placeholder="blur" src={ServiciiCover} />{" "}
 						</div>
 					</section>
-					<div className='h-[1px] w-full ' id='sectiune-servicii-1'></div>
+					<div className="h-[1px] w-full " id="sectiune-servicii-1"></div>
 
-					<section className="flex w-full flex-col items-center gap-8 md:flex-row" >
+					<section className="flex w-full flex-col items-center gap-8 md:flex-row">
 						<div className="flex w-full items-center justify-center md:w-1/2" id="container-imagine">
 							{" "}
 							<Image alt="cover-servicii" placeholder="blur" src={ImgSec1} />{" "}
@@ -87,8 +87,8 @@ const ServiciiPage = () => {
 							<ButonSolicitaOferta />
 						</div>
 					</section>
-					<div className='h-[1px] w-full' id='sectiune-servicii-2'></div>
-					<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row" >
+					<div className="h-[1px] w-full" id="sectiune-servicii-2"></div>
+					<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row">
 						<div className="flex h-full flex-col items-start gap-12 md:w-1/2">
 							<Typography variant="h3">Administram documentatia</Typography>
 							<Typography variant="paragraph">
@@ -104,8 +104,8 @@ const ServiciiPage = () => {
 							<Image alt="cover-servicii" placeholder="blur" src={ImgSec2} />{" "}
 						</div>
 					</section>
-					<div className='h-[1px] w-full' id='sectiune-servicii-3'></div>
-					<section className="flex w-full flex-col items-center gap-8 md:flex-row" >
+					<div className="h-[1px] w-full" id="sectiune-servicii-3"></div>
+					<section className="flex w-full flex-col items-center gap-8 md:flex-row">
 						<div className="flex w-full items-center justify-center md:w-1/2" id="container-imagine">
 							{" "}
 							<Image alt="cover-servicii" placeholder="blur" src={ImgSec3} />{" "}

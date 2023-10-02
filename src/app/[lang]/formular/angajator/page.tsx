@@ -6,10 +6,10 @@ import { Typography } from "@material-tailwind/react";
 
 import Link from "next/link";
 
-import IcoTransport from "@/public/imagini/formular/selectDomeniu/negru/transport.svg";
-import IcoTransportAlb from "@/public/imagini/formular/selectDomeniu/alb/transport.svg";
-import IcoMedical from "@/public/imagini/formular/selectDomeniu/negru/medical.svg";
-import IcoMedicalAlb from "@/public/imagini/formular/selectDomeniu/alb/medical.svg";
+import IcoTransport from "../../../../../public/imagini/formular/selectDomeniu/negru/transport.svg";
+import IcoTransportAlb from "../../../../../public/imagini/formular/selectDomeniu/alb/transport.svg";
+import IcoMedical from "../../../../../public/imagini/formular/selectDomeniu/negru/medical.svg";
+import IcoMedicalAlb from "../../../../../public/imagini/formular/selectDomeniu/alb/medical.svg";
 
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
