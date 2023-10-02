@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import { useState } from "react";
 
 import { Typography } from "@material-tailwind/react";
-import { getLocalePartsFrom, locales } from "i18n";
+
 import Link from "next/link";
 
 import IcoTransport from "@/public/imagini/formular/selectDomeniu/negru/transport.svg";

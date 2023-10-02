@@ -8,7 +8,7 @@ import { Typography } from "@material-tailwind/react";
 
 import Link from "next/link";
 import { useState } from "react";
-import { GiHospital } from "react-icons/gi";
+
 
 
 
