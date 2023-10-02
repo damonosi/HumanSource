@@ -16,7 +16,7 @@ import Pas9Trasport from "@/components/Formular/sofer/pasi/9";
 import { useForm } from "react-hook-form";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
-import { getLocalePartsFrom, locales } from "i18n";
+
 
 
 

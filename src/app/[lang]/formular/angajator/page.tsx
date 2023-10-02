@@ -14,9 +14,7 @@ import IcoMedicalAlb from "@/public/imagini/formular/selectDomeniu/alb/medical.s
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 
-export async function generateStaticParams() {
-	return locales.map((locale) => getLocalePartsFrom({ locale }));
-}
+
 const FormularAngajator = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
 	const [selectedCategory, setSelectedCategory] = useState("");
