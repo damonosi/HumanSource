@@ -1,4 +1,4 @@
-const months = new Array(
+const months = [
 	"Ianuarie",
 	"februarie",
 	"Martie",
@@ -11,8 +11,9 @@ const months = new Array(
 	"Octombrie",
 	"Noiembrie",
 	"Decembrie",
-);
-const days = new Array("Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambate");
+];
+
+const days = ["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambate"];
 
 export default function formatDate(dateCreated: string) {
 	const newDate = new Date(dateCreated);
