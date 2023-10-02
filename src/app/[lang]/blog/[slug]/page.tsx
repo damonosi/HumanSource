@@ -15,7 +15,7 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 	}
 
 	const dateBlog = data.blog;
-	console.log(dateBlog);
+
 
 	const { photo, title, id, dateCreated } = dateBlog;
 	const formattedDate = formatDate(dateCreated);
