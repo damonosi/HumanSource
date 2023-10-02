@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 
 import Link from "next/link";
 import { FC } from "react";
-import FormularAplica from "./../../../../components/Munca/formularAplica";
+import FormularAplica from "@/components/Munca/formularAplica";
 import { Typography } from "@material-tailwind/react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FiTruck } from "react-icons/fi";
@@ -20,7 +20,7 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 			<div className="container mx-auto grid ">
 				{muncaFiller
 					.filter((job) => job.id == params.id)
-					.map(({ salariu, titlu, id }) => (
+					.map(({ id }) => (
 						<div key={id} className="container mx-auto flex flex-col ">
 							<Breadcrumbs>
 								<Link className="text-gri-brand" href={`/${params.lang}`}>

@@ -16,7 +16,7 @@ interface ICardBlogSecundar {
 
 const CardBlogSecundar = ({ id, formattedDate, title, slug, photo, params }: ICardBlogSecundar) => {
 	return (
-		<Link className="cursor-pointer rounded-2xl hover:shadow-xl " href={`blog/${slug}`}>
+		<Link className="cursor-pointer rounded-2xl hover:shadow-xl " id={id} href={`blog/${slug}`}>
 			<div className="flex flex-col gap-5" id="container-card-blog-secundar">
 				<div className="flex w-full flex-col overflow-hidden rounded-t-2xl">
 					<Image alt={photo.altText} src={photo.image.url} width={photo.image.width} height={photo.image.height} />

@@ -21,13 +21,7 @@ import { useForm } from "react-hook-form";
 
 const FormularMedic = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
-	const {
-		register,
-		handleSubmit,
-		setValue,
-
-		formState: { errors },
-	} = useForm({
+	const { register, handleSubmit, setValue } = useForm({
 		mode: "onChange",
 		defaultValues: {
 			experienta: "",
@@ -60,13 +54,13 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
 			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`${params.lang}/`}>
+				<Link className="text-gri-brand" href={`/${params.lang}/`}>
 					Home
 				</Link>
-				<Link className="text-gri-brand" href={`${params.lang}/formular/muncitor`}>
+				<Link className="text-gri-brand" href={`/${params.lang}/formular/muncitor`}>
 					Formular
 				</Link>
-				<Link className="text-red-600" href={`${params.lang}/formular/muncitor`}>
+				<Link className="text-red-600" href={`/${params.lang}/formular/muncitor`}>
 					Medical
 				</Link>
 			</Breadcrumbs>

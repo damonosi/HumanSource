@@ -2,7 +2,7 @@
 
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
-import BlogCover from "@/public/imagini/blog/heroBlogImg.png";
+import BlogCover from "../../../public/imagini/blog/heroBlogImg.png";
 const DescriereBlog = () => {
 	return (
 		<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row" id="hero-bloguri">

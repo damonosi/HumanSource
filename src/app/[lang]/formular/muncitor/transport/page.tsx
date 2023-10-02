@@ -28,8 +28,6 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 		handleSubmit,
 
 		setValue,
-
-		formState: { errors },
 	} = useForm({
 		mode: "onChange",
 		defaultValues: {
@@ -68,13 +66,13 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
 			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`${params.lang}/`}>
+				<Link className="text-gri-brand" href={`/${params.lang}/`}>
 					Home
 				</Link>
-				<Link className="text-gri-brand" href={`${params.lang}/formular/muncitor`}>
+				<Link className="text-gri-brand" href={`/${params.lang}/formular/muncitor`}>
 					Formular
 				</Link>
-				<Link className="text-red-600" href={`${params.lang}/formular/muncitor`}>
+				<Link className="text-red-600" href={`/${params.lang}/formular/muncitor`}>
 					Transport
 				</Link>
 			</Breadcrumbs>

@@ -3,15 +3,15 @@ import FormWrapper from "../../FormWrapper";
 
 
 
-import Postliceala from "../../../../public/imagini/formular/medic/negru/postliceala.svg";
-import PostlicealaAlb from "../../../../public/imagini/formular/medic/alb/postliceala.svg";
-import Universitate from "../../../../public/imagini/formular/medic/negru/universitate.svg";
-import UniversitateAlb from "../../../../public/imagini/formular/medic/alb/universitate.svg";
-import InCurs from "../../../../public/imagini/formular/medic/negru/inCurs.svg";
-import InCursAlb from "../../../../public/imagini/formular/medic/alb/inCurs.svg";
+import Postliceala from "../../../../../public/imagini/formular/medic/negru/postliceala.svg";
+import PostlicealaAlb from "../../../../../public/imagini/formular/medic/alb/postliceala.svg";
+import Universitate from "../../../../../public/imagini/formular/medic/negru/universitate.svg";
+import UniversitateAlb from "../../../../../public/imagini/formular/medic/alb/universitate.svg";
+import InCurs from "../../../../../public/imagini/formular/medic/negru/inCurs.svg";
+import InCursAlb from "../../../../../public/imagini/formular/medic/alb/inCurs.svg";
 
-import Nu from "../../../../public/imagini/formular/medic/negru/nu.svg";
-import NuAlb from "../../../../public/imagini/formular/medic/alb/nu.svg";
+import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
+import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
 import { useState } from "react";
 const Pas4Medical = ({ setValue, setDisabled }: any) => {
 	const [selected, setSelected] = useState(0);

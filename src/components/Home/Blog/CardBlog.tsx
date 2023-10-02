@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-import BackSmall from "@/public/imagini/blog/cover-blog-small.png";
+import BackSmall from "../../../../public/imagini/blog/cover-blog-small.png";
 
 interface ICardBlog {
 	data: string;

@@ -1,8 +1,8 @@
 import FormWrapper from "../../FormWrapper";
-import Da from "../../../../public/imagini/formular/medic/negru/da.svg";
-import DaAlb from "../../../../public/imagini/formular/medic/alb/da.svg";
-import Nu from "../../../../public/imagini/formular/medic/negru/nu.svg";
-import NuAlb from "../../../../public/imagini/formular/medic/alb/nu.svg";
+import Da from "../../../../../public/imagini/formular/medic/negru/da.svg";
+import DaAlb from "../../../../../public/imagini/formular/medic/alb/da.svg";
+import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
+import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
 import { useState } from "react";
 
 const Pas8Medical = ({ setValue, setDisabled }: any) => {

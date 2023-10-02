@@ -1,5 +1,5 @@
 "use client";
-import Hi5 from "@/public/imagini/about/hi5.png";
+import Hi5 from "../../../../public/imagini/about/hi5.png";
 
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";

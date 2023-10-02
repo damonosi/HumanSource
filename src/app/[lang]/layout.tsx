@@ -18,58 +18,58 @@ export const metadata = {
 const madera = localFont({
 	src: [
 		{
-			path: "../../public/fonts/Madera-Thin.ttf",
+			path: "../../../public/fonts/Madera-Thin.ttf",
 			weight: "100",
 			style: "normal",
 		},
 		{
-			path: "../../public/fonts/Madera-Thin-Italic.ttf",
+			path: "../../../public/fonts/Madera-Thin-Italic.ttf",
 			weight: "100",
 			style: "italic",
 		},
 		{
-			path: "../../public/fonts/Madera-Light.ttf",
+			path: "../../../public/fonts/Madera-Light.ttf",
 			weight: "300",
 			style: "normal",
 		},
 		{
-			path: "../../public/fonts/Madera-Light-Italic.ttf",
+			path: "../../../public/fonts/Madera-Light-Italic.ttf",
 			weight: "300",
 			style: "italic",
 		},
 		{
-			path: "../../public/fonts/Madera-Regular.ttf",
+			path: "../../../public/fonts/Madera-Regular.ttf",
 			weight: "400",
 			style: "normal",
 		},
 
 		{
-			path: "../../public/fonts/Madera-Medium.ttf",
+			path: "../../../public/fonts/Madera-Medium.ttf",
 			weight: "500",
 			style: "normal",
 		},
 		{
-			path: "../../public/fonts/Madera-Medium-Italic.ttf",
+			path: "../../../public/fonts/Madera-Medium-Italic.ttf",
 			weight: "500",
 			style: "italic",
 		},
 		{
-			path: "../../public/fonts/Madera-Bold.ttf",
+			path: "../../../public/fonts/Madera-Bold.ttf",
 			weight: "700",
 			style: "normal",
 		},
 		{
-			path: "../../public/fonts/Madera-Bold-Italic.ttf",
+			path: "../../../public/fonts/Madera-Bold-Italic.ttf",
 			weight: "700",
 			style: "italic",
 		},
 		{
-			path: "../../public/fonts/Madera-Extra-Bold.ttf",
+			path: "../../../public/fonts/Madera-Extra-Bold.ttf",
 			weight: "800",
 			style: "normal",
 		},
 		{
-			path: "../../public/fonts/Madera-Extra-Bold-Italic.ttf",
+			path: "../../../public/fonts/Madera-Extra-Bold-Italic.ttf",
 			weight: "800",
 			style: "italic",
 		},

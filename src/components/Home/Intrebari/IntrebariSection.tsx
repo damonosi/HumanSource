@@ -1,7 +1,7 @@
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
 
-import ImgIntrebari from "@/public/imagini/intrebari/imgIntrebari.png";
+import ImgIntrebari from "../../../../public/imagini/intrebari/imgIntrebari.png";
 import dateIntrebari from "./dateIntrebari";
 import DropdownIntrebare from "./DropdownIntrebare";
 

@@ -1,11 +1,11 @@
-import First from "@/public/imagini/about/1.png";
-import Second from "@/public/imagini/about/2.png";
-import Third from "@/public/imagini/about/3.png";
-import Forth from "@/public/imagini/about/4.png";
+import First from "../../../../public/imagini/about/1.png";
+import Second from "../../../../public/imagini/about/2.png";
+import Third from "../../../../public/imagini/about/3.png";
+import Forth from "../../../../public/imagini/about/4.png";
 
-import Dan from "@/public/imagini/about/dan.png";
-import Elena from "@/public/imagini/about/elena.png";
-import Irina from "@/public/imagini/about/irina.png";
+import Dan from "../../../../public/imagini/about/dan.png";
+import Elena from "../../../../public/imagini/about/elena.png";
+import Irina from "../../../../public/imagini/about/irina.png";
 
 export const dateValori = [
 	{

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import FormWrapper from "../../FormWrapper";
 
-import Clinica from "../../../../public/imagini/formular/medic/negru/clinica.svg";
-import ClinicaAlb from "../../../../public/imagini/formular/medic/alb/clinica.svg";
-import Spital from "../../../../public/imagini/formular/medic/negru/spital.svg";
-import SpitalAlb from "../../../../public/imagini/formular/medic/alb/spital.svg";
+import Clinica from "../../../../../public/imagini/formular/medic/negru/clinica.svg";
+import ClinicaAlb from "../../../../../public/imagini/formular/medic/alb/clinica.svg";
+import Spital from "../../../../../public/imagini/formular/medic/negru/spital.svg";
+import SpitalAlb from "../../../../../public/imagini/formular/medic/alb/spital.svg";
 
-import Azil from "../../../../public/imagini/formular/medic/negru/azil.svg";
-import AzilAlb from "../../../../public/imagini/formular/medic/alb/azil.svg";
+import Azil from "../../../../../public/imagini/formular/medic/negru/azil.svg";
+import AzilAlb from "../../../../../public/imagini/formular/medic/alb/azil.svg";
 
 const Pas2Medical = ({ setValue, setDisabled }: any) => {
 	const [selected, setSelected] = useState(0);

@@ -1,8 +1,8 @@
-import Dacia from "@/public/imagini/parteneri/dacia.png";
-import Giorna from "@/public/imagini/parteneri/giorna.png";
-import Oil from "@/public/imagini/parteneri/oil.png";
-import Tf from "@/public/imagini/parteneri/tf.png";
-import Uvm from "@/public/imagini/parteneri/uvm.png";
+import Dacia from "../../../../public/imagini/parteneri/dacia.png";
+import Giorna from "../../../../public/imagini/parteneri/giorna.png";
+import Oil from "../../../../public/imagini/parteneri/oil.png";
+import Tf from "../../../../public/imagini/parteneri/tf.png";
+import Uvm from "../../../../public/imagini/parteneri/uvm.png";
 
 const dateParteneri = [
 	{

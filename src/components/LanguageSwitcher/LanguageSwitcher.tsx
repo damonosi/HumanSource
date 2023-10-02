@@ -4,8 +4,8 @@ import { useState } from "react";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 
-import It from "@/public/imagini/header/it.svg";
-import Ro from "@/public/imagini/header/ro.svg";
+import It from "../../../public/imagini/header/it.svg";
+import Ro from "../../../public/imagini/header/ro.svg";
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";

@@ -1,6 +1,6 @@
-import ImgFillerConstructii from "@/public/imagini/munca/constructii.png";
-import ImgFillerMedical from "@/public/imagini/munca/medical.png";
-import ImgFillerTransport from "@/public/imagini/munca/transport.png";
+import ImgFillerConstructii from "../../../public/imagini/munca/constructii.png";
+import ImgFillerMedical from "../../../public/imagini/munca/medical.png";
+import ImgFillerTransport from "../../../public/imagini/munca/transport.png";
 import { StaticImageData } from "next/image";
 interface IdataJoburi {
 	id: number;

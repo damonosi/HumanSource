@@ -1,9 +1,9 @@
 import FormWrapper from "../../FormWrapper";
 import { useState } from "react";
-import Singur from "../../../../public/imagini/formular/sofer/negru/singur.svg";
-import SingurAlb from "../../../../public/imagini/formular/sofer/alb/singur.svg";
-import Echipaj from "../../../../public/imagini/formular/sofer/negru/echipaj.svg";
-import EchipajAlb from "../../../../public/imagini/formular/sofer/alb/echipaj.svg";
+import Singur from "../../../../../public/imagini/formular/sofer/negru/singur.svg";
+import SingurAlb from "../../../../../public/imagini/formular/sofer/alb/singur.svg";
+import Echipaj from "../../../../../public/imagini/formular/sofer/negru/echipaj.svg";
+import EchipajAlb from "../../../../../public/imagini/formular/sofer/alb/echipaj.svg";
 
 const Pas5Trasport = ({ setValue, setDisabled }: any) => {
 	const [selected, setSelected] = useState(0);

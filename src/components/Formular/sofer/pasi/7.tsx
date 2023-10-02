@@ -1,13 +1,13 @@
 import FormWrapper from "../../FormWrapper";
 import { useState } from "react";
 
-import Deloc from "../../../../public/imagini/formular/sofer/negru/deloc.svg";
-import DelocAlb from "../../../../public/imagini/formular/sofer/alb/deloc.svg";
-import Mediu from "../../../../public/imagini/formular/sofer/negru/mediu.svg";
-import MediuAlb from "../../../../public/imagini/formular/sofer/alb/mediu.svg";
+import Deloc from "../../../../../public/imagini/formular/sofer/negru/deloc.svg";
+import DelocAlb from "../../../../../public/imagini/formular/sofer/alb/deloc.svg";
+import Mediu from "../../../../../public/imagini/formular/sofer/negru/mediu.svg";
+import MediuAlb from "../../../../../public/imagini/formular/sofer/alb/mediu.svg";
 
-import Avansat from "../../../../public/imagini/formular/sofer/negru/avansat.svg";
-import AvansatAlb from "../../../../public/imagini/formular/sofer/alb/avansat.svg";
+import Avansat from "../../../../../public/imagini/formular/sofer/negru/avansat.svg";
+import AvansatAlb from "../../../../../public/imagini/formular/sofer/alb/avansat.svg";
 
 const Pas7Trasport = ({ setValue, setDisabled }: any) => {
 	const [selected, setSelected] = useState(0);

@@ -6,14 +6,13 @@ import { Typography } from "@material-tailwind/react";
 
 import Link from "next/link";
 
-import IcoTransport from "@/public/imagini/formular/selectDomeniu/negru/transport.svg";
-import IcoTransportAlb from "@/public/imagini/formular/selectDomeniu/alb/transport.svg";
-import IcoMedical from "@/public/imagini/formular/selectDomeniu/negru/medical.svg";
-import IcoMedicalAlb from "@/public/imagini/formular/selectDomeniu/alb/medical.svg";
+import IcoTransport from "../../../../../public/imagini/formular/selectDomeniu/negru/transport.svg";
+import IcoTransportAlb from "../../../../../public/imagini/formular/selectDomeniu/alb/transport.svg";
+import IcoMedical from "../../../../../public/imagini/formular/selectDomeniu/negru/medical.svg";
+import IcoMedicalAlb from "../../../../../public/imagini/formular/selectDomeniu/alb/medical.svg";
 
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
-
 
 const Formular = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
@@ -31,10 +30,10 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 	return (
 		<div className="px-5 pb-[60px] md:px-[70px]">
 			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`${params.lang}/`}>
+				<Link className="text-gri-brand" href={`/${params.lang}`}>
 					Home
 				</Link>
-				<Link className="text-red-600" href={`${params.lang}/formular/muncitor`}>
+				<Link className="text-red-600" href={`/${params.lang}/formular/muncitor`}>
 					Formular
 				</Link>
 			</Breadcrumbs>

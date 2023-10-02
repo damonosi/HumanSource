@@ -1,9 +1,9 @@
 "use client";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
-import ServiciiCover from "@/public/imagini/servicii/hero-servicii.png";
-import ImgSec1 from "@/public/imagini/servicii/img-sec-1.png";
-import ImgSec2 from "@/public/imagini/servicii/img-sec-2.png";
-import ImgSec3 from "@/public/imagini/servicii/img-sec-3.png";
+import ServiciiCover from "../../../../public/imagini/servicii/hero-servicii.png";
+import ImgSec1 from "../../../../public/imagini/servicii/img-sec-1.png";
+import ImgSec2 from "../../../../public/imagini/servicii/img-sec-2.png";
+import ImgSec3 from "../../../../public/imagini/servicii/img-sec-3.png";
 import { Typography } from "@material-tailwind/react";
 import AttachEmailOutlinedIcon from "@mui/icons-material/AttachEmailOutlined";
 import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";

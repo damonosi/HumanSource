@@ -1,10 +1,10 @@
 import FormWrapper from "../../FormWrapper";
 
 import { useState } from "react";
-import Da from "../../../../public/imagini/formular/sofer/negru/da.svg";
-import DaAlb from "../../../../public/imagini/formular/sofer/alb/da.svg";
-import Nu from "../../../../public/imagini/formular/sofer/negru/nu.svg";
-import NuAlb from "../../../../public/imagini/formular/sofer/alb/nu.svg";
+import Da from "../../../../../public/imagini/formular/sofer/negru/da.svg";
+import DaAlb from "../../../../../public/imagini/formular/sofer/alb/da.svg";
+import Nu from "../../../../../public/imagini/formular/sofer/negru/nu.svg";
+import NuAlb from "../../../../../public/imagini/formular/sofer/alb/nu.svg";
 
 const Pas4Trasport = ({ setValue, setDisabled }: any) => {
 	const [selected, setSelected] = useState(0);
