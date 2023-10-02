@@ -11,10 +11,9 @@ interface ICardBlogSecundar {
 
 	formattedDate: string;
 	photo: { altText: string; image: { url: StaticImageData; width: number; height: number } };
-	params: { lang: string; country: string };
 }
 
-const CardBlogSecundar = ({ id, formattedDate, title, slug, photo, params }: ICardBlogSecundar) => {
+const CardBlogSecundar = ({ id, formattedDate, title, slug, photo }: ICardBlogSecundar) => {
 	return (
 		<Link className="cursor-pointer rounded-2xl hover:shadow-xl " id={id} href={`blog/${slug}`}>
 			<div className="flex flex-col gap-5" id="container-card-blog-secundar">

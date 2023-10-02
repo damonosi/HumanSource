@@ -10,7 +10,7 @@ const Checkbox = ({
 	varianta: string;
 	value: string;
 	register: any;
-	setDisabled: any;
+	setDisabled: (arg0: boolean) => void;
 }) => (
 	<div className="mb-4 flex items-center">
 		<input

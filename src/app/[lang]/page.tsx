@@ -38,7 +38,7 @@ export default function Home({ params }: { params: { lang: string; country: stri
 					id="background"
 				>
 					{" "}
-					<IntrebariSection params={params} />
+					<IntrebariSection />
 				</div>
 				<div
 					className="mx-1 flex flex-col items-center justify-center  rounded-b-[10px]  bg-white pb-12  md:mx-2 md:px-16 "
