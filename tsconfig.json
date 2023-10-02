@@ -24,6 +24,6 @@
 			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "middleware.js", "src/utils/redux/store.js"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "middleware.js", "src/utils/redux/store.js", "src/lib/apollo/provider.js"],
 	"exclude": ["node_modules", ".next"]
 }

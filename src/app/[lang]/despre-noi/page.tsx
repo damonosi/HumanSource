@@ -8,11 +8,9 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import { CardEchipa, CardValori } from "./CarduriAbout";
 import { dateEchipa, dateValori } from "./dateCarduriAbout";
-import { getLocalePartsFrom, locales } from "i18n";
 
-export async function generateStaticParams() {
-	return locales.map((locale) => getLocalePartsFrom({ locale }));
-}
+
+
 const DespreNoiPage = ({ params }: { params: { lang: string; country: string } }) => {
 	return (
 		<section className="bg-[#E5E5E5] px-5 pb-[100px] md:px-[70px] ">

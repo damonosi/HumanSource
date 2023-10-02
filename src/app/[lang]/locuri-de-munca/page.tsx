@@ -5,14 +5,12 @@ import CardJob from "@/components/Munca/CardJob";
 import muncaFiller from "@/components/Munca/muncaFiller";
 import Search from "@/components/Munca/Search";
 import { Typography } from "@material-tailwind/react";
-import { getLocalePartsFrom, locales } from "i18n";
+
 import Link from "next/link";
 import { useState } from "react";
 import { GiHospital } from "react-icons/gi";
 
-export async function generateStaticParams() {
-	return locales.map((locale) => getLocalePartsFrom({ locale }));
-}
+
 
 const CategorieJoburi = ({ params }: { params: { lang: string; country: string } }) => {
 	const [selectedCategory, setSelectedCategory] = useState("transport");

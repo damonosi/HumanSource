@@ -1,51 +1,48 @@
-"use client";
-import dateBloguri from "@/components/Blog/dateBloguri";
-import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
-import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
+import query from "@/lib/apollo/queries/getBlogBySlug";
+import { getClient } from "@/lib/apollo/client";
+import BreadComponent from "./BreadComponent";
+import formatDate from "@/utils/formatDate";
 
-interface IpageProps {
-	params: { lang: string; slug: string };
-}
+const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
+	const slug = params.slug;
+	const { data, error, loading } = await getClient().query({ query, variables: { where: { slug: slug } } });
+	if (loading) {
+		return <span>Loading.....</span>;
+	}
+	if (error) {
+		return <h1 className="text-red-800">error</h1>;
+	}
 
-const Blog: FC<IpageProps> = ({ params }) => {
+	const dateBlog = data.blog;
+	console.log(dateBlog);
+
+	const { photo, title, id, dateCreated } = dateBlog;
+	const formattedDate = formatDate(dateCreated);
+
 	return (
 		<section className="min-h-screen bg-[#E5E5E5] px-5 pb-[100px]  text-start md:px-20">
 			<div className="container mx-auto grid ">
-				<Breadcrumbs>
-					<Link className="text-gri-brand" href={`/${params.lang}`}>
-						Home
-					</Link>
-					<Link className="text-gri-brand" href={`/${params.lang}/blog`}>
-						Bloguri
-					</Link>
-					<Link className="text-red-600" href={`${params.lang}/blog/${params.slug}`}>
-						{params.slug}
-					</Link>
-				</Breadcrumbs>
-				{dateBloguri
-					.filter((blog) => blog.slug === params.slug)
-					.map(({ src, text, id }) => {
-						return (
-							<div key={id} className="">
-								<div className="flex max-h-[405px] w-full justify-center py-6">
-									<Image src={src} className="h-auto w-full" placeholder="blur" alt="cover-blog" />
-								</div>
-								<div className="flex flex-col gap-5 text-start">
-									<Typography variant="small">By Author Name</Typography>{" "}
-									<Typography variant="small">Luni, 24 Septembrie 2019</Typography>
-									<Typography variant="h4" className="text-start font-bold">
-										Lorem ipsum dolor sit amet consectetur. Magnis sem a.
-									</Typography>
-								</div>
-								<div className="py-8">
-									<Typography variant="paragraph">{text}</Typography>
-								</div>
-							</div>
-						);
-					})}{" "}
+				<BreadComponent params={params} />
+
+				<div key={id} className="">
+					<div className="flex max-h-[405px] w-full justify-center py-6">
+						<Image
+							alt={photo.altText}
+							src={photo.image.url}
+							width={photo.image.width}
+							height={photo.image.height}
+							className="h-auto w-full"
+						/>
+					</div>
+					<div className="flex flex-col gap-5 text-start">
+						<h2>By Author Name</h2> <span>{formattedDate}</span>
+						<p className="text-start font-bold">Lorem ipsum dolor sit amet consectetur. Magnis sem a.</p>
+					</div>
+					<div className="py-8">
+						<h1>{title}</h1>
+					</div>
+				</div>
 			</div>
 		</section>
 	);

@@ -14,9 +14,7 @@ import IcoMedicalAlb from "@/public/imagini/formular/selectDomeniu/alb/medical.s
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 
-export async function generateStaticParams() {
-	return locales.map((locale) => getLocalePartsFrom({ locale }));
-}
+
 const Formular = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
 	const [selectedCategory, setSelectedCategory] = useState("");
@@ -75,7 +73,7 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 				</div>
 				<div className="flex w-full items-center justify-center">
 					<button
-						onClick={() => router.push(`${params.lang}/formular/muncitor/${selectedCategory.toLowerCase()}`)}
+						onClick={() => router.push(`/${params.lang}/formular/muncitor/${selectedCategory.toLowerCase()}`)}
 						disabled={disabled}
 						className={`md:px-5"  flex w-fit items-center justify-center gap-1 rounded-2xl border border-gri-brand px-2 py-2 text-center text-gri-brand md:py-4  ${
 							disabled

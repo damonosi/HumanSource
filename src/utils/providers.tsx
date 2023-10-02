@@ -1,19 +1,18 @@
 "use client";
-import { ApolloProvider } from "@apollo/client/react";
+import { ApolloWrapper } from "@/lib/apollo/provider";
 import { ThemeProvider } from "@material-tailwind/react";
-import { useApollo } from "@/app/apollo";
-import "../globals.css";
+
+import "../../globals.css";
 
 interface IProviders {
 	children: JSX.Element | JSX.Element[];
 }
 
 const Providers = ({ children }: IProviders) => {
-	const client = useApollo();
 	return (
-		<ApolloProvider client={client}>
+		<ApolloWrapper>
 			<ThemeProvider>{children}</ThemeProvider>
-		</ApolloProvider>
+		</ApolloWrapper>
 	);
 };
 export default Providers;

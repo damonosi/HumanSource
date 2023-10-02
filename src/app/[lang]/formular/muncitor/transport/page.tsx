@@ -19,9 +19,7 @@ import Link from "next/link";
 import { getLocalePartsFrom, locales } from "i18n";
 
 
-export async function generateStaticParams() {
-	return locales.map((locale) => getLocalePartsFrom({ locale }));
-}
+
 
 const FormularSofer = ({ params }: { params: { lang: string; country: string } }) => {
 	const {

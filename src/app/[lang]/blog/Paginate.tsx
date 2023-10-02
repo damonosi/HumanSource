@@ -1,54 +1,72 @@
 "use client";
+
+
 import CardBlogSecundar from "@/components/Blog/CardBlogSecundar";
 
 import { useEffect, useState } from "react";
 
 import NavigationPagination from "@/utils/pagination/NavigationPagination";
 import { paginate } from "@/utils/pagination/paginate";
-import dateBloguri from "@/components/Blog/dateBloguri";
 
+import { IPaginatedData, IPaginationData } from "@/interfaces/blog";
 import { StaticImageData } from "next/image";
-
-interface IPaginationData {
-	currentPage: number;
-	bloguri: Array<IPaginatedData>;
-	pageSize: number;
-	params: { lang: string; country: string };
-}
-
-interface IPaginatedData {
-	id: number;
-	data: string;
-	src: StaticImageData;
-	slug: string;
-	descriere: string;
-
-	categorie: string;
-}
 
 const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginationData) => {
 	const paginatedPosts = paginate(bloguri, currentPage, pageSize);
+
 	return (
 		<div className="grid gap-4 md:grid-cols-3">
-			{paginatedPosts &&
-				paginatedPosts.map(({ id, src, data, descriere, categorie, slug }: IPaginatedData) => (
+			{paginatedPosts.map(({ id, dateCreated, title, slug, photo }: IPaginatedData) => {
+				const newDate = new Date(dateCreated);
+				const formattedDate = `${newDate.getDate()} /  ${newDate.getMonth()} / ${newDate.getFullYear()} `;
+				return (
 					<CardBlogSecundar
 						key={id}
-						src={src}
-						data={data}
+						id={id}
+						formattedDate={formattedDate}
 						slug={slug}
-						descriere={descriere}
-						categorie={categorie}
+						title={title}
+						photo={photo}
 						params={params}
 					/>
-				))}
+				);
+			})}
 		</div>
 	);
 };
-function PaginatedItems({ params }: { params: { lang: string; country: string } }) {
+function PaginatedItems({
+	params,
+	data,
+}: {
+	params: { lang: string; country: string };
+	data: {
+		blogs: {
+			id: string;
+			content: {
+				document: string;
+			};
+			dateCreated: string;
+			slug: string;
+			title: string;
+			photo: {
+				altText: string;
+				id: string;
+				image: {
+					height: number;
+					url: StaticImageData;
+					width: number;
+				};
+			};
+		}[];
+	};
+}) {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [pageSize, setPageSize] = useState(1);
+
+	const dateBloguri = Object.values(data.blogs);
+
 	const dataLength = dateBloguri.length;
+
 	const numberOfPages = Math.round(dataLength / pageSize);
 	const onNextPage = () => {
 		if (currentPage >= numberOfPages) {
@@ -61,7 +79,7 @@ function PaginatedItems({ params }: { params: { lang: string; country: string } 
 		if (currentPage <= 1) {
 			setCurrentPage(1);
 		} else {
-			setCurrentPage(currentPage - 1);
+			currentPage === 0 ? setCurrentPage(1) : setCurrentPage(currentPage - 1);
 		}
 	};
 	useEffect(() => {
@@ -83,7 +101,6 @@ function PaginatedItems({ params }: { params: { lang: string; country: string } 
 				onNextPage={onNextPage}
 				onPrevPage={onPrevPage}
 				dataLength={numberOfPages}
-				pageSize={pageSize}
 			/>
 		</>
 	);

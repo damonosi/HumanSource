@@ -15,7 +15,7 @@ export function NavItem({ label, href, params, handleCloseMenu, pathname }: INav
 	return (
 		<Link
 			className=" flex items-center  visited:text-red-600 md:h-[60px] md:justify-center"
-			href={`${params.lang}/${href}`}
+			href={`/${params.lang}/${href}`}
 		>
 			<Typography
 				variant="small"

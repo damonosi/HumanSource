@@ -1,23 +1,26 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-	experimental: {
-		appDir: true,
-		turbo: {
-			loaders: {
-				// Option format
-				".md": [
+	images: {
+		domains: ["backend.humansource.ro"],
+	},
+	async headers() {
+		return [
+			{
+				// matching all API routes
+				source: "/api/:path*",
+				headers: [
+					{ key: "Access-Control-Allow-Credentials", value: "true" },
+					{ key: "Access-Control-Allow-Origin", value: "http://backend.humansource.ro" }, // replace this your actual origin
+					{ key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT,OPTIONS" },
 					{
-						loader: "@mdx-js/loader",
-						options: {
-							format: "md",
-						},
+						key: "Access-Control-Allow-Headers",
+						value:
+							"X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
 					},
 				],
-				// Option-less format
-				".mdx": ["@mdx-js/loader"],
 			},
-		},
+		];
 	},
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports

@@ -9,10 +9,8 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import ContactForm from "@/components/Contact/ContactForm";
 import imgContact from "@/public/imagini/contact/imgContact2.png";
-import { getLocalePartsFrom, locales } from "i18n";
-export async function generateStaticParams() {
-	return locales.map((locale) => getLocalePartsFrom({ locale }));
-}
+
+
 
 const Contact = ({ params }: { params: { lang: string; country: string } }) => {
 	return (

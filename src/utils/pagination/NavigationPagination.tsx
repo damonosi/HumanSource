@@ -8,7 +8,7 @@ interface INavigatie {
 	onPrevPage(): void;
 	currentPage: number;
 	dataLength: number;
-	pageSize?: number;
+
 }
 
 const NavigationPagination = ({ onNextPage, onPrevPage, currentPage, dataLength }: INavigatie) => {
