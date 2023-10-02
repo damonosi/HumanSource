@@ -1,6 +1,6 @@
 {
 	"plugins": ["@typescript-eslint"],
-	"extends": ["eslint:recommended", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+	"extends": ["eslint:recommended", "next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
 	"rules": {
 		// I suggest you add those two rules:
 		"@typescript-eslint/no-unused-vars": "error",
