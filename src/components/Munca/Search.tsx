@@ -11,13 +11,7 @@ type Inputs = {
 };
 
 const Search = ({ setSelectedCategory }: { setSelectedCategory: Dispatch<SetStateAction<string>> }) => {
-	const {
-		register,
-		handleSubmit,
-		setValue,
-		watch,
-		formState: { errors },
-	} = useForm<Inputs>();
+	const { register, handleSubmit, setValue, watch } = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 	const selectDomeniu = watch("domeniu");
 	const selectLocatie = watch("locatie");

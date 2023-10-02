@@ -5,7 +5,7 @@ import ImgIntrebari from "../../../../public/imagini/intrebari/imgIntrebari.png"
 import dateIntrebari from "./dateIntrebari";
 import DropdownIntrebare from "./DropdownIntrebare";
 
-const IntrebariSection = ({ params }: { params: { lang: string; country: string } }) => {
+const IntrebariSection = () => {
 	return (
 		<section className="container relative flex w-full flex-col gap-10 px-[14px]   text-start  md:text-center  lg:flex-row lg:px-0">
 			<div className="flex  h-full items-center justify-center  lg:w-1/2" id="container-imagine-intrebari">
