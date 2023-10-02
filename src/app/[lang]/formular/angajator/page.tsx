@@ -73,7 +73,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 				</div>
 				<div className="flex w-full items-center justify-center">
 					<button
-						onClick={() => router.push(`${params.lang}/formular/angajator/${selectedCategory.toLowerCase()}`)}
+						onClick={() => router.push(`/${params.lang}/formular/angajator/${selectedCategory.toLowerCase()}`)}
 						disabled={disabled}
 						className={`md:px-5"  flex w-fit items-center justify-center gap-1 rounded-2xl border border-gri-brand px-2 py-2 text-center text-gri-brand md:py-4  ${
 							disabled
