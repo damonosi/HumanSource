@@ -18,7 +18,7 @@ const TextComponent = ({ formattedDate, textData, title }: ITextComponent) => {
 				{textData.map(({ type, children }: { type: string; children: [] }) => (
 					<>
 						{children.map(({ text }) => (
-							<Typography variant={type} className=" text-start text-gri-brand opacity-50">
+							<Typography variant={type} className=" text-start font-light text-gri-brand ">
 								{text}
 							</Typography>
 						))}
