@@ -3,6 +3,7 @@ import query from "@/lib/apollo/queries/getBlogBySlug";
 import { getClient } from "@/lib/apollo/client";
 import BreadComponent from "./BreadComponent";
 import formatDate from "@/utils/formatDate";
+import TextComponent from "./TextComponent";
 
 const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 	const slug = params.slug;
@@ -16,8 +17,7 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 
 	const dateBlog = data.blog;
 
-
-	const { photo, title, id, dateCreated } = dateBlog;
+	const { photo, title, id, dateCreated, content } = dateBlog;
 	const formattedDate = formatDate(dateCreated);
 
 	return (
@@ -35,13 +35,8 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 							className="h-auto w-full"
 						/>
 					</div>
-					<div className="flex flex-col gap-5 text-start">
-						<h2>By Author Name</h2> <span>{formattedDate}</span>
-						<p className="text-start font-bold">Lorem ipsum dolor sit amet consectetur. Magnis sem a.</p>
-					</div>
-					<div className="py-8">
-						<h1>{title}</h1>
-					</div>
+
+					<TextComponent title={title} textData={content.document} formattedDate={formattedDate} />
 				</div>
 			</div>
 		</section>

@@ -33,6 +33,7 @@ export interface IPaginatedData {
 	dateCreated: string;
 	slug: string;
 	title: string;
+	categories: { name: string }[];
 	photo: {
 		altText: string;
 		id: string;

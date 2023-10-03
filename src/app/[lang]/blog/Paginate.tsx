@@ -16,11 +16,19 @@ const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginati
 
 	return (
 		<div className="grid gap-4 md:grid-cols-3">
-			{paginatedPosts.map(({ id, dateCreated, title, slug, photo }: IPaginatedData) => {
+			{paginatedPosts.map(({ id, dateCreated, title, slug, photo, categories }: IPaginatedData) => {
 				const newDate = new Date(dateCreated);
 				const formattedDate = `${newDate.getDate()} /  ${newDate.getMonth()} / ${newDate.getFullYear()} `;
 				return (
-					<CardBlogSecundar key={id} id={id} formattedDate={formattedDate} slug={slug} title={title} photo={photo} />
+					<CardBlogSecundar
+						key={id}
+						id={id}
+						date={dateCreated}
+						categories={categories}
+						slug={slug}
+						title={title}
+						photo={photo}
+					/>
 				);
 			})}
 		</div>

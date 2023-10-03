@@ -1,7 +1,8 @@
 import { gql } from "@apollo/client";
+
 const query = gql`
-	query Blog($where: BlogWhereUniqueInput!) {
-		blog(where: $where) {
+	query Blogs($where: BlogWhereInput!) {
+		blogs(where: $where) {
 			id
 			slug
 			dateCreated
@@ -10,6 +11,9 @@ const query = gql`
 				name
 			}
 			tags {
+				name
+			}
+			categories {
 				name
 			}
 
@@ -32,5 +36,4 @@ const query = gql`
 		}
 	}
 `;
-
 export default query;
