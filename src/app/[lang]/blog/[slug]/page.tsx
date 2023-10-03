@@ -18,7 +18,8 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 
 	const dateBlog = data.blog;
 
-	const { photo, title, id, dateCreated, content } = dateBlog;
+	const { photo, title, id, dateCreated, content, tags } = dateBlog;
+
 	const formattedDate = formatDate(dateCreated);
 
 	return (
@@ -37,7 +38,7 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 						/>
 					</div>
 
-					<TextComponent title={title} textData={content.document} formattedDate={formattedDate} />
+					<TextComponent title={title} textData={content.document} formattedDate={formattedDate} tags={tags} />
 				</div>
 			</div>
 			<div className="mx-auto flex w-fit flex-col gap-12 text-center">
