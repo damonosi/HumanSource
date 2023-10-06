@@ -1,3 +1,4 @@
+"use client";
 import imagineFemei from "../../../../public/imagini/nevoi/femei.png";
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";

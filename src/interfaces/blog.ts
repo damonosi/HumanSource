@@ -90,3 +90,29 @@ export interface IdataBlog {
 		};
 	};
 }
+
+
+export interface IlastBlogs {
+	data: {
+		blogs: [
+			{
+				id: string;
+				slug: string;
+				dateCreated: string;
+				title: string;
+				content: {
+					document: { children: [{ text: string }] }[];
+				};
+				photo: {
+					altText: string;
+					id: string;
+					image: {
+						height: number;
+						url: string;
+						width: number;
+					};
+				};
+			},
+		];
+	};
+}

@@ -1,10 +1,10 @@
+"use client";
 import CarduriHero from "./CardHero";
 
 import { Typography } from "@material-tailwind/react";
 
 import { useTranslation } from "./../../../app/i18n/client";
 import { HartaHeroDesktop, HartaHeroMobil } from "./HartaHero";
-
 
 const HeroSection = ({ params }: { params: { lang: string; country: string } }) => {
 	const { t } = useTranslation(params.lang, "home-hero");

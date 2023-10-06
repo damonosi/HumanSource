@@ -4,11 +4,14 @@ import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-i
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CardBlog from "./CardBlog";
-import dateBlog from "./dateBlog";
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import query from "@/lib/apollo/queries/getTopBlogs";
+
+import { Iparams } from "@/interfaces/params";
+import { IlastBlogs } from "@/interfaces/blog";
 
 const responsive = {
 	superLargeDesktop: {
-		// the naming can be any, depends on you.
 		breakpoint: { max: 4000, min: 3000 },
 		items: 3,
 	},
@@ -39,7 +42,16 @@ const CustomButtonGroupAsArrows = ({ next, previous }: { next: () => void; previ
 		</>
 	);
 };
-const CaruselBloguri = () => {
+const CaruselBloguri = ({ params }: Iparams) => {
+	const capitalizedParams = params.lang.toLocaleUpperCase();
+	const { data }: IlastBlogs = useSuspenseQuery(query, {
+		variables: {
+			where: { language: { languages: { contains: capitalizedParams } } },
+			orderBy: [{ dateCreated: "desc" }],
+		},
+	});
+	if (!data) return <h1>No data...</h1>;
+
 	return (
 		<div className="relative flex w-full md:px-6">
 			<Carousel
@@ -74,9 +86,23 @@ const CaruselBloguri = () => {
 				// @ts-ignore
 				customButtonGroup={<CustomButtonGroupAsArrows />}
 			>
-				{dateBlog.map(({ id, data, titlu, continut }) => (
-					<CardBlog data={data} titlu={titlu} continut={continut} id={id} key={id} />
-				))}
+				{data.blogs.map(({ id, dateCreated, title, content, slug, photo }) => {
+					const paragraph = content.document[0].children[0].text;
+					const imageUrl = photo.image.url;
+					console.log(imageUrl);
+					return (
+						<CardBlog
+							lang={params.lang}
+							slug={slug}
+							data={dateCreated}
+							titlu={title}
+							paragraph={paragraph}
+							imageUrl={imageUrl}
+							id={id}
+							key={id}
+						/>
+					);
+				})}
 			</Carousel>
 		</div>
 	);

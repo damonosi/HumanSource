@@ -7,12 +7,13 @@ interface ITextComponent {
 	formattedDate: string;
 	textData: [];
 	title: string;
+	author: { name: string };
 	tags: [];
 }
-const TextComponent = ({ formattedDate, textData, title, tags }: ITextComponent) => {
+const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
 	return (
 		<div className="flex flex-col gap-12 text-start">
-			<h2>By Author Name</h2> <span>{formattedDate}</span>
+			<h2>By {author.name}</h2> <span>{formattedDate}</span>
 			<div className="py-8">
 				<h1>{title}</h1>
 			</div>

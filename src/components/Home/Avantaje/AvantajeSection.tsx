@@ -1,3 +1,4 @@
+"use client";
 import { Typography } from "@material-tailwind/react";
 import CardAvantaje from "./CardAvantaje";
 import dateAvantaje from "./dateAvantaje";

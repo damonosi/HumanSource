@@ -1,3 +1,4 @@
+"use client";
 import CardParteneri from "./CardParteneri";
 import dateParteneri from "./dateParteneri";
 
