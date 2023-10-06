@@ -31,7 +31,7 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 			<div className="flex w-full items-center justify-center">
 				{tags.map(({ name }, index) => (
 					<div key={index} className="flex gap-5">
-						<Chip className="rounded-full" color="blue-gray" value={`# ${name}`} />
+						<Chip className="rounded-full" color="blue-gray" value={name ? `# ${name}` : "no tag"} />
 					</div>
 				))}
 			</div>
