@@ -12,7 +12,7 @@ interface ITextComponent {
 }
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
 	if (!tags) {
-		return (tags = [{ name: "no tags" }]);
+		 tags = [{ name: "no tags" }];
 	}
 
 	return (
