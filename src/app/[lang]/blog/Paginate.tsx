@@ -13,12 +13,10 @@ import { StaticImageData } from "next/image";
 
 const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginationData) => {
 	const paginatedPosts = paginate(bloguri, currentPage, pageSize);
-
+	console.log("paginated posts :", paginatedPosts);
 	return (
 		<div className="grid gap-4 md:grid-cols-3">
 			{paginatedPosts.map(({ id, dateCreated, title, slug, photo, categories }: IPaginatedData) => {
-				const newDate = new Date(dateCreated);
-				const formattedDate = `${newDate.getDate()} /  ${newDate.getMonth()} / ${newDate.getFullYear()} `;
 				return (
 					<CardBlogSecundar
 						key={id}
@@ -40,30 +38,32 @@ function PaginatedItems({
 }: {
 	params: { lang: string; country: string };
 	data: {
-		blogs: {
-			id: string;
-			content: {
-				document: string;
-			};
-			dateCreated: string;
-			slug: string;
-			title: string;
-			photo: {
-				altText: string;
+		blogs: [
+			{
 				id: string;
-				image: {
-					height: number;
-					url: StaticImageData;
-					width: number;
+				content: {
+					document: string;
 				};
-			};
-		}[];
+				dateCreated: string;
+				slug: string;
+				title: string;
+				photo: {
+					altText: string;
+					id: string;
+					image: {
+						height: number;
+						url: StaticImageData;
+						width: number;
+					};
+				};
+			},
+		];
 	};
 }) {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [pageSize, setPageSize] = useState(1);
 
-	const dateBloguri = Object.values(data.blogs);
+	const dateBloguri = data.blogs;
 
 	const dataLength = dateBloguri.length;
 

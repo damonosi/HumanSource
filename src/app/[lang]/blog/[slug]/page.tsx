@@ -1,28 +1,34 @@
+"use client";
 import Image from "next/image";
 import query from "@/lib/apollo/queries/getBlogBySlug";
-import { getClient } from "@/lib/apollo/client";
+
 import BreadComponent from "./BreadComponent";
 import formatDate from "@/utils/formatDate";
 import TextComponent from "./TextComponent";
 import ContactWays from "@/components/Contact/ContactWays";
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { IBlogBySlug } from "@/interfaces/blog";
 
-const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
+const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 	const slug = params.slug;
-	const { data, error, loading } = await getClient().query({ query, variables: { where: { slug: slug } } });
-	if (loading) {
-		return <span>Loading.....</span>;
-	}
-	if (error) {
-		return <span className="text-red-800">error</span>;
-	}
+	const { data }: IBlogBySlug = useSuspenseQuery(query, {
+		variables: {
+			where: { slug: slug },
+		},
+	});
 	if (!data) {
-		return <span>No data...</span>;
+		return <span>Loading...</span>;
 	}
-
-	let { photo, title, id, dateCreated, content, tags, author } = data.blog;
+	const blog = data.blog;
+	let { photo, title, id, dateCreated, content, tags, author } = blog;
 
 	const formattedDate = formatDate(dateCreated);
 
+	let altText = photo ? photo.altText : "default_photo";
+	let imageUrl = photo ? photo.image.url : "https://picsum.photos/1200/500";
+	let width = photo ? photo.image.width : 500;
+	let height = photo ? photo.image.height : 1200;
+	console.log(photo.image.url);
 	return (
 		<section className="flex min-h-screen flex-col gap-12 bg-[#E5E5E5] px-5 pb-[100px] text-start md:px-20">
 			{!data ? (
@@ -33,13 +39,7 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 
 					<div key={id} className="">
 						<div className="flex max-h-[405px] w-full justify-center py-6">
-							<Image
-								alt={photo.altText}
-								src={photo.image.url}
-								width={photo.image.width}
-								height={photo.image.height}
-								className="h-auto w-full"
-							/>
+							<Image alt={altText} src={imageUrl} width={width} height={height} className="h-auto w-full" />
 						</div>
 
 						<TextComponent

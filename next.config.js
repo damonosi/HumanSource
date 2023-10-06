@@ -2,7 +2,7 @@
 
 const nextConfig = {
 	images: {
-		domains: ["backend.humansource.ro"],
+		domains: ["backend.humansource.ro", "picsum.photos"],
 	},
 	async headers() {
 		return [
@@ -11,7 +11,10 @@ const nextConfig = {
 				source: "/api/:path*",
 				headers: [
 					{ key: "Access-Control-Allow-Credentials", value: "true" },
-					{ key: "Access-Control-Allow-Origin", value: "http://backend.humansource.ro" }, // replace this your actual origin
+					{
+						key: "Access-Control-Allow-Origin",
+						value: "http://backend.humansource.ro",
+					},
 					{ key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT,OPTIONS" },
 					{
 						key: "Access-Control-Allow-Headers",

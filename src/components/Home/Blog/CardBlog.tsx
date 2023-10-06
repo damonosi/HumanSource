@@ -53,6 +53,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 						className=" relative z-40 flex items-center  justify-center  "
 					>
 						<Image alt="background" className=" object-cover" width={500} height={500} src={imageUrl} />
+
 						<motion.div
 							key="mask"
 							transition={{

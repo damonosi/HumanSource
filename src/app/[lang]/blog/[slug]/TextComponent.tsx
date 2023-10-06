@@ -5,7 +5,7 @@ import { Chip } from "@material-tailwind/react";
 import { Fragment } from "react";
 interface ITextComponent {
 	formattedDate: string;
-	textData: [];
+	textData: [{ type: string; children: [{ text: string }] }];
 	title: string;
 	author: { name: string };
 	tags: [{ name: string }];
@@ -18,7 +18,7 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				<h1>{title}</h1>
 			</div>
 			<div className="flex flex-col ">
-				{textData.map(({ type, children }: { type: string; children: [] }, index) => (
+				{textData.map(({ type, children }, index) => (
 					<Fragment key={index}>
 						{children.map(({ text }, index) => (
 							<Typography variant={type} key={index} className=" text-start font-light text-gri-brand ">
@@ -40,7 +40,7 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 			</div>
 		</div>
 	);
-}
+};
 
 	
 
