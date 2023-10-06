@@ -11,6 +11,10 @@ interface ITextComponent {
 	tags: [{ name: string }];
 }
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
+	if (!tags) {
+		return (tags = [{ name: "no tags" }]);
+	}
+
 	return (
 		<div className="flex flex-col gap-12 text-start">
 			<h2>By {author.name}</h2> <span>{formattedDate}</span>
@@ -29,11 +33,14 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				))}
 			</div>
 			<div className="flex w-full items-center justify-center">
-				{tags.map(({ name }, index) => (
-					<div key={index} className="flex gap-5">
-						<Chip className="rounded-full" color="blue-gray" value={name ? `# ${name}` : "no tag"} />
-					</div>
-				))}
+				{tags.map(({ name }, index) => {
+					console.log(name);
+					return (
+						<div key={index} className="flex gap-5">
+							<Chip className="rounded-full" color="blue-gray" value={name ? `# ${name}` : "no tag"} />
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);
