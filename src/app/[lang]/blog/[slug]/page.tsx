@@ -15,6 +15,9 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 	if (error) {
 		return <h1 className="text-red-800">error</h1>;
 	}
+	if (!data) {
+		return <h1>No data...</h1>;
+	}
 
 	const dateBlog = data.blog;
 
