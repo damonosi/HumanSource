@@ -11,8 +11,9 @@ interface ITextComponent {
 	tags: [{ name: string }];
 }
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
-
-
+if (!tags) {
+	return <span>Loadinbg....</span>;
+} else {
 	return (
 		<div className="flex flex-col gap-12 text-start">
 			<h2>By {author.name}</h2> <span>{formattedDate}</span>
@@ -31,18 +32,20 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				))}
 			</div>
 			<div className="flex w-full items-center justify-center">
-				{tags &&
-					tags.map((tag) => {
-						console.log(tag);
-						return (
-							<div key={tag.name} className="flex gap-5">
-								<Chip className="rounded-full" color="blue-gray" value={`# ${tag.name}`} />
-							</div>
-						);
-					})}
+				{tags.map((tag) => {
+					console.log(tag);
+					return (
+						<div key={tag.name} className="flex gap-5">
+							<Chip className="rounded-full" color="blue-gray" value={`# ${tag.name}`} />
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);
+}
+
+	
 };
 
 export default TextComponent;
