@@ -118,15 +118,11 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 						className={`bg-transparent py-2 text-start text-sm text-gri-bg shadow-none hover:scale-105 hover:shadow-none md:mt-4 md:py-5 md:text-base ${
 							hovered && "text-alb-site"
 						}`}
+						onClick={() => {
+							router.push(`/${lang}/blog/${slug}`);
+						}}
 					>
-						<button
-							onClick={() => {
-								router.push(`/${lang}/blog/${slug}`);
-							}}
-							className={`${hovered && "text-alb-site"}`}
-						>
-							Citeste mai mult
-						</button>
+						<span className={`${hovered && "text-alb-site"}`}>Citeste mai mult</span>
 						{hovered && <ArrowForwardIcon className="ml-2 text-alb-site" />}
 					</button>
 				</motion.div>

@@ -51,6 +51,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 		},
 	});
 	if (!data) return <h1>No data...</h1>;
+	const blogs = data.blogs;
 
 	return (
 		<div className="relative flex w-full md:px-6">
@@ -86,10 +87,10 @@ const CaruselBloguri = ({ params }: Iparams) => {
 				// @ts-ignore
 				customButtonGroup={<CustomButtonGroupAsArrows />}
 			>
-				{data.blogs.map(({ id, dateCreated, title, content, slug, photo }) => {
+				{blogs.map(({ id, dateCreated, title, content, slug, photo }) => {
 					const paragraph = content.document[0].children[0].text;
 					const imageUrl = photo.image.url;
-					console.log(imageUrl);
+
 					return (
 						<CardBlog
 							lang={params.lang}
