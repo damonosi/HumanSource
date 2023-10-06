@@ -11,9 +11,6 @@ interface ITextComponent {
 	tags: [{ name: string }];
 }
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
-if (!tags) {
-	return <span>Loadinbg....</span>;
-} else {
 	return (
 		<div className="flex flex-col gap-12 text-start">
 			<h2>By {author.name}</h2> <span>{formattedDate}</span>
@@ -46,6 +43,6 @@ if (!tags) {
 }
 
 	
-};
+
 
 export default TextComponent;

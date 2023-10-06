@@ -19,9 +19,9 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 		return <h1>No data...</h1>;
 	}
 
-	const dateBlog = data.blog;
 
-	const { photo, title, id, dateCreated, content, tags, author } = dateBlog;
+
+	const { photo, title, id, dateCreated, content, tags, author } = data.blog;
 
 	const formattedDate = formatDate(dateCreated);
 
@@ -40,17 +40,14 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 							className="h-auto w-full"
 						/>
 					</div>
-					{!dateBlog ? (
-						<span>Loading...</span>
-					) : (
-						<TextComponent
-							title={title}
-							author={author}
-							textData={content.document}
-							formattedDate={formattedDate}
-							tags={tags}
-						/>
-					)}
+
+					<TextComponent
+						title={title}
+						author={author}
+						textData={content.document}
+						formattedDate={formattedDate}
+						tags={tags}
+					/>
 				</div>
 			</div>
 			<div className="mx-auto flex w-fit flex-col gap-12 text-center">
