@@ -8,7 +8,7 @@ interface ITextComponent {
 	textData: [];
 	title: string;
 	author: { name: string };
-	tags: [];
+	tags: [{ name: string }];
 }
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
 	return (
