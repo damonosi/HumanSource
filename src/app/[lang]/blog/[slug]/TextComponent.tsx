@@ -32,14 +32,14 @@ if (!tags) {
 				))}
 			</div>
 			<div className="flex w-full items-center justify-center">
-				{tags.map((tag) => {
-					console.log(tag);
-					return (
-						<div key={tag.name} className="flex gap-5">
-							<Chip className="rounded-full" color="blue-gray" value={`# ${tag.name}`} />
-						</div>
-					);
-				})}
+				{tags &&
+					tags.map(({ name }) => {
+						return (
+							<div key={name} className="flex gap-5">
+								<Chip className="rounded-full" color="blue-gray" value={`# ${name}`} />
+							</div>
+						);
+					})}
 			</div>
 		</div>
 	);
