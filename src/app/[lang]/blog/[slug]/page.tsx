@@ -40,14 +40,17 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 							className="h-auto w-full"
 						/>
 					</div>
-
-					<TextComponent
-						title={title}
-						author={author}
-						textData={content.document}
-						formattedDate={formattedDate}
-						tags={tags}
-					/>
+					{!dateBlog ? (
+						<span>Loading...</span>
+					) : (
+						<TextComponent
+							title={title}
+							author={author}
+							textData={content.document}
+							formattedDate={formattedDate}
+							tags={tags}
+						/>
+					)}
 				</div>
 			</div>
 			<div className="mx-auto flex w-fit flex-col gap-12 text-center">

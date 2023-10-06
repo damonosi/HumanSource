@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-import BackSmall from "../../../../public/imagini/blog/cover-blog-small.png";
+
 import formatDate from "@/utils/formatDate";
 import { useRouter } from "next/navigation";
 
