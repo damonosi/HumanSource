@@ -11,9 +11,7 @@ interface ITextComponent {
 	tags: [{ name: string }];
 }
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
-	if (!tags) {
-		 tags = [{ name: "no tags" }];
-	}
+
 
 	return (
 		<div className="flex flex-col gap-12 text-start">
@@ -33,14 +31,15 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				))}
 			</div>
 			<div className="flex w-full items-center justify-center">
-				{tags.map(({ name }) => {
-					console.log(name);
-					return (
-						<div key={name} className="flex gap-5">
-							<Chip className="rounded-full" color="blue-gray" value={`# ${name}`} />
-						</div>
-					);
-				})}
+				{tags &&
+					tags.map((tag) => {
+						console.log(tag);
+						return (
+							<div key={tag.name} className="flex gap-5">
+								<Chip className="rounded-full" color="blue-gray" value={`# ${tag.name}`} />
+							</div>
+						);
+					})}
 			</div>
 		</div>
 	);
