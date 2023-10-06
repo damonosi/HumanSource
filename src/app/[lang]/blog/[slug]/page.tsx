@@ -13,43 +13,46 @@ const Blog = async ({ params }: { params: { lang: string; slug: string } }) => {
 		return <span>Loading.....</span>;
 	}
 	if (error) {
-		return <h1 className="text-red-800">error</h1>;
+		return <span className="text-red-800">error</span>;
 	}
 	if (!data) {
-		return <h1>No data...</h1>;
+		return <span>No data...</span>;
 	}
 
-
-
-	const { photo, title, id, dateCreated, content, tags, author } = data.blog;
+	let { photo, title, id, dateCreated, content, tags, author } = data.blog;
 
 	const formattedDate = formatDate(dateCreated);
 
 	return (
 		<section className="flex min-h-screen flex-col gap-12 bg-[#E5E5E5] px-5 pb-[100px] text-start md:px-20">
-			<div className="container mx-auto grid ">
-				<BreadComponent params={params} />
+			{!data ? (
+				<span>loading...</span>
+			) : (
+				<div className="container mx-auto grid ">
+					<BreadComponent params={params} />
 
-				<div key={id} className="">
-					<div className="flex max-h-[405px] w-full justify-center py-6">
-						<Image
-							alt={photo.altText}
-							src={photo.image.url}
-							width={photo.image.width}
-							height={photo.image.height}
-							className="h-auto w-full"
+					<div key={id} className="">
+						<div className="flex max-h-[405px] w-full justify-center py-6">
+							<Image
+								alt={photo.altText}
+								src={photo.image.url}
+								width={photo.image.width}
+								height={photo.image.height}
+								className="h-auto w-full"
+							/>
+						</div>
+
+						<TextComponent
+							title={title}
+							author={author}
+							textData={content.document}
+							formattedDate={formattedDate}
+							tags={tags}
 						/>
 					</div>
-
-					<TextComponent
-						title={title}
-						author={author}
-						textData={content.document}
-						formattedDate={formattedDate}
-						tags={tags}
-					/>
 				</div>
-			</div>
+			)}
+
 			<div className="mx-auto flex w-fit flex-col gap-12 text-center">
 				<span className="text-[7vw] font-extrabold md:text-[2vw]">Contacteaza-ne !</span>
 				<ContactWays />

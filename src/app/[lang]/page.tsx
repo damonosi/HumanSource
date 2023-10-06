@@ -1,3 +1,4 @@
+"use client";
 import AvantajeSection from "@/components/Home/Avantaje/AvantajeSection";
 import BlogSection from "@/components/Home/Blog/BlogSection";
 import HeroSection from "@/components/Home/Hero/HeroSection";
