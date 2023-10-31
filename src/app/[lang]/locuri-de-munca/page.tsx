@@ -20,7 +20,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 	const { data }: IJobs = useSuspenseQuery(query, {
 		variables: {
 			where: {
-				category: {
+				jobCategory: {
 					name: {
 						contains: category,
 					},

@@ -5,7 +5,7 @@ import { getClient } from "@/lib/apollo/client";
 import query from "@/lib/apollo/queries/blog/getBlogsByLang";
 const BloguriPage = async ({ params }: { params: { lang: string; country: string } }) => {
 	const capitalizedParams = params.lang.toLocaleUpperCase();
-
+console.log(capitalizedParams);
 	const { data, error, loading } = await getClient().query({
 		query,
 		variables: { where: { language: { languages: { contains: capitalizedParams } } } },
