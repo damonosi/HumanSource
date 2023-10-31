@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import NavigationPagination from "@/utils/pagination/NavigationPagination";
 import { paginate } from "@/utils/pagination/paginate";
 
-import { IPaginatedData, IPaginationData } from "@/interfaces/blog";
+import { DocumentProp, IPaginatedData, IPaginationData } from "@/interfaces/blog";
 import { StaticImageData } from "next/image";
 
 const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginationData) => {
@@ -42,7 +42,7 @@ function PaginatedItems({
 			{
 				id: string;
 				content: {
-					document: string;
+					document: DocumentProp;
 				};
 				dateCreated: string;
 				slug: string;

@@ -16,7 +16,7 @@ const BloguriPage = async ({ params }: { params: { lang: string; country: string
 	if (error) {
 		return <h1 className="text-red-800">error</h1>;
 	}
-
+console.log("data:", data);
 	return (
 		<section className="bg-[#E5E5E5]    px-4 pb-[100px] md:px-[70px]">
 			<div className="container mx-auto flex flex-col  gap-16 ">

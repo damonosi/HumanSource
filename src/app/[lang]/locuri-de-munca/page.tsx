@@ -47,6 +47,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 				<Select
 					size="lg"
 					onChange={(e) => {
+						if (!e) return;
 						setCategory(e);
 					}}
 					variant="outlined"

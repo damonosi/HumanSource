@@ -1,13 +1,15 @@
 import { ApolloError } from "@apollo/client";
+import { DocumentRendererProps } from "@keystone-6/document-renderer";
 import { StaticImageData } from "next/image";
 
+export type DocumentProp = DocumentRendererProps["document"];
 export type IPaginationData = {
 	currentPage: number;
 	bloguri: [
 		{
 			id: string;
 			content: {
-				document: string;
+				document: DocumentProp;
 			};
 			dateCreated: string;
 			slug: string;
