@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CardBlog from "./CardBlog";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import query from "@/lib/apollo/queries/getTopBlogs";
+import query from "@/lib/apollo/queries/blog/getTopBlogs";
 
 import { Iparams } from "@/interfaces/params";
 import { IlastBlogs } from "@/interfaces/blog";
@@ -52,62 +52,62 @@ const CaruselBloguri = ({ params }: Iparams) => {
 	});
 	if (!data) return <h1>No data...</h1>;
 	const blogs = data.blogs;
-console.log(blogs);
-return (
-	<div className="relative flex w-full md:px-6">
-		<Carousel
-			responsive={responsive}
-			additionalTransfrom={0}
-			arrows={false}
-			autoPlaySpeed={3000}
-			centerMode={false}
-			className="py-6 "
-			containerClass="container"
-			dotListClass=""
-			draggable
-			partialVisible={false}
-			focusOnSelect={false}
-			infinite
-			itemClass="max-w-1/3 min-w-1/3 p-4"
-			keyBoardControl
-			minimumTouchDrag={80}
-			pauseOnHover
-			renderArrowsWhenDisabled={false}
-			renderDotsOutside={false}
-			rewind={false}
-			rewindWithAnimation={false}
-			rtl={false}
-			shouldResetAutoplay
-			showDots={true}
-			sliderClass=""
-			slidesToSlide={1}
-			swipeable
-			renderButtonGroupOutside={true}
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-ignore
-			customButtonGroup={<CustomButtonGroupAsArrows />}
-		>
-			{blogs.map(({ id, dateCreated, title, content, slug, photo }) => {
-				const paragraph = content.document[0].children[0].text;
+	console.log(blogs);
+	return (
+		<div className="relative flex w-full md:px-6">
+			<Carousel
+				responsive={responsive}
+				additionalTransfrom={0}
+				arrows={false}
+				autoPlaySpeed={3000}
+				centerMode={false}
+				className="py-6 "
+				containerClass="container"
+				dotListClass=""
+				draggable
+				partialVisible={false}
+				focusOnSelect={false}
+				infinite
+				itemClass="max-w-1/3 min-w-1/3 p-4"
+				keyBoardControl
+				minimumTouchDrag={80}
+				pauseOnHover
+				renderArrowsWhenDisabled={false}
+				renderDotsOutside={false}
+				rewind={false}
+				rewindWithAnimation={false}
+				rtl={false}
+				shouldResetAutoplay
+				showDots={true}
+				sliderClass=""
+				slidesToSlide={1}
+				swipeable
+				renderButtonGroupOutside={true}
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+				// @ts-ignore
+				customButtonGroup={<CustomButtonGroupAsArrows />}
+			>
+				{blogs.map(({ id, dateCreated, title, content, slug, photo }) => {
+					const paragraph = content.document[0].children[0].text;
 
-				let imageUrl = photo?.image?.url;
+					let imageUrl = photo?.image?.url;
 
-				return (
-					<CardBlog
-						lang={params.lang}
-						slug={slug}
-						data={dateCreated}
-						titlu={title}
-						paragraph={paragraph}
-						imageUrl={imageUrl ? imageUrl : "https://picsum.photos/200/300"}
-						id={id}
-						key={id}
-					/>
-				);
-			})}
-		</Carousel>
-	</div>
-);
+					return (
+						<CardBlog
+							lang={params.lang}
+							slug={slug}
+							data={dateCreated}
+							titlu={title}
+							paragraph={paragraph}
+							imageUrl={!imageUrl ? "https://picsum.photos/200/300" : imageUrl}
+							id={id}
+							key={id}
+						/>
+					);
+				})}
+			</Carousel>
+		</div>
+	);
 };
 
 export default CaruselBloguri;

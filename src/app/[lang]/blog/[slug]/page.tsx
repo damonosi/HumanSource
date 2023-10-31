@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import query from "@/lib/apollo/queries/getBlogBySlug";
+import query from "@/lib/apollo/queries/blog/getBlogBySlug";
 
 import BreadComponent from "./BreadComponent";
 import formatDate from "@/utils/formatDate";
@@ -25,7 +25,7 @@ const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 	const formattedDate = formatDate(dateCreated);
 
 	let altText = photo ? photo.altText : "default_photo";
-	let imageUrl = photo ? photo.image.url : "https://picsum.photos/1200/500";
+	let imageUrl = !photo ? "https://picsum.photos/1200/500" : photo.image.url;
 	let width = photo ? photo.image.width : 500;
 	let height = photo ? photo.image.height : 1200;
 	console.log(photo.image.url);

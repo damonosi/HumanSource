@@ -4,6 +4,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 
 import "../../globals.css";
 
+
 interface IProviders {
 	children: JSX.Element | JSX.Element[];
 }

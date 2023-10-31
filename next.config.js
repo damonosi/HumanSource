@@ -2,7 +2,7 @@
 
 const nextConfig = {
 	images: {
-		domains: ["backend.humansource.ro", "picsum.photos"],
+		domains: ["backend.humansource.ro", "picsum.photos", "res.cloudinary.com"],
 	},
 	async headers() {
 		return [
@@ -13,7 +13,7 @@ const nextConfig = {
 					{ key: "Access-Control-Allow-Credentials", value: "true" },
 					{
 						key: "Access-Control-Allow-Origin",
-						value: "http://backend.humansource.ro",
+						value: "https://backend.humansource.ro/api/graphql",
 					},
 					{ key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT,OPTIONS" },
 					{

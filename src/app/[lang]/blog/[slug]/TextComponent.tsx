@@ -1,5 +1,6 @@
 "use client";
 
+import { DocumentRenderer } from "@keystone-6/document-renderer";
 import { Typography } from "@material-tailwind/react";
 import { Chip } from "@material-tailwind/react";
 import { Fragment } from "react";
@@ -18,6 +19,7 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				<h1>{title}</h1>
 			</div>
 			<div className="flex flex-col ">
+				<DocumentRenderer document={textData} />
 				{textData.map(({ type, children }, index) => (
 					<Fragment key={index}>
 						{children.map(({ text }, index) => (

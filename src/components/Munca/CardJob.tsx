@@ -10,21 +10,26 @@ interface ICardJob {
 	data: string;
 	titlu: string;
 	descriere: string;
-	src: StaticImageData;
+	src?: StaticImageData;
 
-	salariu?: number;
-	id: number;
+	id: string;
 	params: { lang: string; country: string };
 }
 
-const CardJob = ({ params, data, titlu, descriere, id, src, salariu }: ICardJob) => {
+const CardJob = ({ params, data, titlu, descriere, id, src }: ICardJob) => {
 	return (
 		<div
 			key={id}
 			className="relative flex  h-fit   w-full flex-col justify-end overflow-hidden  rounded-2xl border-none bg-transparent text-[#383A3C]  shadow hover:border  hover:shadow-xl    "
 		>
 			<div id="img-container" className=" relative z-40 flex h-1/3 w-full overflow-hidden ">
-				<Image alt="background" className="w-full " placeholder="blur" src={src} />
+				<Image
+					alt="background"
+					className="aspect-video w-full"
+					src={src ? src : "https://picsum.photos/1200/500"}
+					width={700}
+					height={500}
+				/>
 			</div>
 			<div
 				key="container-text"
@@ -51,9 +56,6 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salariu }: ICardJob)
 							<ArrowSmallRightIcon strokeWidth={1} className=" ml-1 h-5 w-5 " />
 						</Button>
 					</Link>
-					<Typography variant="paragraph" className="text-[18px] font-[700] leading-[22px] text-gri-bg">
-						{salariu} $
-					</Typography>
 				</div>
 			</div>
 		</div>

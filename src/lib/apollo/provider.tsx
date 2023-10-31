@@ -7,6 +7,7 @@ import {
 	SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr";
 
+
 function makeClient() {
 	const httpLink = new HttpLink({
 		uri: "https://backend.humansource.ro/api/graphql",

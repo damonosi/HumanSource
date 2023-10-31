@@ -12,14 +12,12 @@ import Pas6Trasport from "@/components/Formular/sofer/pasi/6";
 import Pas7Trasport from "@/components/Formular/sofer/pasi/7";
 import Pas8Trasport from "@/components/Formular/sofer/pasi/8";
 import Pas9Trasport from "@/components/Formular/sofer/pasi/9";
-
+import query from "@/lib/apollo/queries/job/getJobsByCategory";
 import { useForm } from "react-hook-form";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
-
-
-
-
+import { IJobs } from "@/interfaces/job";
+import { useSuspenseQuery } from "@apollo/client";
 
 const FormularSofer = ({ params }: { params: { lang: string; country: string } }) => {
 	const {
@@ -40,6 +38,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 			lbItaliana: "",
 			ultimulSalariu: "",
 			salariuDorit: "",
+			category: "medical",
 		},
 	});
 	const [disabled, setDisabled] = useState(true);
@@ -59,8 +58,9 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 		setDisabled,
 	);
 
-	const submitHandler = (data: object) => {
-		console.log(data);
+	const submitHandler = (dat: object) => {
+		console.log(dat);
+
 		console.log("submited");
 	};
 	return (
