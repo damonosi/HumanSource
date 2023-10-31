@@ -6,14 +6,12 @@ const query = gql`
 			slug
 			dateCreated
 			title
-
 			author {
 				name
 			}
 			tags {
 				name
 			}
-
 			content {
 				document
 			}
