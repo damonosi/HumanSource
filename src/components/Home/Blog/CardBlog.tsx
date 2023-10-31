@@ -3,10 +3,9 @@ import { useState } from "react";
 
 import { Typography } from "@material-tailwind/react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
 
 import formatDate from "@/utils/formatDate";
 import { useRouter } from "next/navigation";
@@ -17,7 +16,7 @@ interface ICardBlog {
 	paragraph: string;
 	id: string;
 	slug: string;
-	imageUrl: string;
+	imageUrl: StaticImageData;
 	lang: string;
 }
 
@@ -113,7 +112,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 						{titlu}
 					</Typography>
 					<Typography variant="paragraph" className="max-w-prose text-[14px] font-[350] leading-[22px]  md:text-[16px]">
-						{!hovered ? ` ${paragraph.substring(0, 120)} ....` : paragraph}
+						{!hovered ? ` ${paragraph.substring(0, 120)} ....` : `${paragraph.substring(0, 240)} ....`}
 					</Typography>
 					<button
 						className={`bg-transparent py-2 text-start text-sm text-gri-bg shadow-none hover:scale-105 hover:shadow-none md:mt-4 md:py-5 md:text-base ${

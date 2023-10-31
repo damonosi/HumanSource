@@ -7,11 +7,11 @@ import formatDate from "@/utils/formatDate";
 import TextComponent from "./TextComponent";
 import ContactWays from "@/components/Contact/ContactWays";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { IBlogBySlug } from "@/interfaces/blog";
+import { IBlog } from "@/interfaces/blog";
 
 const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 	const slug = params.slug;
-	const { data }: IBlogBySlug = useSuspenseQuery(query, {
+	const { data }: IBlog = useSuspenseQuery(query, {
 		variables: {
 			where: { slug: slug },
 		},
@@ -24,11 +24,9 @@ const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 
 	const formattedDate = formatDate(dateCreated);
 
-	let altText = photo ? photo.altText : "default_photo";
-	let imageUrl = !photo ? "https://picsum.photos/1200/500" : photo.image.url;
-	let width = photo ? photo.image.width : 500;
-	let height = photo ? photo.image.height : 1200;
-	console.log(photo.image.url);
+	let altText = photo.altText;
+	let imageUrl = photo.image.publicUrl;
+
 	return (
 		<section className="flex min-h-screen flex-col gap-12 bg-[#E5E5E5] px-5 pb-[100px] text-start md:px-20">
 			{!data ? (
@@ -39,7 +37,7 @@ const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 
 					<div key={id} className="">
 						<div className="flex max-h-[405px] w-full justify-center py-6">
-							<Image alt={altText} src={imageUrl} width={width} height={height} className="h-auto w-full" />
+							<Image alt={altText} src={imageUrl} width={500} height={500} className="h-auto w-full" />
 						</div>
 
 						<TextComponent

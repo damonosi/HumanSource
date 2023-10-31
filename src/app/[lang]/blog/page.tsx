@@ -1,22 +1,22 @@
+"use client";
 import PaginatedItems from "./Paginate";
 import DescriereBlog from "@/components/Blog/DescrierePaginaBlog";
 import BlogsBradcrumbs from "@/components/Blog/BlogsBreadcrumbs";
-import { getClient } from "@/lib/apollo/client";
+
 import query from "@/lib/apollo/queries/blog/getBlogsByLang";
-const BloguriPage = async ({ params }: { params: { lang: string; country: string } }) => {
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { IBlogs } from "@/interfaces/blog";
+const BloguriPage = ({ params }: { params: { lang: string; country: string } }) => {
 	const capitalizedParams = params.lang.toLocaleUpperCase();
-console.log(capitalizedParams);
-	const { data, error, loading } = await getClient().query({
-		query,
-		variables: { where: { language: { languages: { contains: capitalizedParams } } } },
+	console.log(capitalizedParams);
+	const { data }: IBlogs = useSuspenseQuery(query, {
+		variables: {
+			where: { language: { languages: { contains: capitalizedParams } } },
+			orderBy: [{ dateCreated: "desc" }],
+		},
 	});
-	if (loading) {
-		return <span>Loading.....</span>;
-	}
-	if (error) {
-		return <h1 className="text-red-800">error</h1>;
-	}
-console.log("data:", data);
+
+	console.log("data:", data);
 	return (
 		<section className="bg-[#E5E5E5]    px-4 pb-[100px] md:px-[70px]">
 			<div className="container mx-auto flex flex-col  gap-16 ">

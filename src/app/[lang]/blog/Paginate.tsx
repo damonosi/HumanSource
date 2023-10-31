@@ -13,7 +13,7 @@ import { StaticImageData } from "next/image";
 
 const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginationData) => {
 	const paginatedPosts = paginate(bloguri, currentPage, pageSize);
-	console.log("paginated posts :", paginatedPosts);
+	console.log("paginated posts :", bloguri);
 	return (
 		<div className="grid gap-4 md:grid-cols-3">
 			{paginatedPosts.map(({ id, dateCreated, title, slug, photo, categories }: IPaginatedData) => {
@@ -51,9 +51,7 @@ function PaginatedItems({
 					altText: string;
 					id: string;
 					image: {
-						height: number;
-						url: StaticImageData;
-						width: number;
+						publicUrl: StaticImageData;
 					};
 				};
 			},

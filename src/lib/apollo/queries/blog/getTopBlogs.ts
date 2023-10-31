@@ -13,15 +13,8 @@ const query = gql`
 			}
 			photo {
 				altText
-				filename
-				id
 				image {
-					url
-					height
-					filesize
-					extension
-					id
-					width
+					publicUrl
 				}
 			}
 		}

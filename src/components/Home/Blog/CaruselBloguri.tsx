@@ -90,7 +90,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 				{blogs.map(({ id, dateCreated, title, content, slug, photo }) => {
 					const paragraph = content.document[0].children[0].text;
 
-					let imageUrl = photo?.image?.url;
+					let imageUrl = photo?.image?.publicUrl;
 
 					return (
 						<CardBlog
@@ -99,7 +99,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 							data={dateCreated}
 							titlu={title}
 							paragraph={paragraph}
-							imageUrl={!imageUrl ? "https://picsum.photos/200/300" : imageUrl}
+							imageUrl={imageUrl}
 							id={id}
 							key={id}
 						/>

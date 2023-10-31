@@ -16,11 +16,9 @@ export type IPaginationData = {
 			title: string;
 			photo: {
 				altText: string;
-				id: string;
+
 				image: {
-					height: number;
-					url: StaticImageData;
-					width: number;
+					publicUrl: StaticImageData;
 				};
 			};
 		},
@@ -42,9 +40,7 @@ export interface IPaginatedData {
 		altText: string;
 		id: string;
 		image: {
-			height: number;
-			url: StaticImageData;
-			width: number;
+			publicUrl: StaticImageData;
 		};
 	};
 }
@@ -54,7 +50,7 @@ export type IdataBloguri = {
 		blogs: {
 			id: string;
 			content: {
-				document: string;
+				document: DocumentProp;
 			};
 			dateCreated: string;
 			slug: string;
@@ -63,9 +59,7 @@ export type IdataBloguri = {
 				altText: string;
 				id: string;
 				image: {
-					height: number;
-					url: StaticImageData;
-					width: number;
+					publicUrl: StaticImageData;
 				};
 			};
 		};
@@ -77,7 +71,7 @@ export interface IdataBlog {
 		blog: {
 			id: string;
 			content: {
-				document: string;
+				document: DocumentProp;
 			};
 			dateCreated: string;
 			slug: string;
@@ -86,9 +80,7 @@ export interface IdataBlog {
 				altText: string;
 				id: string;
 				image: {
-					height: number;
-					url: string;
-					width: number;
+					publicUrl: StaticImageData;
 				};
 			};
 		};
@@ -110,16 +102,14 @@ export interface IlastBlogs {
 					altText: string;
 					id: string;
 					image: {
-						height: number;
-						url: string;
-						width: number;
+						publicUrl: StaticImageData;
 					};
 				};
 			},
 		];
 	};
 }
-export interface IBlogBySlug {
+export interface IBlog {
 	data: {
 		blog: {
 			id: string;
@@ -127,7 +117,7 @@ export interface IBlogBySlug {
 			dateCreated: string;
 			title: string;
 			content: {
-				document: [{ type: string; children: [{ text: string }] }];
+				document: DocumentProp;
 			};
 
 			tags: [{ name: string }];
@@ -136,11 +126,34 @@ export interface IBlogBySlug {
 				altText: string;
 				id: string;
 				image: {
-					height: number;
-					url: string;
-					width: number;
+					publicUrl: StaticImageData;
 				};
 			};
 		};
+	};
+}
+export interface IBlogs {
+	data: {
+		blogs: [
+			{
+				id: string;
+				slug: string;
+				dateCreated: string;
+				title: string;
+				content: {
+					document: DocumentProp;
+				};
+
+				tags: [{ name: string }];
+				author: { name: string };
+				photo: {
+					altText: string;
+					id: string;
+					image: {
+						publicUrl: StaticImageData;
+					};
+				};
+			},
+		];
 	};
 }

@@ -22,12 +22,7 @@ const query = gql`
 				filename
 				id
 				image {
-					url
-					height
-					filesize
-					extension
-					id
-					width
+					publicUrl
 				}
 			}
 		}
