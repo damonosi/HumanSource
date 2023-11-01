@@ -11,7 +11,7 @@ import { MdPersonOutline } from "react-icons/md";
 
 type Inputs = {
 	nume: string;
-	dataNastere: string;
+	dataNastere: Date;
 	email: string;
 	telefon: string;
 	mesaj: string;
@@ -30,29 +30,30 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 		formState: { errors },
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
-	try {
-		addJobApplication({
-			variables: {
-				data: {
-					birthDate: data.dataNastere,
-					email: data.email,
-					name: data.nume,
-					message: data.mesaj,
-					phone: data.telefon,
-
-					job: {
-						connect: {
-							id: id,
+		const newDate = new Date(data.dataNastere);
+		console.log(newDate);
+		try {
+			console.log(data);
+			addJobApplication({
+				variables: {
+					data: {
+						birthDate: newDate,
+						email: data.email,
+						name: data.nume,
+						message: data.mesaj,
+						phone: data.telefon,
+						job: {
+							connect: {
+								id: id,
+							},
 						},
 					},
 				},
-			},
-		});
-		router.push(`/${params.lang}/multumim`);
-	} catch (error) {
-		console.log(error);
-	}
-	
+			});
+			router.push(`/${params.lang}/multumim`);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 	console.log(data);
 	return (
