@@ -1,4 +1,8 @@
+"use client";
+import AddJobApplication from "@/lib/apollo/mutations/mutateJobAplication";
+import { useMutation } from "@apollo/client";
 import { Checkbox, Input, Textarea, Typography } from "@material-tailwind/react";
+import { RandomUUIDOptions } from "crypto";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineMail } from "react-icons/ai";
 import { FiPhone } from "react-icons/fi";
@@ -13,13 +17,41 @@ type Inputs = {
 	privacy: boolean;
 };
 
-const FormularAplica = () => {
+const FormularAplica = ({ id }: { id: RandomUUIDOptions }) => {
+	const [addJobApplication, { data, loading, error }] = useMutation(AddJobApplication, {
+		variables: {
+			type: "placeholder",
+			someOtherVariable: 1234,
+		},
+	});
+
+	if (loading) return <span> "Submitting..."</span>;
+
+	if (error) return <span> `Submission error! ${error.message}`</span>;
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<Inputs>();
-	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+	const onSubmit: SubmitHandler<Inputs> = (data) =>
+		addJobApplication({
+			variables: {
+				data: {
+					birthDate: data.dataNastere,
+					email: data.email,
+					name: data.nume,
+					message: data.mesaj,
+					phone: data.telefon,
+
+					job: {
+						connect: {
+							id: id,
+						},
+					},
+				},
+			},
+		});
+	console.log(data);
 	return (
 		<form className="relative w-full justify-between  " onSubmit={handleSubmit(onSubmit)}>
 			<div className="mb-4 grid grid-cols-1 gap-8 ">

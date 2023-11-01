@@ -17,3 +17,18 @@ export interface IJobs {
 		];
 	};
 }
+export interface IJob {
+	data: {
+		job: {
+			description: string;
+
+			title: string;
+			date: string;
+			jobCategory: { name: string };
+			company: string;
+			salary: string;
+			requierments: string;
+			whyWork: string;
+		};
+	};
+}

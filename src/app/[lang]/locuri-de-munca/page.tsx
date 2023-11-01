@@ -16,21 +16,24 @@ import { useEffect, useState } from "react";
 
 const CategorieJoburi = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const [category, setCategory] = useState("medical");
-
-	const { data }: IJobs = useSuspenseQuery(query, {
-		variables: {
-			where: {
-				jobCategory: {
+const upperdParams = params.lang.toUpperCase();
+const { data }: IJobs = useSuspenseQuery(query, {
+	variables: {
+		where: {
+			jobCategory: {
+				category: {
 					name: {
 						contains: category,
 					},
 				},
 			},
+			language: { languages: { contains: upperdParams } },
 		},
-	});
+	},
+});
 
 	const jobs = data.jobs;
-	console.log(jobs);
+	console.log("jobs", jobs);
 
 	return (
 		<section className=" bg-[#E5E5E5] px-5 pb-16 md:px-[70px] ">
