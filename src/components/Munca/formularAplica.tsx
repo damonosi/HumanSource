@@ -18,12 +18,7 @@ type Inputs = {
 };
 
 const FormularAplica = ({ id }: { id: RandomUUIDOptions }) => {
-	const [addJobApplication, { data, loading, error }] = useMutation(AddJobApplication, {
-		variables: {
-			type: "placeholder",
-			someOtherVariable: 1234,
-		},
-	});
+	const [addJobApplication, { data, loading, error }] = useMutation(AddJobApplication);
 
 	if (loading) return <span> "Submitting..."</span>;
 
