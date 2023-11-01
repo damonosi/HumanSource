@@ -21,9 +21,13 @@ type Inputs = {
 const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang: string; id: RandomUUIDOptions } }) => {
 	const [addJobApplication, { data, loading, error }] = useMutation(AddJobApplication);
 	const router = useRouter();
-	if (loading) return <span> "Submitting..."</span>;
+	if (loading) {
+		return <span> "Submitting..."</span>;
+	}
 
-	if (error) return <span> `Submission error! ${error.message}`</span>;
+	if (error) {
+		return <span> `Submission error! ${error.message}`</span>;
+	}
 	const {
 		register,
 		handleSubmit,
@@ -31,13 +35,13 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		const newDate = new Date(data.dataNastere);
-		console.log(newDate);
+		console.log(newDate.toISOString());
 		try {
 			console.log(data);
 			addJobApplication({
 				variables: {
 					data: {
-						birthDate: newDate,
+						birthDate: newDate.toISOString(),
 						email: data.email,
 						name: data.nume,
 						message: data.mesaj,
