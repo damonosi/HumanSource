@@ -17,7 +17,9 @@ const CategorySelector = ({ category, setCategory }: { category: string; setCate
 			label="Categorie"
 		>
 			{data.categories.map(({ name }) => (
-				<Option value={name}>{name}</Option>
+				<Option key={name} value={name}>
+					{name}
+				</Option>
 			))}
 		</Select>
 	);

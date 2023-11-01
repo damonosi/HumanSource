@@ -3,6 +3,7 @@ import AddJobApplication from "@/lib/apollo/mutations/mutateJobAplication";
 import { useMutation } from "@apollo/client";
 import { Checkbox, Input, Textarea, Typography } from "@material-tailwind/react";
 import { RandomUUIDOptions } from "crypto";
+import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineMail } from "react-icons/ai";
 import { FiPhone } from "react-icons/fi";
@@ -17,9 +18,9 @@ type Inputs = {
 	privacy: boolean;
 };
 
-const FormularAplica = ({ id }: { id: RandomUUIDOptions }) => {
+const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang: string; id: RandomUUIDOptions } }) => {
 	const [addJobApplication, { data, loading, error }] = useMutation(AddJobApplication);
-
+	const router = useRouter();
 	if (loading) return <span> "Submitting..."</span>;
 
 	if (error) return <span> `Submission error! ${error.message}`</span>;
@@ -28,7 +29,7 @@ const FormularAplica = ({ id }: { id: RandomUUIDOptions }) => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<Inputs>();
-	const onSubmit: SubmitHandler<Inputs> = (data) =>
+	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		addJobApplication({
 			variables: {
 				data: {
@@ -46,6 +47,8 @@ const FormularAplica = ({ id }: { id: RandomUUIDOptions }) => {
 				},
 			},
 		});
+		router.push(`${params.lang}/multumim`);
+	};
 	console.log(data);
 	return (
 		<form className="relative w-full justify-between  " onSubmit={handleSubmit(onSubmit)}>
