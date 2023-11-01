@@ -47,7 +47,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 				},
 			},
 		});
-		router.push(`${params.lang}/multumim`);
+		router.push(`/${params.lang}/multumim`);
 	};
 	console.log(data);
 	return (
