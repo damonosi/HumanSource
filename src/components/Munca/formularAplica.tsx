@@ -30,6 +30,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 		formState: { errors },
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
+	try {
 		addJobApplication({
 			variables: {
 				data: {
@@ -48,6 +49,10 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 			},
 		});
 		router.push(`/${params.lang}/multumim`);
+	} catch (error) {
+		console.log(error);
+	}
+	
 	};
 	console.log(data);
 	return (
