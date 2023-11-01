@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import query from "@/lib/apollo/queries/blog/getBlogBySlug";
 
 import BreadComponent from "./BreadComponent";
@@ -24,8 +24,10 @@ const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 
 	const formattedDate = formatDate(dateCreated);
 
-	let altText = photo.altText;
-	let imageUrl = photo.image.publicUrl;
+	let altText = !photo ? "nu are alt" : photo.altText;
+	let imageUrl = !photo
+		? "https://res.cloudinary.com/dmm7tnk7s/image/upload/v1698689593/87Af-eFtsR_JPiASGbYk9RpEly4.jpg"
+		: photo.image.publicUrl;
 
 	return (
 		<section className="flex min-h-screen flex-col gap-12 bg-[#E5E5E5] px-5 pb-[100px] text-start md:px-20">

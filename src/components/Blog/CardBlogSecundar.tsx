@@ -22,8 +22,11 @@ interface ICardBlogSecundar {
 }
 
 const CardBlogSecundar = ({ id, date, title, slug, photo, categories }: ICardBlogSecundar) => {
-	let altText = photo.altText;
-	let imageUrl = photo.image.publicUrl;
+let altText = !photo ? "nu are alt" : photo.altText;
+let imageUrl = !photo
+	? "https://res.cloudinary.com/dmm7tnk7s/image/upload/v1698689593/87Af-eFtsR_JPiASGbYk9RpEly4.jpg"
+	: photo.image.publicUrl;
+
 
 	return (
 		<Link className="cursor-pointer rounded-2xl hover:shadow-xl " id={id} href={`blog/${slug}`}>

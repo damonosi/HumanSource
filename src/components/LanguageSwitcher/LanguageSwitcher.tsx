@@ -30,7 +30,7 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 		setOpened(!open && false);
 	});
 
-	const router = useRouter();
+
 
 	return (
 		<div ref={ref} className={`${className}  relative z-50 flex  w-72 flex-col items-start justify-center`}>
