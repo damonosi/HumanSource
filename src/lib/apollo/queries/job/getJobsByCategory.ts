@@ -3,7 +3,7 @@ const query = gql`
 	query Jobs($where: JobWhereInput!) {
 		jobs(where: $where) {
 			description
-
+			id
 			title
 			date
 			company

@@ -12,25 +12,25 @@ import Link from "next/link";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobsByCategory";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const CategorieJoburi = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const [category, setCategory] = useState("medical");
-const upperdParams = params.lang.toUpperCase();
-const { data }: IJobs = useSuspenseQuery(query, {
-	variables: {
-		where: {
-			jobCategory: {
-				category: {
-					name: {
-						contains: category,
+	const upperdParams = params.lang.toUpperCase();
+	const { data }: IJobs = useSuspenseQuery(query, {
+		variables: {
+			where: {
+				jobCategory: {
+					category: {
+						name: {
+							equals: category,
+						},
 					},
 				},
+				language: { languages: { equals: upperdParams } },
 			},
-			language: { languages: { contains: upperdParams } },
 		},
-	},
-});
+	});
 
 	const jobs = data.jobs;
 	console.log("jobs", jobs);
@@ -68,7 +68,8 @@ const { data }: IJobs = useSuspenseQuery(query, {
 						Cele mai cautate locuri de munca
 					</Typography>
 					<div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3" id="container joburi">
-						{data.jobs.map(({ title, id, date, description }) => {
+						{jobs.map(({ title, id, date, description }) => {
+							console.log(id);
 							return <CardJob params={params} key={id} id={id} titlu={title} data={date} descriere={description} />;
 						})}
 					</div>
