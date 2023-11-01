@@ -13,6 +13,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobsByCategory";
 
 import { useState } from "react";
+import CategorySelector from "@/components/Munca/CategorySelector";
 
 const CategorieJoburi = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const [category, setCategory] = useState("medical");
@@ -47,20 +48,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 					</Link>
 					<Link className="capitalize text-red-600" href={`/${params.lang}/locuri-de-munca`}></Link>
 				</Breadcrumbs>
-				<Select
-					size="lg"
-					onChange={(e) => {
-						if (!e) return;
-						setCategory(e);
-					}}
-					variant="outlined"
-					defaultValue={category}
-					label="Categorie"
-				>
-					<Option value="medical">medical</Option>
-					<Option value="sofer">transport</Option>
-					<Option value="construct">constructii</Option>
-				</Select>
+				<CategorySelector category={category} setCategory={setCategory} />
 
 				{/* joburi dupa categorie */}
 				<section className="flex flex-col gap-9">
