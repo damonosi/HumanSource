@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 const AddJobApplication = gql`
-	mutation Mutation($data: JobApplicationUpdateInput!, $where: JobApplicationWhereUniqueInput!) {
+	mutation Mutation($data: JobApplicationUpdateInput!) {
 		createJobApplication(data: $data) {
 			email
 		}
