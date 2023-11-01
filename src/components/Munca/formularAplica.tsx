@@ -35,14 +35,10 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		try {
-			
-			const newDate = new Date(data.dataNastere);
-			const isoDate = newDate.toISOString();
-			console.log(isoDate);
 			addJobApplication({
 				variables: {
 					data: {
-						birthDate: isoDate,
+						birthDate: data.dataNastere,
 						email: data.email,
 						name: data.nume,
 						message: data.mesaj,
