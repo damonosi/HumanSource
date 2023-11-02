@@ -38,12 +38,20 @@ const NavigatieFormular = ({
 				{currentStepIndex + 1} / {steps.length}
 			</div>
 
-			{!isLastStep ? (
+			{isLastStep ? (
+				<button className={`${stilComunButon} right-0 `} type="submit">
+					<span className="text-sm md:text-lg">Cauta</span>{" "}
+					<ArrowSmallRightIcon strokeWidth={2} className="h-3 w-3 md:h-5 md:w-5" />
+				</button>
+			) : (
 				<button
 					className={` right-0 ${stilComunButon}   ${
 						disabled ? "cursor-not-allowed   opacity-10" : "bg-alb-site hover:bg-gri-brand hover:text-alb-site"
 					}`}
-					onClick={next}
+					onClick={(e) => {
+						e.preventDefault();
+						next();
+					}}
 					type="button"
 					disabled={disabled}
 				>
@@ -52,11 +60,6 @@ const NavigatieFormular = ({
 						strokeWidth={2}
 						className={` ${disabled ? "text-gri-bg" : " "}  h-3 w-3 md:h-5 md:w-5 `}
 					/>
-				</button>
-			) : (
-				<button className={`${stilComunButon} right-0 `} type="submit">
-					<span className="text-sm md:text-lg">Cauta</span>{" "}
-					<ArrowSmallRightIcon strokeWidth={2} className="h-3 w-3 md:h-5 md:w-5" />
 				</button>
 			)}
 		</div>
