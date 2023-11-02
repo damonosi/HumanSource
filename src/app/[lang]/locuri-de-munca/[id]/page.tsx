@@ -31,7 +31,7 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 	return (
 		<section className="min-h-screen bg-[#E5E5E5]  pb-24 text-start md:px-20">
 			<div className="container mx-auto grid ">
-				<div className="container mx-auto flex flex-col ">
+				<div className="container mx-auto flex flex-col px-5 md:px-0">
 					<Breadcrumbs>
 						<Link className="text-gri-brand" href={`/${params.lang}`}>
 							Home
@@ -40,9 +40,8 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 							Locuri de munca
 						</Link>
 					</Breadcrumbs>
-					<div className="container flex w-full ">
-						<div className="flex w-1/2 flex-col gap-[30px] text-gri-brand ">
-							{" "}
+					<div className="container flex w-full flex-col  md:flex-row">
+						<div className="flex flex-col gap-[30px]  text-gri-brand md:w-1/2 md:px-0 ">
 							<div className="flex flex-col gap-3" id="container info titlu">
 								<Typography variant="h3" className="text-[28px] font-bold  ">
 									{title}
@@ -52,15 +51,15 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 								</Typography>
 								<div className="flex gap-2 text-[14px]" id="container butoane titlu">
 									<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
-										<FaRegCalendarAlt />
-										<span> Data inceperii : Imediata</span>
+										<FaRegCalendarAlt className="w-5" />
+										<span className=""> Data inceperii : Imediata</span>
 									</div>
 									<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand ">
-										<FiTruck />
+										<FiTruck className="w-5" />
 										<span className=" "> Industrie : {jobCategory.name}</span>
 									</div>
 									<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
-										<TbTicket />
+										<TbTicket className="w-5" />
 										<span> Numar job : 203</span>
 									</div>
 								</div>
@@ -105,11 +104,11 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 									</li>
 								</ol>
 							</div>
-							<Typography className="text-[20px] font-bold text-gri-brand " variant="h5">
+							<Typography className="py-5 text-lg font-bold text-gri-brand md:text-[20px]" variant="h5">
 								Aplica acum iar unul dintre agentii nostrii de recrutare te va contacta in cel mai scurt timp!
 							</Typography>
 						</div>
-						<div className="flex w-1/2 rounded-2xl bg-alb-site p-10">
+						<div className="flex rounded-2xl bg-alb-site p-5 md:w-1/2 md:p-10">
 							<FormularAplica params={params} id={params.id} />
 						</div>
 					</div>

@@ -4,7 +4,8 @@ import { DocumentProp } from "@/interfaces/blog";
 import { DocumentRenderer } from "@keystone-6/document-renderer";
 import { Typography } from "@material-tailwind/react";
 import { Chip } from "@material-tailwind/react";
-import { Fragment } from "react";
+import { ComponentProps, Fragment } from "react";
+import React from "react";
 interface ITextComponent {
 	formattedDate: string;
 	textData: DocumentProp;
@@ -12,7 +13,9 @@ interface ITextComponent {
 	author: { name: string };
 	tags: [{ name: string }];
 }
+
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
+	console.log(textData);
 	return (
 		<div className="flex flex-col gap-12 text-start">
 			<h2>By {author.name}</h2> <span>{formattedDate}</span>

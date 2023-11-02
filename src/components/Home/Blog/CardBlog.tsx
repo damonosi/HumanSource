@@ -34,74 +34,29 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 		<div
 			onMouseLeave={handleMouseLeave}
 			onMouseEnter={handleMouseEnter}
-			className="relative   flex h-[350px]  w-full flex-col justify-end overflow-hidden  rounded-2xl border-none bg-transparent text-[#383A3C] shadow  transition   md:h-[500px]  "
+			className="group   relative flex h-[400px]   w-full flex-col justify-between overflow-hidden  rounded-2xl border-none bg-transparent text-[#383A3C] shadow  transition   md:h-[500px]  "
 		>
+			<div
+				key="mask"
+				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full translate-y-full overflow-hidden rounded-2xl bg-black bg-fixed opacity-30 transition-transform duration-700 group-hover:translate-y-0"
+			/>
+			<div className="flex h-1/2 w-full"></div>
+			<Image
+				fill
+				alt="background"
+				className="relative z-10 w-full -translate-y-72 transition-transform duration-700 group-hover:absolute group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
+				src={imageUrl}
+			/>
+
 			<AnimatePresence>
-				{!hovered ? (
-					<motion.div
-						key="imagine"
-						layout
-						transition={{
-							layout: {
-								type: "spring",
-								stiffness: 30,
-								duration: 1,
-							},
-						}}
-						id="img-container"
-						className=" relative z-40 flex items-center  justify-center  "
-					>
-						<Image alt="background" className=" object-cover" width={500} height={500} src={imageUrl} />
-
-						<motion.div
-							key="mask"
-							transition={{
-								type: "spring",
-								stiffness: 40,
-								duration: 1,
-								delay: 500,
-							}}
-							className="hidden"
-						/>
-					</motion.div>
-				) : (
-					<motion.div
-						key="imagine"
-						layout
-						transition={{
-							layout: { type: "spring", stiffness: 30, duration: 1 },
-						}}
-						id="img-container"
-						className="absolute top-0 bottom-0 left-0 right-0 object-fill"
-					>
-						<Image
-							alt="background"
-							className="relative h-full w-full  transform object-fill"
-							width={500}
-							height={500}
-							src={imageUrl}
-						/>{" "}
-						<motion.div
-							key="mask"
-							transition={{
-								type: "spring",
-								stiffness: 40,
-								duration: 1,
-								delay: 500,
-							}}
-							className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden rounded-2xl bg-black bg-fixed opacity-20"
-						/>
-					</motion.div>
-				)}
-
 				<motion.div
 					key="container-text"
 					layout
 					transition={{
 						layout: { type: "spring", stiffness: 30 },
 					}}
-					className={`z-20 flex  flex-col justify-end gap-2 py-2 px-4 text-start  md:justify-between ${
-						hovered ? "gap-5 text-alb-site" : "text-gri-brand"
+					className={`relative z-20 flex flex-col justify-end gap-2 py-2 px-4 text-start  md:justify-between ${
+						hovered ? "mt-auto  gap-5 text-alb-site" : "text-gri-brand"
 					} `}
 					id="container-text-bloguri"
 				>
@@ -132,3 +87,57 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 };
 
 export default CardBlog;
+
+
+		// {
+		// 	!hovered ? (
+		// 		<motion.div
+		// 			key="imagine"
+		// 			layout
+		// 			transition={{
+		// 				layout: {
+		// 					type: "spring",
+		// 					stiffness: 30,
+		// 					duration: 1,
+		// 				},
+		// 			}}
+		// 			id="img-container"
+		// 			className=" relative z-40 flex h-1/2 items-center justify-center  "
+		// 		>
+		// 			<Image fill alt="background" className=" object-cover" src={imageUrl} />
+
+		// 			<motion.div
+		// 				key="mask"
+		// 				transition={{
+		// 					type: "spring",
+		// 					stiffness: 40,
+		// 					duration: 1,
+		// 					delay: 500,
+		// 				}}
+		// 				className="hidden"
+		// 			/>
+		// 		</motion.div>
+		// 	) : (
+		// 		<motion.div
+		// 			key="imagine"
+		// 			layout
+		// 			transition={{
+		// 				layout: { type: "spring", stiffness: 30, duration: 1 },
+		// 			}}
+		// 			id="img-container"
+		// 			className="absolute top-0 bottom-0 left-0 right-0 object-fill"
+		// 		>
+		// 			<Image alt="background" className="relative h-full w-full  transform object-fill" fill src={imageUrl} />{" "}
+		// 			<motion.div
+		// 				key="mask"
+		// 				transition={{
+		// 					type: "spring",
+		// 					stiffness: 40,
+		// 					duration: 1,
+		// 					delay: 500,
+		// 				}}
+		// 				className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden rounded-2xl bg-black bg-fixed opacity-20"
+		// 			/>
+		// 		</motion.div>
+		// 	);
+		// }

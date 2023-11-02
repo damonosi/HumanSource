@@ -2,7 +2,7 @@
 
 const nextConfig = {
 	images: {
-		domains: ["backend.humansource.ro", "picsum.photos", "res.cloudinary.com"],
+		domains: ["backend.humansource.ro", "picsum.photos", "res.cloudinary.com", "source.unsplash.com"],
 	},
 	async headers() {
 		return [

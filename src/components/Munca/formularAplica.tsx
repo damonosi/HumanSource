@@ -62,7 +62,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 	return (
 		<form className="relative w-full justify-between  " onSubmit={handleSubmit(onSubmit)}>
 			<div className="mb-4 grid grid-cols-1 gap-8 ">
-				<Typography className="mb-16" variant="h3">
+				<Typography className="mb-5 md:mb-16" variant="h3">
 					Aplicare
 				</Typography>
 				<Input
@@ -99,28 +99,34 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 					icon={<FiPhone />}
 					label="Numar de telefon"
 				/>
-			</div>
-			<Checkbox
-				className="my-4 items-center justify-center"
-				{...register("privacy", { required: true })}
-				label={
-					<span className="text-xs  text-gri-bg">
-						*Sunt de acord cu
-						<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
-							Politica de confidentialitate
-						</a>
-						in vederea prelucrarii datelor personale.
-					</span>
-				}
-			/>
 
-			<Textarea
-				variant="outlined"
-				{...register("mesaj", { required: true })}
-				id="telefon"
-				aria-expanded
-				label="Trimite-ne un mesaj"
-			/>
+				<Textarea
+					variant="outlined"
+					{...register("mesaj", { required: true })}
+					id="telefon"
+					aria-expanded
+					label="Trimite-ne un mesaj"
+				/>
+				<Checkbox
+					className=" "
+					{...register("privacy", { required: true })}
+					label={
+						<Typography color="blue-gray" className="flex text-center text-xs font-medium md:text-lg">
+							*sunt de acord cu
+							<Typography
+								as="a"
+								href="#"
+								color="blue"
+								className="text-xs font-medium transition-colors hover:text-blue-700 md:text-lg"
+							>
+								&nbsp;termenii si conditiile
+							</Typography>
+							.
+						</Typography>
+					}
+				/>
+			</div>
+
 			<div className="flex flex-col items-center justify-center gap-2 text-rosu-brand">
 				{errors.nume && <span>Trebuie sa adaugati un nume</span>}
 				{errors.dataNastere && <span>Trebuie sa adaugati o data de nastere</span>}
@@ -129,7 +135,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 				{errors.privacy && <span>Trebuie sa fiti de acord cu politica de confidentialitate</span>}
 			</div>
 			<div className="mt-16 flex w-full items-center justify-center">
-				<button className="mt-5 rounded-2xl  bg-gri-brand px-5 py-4 text-alb-site" type="submit">
+				<button className=" rounded-2xl bg-gri-brand  px-5 py-4 text-alb-site " type="submit">
 					Trimite datele
 				</button>
 			</div>
