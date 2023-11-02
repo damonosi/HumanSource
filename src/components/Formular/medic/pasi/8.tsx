@@ -7,7 +7,7 @@ const Pas8Medical = ({ register, setDisabled }: any) => {
 			<Input
 				variant="outlined"
 				type="text"
-				{...register("ultimulSalariu", { required: true })}
+				{...register("ultimulSalariu", { required: true, valueAsNumber: true })}
 				id="ultimulSalariu"
 				onChange={() => setDisabled(false)}
 				label="Raspunsul Dumneavoastra"
