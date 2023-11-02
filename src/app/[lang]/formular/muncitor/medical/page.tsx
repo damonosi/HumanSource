@@ -9,19 +9,31 @@ import Pas5Medical from "@/components/Formular/medic/pasi/5";
 import Pas6Medical from "@/components/Formular/medic/pasi/6";
 import Pas7Medical from "@/components/Formular/medic/pasi/7";
 import Pas8Medical from "@/components/Formular/medic/pasi/8";
-
+import Pas9Medical from "@/components/Formular/medic/pasi/9";
 import NavigatieFormular from "@/components/Formular/NavigatieFormular";
 import { useMultistepForm } from "@/components/Formular/useMultistepForm";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useMutation } from "@apollo/client";
+import AddMedicalForm from "@/lib/apollo/mutations/mutateMedicForm";
+type Inputs = {
+	experienta: string;
 
-
+	domeniu: string;
+	bac: string;
+	educatie: string;
+	absolvire: string;
+	lbItaliana: string;
+	ultimulSalariu: string;
+	locatia: string;
+	curs: string;
+};
 
 const FormularMedic = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
-	const { register, handleSubmit, setValue } = useForm({
+	const { register, handleSubmit, setValue, reset } = useForm({
 		mode: "onChange",
 		defaultValues: {
 			experienta: "",
@@ -31,6 +43,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			absolvire: "",
 			lbItaliana: "",
 			ultimulSalariu: "",
+			locatia: "",
 			curs: "",
 		},
 	});
@@ -42,12 +55,35 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			<Pas4Medical setValue={setValue} setDisabled={setDisabled} />,
 			<Pas5Medical register={register} setDisabled={setDisabled} />,
 			<Pas6Medical setValue={setValue} setDisabled={setDisabled} />,
-			<Pas7Medical register={register} setDisabled={setDisabled} />,
-			<Pas8Medical setValue={setValue} setDisabled={setDisabled} />,
+			<Pas7Medical setValue={setValue} setDisabled={setDisabled} />,
+			<Pas8Medical register={register} setDisabled={setDisabled} />,
+			<Pas9Medical setValue={setValue} setDisabled={setDisabled} />,
 		],
 		setDisabled,
 	);
-	const submitHandler = (data: object) => {
+	const [addMedicalForm, { data, loading, error }] = useMutation(AddMedicalForm);
+	const onSubmit: SubmitHandler<Inputs> = (data) => {
+		try {
+			addMedicalForm({
+				variables: {
+					data: {
+						absolvire: data.absolvire,
+						amg: data.educatie,
+						bac: data.bac,
+						cursItaliana: data.curs,
+						domeniu: "medical",
+						experienta: data.experienta,
+						experientaLimba: data.lbItaliana,
+						locatia: data.locatia,
+						subDomeniu: data.domeniu,
+						ultimuSalar: data.ultimulSalariu,
+					},
+				},
+			});
+			reset();
+		} catch (error) {
+			console.log(error);
+		}
 		console.log(data);
 		console.log("submited");
 	};
@@ -64,7 +100,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 					Medical
 				</Link>
 			</Breadcrumbs>
-			<form onSubmit={handleSubmit(submitHandler)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">
+			<form onSubmit={handleSubmit(onSubmit)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">
 				{step}
 				<NavigatieFormular
 					disabled={disabled}
