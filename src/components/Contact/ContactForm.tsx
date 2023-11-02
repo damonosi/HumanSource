@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 type Inputs = {
 	nume: string;
-	dataNastere: string;
+
 	email: string;
 	telefon: string;
 	mesaj: string;
@@ -57,14 +57,6 @@ const ContactForm = () => {
 
 					<Input
 						variant="outlined"
-						type="date"
-						{...register("dataNastere", { required: true })}
-						id="dataNastere"
-						label="Data Nastere"
-					/>
-
-					<Input
-						variant="outlined"
 						type="text"
 						{...register("email", { required: true })}
 						id="email"
@@ -104,7 +96,7 @@ const ContactForm = () => {
 				/>
 				<div className="flex flex-col items-center justify-center gap-2 text-rosu-brand">
 					{errors.nume && <span>Trebuie sa adaugati un nume</span>}
-					{errors.dataNastere && <span>Trebuie sa adaugati o data de nastere</span>}
+
 					{errors.email && <span>Trebuie sa adaugati o adresa de email</span>}
 					{errors.telefon && <span>Trebuie sa adaugati un numar de telefon</span>}
 					{errors.privacy && <span>Trebuie sa fiti de acord cu politica de confidentialitate</span>}
