@@ -37,7 +37,7 @@ const Contact = ({ params }: { params: { lang: string; country: string } }) => {
 							</p>
 						</div>
 						<ContactWays />
-						<ContactForm />
+						<ContactForm params={params} />
 					</div>
 					<div className="flex w-full md:w-1/2">
 						<Image alt="imagine contact" placeholder="blur" src={imgContact} />

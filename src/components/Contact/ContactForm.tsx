@@ -16,7 +16,7 @@ type Inputs = {
 	privacy: boolean;
 };
 
-const ContactForm = () => {
+const ContactForm = ({ params }: { params: { lang: string; country: string } }) => {
 	const [addContact, { data, loading, error }] = useMutation(addContactForm);
 	const router = useRouter();
 	const {
@@ -38,6 +38,7 @@ const ContactForm = () => {
 				},
 			});
 			reset();
+			router.push(`/${params.lang}/multumim`);
 		} catch (error) {
 			console.log(error);
 		}
