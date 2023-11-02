@@ -3,6 +3,10 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FiPhone } from "react-icons/fi";
 import { Checkbox, Input, Textarea } from "@material-tailwind/react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import addContactForm from "@/lib/apollo/mutations/mutateContactForm";
+import { useMutation } from "@apollo/client";
+import { useRouter } from "next/navigation";
+
 type Inputs = {
 	nume: string;
 	dataNastere: string;
@@ -11,13 +15,33 @@ type Inputs = {
 	mesaj: string;
 	privacy: boolean;
 };
+
 const ContactForm = () => {
+	const [addContact, { data, loading, error }] = useMutation(addContactForm);
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm<Inputs>();
-	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+	const onSubmit: SubmitHandler<Inputs> = (data) => {
+		try {
+			addContact({
+				variables: {
+					data: {
+						email: data.email,
+						name: data.nume,
+						message: data.mesaj,
+						phone: data.telefon,
+					},
+				},
+			});
+			reset();
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		<div className="flex justify-end rounded-2xl bg-alb-site p-5">
 			<form className="relative w-full justify-between bg-alb-site" onSubmit={handleSubmit(onSubmit)}>

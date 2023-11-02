@@ -31,6 +31,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -51,6 +52,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 					},
 				},
 			});
+			reset();
 			router.push(`/${params.lang}/multumim`);
 		} catch (error) {
 			console.log(error);
