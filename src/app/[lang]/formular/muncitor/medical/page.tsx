@@ -26,7 +26,7 @@ type Inputs = {
 	educatie: string;
 	absolvire: string;
 	lbItaliana: string;
-	ultimulSalariu: string;
+	ultimulSalariu: number;
 	locatia: string;
 	curs: string;
 };
@@ -42,7 +42,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			educatie: "",
 			absolvire: "",
 			lbItaliana: "",
-			ultimulSalariu: "",
+			ultimulSalariu: 0,
 			locatia: "",
 			curs: "",
 		},

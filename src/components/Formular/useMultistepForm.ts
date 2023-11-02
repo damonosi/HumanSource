@@ -25,7 +25,7 @@ export function useMultistepForm(steps: ReactElement[], setDisabled: Dispatch<Se
 			return i - 1;
 		});
 	}
-	console.log(steps.length);
+	console.log(steps.length - 1);
 	console.log(currentStepIndex);
 	return {
 		currentStepIndex,
@@ -34,6 +34,6 @@ export function useMultistepForm(steps: ReactElement[], setDisabled: Dispatch<Se
 		back,
 		steps,
 		isFirstStep: currentStepIndex === 0,
-		isLastStep: currentStepIndex == steps.length - 1,
+		isLastStep: currentStepIndex === steps.length - 1,
 	};
 }
