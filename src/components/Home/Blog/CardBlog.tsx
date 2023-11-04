@@ -38,7 +38,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 		>
 			<div
 				key="mask"
-				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full origin-top -translate-y-full overflow-hidden rounded-2xl bg-black bg-fixed opacity-30 transition-transform delay-200 duration-700 group-hover:translate-y-0"
+				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full origin-top -translate-y-72 overflow-hidden rounded-2xl bg-black bg-fixed opacity-0 transition-all duration-700  group-hover:translate-y-0 group-hover:opacity-30 "
 			/>
 			<div className="flex h-1/2 w-full"></div>
 			<Image
@@ -55,15 +55,15 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 					transition={{
 						layout: { type: "spring", stiffness: 30 },
 					}}
-					className={`relative z-20 flex flex-col justify-end gap-2 py-2 px-4 text-start  md:justify-between ${
-						hovered ? "mt-auto  gap-5 text-alb-site" : "text-gri-brand"
+					className={`relative z-20 flex h-1/2 flex-col justify-end gap-2 py-2 px-4 text-start  md:justify-between ${
+						hovered ? "mt-auto h-full  gap-5 text-alb-site" : "text-gri-brand"
 					} `}
 					id="container-text-bloguri"
 				>
 					<Typography variant="paragraph" className="z-20 text-sm font-[350] opacity-50   md:text-base ">
 						{formattedDate}
 					</Typography>
-					<Typography variant="h4" className="text-base font-medium md:text-2xl">
+					<Typography variant="h4" className="text-base font-medium md:text-[1.4rem]">
 						{titlu}
 					</Typography>
 					<Typography variant="paragraph" className="max-w-prose text-[14px] font-[350] leading-[22px]  md:text-[16px]">
