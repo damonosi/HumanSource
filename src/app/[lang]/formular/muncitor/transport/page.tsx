@@ -1,6 +1,6 @@
 "use client";
 
-import NavigatieFormular from "@/components/Formular/NavigatieFormularSofer";
+
 import { useMultistepForm } from "@/components/Formular/useMultistepForm";
 import { useState } from "react";
 import Pas1Trasport from "@/components/Formular/sofer/pasi/1";
