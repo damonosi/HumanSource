@@ -1,7 +1,7 @@
 "use client";
 
 import { DocumentProp } from "@/interfaces/blog";
-import { DocumentRenderer } from "@keystone-6/document-renderer";
+import { BlockRenderer } from "./CustomDocumentRenderer";
 import { Typography } from "@material-tailwind/react";
 import { Chip } from "@material-tailwind/react";
 import { ComponentProps, Fragment } from "react";
@@ -23,7 +23,7 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				<h1>{title}</h1>
 			</div>
 			<div className="flex flex-col ">
-				<DocumentRenderer document={textData} />
+				<BlockRenderer document={textData} />
 			</div>
 			<div className="flex w-full items-center justify-center">
 				{tags &&
