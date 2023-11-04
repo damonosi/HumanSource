@@ -18,6 +18,13 @@ type Inputs = {
 
 const ContactForm = ({ params }: { params: { lang: string; country: string } }) => {
 	const [addContact, { data, loading, error }] = useMutation(addContactForm);
+		if (loading) {
+			return <span> "Submitting..."</span>;
+		}
+
+		if (error) {
+			return <span> `Submission error! ${error.message}`</span>;
+		}
 	const router = useRouter();
 	const {
 		register,
