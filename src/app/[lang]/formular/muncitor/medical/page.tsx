@@ -10,7 +10,7 @@ import Pas6Medical from "@/components/Formular/medic/pasi/6";
 import Pas7Medical from "@/components/Formular/medic/pasi/7";
 import Pas8Medical from "@/components/Formular/medic/pasi/8";
 import Pas9Medical from "@/components/Formular/medic/pasi/9";
-import NavigatieFormular from "@/components/Formular/NavigatieFormular";
+import NavigatieFormular from "@/components/Formular/NavigatieFormularSofer";
 import { useMultistepForm } from "@/components/Formular/useMultistepForm";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
@@ -19,6 +19,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useMutation } from "@apollo/client";
 import AddMedicalForm from "@/lib/apollo/mutations/mutateMedicForm";
 import { useRouter } from "next/navigation";
+import NavigatieFormularMedic from "@/components/Formular/medic/NavigatieFormularMedic";
 type Inputs = {
 	experienta: string;
 
@@ -103,7 +104,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			</Breadcrumbs>
 			<form onSubmit={handleSubmit(onSubmit)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">
 				{step}
-				<NavigatieFormular
+				<NavigatieFormularMedic
 					data={data}
 					params={params}
 					disabled={disabled}

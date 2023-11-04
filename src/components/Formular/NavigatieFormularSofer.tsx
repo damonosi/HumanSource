@@ -9,26 +9,14 @@ interface IButtonProps {
 	isFirstStep: boolean;
 	isLastStep: boolean;
 	disabled: boolean;
-	data: {
-		absolvire: string;
-		amg: string;
-		bac: string;
-		cursItaliana: string;
-		domeniu: string;
-		experienta: string;
-		experientaLimba: string;
-		locatia: string;
-		subDomeniu: string;
-		ultimuSalar: string;
-	};
+
 	params: { lang: string; country: string };
 	back: () => void;
 	next: () => void;
 }
 const stilComunButon =
 	"absolute flex  w-fit items-center content-center text-center justify-center border border-gri-brand gap-1 rounded-2xl px-2 py-2 text-gri-brand md:py-4 md:px-5";
-const NavigatieFormular = ({
-	data,
+const NavigatieFormularSofer = ({
 	params,
 	currentStepIndex,
 	steps,
@@ -58,7 +46,7 @@ const NavigatieFormular = ({
 				<Link
 					href={{
 						pathname: `/${params.lang}/locuri-de-munca`,
-						query: { absolvire: data.absolvire },
+						query: { name: "test" },
 					}}
 					className={`${stilComunButon} right-0 `}
 					type="submit"
@@ -89,4 +77,4 @@ const NavigatieFormular = ({
 	);
 };
 
-export default NavigatieFormular;
+export default NavigatieFormularSofer;

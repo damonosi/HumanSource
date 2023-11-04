@@ -1,6 +1,6 @@
 "use client";
 
-import NavigatieFormular from "@/components/Formular/NavigatieFormular";
+import NavigatieFormular from "@/components/Formular/NavigatieFormularSofer";
 import { useMultistepForm } from "@/components/Formular/useMultistepForm";
 import { useState } from "react";
 import Pas1Trasport from "@/components/Formular/sofer/pasi/1";
@@ -18,6 +18,7 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 import { IJobs } from "@/interfaces/job";
 import { useSuspenseQuery } from "@apollo/client";
+import NavigatieFormularSofer from "@/components/Formular/NavigatieFormularSofer";
 
 const FormularSofer = ({ params }: { params: { lang: string; country: string } }) => {
 	const {
@@ -79,7 +80,8 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 			<form className="relative  rounded-2xl bg-alb-site px-5 pt-8 " onSubmit={handleSubmit(submitHandler)}>
 				{step}
 
-				<NavigatieFormular
+				<NavigatieFormularSofer
+					params={params}
 					disabled={disabled}
 					back={back}
 					next={next}
