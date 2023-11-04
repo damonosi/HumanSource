@@ -38,7 +38,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 		>
 			<div
 				key="mask"
-				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full origin-top -translate-y-72 overflow-hidden rounded-2xl bg-black bg-fixed opacity-0 transition-all duration-700  group-hover:translate-y-0 group-hover:opacity-30 "
+				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full origin-top -translate-y-72 overflow-hidden rounded-2xl bg-black bg-fixed opacity-0 transition-all duration-700  group-hover:translate-y-0 group-hover:opacity-50 "
 			/>
 			<div className="flex h-1/2 w-full"></div>
 			<Image
