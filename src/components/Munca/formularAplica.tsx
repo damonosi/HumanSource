@@ -20,17 +20,10 @@ type Inputs = {
 const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang: string; id: RandomUUIDOptions } }) => {
 	const [addJobApplication, { data, loading, error }] = useMutation(AddJobApplication);
 	const router = useRouter();
-	if (loading) {
-		return <span> "Submitting..."</span>;
-	}
 
-	if (error) {
-		return <span> `Submission error! ${error.message}`</span>;
-	}
 	const {
 		register,
 		handleSubmit,
-
 		formState: { errors },
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -56,7 +49,13 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 			console.log(error);
 		}
 	};
+	if (loading) {
+		return <span> "Submitting..."</span>;
+	}
 
+	if (error) {
+		return <span> `Submission error! ${error.message}`</span>;
+	}
 	return (
 		<form className="relative w-full justify-between  " onSubmit={handleSubmit(onSubmit)}>
 			<div className="mb-4 grid grid-cols-1 gap-8 ">
