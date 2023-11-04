@@ -33,12 +33,11 @@ const Checkbox = ({
 const Pas2Trasport = ({ register, setDisabled }: any) => {
 	useEffect(() => {
 		const isBrowser = () => typeof window !== "undefined";
-		console.log("mounted");
+
 		function scrollToTop() {
 			if (!isBrowser()) return;
 
 			window.scrollTo({ top: 0, behavior: "smooth" });
-			console.log("ajuns");
 		}
 		scrollToTop();
 	}, []);

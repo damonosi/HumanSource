@@ -18,6 +18,7 @@ import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useMutation } from "@apollo/client";
 import AddMedicalForm from "@/lib/apollo/mutations/mutateMedicForm";
+import { useRouter } from "next/navigation";
 type Inputs = {
 	experienta: string;
 
@@ -62,6 +63,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		setDisabled,
 	);
 	const [addMedicalForm, { data, loading, error }] = useMutation(AddMedicalForm);
+	const router = useRouter();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		try {
 			addMedicalForm({
@@ -80,12 +82,11 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			reset();
+			loading && <span>Loading....</span>;
+			error && <span>error....</span>;
 		} catch (error) {
 			console.log(error);
 		}
-		console.log(data);
-		console.log("submited");
 	};
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
@@ -103,6 +104,8 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			<form onSubmit={handleSubmit(onSubmit)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">
 				{step}
 				<NavigatieFormular
+					data={data}
+					params={params}
 					disabled={disabled}
 					back={back}
 					next={next}

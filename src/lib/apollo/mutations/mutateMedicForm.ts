@@ -5,6 +5,13 @@ const AddMedicalForm = gql`
 		createMedicalForm(data: $data) {
 			domeniu
 			experienta
+			amg
+			bac
+			cursItaliana
+			experientaLimba
+			locatia
+			subDomeniu
+			ultimuSalar
 		}
 	}
 `;

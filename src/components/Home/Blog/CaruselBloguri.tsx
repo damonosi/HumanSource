@@ -52,7 +52,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 	});
 	if (!data) return <h1>No data...</h1>;
 	const blogs = data.blogs;
-	console.log(blogs);
+
 	return (
 		<div className="relative flex w-full md:px-6">
 			<Carousel
