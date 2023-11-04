@@ -1,4 +1,3 @@
-"use client";
 import AddJobApplication from "@/lib/apollo/mutations/mutateJobAplication";
 import { useMutation } from "@apollo/client";
 import { Checkbox, Input, Textarea, Typography } from "@material-tailwind/react";
@@ -52,7 +51,6 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 					},
 				},
 			});
-
 			router.push(`/${params.lang}/multumim`);
 		} catch (error) {
 			console.log(error);
