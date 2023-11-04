@@ -18,7 +18,7 @@ type Inputs = {
 };
 
 const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang: string; id: RandomUUIDOptions } }) => {
-	const [addJobApplication, { data, loading, error }] = useMutation(AddJobApplication);
+	const [addJobApplication, { loading, error }] = useMutation(AddJobApplication);
 	const router = useRouter();
 
 	const {
