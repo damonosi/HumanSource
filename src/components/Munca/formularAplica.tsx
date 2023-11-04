@@ -11,7 +11,7 @@ import { MdPersonOutline } from "react-icons/md";
 
 type Inputs = {
 	nume: string;
-	dataNastere: Date;
+	dataNastere: string;
 	email: string;
 	telefon: string;
 	mesaj: string;
@@ -31,7 +31,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 	const {
 		register,
 		handleSubmit,
-		reset,
+
 		formState: { errors },
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -52,13 +52,13 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 					},
 				},
 			});
-			reset();
+
 			router.push(`/${params.lang}/multumim`);
 		} catch (error) {
 			console.log(error);
 		}
 	};
-	console.log(data);
+
 	return (
 		<form className="relative w-full justify-between  " onSubmit={handleSubmit(onSubmit)}>
 			<div className="mb-4 grid grid-cols-1 gap-8 ">
