@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import ContactForm from "@/components/Contact/ContactForm";
 import imgContact from "../../../../public/imagini/contact/imgContact2.png";
 import ContactWays from "@/components/Contact/ContactWays";
+import GoogleMap from "@/components/Contact/GoogleMap";
 
 
 
@@ -39,9 +40,8 @@ const Contact = ({ params }: { params: { lang: string; country: string } }) => {
 						<ContactWays />
 						<ContactForm params={params} />
 					</div>
-					<div className="flex w-full md:w-1/2">
-						<Image alt="imagine contact" placeholder="blur" src={imgContact} />
-					</div>
+
+					<GoogleMap />
 				</div>
 			</div>
 		</section>
