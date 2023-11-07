@@ -28,6 +28,8 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 	const handleMouseLeave = () => {
 		setHovered(false);
 	};
+	const titleLength = titlu.length;
+
 	const router = useRouter();
 	const formattedDate = formatDate(data);
 	return (
@@ -44,7 +46,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 				<Image
 					fill
 					alt="background"
-					className=" z-10  w-full -translate-y-[60%] transition-transform duration-700 group-hover:absolute group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
+					className=" -hover:absolute  z-10 w-full -translate-y-[60%] transition-transform duration-500 group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
 					src={imageUrl}
 				/>
 			</div>
@@ -63,8 +65,8 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 					<Typography variant="paragraph" className="z-20 text-sm font-[350] opacity-50   md:text-base ">
 						{formattedDate}
 					</Typography>
-					<Typography variant="h4" className="text-base font-medium md:text-[1.4rem]">
-						{!hovered ? ` ${titlu.substring(0, 60)} ` : titlu}
+					<Typography variant="h4" className="text-base font-medium leading-8 md:text-[1.4rem]">
+						{!hovered ? ` ${titlu.substring(0, 60)}  ${titleLength >= 60 ? "..." : ""} ` : titlu}
 					</Typography>
 					<Typography variant="paragraph" className="max-w-prose text-[14px] font-[350] leading-[22px]  md:text-[16px]">
 						{!hovered ? ` ${paragraph.substring(0, 120)} ....` : `${paragraph.substring(0, 200)} ....`}

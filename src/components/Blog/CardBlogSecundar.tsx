@@ -32,7 +32,7 @@ let imageUrl = !photo
 		<Link className=" cursor-pointer rounded-2xl hover:shadow-xl" id={id} href={`blog/${slug}`}>
 			<div className="group flex  h-full   flex-col  gap-5 " id="container-card-blog-secundar">
 				<div className="relative flex aspect-video h-1/2 w-full flex-col overflow-hidden rounded-b-2xl rounded-t-2xl transition-all duration-700 group-hover:rounded-b-none">
-					<Image alt={altText} src={imageUrl} fill />
+					<Image alt={altText} src={imageUrl} sizes="" fill />
 				</div>
 				<div className="flex h-1/2 flex-col justify-between  gap-5 px-2 pb-4">
 					<Typography variant="small" className="text-start text-gri-brand opacity-50">

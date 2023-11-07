@@ -11,6 +11,7 @@ import { IBlog } from "@/interfaces/blog";
 
 const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 	const slug = params.slug;
+	console.log("slug", slug);
 	const { data }: IBlog = useSuspenseQuery(query, {
 		variables: {
 			where: { slug: slug },
@@ -19,6 +20,7 @@ const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 	if (!data) {
 		return <span>Loading...</span>;
 	}
+	console.log(data);
 	const blog = data.blog;
 	let { photo, title, id, dateCreated, content, tags, author } = blog;
 

@@ -17,8 +17,7 @@ const query = gql`
 			}
 			photo {
 				altText
-				filename
-				id
+
 				image {
 					publicUrl
 				}
