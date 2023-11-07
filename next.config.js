@@ -2,7 +2,24 @@
 
 const nextConfig = {
 	images: {
-		domains: ["backend.humansource.ro", "picsum.photos", "res.cloudinary.com", "source.unsplash.com"],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "backend.humansource.ro",
+			},
+			{
+				protocol: "https",
+				hostname: "picsum.photos",
+			},
+			{
+				protocol: "https",
+				hostname: "res.cloudinary.com",
+			},
+			{
+				protocol: "https",
+				hostname: "source.unsplash.com",
+			},
+		],
 	},
 	async headers() {
 		return [
