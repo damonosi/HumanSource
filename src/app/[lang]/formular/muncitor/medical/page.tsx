@@ -93,42 +93,41 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		setDisabled,
 	);
 	const [addMedicalForm] = useMutation(AddMedicalForm);
-
-	const onSubmit: SubmitHandler<Inputs> = ({
-		absolvire,
-		educatie,
-		bac,
-		curs,
-		experienta,
-		lbItaliana,
-		locatia,
-		domeniu,
-		ultimulSalariu,
-	}) => {
-		try {
-			addMedicalForm({
-				variables: {
-					data: {
-						absolvire: absolvire,
-						amg: educatie,
-						bac: bac,
-						cursItaliana: curs,
-						domeniu: "medical",
-						experienta: experienta,
-						experientaLimba: lbItaliana,
-						locatia: locatia,
-						subDomeniu: domeniu,
-						ultimuSalar: ultimulSalariu,
-					},
+const router = useRouter();
+const onSubmit: SubmitHandler<Inputs> = ({
+	absolvire,
+	educatie,
+	bac,
+	curs,
+	experienta,
+	lbItaliana,
+	locatia,
+	domeniu,
+	ultimulSalariu,
+}) => {
+	try {
+		addMedicalForm({
+			variables: {
+				data: {
+					absolvire: absolvire,
+					amg: educatie,
+					bac: bac,
+					cursItaliana: curs,
+					domeniu: "medical",
+					experienta: experienta,
+					experientaLimba: lbItaliana,
+					locatia: locatia,
+					subDomeniu: domeniu,
+					ultimuSalar: ultimulSalariu,
 				},
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	};
-	const submitter = () => {
-		handleSubmit(onSubmit);
-	};
+			},
+		});
+		router.push(`/${params.lang}/locuri-de-munca?domeniu=medical&subDomeniu=${domeniu}`);
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
 			<Breadcrumbs>

@@ -1,5 +1,7 @@
+import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
 import { ArrowSmallRightIcon, ArrowSmallLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { ReactElement } from "react";
 
@@ -9,18 +11,7 @@ interface IButtonProps {
 	isFirstStep: boolean;
 	isLastStep: boolean;
 	disabled: boolean;
-	seachParams: {
-		absolvire: string;
-		amg: string;
-		bac: string;
-		cursItaliana: string;
-		domeniu: string;
-		experienta: string;
-		experientaLimba: string;
-		locatia: string;
-		subDomeniu: string;
-		ultimuSalar: number;
-	};
+	seachParams: MedicalSearchParamsType;
 	params: { lang: string; country: string };
 	back: () => void;
 	next: () => void;
@@ -55,18 +46,10 @@ const NavigatieFormularMedic = ({
 			</div>
 
 			{isLastStep ? (
-				<Link
-					type="submit"
-					href={{
-						pathname: `/${params.lang}/locuri-de-munca`,
-						query: { domeniu: seachParams.domeniu, subDomeniu: seachParams.subDomeniu },
-					}}
-					replace
-					className={`${stilComunButon} right-0 `}
-				>
+				<button className={`${stilComunButon} right-0 `} type="submit">
 					<span className="text-sm md:text-lg">Cauta</span>{" "}
 					<ArrowSmallRightIcon strokeWidth={2} className="h-3 w-3 md:h-5 md:w-5" />
-				</Link>
+				</button>
 			) : (
 				<button
 					className={` right-0 ${stilComunButon}   ${

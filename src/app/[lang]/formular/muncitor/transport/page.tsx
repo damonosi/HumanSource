@@ -20,14 +20,22 @@ import { IJobs } from "@/interfaces/job";
 import { useSuspenseQuery } from "@apollo/client";
 import NavigatieFormularSofer from "@/components/Formular/NavigatieFormularSofer";
 
+export type TransportSearchParamsType = {
+	absolvire: string;
+	amg: string;
+	bac: string;
+	cursItaliana: string;
+	domeniu: string;
+	experienta: string;
+	experientaLimba: string;
+	locatia: string;
+	subDomeniu: string;
+	ultimuSalar: number;
+};
+
+
 const FormularSofer = ({ params }: { params: { lang: string; country: string } }) => {
-	const {
-		register,
-
-		handleSubmit,
-
-		setValue,
-	} = useForm({
+	const { register, handleSubmit, setValue } = useForm({
 		mode: "onChange",
 		defaultValues: {
 			tipRemorca: "",

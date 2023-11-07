@@ -27,7 +27,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 				jobCategory: {
 					category: {
 						name: {
-							equals: domeniu,
+							contains: domeniu,
 						},
 					},
 					subcategories: {
