@@ -44,7 +44,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 				<Image
 					fill
 					alt="background"
-					className=" z-10 h-full w-full -translate-y-1/2 transition-transform duration-700 group-hover:absolute group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
+					className=" z-10  w-full -translate-y-[60%] transition-transform duration-700 group-hover:absolute group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
 					src={imageUrl}
 				/>
 			</div>
@@ -55,7 +55,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 					transition={{
 						layout: { type: "spring", stiffness: 30 },
 					}}
-					className={`relative z-20 flex h-1/2 flex-col justify-end gap-2 py-2 px-4 text-start  md:justify-between ${
+					className={`relative z-20 flex h-[55%] flex-col justify-end gap-2 py-2 px-4 text-start  md:justify-between ${
 						hovered ? "mt-auto h-full  gap-5 text-alb-site" : "text-gri-brand"
 					} `}
 					id="container-text-bloguri"

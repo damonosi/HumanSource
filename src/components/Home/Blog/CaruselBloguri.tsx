@@ -46,7 +46,9 @@ const CaruselBloguri = ({ params }: Iparams) => {
 	const capitalizedParams = params.lang.toLocaleUpperCase();
 	const { data }: IlastBlogs = useSuspenseQuery(query, {
 		variables: {
-			where: { language: { languages: { contains: capitalizedParams } } },
+			where: {
+				language: { languages: { contains: capitalizedParams } },
+			},
 			orderBy: [{ dateCreated: "desc" }],
 		},
 	});
@@ -87,24 +89,26 @@ const CaruselBloguri = ({ params }: Iparams) => {
 				// @ts-ignore
 				customButtonGroup={<CustomButtonGroupAsArrows />}
 			>
-				{blogs.map(({ id, dateCreated, title, content, slug, photo }) => {
-					const paragraph = content.document[0].children[0].text;
+				{blogs
+					.filter(({}, index) => index <= 5)
+					.map(({ id, dateCreated, title, content, slug, photo }, index) => {
+						const paragraph = content.document[0].children[0].text;
 
-					let imageUrl = photo?.image?.publicUrl;
-
-					return (
-						<CardBlog
-							lang={params.lang}
-							slug={slug}
-							data={dateCreated}
-							titlu={title}
-							paragraph={paragraph}
-							imageUrl={imageUrl}
-							id={id}
-							key={id}
-						/>
-					);
-				})}
+						let imageUrl = photo?.image?.publicUrl;
+						index;
+						return (
+							<CardBlog
+								lang={params.lang}
+								slug={slug}
+								data={dateCreated}
+								titlu={title}
+								paragraph={paragraph}
+								imageUrl={imageUrl}
+								id={id}
+								key={id}
+							/>
+						);
+					})}
 			</Carousel>
 		</div>
 	);

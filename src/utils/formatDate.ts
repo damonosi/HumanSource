@@ -1,6 +1,6 @@
 const months = [
 	"Ianuarie",
-	"februarie",
+	"Februarie",
 	"Martie",
 	"Aprilie",
 	"Mai",
@@ -19,7 +19,7 @@ export default function formatDate(dateCreated: string) {
 	const newDate = new Date(dateCreated);
 
 	const month = newDate.getMonth();
-	const monthName = months[`${month - 1}`];
+	const monthName = months[`${month}`];
 	const day = newDate.getDay();
 	const dayName = days[day];
 	const formattedDate = `${dayName},  ${newDate.getDate()}  ${monthName}  ${newDate.getFullYear()} `;
