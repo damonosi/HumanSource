@@ -18,13 +18,23 @@ import CategorySelector from "@/components/Munca/CategorySelector";
 const CategorieJoburi = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const [category, setCategory] = useState("medical");
 	const upperdParams = params.lang.toUpperCase();
+	const searchParams = useSearchParams();
+	const domeniu = searchParams.get("domeniu");
+	const subDomeniu = searchParams.get("subDomeniu");
 	const { data }: IJobs = useSuspenseQuery(query, {
 		variables: {
 			where: {
 				jobCategory: {
 					category: {
 						name: {
-							equals: category,
+							equals: domeniu,
+						},
+					},
+					subcategories: {
+						some: {
+							name: {
+								contains: subDomeniu,
+							},
 						},
 					},
 				},
@@ -32,10 +42,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 			},
 		},
 	});
-	const searchParams = useSearchParams();
-	const search = searchParams.get("absolvire");
 
-	console.log("seachParams", search);
 	const jobs = data.jobs;
 
 	return (

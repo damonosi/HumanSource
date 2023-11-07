@@ -13,7 +13,7 @@ const Pas7Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 		"flex w-1/3 flex-col max-h-[300px] items-center  justify-center rounded-2xl bg-alb-site px-1 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
 	const clasaIconita = "w-full";
 	return (
-		<FormWrapper intrebare="Daca ai mai lucrat in sistemul medica, ne poti spune care a fost ultimul tau salariu?">
+		<FormWrapper intrebare="Unde doresti sa lucrezi in Italia?">
 			<div className="flex justify-center gap-4  md:gap-5 ">
 				<button
 					onClick={() => {

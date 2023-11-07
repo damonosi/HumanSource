@@ -47,15 +47,15 @@ type Inputs = {
 const FormularMedic = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
 	const [searchParams, setSearchParams] = useState({
-		absolvire: "default",
-		amg: "default",
-		bac: "default",
-		cursItaliana: "default",
+		absolvire: "",
+		amg: "",
+		bac: "",
+		cursItaliana: "",
 		domeniu: "medical",
-		experienta: "default",
-		experientaLimba: "default",
-		locatia: "default",
-		subDomeniu: "default",
+		experienta: "",
+		experientaLimba: "",
+		locatia: "",
+		subDomeniu: "",
 		ultimuSalar: 0,
 	});
 
@@ -93,21 +93,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		setDisabled,
 	);
 	const [addMedicalForm] = useMutation(AddMedicalForm);
-	const router = useRouter();
-	// setSearchParams((searchParams) => ({
-	// 	...searchParams,
-	// 	absolvire: absolvire,
-	// 	amg: educatie,
-	// 	bac: bac,
-	// 	cursItaliana: curs,
-	// 	domeniu: "medical",
-	// 	experienta: experienta,
-	// 	experientaLimba: lbItaliana,
-	// 	locatia: locatia,
-	// 	subDomeniu: domeniu,
-	// 	ultimuSalar: ultimulSalariu,
-	// }));
-	console.log("set params", searchParams);
+
 	const onSubmit: SubmitHandler<Inputs> = ({
 		absolvire,
 		educatie,

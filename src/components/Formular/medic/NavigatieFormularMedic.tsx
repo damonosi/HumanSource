@@ -59,8 +59,9 @@ const NavigatieFormularMedic = ({
 					type="submit"
 					href={{
 						pathname: `/${params.lang}/locuri-de-munca`,
-						query: { absolvire: seachParams.absolvire, domeniu: seachParams.domeniu },
+						query: { domeniu: seachParams.domeniu, subDomeniu: seachParams.subDomeniu },
 					}}
+					replace
 					className={`${stilComunButon} right-0 `}
 				>
 					<span className="text-sm md:text-lg">Cauta</span>{" "}
