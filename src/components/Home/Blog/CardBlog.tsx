@@ -40,14 +40,14 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 				key="mask"
 				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full origin-top -translate-y-72 overflow-hidden rounded-2xl bg-black bg-fixed opacity-0 transition-all duration-700  group-hover:translate-y-0 group-hover:opacity-50 "
 			/>
-			<div className="flex h-1/2 w-full"></div>
-			<Image
-				fill
-				alt="background"
-				className="relative z-10 w-full -translate-y-72 transition-transform duration-700 group-hover:absolute group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
-				src={imageUrl}
-			/>
-
+			<div className=" flex h-1/3 w-full ">
+				<Image
+					fill
+					alt="background"
+					className="relative z-10  w-full -translate-y-72 transition-transform duration-700 group-hover:absolute group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
+					src={imageUrl}
+				/>
+			</div>
 			<AnimatePresence>
 				<motion.div
 					key="container-text"
