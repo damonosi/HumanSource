@@ -29,19 +29,19 @@ let imageUrl = !photo
 
 
 	return (
-		<Link className="cursor-pointer rounded-2xl hover:shadow-xl " id={id} href={`blog/${slug}`}>
-			<div className="flex  h-fit   flex-col  gap-5 " id="container-card-blog-secundar">
-				<div className="relative flex aspect-video h-1/2 w-full flex-col overflow-hidden rounded-t-2xl">
+		<Link className=" cursor-pointer rounded-2xl hover:shadow-xl" id={id} href={`blog/${slug}`}>
+			<div className="group flex  h-full   flex-col  gap-5 " id="container-card-blog-secundar">
+				<div className="relative flex aspect-video h-1/2 w-full flex-col overflow-hidden rounded-b-2xl rounded-t-2xl transition-all duration-700 group-hover:rounded-b-none">
 					<Image alt={altText} src={imageUrl} fill />
 				</div>
-				<div className="flex h-1/2 flex-col  gap-5 px-2 pb-4">
+				<div className="flex h-1/2 flex-col justify-between  gap-5 px-2 pb-4">
 					<Typography variant="small" className="text-start text-gri-brand opacity-50">
 						{formatDate(date)}
 					</Typography>
 					<Typography variant="h4" className="text-start font-bold text-gri-brand">
 						{title}
 					</Typography>
-					<div className="flex flex-col justify-end">
+					<div className="flex flex-col justify-self-end">
 						{categories.map(({ name }, index) => (
 							<Typography key={index} variant="paragraph" className="text-start font-bold text-red-800">
 								{name.toUpperCase()}
