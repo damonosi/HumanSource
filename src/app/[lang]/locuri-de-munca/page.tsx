@@ -55,7 +55,20 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 					<Link className="" href={`/${params.lang}/locuri-de-munca`}>
 						Locuri de munca
 					</Link>
-					<Link className="capitalize text-red-600" href={`/${params.lang}/locuri-de-munca`}></Link>
+					{domeniu !== "" ? (
+						<Link className="capitalize text-red-600" href={`/${params.lang}/locuri-de-munca`}>
+							{domeniu}
+						</Link>
+					) : (
+						<span></span>
+					)}
+					{subDomeniu !== "" ? (
+						<Link className="capitalize text-red-600" href={`/${params.lang}/locuri-de-munca`}>
+							{subDomeniu}
+						</Link>
+					) : (
+						<span></span>
+					)}
 				</Breadcrumbs>
 				<CategorySelector category={category} setCategory={setCategory} />
 
