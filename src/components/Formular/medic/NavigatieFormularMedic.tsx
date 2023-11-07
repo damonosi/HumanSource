@@ -9,7 +9,7 @@ interface IButtonProps {
 	isFirstStep: boolean;
 	isLastStep: boolean;
 	disabled: boolean;
-	data: {
+	seachParams: {
 		absolvire: string;
 		amg: string;
 		bac: string;
@@ -28,7 +28,7 @@ interface IButtonProps {
 const stilComunButon =
 	"absolute flex  w-fit items-center content-center text-center justify-center border border-gri-brand gap-1 rounded-2xl px-2 py-2 text-gri-brand md:py-4 md:px-5";
 const NavigatieFormularMedic = ({
-	data,
+	seachParams,
 	params,
 	currentStepIndex,
 	steps,
@@ -58,10 +58,12 @@ const NavigatieFormularMedic = ({
 				<Link
 					href={{
 						pathname: `/${params.lang}/locuri-de-munca`,
-						query: { absolvire: data.absolvire },
+						query: { absolvire: seachParams.absolvire },
 					}}
 					className={`${stilComunButon} right-0 `}
 					type="submit"
+					onClick={() => console.log(seachParams.absolvire)}
+					onSubmit={() => console.log(seachParams.absolvire)}
 				>
 					<span className="text-sm md:text-lg">Cauta</span>{" "}
 					<ArrowSmallRightIcon strokeWidth={2} className="h-3 w-3 md:h-5 md:w-5" />

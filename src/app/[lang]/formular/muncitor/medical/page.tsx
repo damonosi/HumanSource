@@ -80,6 +80,18 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 	const router = useRouter();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		try {
+			setSearchParams({
+				absolvire: data.absolvire,
+				amg: data.educatie,
+				bac: data.bac,
+				cursItaliana: data.curs,
+				domeniu: "medical",
+				experienta: data.experienta,
+				experientaLimba: data.lbItaliana,
+				locatia: data.locatia,
+				subDomeniu: data.domeniu,
+				ultimuSalar: data.ultimulSalariu,
+			});
 			addMedicalForm({
 				variables: {
 					data: {
@@ -96,20 +108,8 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			loading && <span>Loading....</span>;
-			error && <span>error....</span>;
-			setSearchParams({
-				absolvire: data.absolvire,
-				amg: data.educatie,
-				bac: data.bac,
-				cursItaliana: data.curs,
-				domeniu: "medical",
-				experienta: data.experienta,
-				experientaLimba: data.lbItaliana,
-				locatia: data.locatia,
-				subDomeniu: data.domeniu,
-				ultimuSalar: data.ultimulSalariu,
-			});
+
+			console.log("seachParams", searchParams.absolvire);
 		} catch (error) {
 			console.log(error);
 		}
@@ -130,7 +130,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			<form onSubmit={handleSubmit(onSubmit)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">
 				{step}
 				<NavigatieFormularMedic
-					data={searchParams}
+					seachParams={searchParams}
 					params={params}
 					disabled={disabled}
 					back={back}
