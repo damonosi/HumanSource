@@ -9,7 +9,7 @@ const Pas8Trasport = ({ register, setDisabled }: any) => {
 					className="max-w-xs"
 					variant="outlined"
 					type="text"
-					{...register("ultimulSalariu", { required: true })}
+					{...register("ultimulSalariu", { required: true, valueAsNumber: true })}
 					id="ultimulSalariu"
 					onChange={(e) => {
 						const value = e.target.value;

@@ -44,7 +44,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 	});
 
 	const jobs = data.jobs;
-
+console.log(subDomeniu);
 	return (
 		<section className=" bg-[#E5E5E5] px-5 pb-16 md:px-[70px] ">
 			<div className="container mx-auto grid grid-cols-1 gap-9">

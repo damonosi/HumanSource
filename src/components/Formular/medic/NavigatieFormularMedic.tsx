@@ -11,16 +11,13 @@ interface IButtonProps {
 	isFirstStep: boolean;
 	isLastStep: boolean;
 	disabled: boolean;
-	seachParams: MedicalSearchParamsType;
-	params: { lang: string; country: string };
+
 	back: () => void;
 	next: () => void;
 }
 const stilComunButon =
 	"absolute flex  w-fit items-center content-center text-center justify-center border border-gri-brand gap-1 rounded-2xl px-2 py-2 text-gri-brand md:py-4 md:px-5";
 const NavigatieFormularMedic = ({
-	seachParams,
-	params,
 	currentStepIndex,
 	steps,
 	isFirstStep,

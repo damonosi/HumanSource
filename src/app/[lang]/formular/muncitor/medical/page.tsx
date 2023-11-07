@@ -144,8 +144,6 @@ const onSubmit: SubmitHandler<Inputs> = ({
 			<form onSubmit={handleSubmit(onSubmit)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">
 				{step}
 				<NavigatieFormularMedic
-					seachParams={searchParams}
-					params={params}
 					disabled={disabled}
 					back={back}
 					next={next}

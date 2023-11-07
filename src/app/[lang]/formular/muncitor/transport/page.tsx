@@ -13,12 +13,14 @@ import Pas7Trasport from "@/components/Formular/sofer/pasi/7";
 import Pas8Trasport from "@/components/Formular/sofer/pasi/8";
 import Pas9Trasport from "@/components/Formular/sofer/pasi/9";
 import query from "@/lib/apollo/queries/job/getJobsByCategory";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 import { IJobs } from "@/interfaces/job";
-import { useSuspenseQuery } from "@apollo/client";
+import { useMutation, useSuspenseQuery } from "@apollo/client";
 import NavigatieFormularSofer from "@/components/Formular/NavigatieFormularSofer";
+import AddTransportForm from "@/lib/apollo/mutations/mutateTransportForm";
+import { useRouter } from "next/navigation";
 
 export type TransportSearchParamsType = {
 	absolvire: string;
@@ -32,7 +34,18 @@ export type TransportSearchParamsType = {
 	subDomeniu: string;
 	ultimuSalar: number;
 };
-
+type Inputs = {
+	tipRemorca: string;
+	vechime: string;
+	regim: string;
+	tahograf: string;
+	echipaj: string;
+	turaNoapte: string;
+	lbItaliana: string;
+	ultimulSalariu: number;
+	salariuDorit: string;
+	category: string;
+};
 
 const FormularSofer = ({ params }: { params: { lang: string; country: string } }) => {
 	const { register, handleSubmit, setValue } = useForm({
@@ -45,9 +58,9 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 			echipaj: "",
 			turaNoapte: "",
 			lbItaliana: "",
-			ultimulSalariu: "",
+			ultimulSalariu: 0,
 			salariuDorit: "",
-			category: "medical",
+			category: "transport",
 		},
 	});
 	const [disabled, setDisabled] = useState(true);
@@ -66,12 +79,43 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 		],
 		setDisabled,
 	);
-
-	const submitHandler = (dat: object) => {
-		console.log(dat);
-
-		console.log("submited");
+	const router = useRouter();
+	const [addTransportForm] = useMutation(AddTransportForm);
+	const onSubmit: SubmitHandler<Inputs> = ({
+		tipRemorca,
+		vechime,
+		regim,
+		tahograf,
+		echipaj,
+		turaNoapte,
+		lbItaliana,
+		salariuDorit,
+		ultimulSalariu,
+		category,
+	}) => {
+		try {
+			addTransportForm({
+				variables: {
+					data: {
+						domeniu: category,
+						echipa: echipaj,
+						experienta: vechime,
+						experientaLimba: lbItaliana,
+						locatia: regim,
+						salariuDorit: salariuDorit,
+						subDomeniu: tipRemorca,
+						tahograf: tahograf,
+						turaNoapte: turaNoapte,
+						ultimuSalar: ultimulSalariu,
+					},
+				},
+			});
+			router.push(`/${params.lang}/locuri-de-munca?domeniu=transport&subDomeniu=${tipRemorca}`);
+		} catch (error) {
+			console.log(error);
+		}
 	};
+
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
 			<Breadcrumbs>
@@ -85,11 +129,10 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 					Transport
 				</Link>
 			</Breadcrumbs>
-			<form className="relative  rounded-2xl bg-alb-site px-5 pt-8 " onSubmit={handleSubmit(submitHandler)}>
+			<form className="relative  rounded-2xl bg-alb-site px-5 pt-8 " onSubmit={handleSubmit(onSubmit)}>
 				{step}
 
 				<NavigatieFormularSofer
-					params={params}
 					disabled={disabled}
 					back={back}
 					next={next}

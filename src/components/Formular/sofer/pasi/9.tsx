@@ -8,7 +8,7 @@ const Pas9Trasport = ({ register, setDisabled }: any) => {
 			<Input
 				variant="outlined"
 				type="text"
-				{...register("salariuDorit", { required: true })}
+				{...register("salariuDorit", { required: true, valueAsNumber: true })}
 				id="salariuDorit"
 				onChange={() => setDisabled(false)}
 				label="Raspunsul Dumneavoastra"
