@@ -10,7 +10,7 @@ import Pas6Medical from "@/components/Formular/medic/pasi/6";
 import Pas7Medical from "@/components/Formular/medic/pasi/7";
 import Pas8Medical from "@/components/Formular/medic/pasi/8";
 import Pas9Medical from "@/components/Formular/medic/pasi/9";
-import NavigatieFormular from "@/components/Formular/NavigatieFormularSofer";
+
 import { useMultistepForm } from "@/components/Formular/useMultistepForm";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
@@ -35,6 +35,19 @@ type Inputs = {
 
 const FormularMedic = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
+	const [searchParams, setSearchParams] = useState({
+		absolvire: "",
+		amg: "",
+		bac: "",
+		cursItaliana: "",
+		domeniu: "medical",
+		experienta: "",
+		experientaLimba: "",
+		locatia: "",
+		subDomeniu: "",
+		ultimuSalar: 0,
+	});
+
 	const { register, handleSubmit, setValue, reset } = useForm({
 		mode: "onChange",
 		defaultValues: {
@@ -85,6 +98,18 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			});
 			loading && <span>Loading....</span>;
 			error && <span>error....</span>;
+			setSearchParams({
+				absolvire: data.absolvire,
+				amg: data.educatie,
+				bac: data.bac,
+				cursItaliana: data.curs,
+				domeniu: "medical",
+				experienta: data.experienta,
+				experientaLimba: data.lbItaliana,
+				locatia: data.locatia,
+				subDomeniu: data.domeniu,
+				ultimuSalar: data.ultimulSalariu,
+			});
 		} catch (error) {
 			console.log(error);
 		}
@@ -105,7 +130,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			<form onSubmit={handleSubmit(onSubmit)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">
 				{step}
 				<NavigatieFormularMedic
-					data={data}
+					data={searchParams}
 					params={params}
 					disabled={disabled}
 					back={back}

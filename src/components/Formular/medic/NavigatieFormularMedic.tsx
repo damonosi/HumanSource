@@ -19,7 +19,7 @@ interface IButtonProps {
 		experientaLimba: string;
 		locatia: string;
 		subDomeniu: string;
-		ultimuSalar: string;
+		ultimuSalar: number;
 	};
 	params: { lang: string; country: string };
 	back: () => void;
