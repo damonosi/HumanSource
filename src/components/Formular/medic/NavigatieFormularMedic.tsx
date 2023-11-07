@@ -56,14 +56,12 @@ const NavigatieFormularMedic = ({
 
 			{isLastStep ? (
 				<Link
+					type="submit"
 					href={{
 						pathname: `/${params.lang}/locuri-de-munca`,
-						query: { absolvire: seachParams.absolvire },
+						query: { absolvire: seachParams.absolvire, domeniu: seachParams.domeniu },
 					}}
 					className={`${stilComunButon} right-0 `}
-					type="submit"
-					onClick={() => console.log(seachParams.absolvire)}
-					onSubmit={() => console.log(seachParams.absolvire)}
 				>
 					<span className="text-sm md:text-lg">Cauta</span>{" "}
 					<ArrowSmallRightIcon strokeWidth={2} className="h-3 w-3 md:h-5 md:w-5" />

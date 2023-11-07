@@ -13,7 +13,8 @@ import InCursAlb from "../../../../../public/imagini/formular/medic/alb/inCurs.s
 import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
 import { useState } from "react";
-const Pas4Medical = ({ setValue, setDisabled }: any) => {
+import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const [selected, setSelected] = useState(0);
 	const clasaCard =
 		"flex w-full md:w-1/4 flex-col items-center max-h-[300px] justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
@@ -25,6 +26,10 @@ const Pas4Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("educatie", "postliceala");
 						setSelected(1);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							amg: "postliceala",
+						}));
 						setDisabled(false);
 					}}
 					type="button"
@@ -39,6 +44,10 @@ const Pas4Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("educatie", "universitate");
 						setSelected(2);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							amg: "universitate",
+						}));
 						setDisabled(false);
 					}}
 					type="button"
@@ -52,6 +61,10 @@ const Pas4Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("educatie", "inCurs");
 						setSelected(3);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							amg: "inCurs",
+						}));
 						setDisabled(false);
 					}}
 					type="button"
@@ -65,6 +78,10 @@ const Pas4Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("educatie", "nu");
 						setSelected(4);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							amg: "nu",
+						}));
 						setDisabled(false);
 					}}
 					type="button"

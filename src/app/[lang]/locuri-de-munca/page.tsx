@@ -33,7 +33,9 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 		},
 	});
 	const searchParams = useSearchParams();
-	console.log(searchParams.get("absolvire"));
+	const search = searchParams.get("absolvire");
+
+	console.log("seachParams", search);
 	const jobs = data.jobs;
 
 	return (

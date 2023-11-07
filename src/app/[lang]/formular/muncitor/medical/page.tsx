@@ -20,9 +20,20 @@ import { useMutation } from "@apollo/client";
 import AddMedicalForm from "@/lib/apollo/mutations/mutateMedicForm";
 import { useRouter } from "next/navigation";
 import NavigatieFormularMedic from "@/components/Formular/medic/NavigatieFormularMedic";
+export type MedicalSearchParamsType = {
+	absolvire: string;
+	amg: string;
+	bac: string;
+	cursItaliana: string;
+	domeniu: string;
+	experienta: string;
+	experientaLimba: string;
+	locatia: string;
+	subDomeniu: string;
+	ultimuSalar: number;
+};
 type Inputs = {
 	experienta: string;
-
 	domeniu: string;
 	bac: string;
 	educatie: string;
@@ -36,15 +47,15 @@ type Inputs = {
 const FormularMedic = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
 	const [searchParams, setSearchParams] = useState({
-		absolvire: "",
-		amg: "",
-		bac: "",
-		cursItaliana: "",
+		absolvire: "default",
+		amg: "default",
+		bac: "default",
+		cursItaliana: "default",
 		domeniu: "medical",
-		experienta: "",
-		experientaLimba: "",
-		locatia: "",
-		subDomeniu: "",
+		experienta: "default",
+		experientaLimba: "default",
+		locatia: "default",
+		subDomeniu: "default",
 		ultimuSalar: 0,
 	});
 
@@ -64,55 +75,73 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 	});
 	const { steps, currentStepIndex, isFirstStep, isLastStep, step, back, next } = useMultistepForm(
 		[
-			<Pas1Medical register={register} setDisabled={setDisabled} />,
-			<Pas2Medical setValue={setValue} setDisabled={setDisabled} />,
-			<Pas3Medical setValue={setValue} setDisabled={setDisabled} />,
-			<Pas4Medical setValue={setValue} setDisabled={setDisabled} />,
-			<Pas5Medical register={register} setDisabled={setDisabled} />,
-			<Pas6Medical setValue={setValue} setDisabled={setDisabled} />,
-			<Pas7Medical setValue={setValue} setDisabled={setDisabled} />,
-			<Pas8Medical register={register} setDisabled={setDisabled} />,
-			<Pas9Medical setValue={setValue} setDisabled={setDisabled} />,
+			<Pas1Medical
+				register={register}
+				setSearchParams={setSearchParams}
+				searchParams={searchParams}
+				setDisabled={setDisabled}
+			/>,
+			<Pas2Medical setSearchParams={setSearchParams} setValue={setValue} setDisabled={setDisabled} />,
+			<Pas3Medical setSearchParams={setSearchParams} setValue={setValue} setDisabled={setDisabled} />,
+			<Pas4Medical setSearchParams={setSearchParams} setValue={setValue} setDisabled={setDisabled} />,
+			<Pas5Medical setSearchParams={setSearchParams} register={register} setDisabled={setDisabled} />,
+			<Pas6Medical setSearchParams={setSearchParams} setValue={setValue} setDisabled={setDisabled} />,
+			<Pas7Medical setSearchParams={setSearchParams} setValue={setValue} setDisabled={setDisabled} />,
+			<Pas8Medical setSearchParams={setSearchParams} register={register} setDisabled={setDisabled} />,
+			<Pas9Medical setSearchParams={setSearchParams} setValue={setValue} setDisabled={setDisabled} />,
 		],
 		setDisabled,
 	);
-	const [addMedicalForm, { data, loading, error }] = useMutation(AddMedicalForm);
+	const [addMedicalForm] = useMutation(AddMedicalForm);
 	const router = useRouter();
-	const onSubmit: SubmitHandler<Inputs> = (data) => {
+	// setSearchParams((searchParams) => ({
+	// 	...searchParams,
+	// 	absolvire: absolvire,
+	// 	amg: educatie,
+	// 	bac: bac,
+	// 	cursItaliana: curs,
+	// 	domeniu: "medical",
+	// 	experienta: experienta,
+	// 	experientaLimba: lbItaliana,
+	// 	locatia: locatia,
+	// 	subDomeniu: domeniu,
+	// 	ultimuSalar: ultimulSalariu,
+	// }));
+	console.log("set params", searchParams);
+	const onSubmit: SubmitHandler<Inputs> = ({
+		absolvire,
+		educatie,
+		bac,
+		curs,
+		experienta,
+		lbItaliana,
+		locatia,
+		domeniu,
+		ultimulSalariu,
+	}) => {
 		try {
-			setSearchParams({
-				absolvire: data.absolvire,
-				amg: data.educatie,
-				bac: data.bac,
-				cursItaliana: data.curs,
-				domeniu: "medical",
-				experienta: data.experienta,
-				experientaLimba: data.lbItaliana,
-				locatia: data.locatia,
-				subDomeniu: data.domeniu,
-				ultimuSalar: data.ultimulSalariu,
-			});
 			addMedicalForm({
 				variables: {
 					data: {
-						absolvire: data.absolvire,
-						amg: data.educatie,
-						bac: data.bac,
-						cursItaliana: data.curs,
+						absolvire: absolvire,
+						amg: educatie,
+						bac: bac,
+						cursItaliana: curs,
 						domeniu: "medical",
-						experienta: data.experienta,
-						experientaLimba: data.lbItaliana,
-						locatia: data.locatia,
-						subDomeniu: data.domeniu,
-						ultimuSalar: data.ultimulSalariu,
+						experienta: experienta,
+						experientaLimba: lbItaliana,
+						locatia: locatia,
+						subDomeniu: domeniu,
+						ultimuSalar: ultimulSalariu,
 					},
 				},
 			});
-
-			console.log("seachParams", searchParams.absolvire);
 		} catch (error) {
 			console.log(error);
 		}
+	};
+	const submitter = () => {
+		handleSubmit(onSubmit);
 	};
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">

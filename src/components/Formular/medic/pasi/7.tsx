@@ -5,19 +5,24 @@ import Italia from "../../../../../public/imagini/formular/medic/negru/italia.sv
 import ItaliaAlb from "../../../../../public/imagini/formular/medic/alb/italia.svg";
 import Oriunde from "../../../../../public/imagini/formular/medic/negru/oriunde.svg";
 import OriundeAlb from "../../../../../public/imagini/formular/medic/alb/oriunde.svg";
+import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
 
-const Pas7Medical = ({ setValue, setDisabled }: any) => {
+const Pas7Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const [selected, setSelected] = useState(0);
 	const clasaCard =
 		"flex w-1/3 flex-col max-h-[300px] items-center  justify-center rounded-2xl bg-alb-site px-1 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
 	const clasaIconita = "w-full";
 	return (
-		<FormWrapper intrebare="Daca ai mai lucrat in sistemul medica, ne poti spune care a fsot ultimul tau salariu?">
+		<FormWrapper intrebare="Daca ai mai lucrat in sistemul medica, ne poti spune care a fost ultimul tau salariu?">
 			<div className="flex justify-center gap-4  md:gap-5 ">
 				<button
 					onClick={() => {
 						setValue("locatia", "zona anume");
 						setSelected(1);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							locatia: "zona anume",
+						}));
 						setDisabled(false);
 					}}
 					type="button"
@@ -32,6 +37,10 @@ const Pas7Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("locatia", "oriunde");
 						setSelected(2);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							locatia: "oriunde",
+						}));
 						setDisabled(false);
 					}}
 					type="button"

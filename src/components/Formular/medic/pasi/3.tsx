@@ -4,7 +4,8 @@ import Da from "../../../../../public/imagini/formular/medic/negru/da.svg";
 import DaAlb from "../../../../../public/imagini/formular/medic/alb/da.svg";
 import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
-const Pas3Medical = ({ setValue, setDisabled }: any) => {
+import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+const Pas3Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const [selected, setSelected] = useState(0);
 	const clasaCard =
 		"flex w-1/2 flex-col items-center max-h-[300px] justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
@@ -15,6 +16,11 @@ const Pas3Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("bac", "da");
 						setSelected(1);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							bac: "da",
+						}));
+
 						setDisabled(false);
 					}}
 					type="button"
@@ -29,6 +35,10 @@ const Pas3Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("bac", "nu");
 						setSelected(2);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							bac: "nu",
+						}));
 						setDisabled(false);
 					}}
 					type="button"

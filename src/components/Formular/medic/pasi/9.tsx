@@ -4,8 +4,9 @@ import DaAlb from "../../../../../public/imagini/formular/medic/alb/da.svg";
 import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
 import { useState } from "react";
+import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
 
-const Pas9Medical = ({ setValue, setDisabled }: any) => {
+const Pas9Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const [selected, setSelected] = useState(0);
 	const clasaCard =
 		"flex w-1/2 flex-col items-center max-h-[300px] justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
@@ -16,6 +17,10 @@ const Pas9Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("curs", "da");
 						setSelected(1);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							cursItaliana: "da",
+						}));
 						setDisabled(false);
 					}}
 					type="button"
@@ -30,6 +35,10 @@ const Pas9Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("curs", "nu");
 						setSelected(2);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({
+							...searchParams,
+							cursItaliana: "nu",
+						}));
 						setDisabled(false);
 					}}
 					type="button"

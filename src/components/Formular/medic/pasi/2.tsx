@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import FormWrapper from "../../FormWrapper";
 
 import Clinica from "../../../../../public/imagini/formular/medic/negru/clinica.svg";
@@ -8,8 +8,17 @@ import SpitalAlb from "../../../../../public/imagini/formular/medic/alb/spital.s
 
 import Azil from "../../../../../public/imagini/formular/medic/negru/azil.svg";
 import AzilAlb from "../../../../../public/imagini/formular/medic/alb/azil.svg";
+import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
 
-const Pas2Medical = ({ setValue, setDisabled }: any) => {
+const Pas2Medical = ({
+	setValue,
+	setDisabled,
+	setSearchParams,
+}: {
+	setValue: any;
+	setDisabled: (arg0: boolean) => void;
+	setSearchParams: any;
+}) => {
 	const [selected, setSelected] = useState(0);
 	const clasaCard =
 		"flex w-1/3 flex-col max-h-[300px] items-center  justify-center rounded-2xl bg-alb-site px-1 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
@@ -21,6 +30,7 @@ const Pas2Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("domeniu", "clinica");
 						setSelected(1);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({ ...searchParams, subDomeniu: "clinica" }));
 						setDisabled(false);
 					}}
 					type="button"
@@ -34,7 +44,9 @@ const Pas2Medical = ({ setValue, setDisabled }: any) => {
 					className={`${selected == 2 && "bg-gri-brand text-alb-site"} ${clasaCard}`}
 					onClick={() => {
 						setValue("domeniu", "spital");
+
 						setSelected(2);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({ ...searchParams, subDomeniu: "spital" }));
 						setDisabled(false);
 					}}
 					type="button"
@@ -48,6 +60,7 @@ const Pas2Medical = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("domeniu", "azil");
 						setSelected(3);
+						setSearchParams((searchParams: MedicalSearchParamsType) => ({ ...searchParams, subDomeniu: "azil" }));
 						setDisabled(false);
 					}}
 					type="button"
