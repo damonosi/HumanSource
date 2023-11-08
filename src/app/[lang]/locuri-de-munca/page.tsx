@@ -14,6 +14,8 @@ import query from "@/lib/apollo/queries/job/getJobsByCategory";
 
 import { useState } from "react";
 import CategorySelector from "@/components/Munca/CategorySelector";
+import { Search } from "@mui/icons-material";
+import SearchBar from "@/components/Munca/CategorySelector";
 
 const CategorieJoburi = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const [category, setCategory] = useState("medical");
@@ -44,7 +46,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 	});
 
 	const jobs = data.jobs;
-console.log(subDomeniu);
+	console.log(subDomeniu);
 	return (
 		<section className=" bg-[#E5E5E5] px-5 pb-16 md:px-[70px] ">
 			<div className="container mx-auto grid grid-cols-1 gap-9">
@@ -70,7 +72,7 @@ console.log(subDomeniu);
 						<span></span>
 					)}
 				</Breadcrumbs>
-				<CategorySelector category={category} setCategory={setCategory} />
+				<SearchBar category={category} setCategory={setCategory} />
 
 				{/* joburi dupa categorie */}
 				<section className="flex flex-col gap-9">
