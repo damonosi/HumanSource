@@ -62,7 +62,7 @@ const defaultElementRenderers: CustomRendererProps["renderers"] = {
 	},
 	inline: {
 		bold: ({ children }) => {
-			return <strong style={{ color: "var(--c-bold)" }}>{children}</strong>;
+			return <strong>{children}</strong>;
 		},
 		// inline code ` `
 		code: ({ children }) => {
@@ -75,6 +75,13 @@ const defaultElementRenderers: CustomRendererProps["renderers"] = {
 const customComponentRenderers: CustomRendererProps["componentBlocks"] = {
 	image: (props) => {
 		return <ImageBlock {...props} />;
+	},
+	a: (props) => {
+		return (
+			<a className="text-blue-800 underline" {...props}>
+				<strong className="text-blue-800 underline"></strong>;
+			</a>
+		);
 	},
 };
 

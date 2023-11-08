@@ -41,7 +41,7 @@ const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 
 					<div key={id} className="">
 						<div className="relative flex h-48 w-full justify-center py-6 md:h-96">
-							<Image alt={altText} src={imageUrl} fill className="  rounded-2xl" />
+							<Image alt={altText} src={imageUrl} fill className="rounded-2xl  object-cover" />
 						</div>
 
 						<TextComponent
