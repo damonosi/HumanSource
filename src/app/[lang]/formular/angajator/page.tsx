@@ -1,92 +1,150 @@
 "use client";
-import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
-import { useState } from "react";
-
-import { Typography } from "@material-tailwind/react";
-
-import Link from "next/link";
-
-import IcoTransport from "../../../../../public/imagini/formular/selectDomeniu/negru/transport.svg";
-import IcoTransportAlb from "../../../../../public/imagini/formular/selectDomeniu/alb/transport.svg";
-import IcoMedical from "../../../../../public/imagini/formular/selectDomeniu/negru/medical.svg";
-import IcoMedicalAlb from "../../../../../public/imagini/formular/selectDomeniu/alb/medical.svg";
-
-import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
+import AddAngajatorForm from "@/lib/apollo/mutations/mutateAngajatorForm";
+import { useMutation, useSuspenseQuery } from "@apollo/client";
+import { Checkbox, Input, Option, Select, Textarea, Typography } from "@material-tailwind/react";
 import { useRouter } from "next/navigation";
-
+import { SubmitHandler, useForm } from "react-hook-form";
+import { AiOutlineMail } from "react-icons/ai";
+import { FiPhone } from "react-icons/fi";
+import { MdPersonOutline } from "react-icons/md";
+import query from "@/lib/apollo/queries/categories/categories";
+type Inputs = {
+	codFiscal: string;
+	domeniu: string;
+	nrPersoane: string;
+	email: string;
+	telefon: string;
+	subdomeniu: string;
+	privacy: boolean;
+	dateContact: string;
+};
 
 const FormularAngajator = ({ params }: { params: { lang: string; country: string } }) => {
-	const [disabled, setDisabled] = useState(true);
-	const [selectedCategory, setSelectedCategory] = useState("");
-	const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-		const eventul = e.currentTarget.childNodes[1].textContent?.toString();
-		setDisabled(false);
-		eventul && setSelectedCategory(eventul);
-	};
+	const [addAngajatorForm] = useMutation(AddAngajatorForm);
 	const router = useRouter();
-	const clasaCard =
-		"flex max-w-[272px] flex-col items-center gap-2 justify-center rounded-2xl bg-alb-site px-2 py-8 w-1/2  md:p-16 shadow-2xl";
-	const clasaIconite = "h-9 w-8 md:h-36 md:w-28";
-
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		formState: { errors },
+	} = useForm<Inputs>();
+	const { data }: { data: { categories: [{ name: string }] } } = useSuspenseQuery(query);
+	const onSubmit: SubmitHandler<Inputs> = (data) => {
+		try {
+			addAngajatorForm({
+				variables: {
+					data: {
+						domeniu: data.domeniu,
+						codFiscal: data.codFiscal,
+						dateContact: "email",
+						email: data.email,
+						nrPersoane: data.nrPersoane,
+						nrTel: data.telefon,
+						subDomeniu: data.subdomeniu,
+					},
+				},
+			});
+			console.log(data);
+			router.push(`/${params.lang}/multumim`);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
-		<div className="px-5 pb-[60px] md:px-[70px]">
-			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`${params.lang}/`}>
-					Home
-				</Link>
-				<Link className="text-red-600" href={`${params.lang}/formular/angajator`}>
-					Formular
-				</Link>
-			</Breadcrumbs>
-			<div
-				className="flex flex-col   gap-9 rounded-2xl bg-alb-site py-9 px-3 text-start md:px-16"
-				id="container-alege-domeniu-titlu"
-			>
-				<Typography className="text-start text-xl font-bold md:text-3xl" variant="h3">
-					Introdu datele firmei tale mai jos
+		<form className=" " onSubmit={handleSubmit(onSubmit)}>
+			<div className="relative mx-auto my-4 grid  w-fit grid-cols-1 justify-between gap-8 rounded bg-alb-site p-4">
+				<Typography className="mb-16" variant="h3">
+					Aplicare
 				</Typography>
-				<div className="flex w-full items-center justify-center gap-3 md:gap-8" id="container-carduri-alege-domeniu">
-					<button
-						onClick={handleClick}
-						className={` ${selectedCategory === "Transport" && "bg-gri-brand"} ${clasaCard}  `}
-					>
-						{selectedCategory === "Transport" ? (
-							<IcoTransportAlb className={clasaIconite} />
-						) : (
-							<IcoTransport className={clasaIconite} />
-						)}
+				<section className="grid grid-cols-2 gap-5">
+					<Select
+						size="lg"
+						onChange={(e) => {
+							if (!e) return;
 
-						<span className={` ${selectedCategory === "Transport" && "text-alb-site"} text-sm md:text-2xl `}>
-							Transport
-						</span>
-					</button>
-					<button onClick={handleClick} className={` ${selectedCategory === "Medical" && "bg-gri-brand"} ${clasaCard}`}>
-						{selectedCategory === "Medical" ? (
-							<IcoMedicalAlb className={clasaIconite} />
-						) : (
-							<IcoMedical className={clasaIconite} />
-						)}
-						<span className={` ${selectedCategory === "Medical" && "text-alb-site"} text-sm md:text-2xl `}>
-							Medical
-						</span>
-					</button>
-				</div>
-				<div className="flex w-full items-center justify-center">
-					<button
-						onClick={() => router.push(`/${params.lang}/formular/angajator/${selectedCategory.toLowerCase()}`)}
-						disabled={disabled}
-						className={`md:px-5"  flex w-fit items-center justify-center gap-1 rounded-2xl border border-gri-brand px-2 py-2 text-center text-gri-brand md:py-4  ${
-							disabled
-								? "cursor-not-allowed  text-gri-brand opacity-10"
-								: "bg-alb-site hover:bg-gri-brand hover:text-alb-site"
-						} `}
+							setValue("domeniu", e);
+						}}
+						variant="outlined"
+						defaultValue=""
+						label="Domeniu"
 					>
-						<span className={`  ${disabled ? "#1d2328" : ""} `}>CONTINUA</span>{" "}
-						<ArrowSmallRightIcon strokeWidth={2} className={`h-5 w-5  ${disabled ? " text-gri-bg " : ""} `} />
+						{data.categories.map(({ name }) => (
+							<Option key={name} value={name}>
+								{name}
+							</Option>
+						))}
+					</Select>
+					<Input
+						variant="outlined"
+						type="text"
+						{...register("subdomeniu", { required: true })}
+						id="subdomeniu"
+						label="Adaugati un subdomeniu"
+					/>
+					<Input
+						variant="outlined"
+						className=""
+						type="text"
+						{...register("codFiscal", { required: true })}
+						id="codFiscal"
+						label="Cod fiscal"
+						icon={<MdPersonOutline />}
+					/>
+
+					<Input
+						variant="outlined"
+						type="number"
+						{...register("nrPersoane", { required: true })}
+						id="nrPersoane"
+						label="cate persoane doriti sa angajati"
+					/>
+
+					<Input
+						variant="outlined"
+						type="text"
+						{...register("email", { required: true })}
+						id="email"
+						icon={<AiOutlineMail />}
+						label="Email"
+					/>
+
+					<Input
+						variant="outlined"
+						type="text"
+						{...register("telefon", { required: true, valueAsNumber: true })}
+						id="telefon"
+						icon={<FiPhone />}
+						label="Numar de telefon"
+					/>
+				</section>
+				<Checkbox
+					className="my-4 items-center justify-center"
+					{...register("privacy", { required: true })}
+					label={
+						<span className="text-xs  text-gri-bg">
+							*Sunt de acord cu
+							<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
+								Politica de confidentialitate
+							</a>
+							in vederea prelucrarii datelor personale.
+						</span>
+					}
+				/>
+				<div className="mt-16 flex w-full items-center justify-center">
+					<button className="mt-5 rounded-2xl  bg-gri-brand px-5 py-4 text-alb-site" type="submit">
+						Trimite datele
 					</button>
 				</div>
 			</div>
-		</div>
+
+			<div className="flex flex-col items-center justify-center gap-2 text-rosu-brand">
+				{errors.codFiscal && <span>Trebuie sa adaugati un nume</span>}
+				{errors.nrPersoane && <span>Trebuie sa adaugati un numar de persoane cautate</span>}
+				{errors.email && <span>Trebuie sa adaugati o adresa de email</span>}
+				{errors.telefon && <span>Trebuie sa adaugati un numar de telefon</span>}
+				{errors.privacy && <span>Trebuie sa fiti de acord cu politica de confidentialitate</span>}
+			</div>
+		</form>
 	);
 };
 
