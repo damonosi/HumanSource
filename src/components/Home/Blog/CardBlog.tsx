@@ -46,7 +46,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 				<Image
 					fill
 					alt="background"
-					className=" -hover:absolute  z-10 w-full -translate-y-[60%] transition-transform duration-500 group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
+					className="-hover:absolute z-10  w-full -translate-y-[60%] object-cover transition-transform duration-500 group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
 					src={imageUrl}
 				/>
 			</div>
