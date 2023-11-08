@@ -64,7 +64,7 @@ function PaginatedItems({
 	const dateBloguri = data.blogs;
 
 	const dataLength = dateBloguri.length;
-	console.log(dataLength);
+	console.log("number of blogs", dataLength);
 
 	const numberOfPages = Math.floor(dataLength / pageSize);
 	const onNextPage = () => {
