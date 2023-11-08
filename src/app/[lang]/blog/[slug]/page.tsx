@@ -40,8 +40,8 @@ const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
 					<BreadComponent title={title} params={params} />
 
 					<div key={id} className="">
-						<div className="flex max-h-[405px] w-full justify-center py-6">
-							<Image alt={altText} src={imageUrl} width={500} height={500} className="h-auto w-full" />
+						<div className="relative flex h-48 w-full justify-center py-6 md:h-96">
+							<Image alt={altText} src={imageUrl} fill className="  rounded-2xl" />
 						</div>
 
 						<TextComponent

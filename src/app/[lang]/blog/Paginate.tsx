@@ -10,6 +10,7 @@ import { paginate } from "@/utils/pagination/paginate";
 
 import { DocumentProp, IPaginatedData, IPaginationData } from "@/interfaces/blog";
 import { StaticImageData } from "next/image";
+import { scrollToTop } from "@/utils/scrollToTop";
 
 const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginationData) => {
 	const paginatedPosts = paginate(bloguri, currentPage, pageSize);
@@ -65,7 +66,6 @@ function PaginatedItems({
 
 	const dataLength = dateBloguri.length;
 
-
 	const numberOfPages = Math.ceil(dataLength / pageSize);
 
 	const onNextPage = () => {
@@ -76,6 +76,7 @@ function PaginatedItems({
 		}
 	};
 	const onPrevPage = () => {
+		scrollToTop();
 		if (currentPage <= 1) {
 			setCurrentPage(1);
 		} else {

@@ -1,5 +1,5 @@
 import { ArrowSmallRightIcon, ArrowSmallLeftIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
+
 
 import { ReactElement } from "react";
 

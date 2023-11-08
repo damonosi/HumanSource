@@ -1,13 +1,9 @@
+import { scrollToTop } from "@/utils/scrollToTop";
 import { Dispatch, ReactElement, SetStateAction, useState } from "react";
 
 export function useMultistepForm(steps: ReactElement[], setDisabled: Dispatch<SetStateAction<boolean>>) {
 	const [currentStepIndex, setCurrentStepIndex] = useState(0);
-	const isBrowser = () => typeof window !== "undefined";
-	function scrollToTop() {
-		if (!isBrowser()) return;
 
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	}
 	function next() {
 		scrollToTop();
 

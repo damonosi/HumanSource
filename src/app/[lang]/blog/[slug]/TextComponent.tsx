@@ -15,9 +15,9 @@ interface ITextComponent {
 }
 
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
-	console.log(textData);
+	
 	return (
-		<div className="flex flex-col gap-12 text-start">
+		<div className="mt-7 flex flex-col gap-12 text-start">
 			<h2>By {author.name}</h2> <span>{formattedDate}</span>
 			<div className="py-8">
 				<h1>{title}</h1>
