@@ -17,7 +17,6 @@ const BloguriPage = ({ params }: { params: { lang: string; country: string } }) 
 					equals: "PUBLISHED",
 				},
 			},
-			orderBy: [{ dateCreated: "desc" }],
 		},
 	});
 console.log(data);
