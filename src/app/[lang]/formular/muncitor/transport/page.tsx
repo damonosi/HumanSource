@@ -48,7 +48,12 @@ type Inputs = {
 };
 
 const FormularSofer = ({ params }: { params: { lang: string; country: string } }) => {
-	const { register, handleSubmit, setValue } = useForm({
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		formState: { isSubmitted },
+	} = useForm({
 		mode: "onChange",
 		defaultValues: {
 			tipRemorca: "",
@@ -110,7 +115,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			router.push(`/${params.lang}/locuri-de-munca?domeniu=transport&subDomeniu=${tipRemorca}`);
+			isSubmitted && router.push(`/${params.lang}/locuri-de-munca?domeniu=transport&subDomeniu=${tipRemorca}`);
 		} catch (error) {
 			console.log(error);
 		}

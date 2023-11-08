@@ -17,14 +17,22 @@ type Inputs = {
 	privacy: boolean;
 };
 
-const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang: string; id: RandomUUIDOptions } }) => {
+const FormularAplica = ({
+	id,
+	params,
+	title,
+}: {
+	id: RandomUUIDOptions;
+	params: { lang: string; id: RandomUUIDOptions };
+	title: string;
+}) => {
 	const [addJobApplication, { loading, error }] = useMutation(AddJobApplication);
 	const router = useRouter();
 
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
+		formState: { errors, isSubmitted },
 	} = useForm<Inputs>();
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		try {
@@ -44,7 +52,7 @@ const FormularAplica = ({ id, params }: { id: RandomUUIDOptions; params: { lang:
 					},
 				},
 			});
-			router.push(`/${params.lang}/multumim`);
+			isSubmitted && router.push(`/${params.lang}/multumim?title=${title}`);
 		} catch (error) {
 			console.log(error);
 		}

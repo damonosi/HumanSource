@@ -59,7 +59,12 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		ultimuSalar: 0,
 	});
 
-	const { register, handleSubmit, setValue, reset } = useForm({
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		formState: { isSubmitted },
+	} = useForm({
 		mode: "onChange",
 		defaultValues: {
 			experienta: "",
@@ -122,7 +127,8 @@ const onSubmit: SubmitHandler<Inputs> = ({
 				},
 			},
 		});
-		router.push(`/${params.lang}/locuri-de-munca?domeniu=medical&subDomeniu=${domeniu}`);
+		isSubmitted && router.push(`/${params.lang}/locuri-de-munca?domeniu=medical&subDomeniu=${domeniu}`);
+		
 	} catch (error) {
 		console.log(error);
 	}

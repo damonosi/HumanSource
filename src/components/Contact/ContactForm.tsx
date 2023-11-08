@@ -38,7 +38,6 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 				},
 			});
 			reset();
-			router.push(`/${params.lang}/multumim`);
 		} catch (error) {
 			console.log(error);
 		}

@@ -112,7 +112,7 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 							</Typography>
 						</div>
 						<div className="flex rounded-2xl bg-alb-site p-5 md:w-1/2 md:p-10">
-							<FormularAplica params={params} id={params.id} />
+							<FormularAplica title={title} params={params} id={params.id} />
 						</div>
 					</div>
 				</div>

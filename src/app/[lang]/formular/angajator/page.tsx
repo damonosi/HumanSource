@@ -26,7 +26,8 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 		register,
 		handleSubmit,
 		setValue,
-		formState: { errors },
+
+		formState: { errors, isSubmitted },
 	} = useForm<Inputs>();
 	const { data }: { data: { categories: [{ name: string }] } } = useSuspenseQuery(query);
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -44,8 +45,8 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 					},
 				},
 			});
-			console.log(data);
-			router.push(`/${params.lang}/multumim`);
+
+			isSubmitted && router.push(`/${params.lang}/multumim`);
 		} catch (error) {
 			console.log(error);
 		}
