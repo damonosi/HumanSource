@@ -45,8 +45,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 					},
 				},
 			});
-
-			isSubmitted && router.push(`/${params.lang}/multumim`);
+			isSubmitted && router.push(`/${params.lang}/multumim?categorie=${data.domeniu}`);
 		} catch (error) {
 			console.log(error);
 		}

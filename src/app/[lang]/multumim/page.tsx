@@ -5,11 +5,23 @@ const MultumimPage = ({ params }: { params: { lang: string } }) => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const titluJob = searchParams.get("title");
+	const categorieJob = searchParams.get("categorie");
+	console.log(categorieJob);
+
 	return (
 		<section className="flex  items-center  justify-center">
 			<div className=" flex max-w-sm flex-col items-center justify-center gap-7 px-2 py-24 text-center">
 				<h1 className="text-4xl font-[700] md:text-5xl">Multumim!</h1>
-				<h2 className="text-base font-[500] md:text-2xl">Ai făcut primul pas spre o carieră ca {titluJob}</h2>
+
+				{titluJob !== null && (
+					<h2 className="text-base font-[500] md:text-2xl">Ai făcut primul pas spre o carieră ca {titluJob}</h2>
+				)}
+				{categorieJob !== null && (
+					<h2 className="text-base font-[500] md:text-2xl">
+						Ai făcut primul pas spre angajarea de personal in domeniul {categorieJob}
+					</h2>
+				)}
+
 				<h3 className="text-base font-[500] md:text-2xl">
 					Unul dintre agenții noștri de recrutare te va contacta în cel mai scurt timp posibil
 				</h3>
