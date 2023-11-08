@@ -20,7 +20,7 @@ const BloguriPage = ({ params }: { params: { lang: string; country: string } }) 
 			orderBy: [{ dateCreated: "desc" }],
 		},
 	});
-
+console.log(data);
 	return (
 		<section className="bg-[#E5E5E5]    px-4 pb-[100px] md:px-[70px]">
 			<div className="container mx-auto flex flex-col  gap-16 ">

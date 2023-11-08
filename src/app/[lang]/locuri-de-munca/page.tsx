@@ -3,7 +3,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import CardJob from "@/components/Munca/CardJob";
 
-import { Select, Option } from "@material-tailwind/react";
+
 
 import { Typography } from "@material-tailwind/react";
 import { IJobs } from "@/interfaces/job";
@@ -12,7 +12,7 @@ import { useSearchParams } from "next/navigation";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobsByCategory";
 
-import { useState } from "react";
+
 
 import SearchBar from "@/components/Munca/CategorySelector";
 
