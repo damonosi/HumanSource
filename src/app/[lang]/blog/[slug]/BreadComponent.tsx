@@ -2,7 +2,7 @@
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 
-const BreadComponent = ({ params }: { params: { lang: string; slug: string } }) => {
+const BreadComponent = ({ params, title }: { params: { lang: string; slug: string }; title: string }) => {
 	return (
 		<Breadcrumbs>
 			<Link className="text-gri-brand" href={`/${params.lang}`}>
@@ -12,7 +12,7 @@ const BreadComponent = ({ params }: { params: { lang: string; slug: string } }) 
 				Bloguri
 			</Link>
 			<Link className="text-red-600" href={`${params.lang}/blog/${params.slug}`}>
-				{params.slug}
+				{title}
 			</Link>
 		</Breadcrumbs>
 	);
