@@ -1,4 +1,8 @@
-const MultumimPage = () => {
+"use client";
+import { useRouter } from "next/navigation";
+
+const MultumimPage = ({ params }: { params: { lang: string } }) => {
+	const router = useRouter();
 	return (
 		<section className="flex  items-center  justify-center">
 			<div className=" flex max-w-sm flex-col items-center justify-center gap-7 px-2 py-24 text-center">
@@ -10,7 +14,10 @@ const MultumimPage = () => {
 					Unul dintre agenții noștri de recrutare te va contacta în cel mai scurt timp posibil ca șofer profesionist în
 					Italia!
 				</h3>
-				<button className="flex items-center justify-center gap-3 rounded-2xl bg-gri-brand py-4 px-5 text-alb-site">
+				<button
+					onClick={() => router.push(`/${params.lang}/contact`)}
+					className="flex items-center justify-center gap-3 rounded-2xl bg-gri-brand py-4 px-5 text-alb-site"
+				>
 					Intreaba-ne ceva
 				</button>
 			</div>
