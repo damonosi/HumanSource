@@ -39,6 +39,9 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 						<Link className="text-gri-brand" href={`/${params.lang}/locuri-de-munca`}>
 							Locuri de munca
 						</Link>
+						<Link className="text-gri-brand" href={`/${params.lang}/locuri-de-munca`}>
+							{title}
+						</Link>
 					</Breadcrumbs>
 					<div className="container flex w-full flex-col  md:flex-row">
 						<div className="flex flex-col gap-[30px]  text-gri-brand md:w-1/2 md:px-0 ">
@@ -49,7 +52,7 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 								<Typography variant="h5" className="text- font-bold  ">
 									{company}
 								</Typography>
-								<div className="flex gap-2 text-[14px]" id="container butoane titlu">
+								<div className="flex flex-col gap-2 text-[14px] md:flex-row" id="container butoane titlu">
 									<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
 										<FaRegCalendarAlt className="w-5" />
 										<span className=""> Data inceperii : Imediata</span>
@@ -69,7 +72,7 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 								<Typography className="text-[20px] font-bold text-gri-brand " variant="h5">
 									Descriere
 								</Typography>
-								<ol className="flex list-disc flex-col gap-2 ">
+								<ol className="ml-5 flex list-disc flex-col gap-2 md:ml-0 ">
 									<li>
 										{" "}
 										<Typography className="text-[16px] font-[350] text-gri-brand " variant="paragraph">
@@ -82,7 +85,7 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 								<Typography className="text-[20px] font-bold text-gri-brand " variant="h5">
 									Cerinte
 								</Typography>
-								<ol className="flex list-disc flex-col gap-2">
+								<ol className="ml-5 flex list-disc flex-col gap-2 md:ml-0">
 									<li>
 										{" "}
 										<Typography className="text-[16px] font-[350] text-gri-brand " variant="paragraph">
@@ -95,7 +98,7 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 								<Typography className="text-[20px] font-bold text-gri-brand " variant="h5">
 									De ce sa lucrezi cu noi?
 								</Typography>
-								<ol className="flex list-disc flex-col gap-2">
+								<ol className="ml-5 flex list-disc flex-col gap-2 md:ml-0">
 									<li>
 										{" "}
 										<Typography className="text-[16px] font-[350] text-gri-brand " variant="paragraph">
