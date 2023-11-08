@@ -11,7 +11,7 @@ const BreadComponent = ({ params, title }: { params: { lang: string; slug: strin
 			<Link className="text-gri-brand" href={`/${params.lang}/blog`}>
 				Bloguri
 			</Link>
-			<Link className="text-red-600" href={`${params.lang}/blog/${params.slug}`}>
+			<Link className="text-red-600" href={`/${params.lang}/blog/${params.slug}`}>
 				{title}
 			</Link>
 		</Breadcrumbs>
