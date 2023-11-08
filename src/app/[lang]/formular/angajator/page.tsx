@@ -52,11 +52,11 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 	};
 	return (
 		<form className=" " onSubmit={handleSubmit(onSubmit)}>
-			<div className="relative mx-auto my-4 grid  w-fit grid-cols-1 justify-between gap-8 rounded bg-alb-site p-4">
+			<div className="relative mx-auto grid w-fit  grid-cols-1 justify-between gap-8 rounded bg-alb-site p-4 md:my-4">
 				<Typography className="mb-16" variant="h3">
 					Aplicare
 				</Typography>
-				<section className="grid grid-cols-2 gap-5">
+				<section className="grid grid-cols-1 gap-5 md:grid-cols-2">
 					<Select
 						size="lg"
 						onChange={(e) => {
