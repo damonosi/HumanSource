@@ -55,6 +55,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 	if (!data) return <h1>No data...</h1>;
 	const blogs = data.blogs;
 
+
 	return (
 		<div className="relative flex w-full md:px-6">
 			<Carousel
@@ -95,7 +96,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 						const paragraph = content.document[0].children[0].text;
 
 						let imageUrl = photo?.image?.publicUrl;
-						index;
+console.log(imageUrl);
 						return (
 							<CardBlog
 								lang={params.lang}

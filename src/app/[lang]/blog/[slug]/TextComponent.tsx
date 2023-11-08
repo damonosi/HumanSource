@@ -18,9 +18,10 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 	
 	return (
 		<div className="mt-7 flex flex-col gap-12 text-start">
-			<h2>By {author.name}</h2> <span>{formattedDate}</span>
-			<div className="py-8">
-				<h1>{title}</h1>
+			<div className="flex flex-col gap-6" id="titleSection">
+				<h2 className="text-base font-[350] opacity-50">By {author.name}</h2>{" "}
+				<span className="text-xs font-[350] opacity-50">{formattedDate}</span>
+				<h1 className="max-w-[40ch] text-2xl font-[500]">{title}</h1>
 			</div>
 			<div className="flex flex-col ">
 				<BlockRenderer document={textData} />
