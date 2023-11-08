@@ -6,7 +6,7 @@ const MultumimPage = ({ params }: { params: { lang: string } }) => {
 	const searchParams = useSearchParams();
 	const titluJob = searchParams.get("title");
 	const categorieJob = searchParams.get("categorie");
-	console.log(categorieJob);
+
 
 	return (
 		<section className="flex  items-center  justify-center">
