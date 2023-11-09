@@ -1,7 +1,7 @@
 import { SetStateAction } from "react";
 import FormWrapper from "../../FormWrapper";
 import experienta from "./data";
-import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+
 
 const Checkbox = ({
 	varianta,

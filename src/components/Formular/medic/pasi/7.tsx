@@ -5,7 +5,7 @@ import Italia from "../../../../../public/imagini/formular/medic/negru/italia.sv
 import ItaliaAlb from "../../../../../public/imagini/formular/medic/alb/italia.svg";
 import Oriunde from "../../../../../public/imagini/formular/medic/negru/oriunde.svg";
 import OriundeAlb from "../../../../../public/imagini/formular/medic/alb/oriunde.svg";
-import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
 
 const Pas7Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const [selected, setSelected] = useState(0);

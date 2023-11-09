@@ -1,6 +1,6 @@
 import { Input } from "@material-tailwind/react";
 import FormWrapper from "../../FormWrapper";
-import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
 
 const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 	return (

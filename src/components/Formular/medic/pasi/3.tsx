@@ -4,7 +4,7 @@ import Da from "../../../../../public/imagini/formular/medic/negru/da.svg";
 import DaAlb from "../../../../../public/imagini/formular/medic/alb/da.svg";
 import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
-import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
 const Pas3Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const [selected, setSelected] = useState(0);
 	const clasaCard =

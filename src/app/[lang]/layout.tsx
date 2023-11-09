@@ -5,11 +5,16 @@ import { getLocalePartsFrom, locales } from "../../../i18n";
 import { Viewport } from "next";
 import Footer from "./Footer";
 import Header from "./Header";
+
+
 export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
 	maximumScale: 1,
 };
+
+
+
 export const metadata = {
 	title: "Human Source",
 	applicationName: "Human Source",

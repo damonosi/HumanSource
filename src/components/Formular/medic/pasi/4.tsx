@@ -13,7 +13,7 @@ import InCursAlb from "../../../../../public/imagini/formular/medic/alb/inCurs.s
 import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
 import { useState } from "react";
-import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
 const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const [selected, setSelected] = useState(0);
 	const clasaCard =

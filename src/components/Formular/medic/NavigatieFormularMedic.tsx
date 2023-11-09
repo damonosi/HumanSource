@@ -1,7 +1,4 @@
-import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
 import { ArrowSmallRightIcon, ArrowSmallLeftIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 import { ReactElement } from "react";
 
