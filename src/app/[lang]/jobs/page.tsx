@@ -45,7 +45,7 @@ const CategorieJoburi = ({ params }: { params: { lang: string; country: string; 
 
 	const jobs = data.jobs;
 
-	const strDescending = [...jobs].sort((a, b) => (a.date > b.date ? -1 : 1));
+	const strDescending = jobs.sort((a, b) => (a.date > b.date ? -1 : 1));
 	console.log(strDescending);
 
 	return (
