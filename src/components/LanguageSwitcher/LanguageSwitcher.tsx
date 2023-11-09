@@ -22,8 +22,25 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 	const redirectedPathName = (locale: string) => {
 		if (!pathName) return "/";
 		const segments = pathName.split("/");
-		segments[1] = locale;
-		return segments.join("/");
+		if (segments[3] === undefined) {
+			segments[1] = locale;
+			return segments.join("/");
+		} else {
+			segments[1] = locale;
+			if (segments[2] === "locuri-de-munca") {
+				segments[2] = "locuri-de-munca";
+				segments[3] = "";
+				return segments.join("/");
+			} else if (segments[2] === "blog") {
+				segments[2] = "blog";
+				segments[3] = "";
+				return segments.join("/");
+			}
+			return segments.join("/");
+		}
+	
+		
+		
 	};
 
 	const ref = useOnclickOutside(() => {
