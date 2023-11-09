@@ -4,6 +4,7 @@ export interface IJobs {
 	data: {
 		jobs: [
 			{
+				salary: string;
 				description: string;
 				id: string;
 				title: string;

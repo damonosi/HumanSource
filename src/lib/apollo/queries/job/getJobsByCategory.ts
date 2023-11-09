@@ -7,6 +7,7 @@ const query = gql`
 			title
 			date
 			company
+			salary
 			requierments
 			whyWork
 		}

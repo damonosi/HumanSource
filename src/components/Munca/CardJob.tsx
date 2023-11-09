@@ -13,14 +13,15 @@ interface ICardJob {
 	src?: StaticImageData;
 
 	id: string;
+	salary: string;
 	params: { lang: string; country: string };
 }
 
-const CardJob = ({ params, data, titlu, descriere, id, src }: ICardJob) => {
+const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) => {
 	return (
 		<div
 			key={id}
-			className="relative flex  h-fit   w-full flex-col justify-end overflow-hidden  rounded-2xl border-none bg-transparent text-[#383A3C]  shadow hover:border  hover:shadow-xl    "
+			className="relative flex  h-fit w-full  flex-col justify-end gap-5 overflow-hidden  rounded-2xl border-none bg-transparent text-[#383A3C]  shadow hover:border  hover:shadow-xl    "
 		>
 			<div id="img-container" className=" relative z-40 flex h-1/3 w-full overflow-hidden ">
 				<Image
@@ -33,10 +34,10 @@ const CardJob = ({ params, data, titlu, descriere, id, src }: ICardJob) => {
 			</div>
 			<div
 				key="container-text"
-				className="z-20 flex  h-2/3 flex-col justify-center gap-3 py-2 px-4 text-start  "
+				className="z-20 flex  h-2/3 flex-col justify-center gap-5 py-2 px-4 text-start  "
 				id="container-text-bloguri"
 			>
-				<Typography variant="paragraph" className="z-20 text-[18px] font-[350]  opacity-50 ">
+				<Typography variant="paragraph" className="z-20 text-sm font-[350]  opacity-50 ">
 					{data}
 				</Typography>
 				<Typography variant="h5" className="text-[16px] font-bold">
@@ -56,6 +57,9 @@ const CardJob = ({ params, data, titlu, descriere, id, src }: ICardJob) => {
 							<ArrowSmallRightIcon strokeWidth={1} className=" ml-1 h-5 w-5 " />
 						</Button>
 					</Link>
+					<span className="text-sm font-bold tracking-[0.0625]">
+						{salary} <span className="ml-2">$</span>{" "}
+					</span>
 				</div>
 			</div>
 		</div>
