@@ -13,8 +13,8 @@ const Footer = () => {
 							<h6 className=" text-[16px]  font-bold leading-[20px]">HUMAN SOURCE</h6>
 							<hr className="h-2 w-full" />
 							<div className="flex flex-col gap-8 text-[16px]  font-[350] leading-[24px]">
-								<Link href="/despre-noi">Despre noi </Link>
-								<Link href="/despre-noi">Angajatori </Link>
+								<Link href="/about">Despre noi </Link>
+								<Link href="/about">Angajatori </Link>
 								<Link href="/blog">Candidati</Link>
 								<Link href="/munca">Locuri de munca</Link>
 							</div>
@@ -24,7 +24,7 @@ const Footer = () => {
 
 							<hr className="h-2 w-full" />
 							<div className="flex flex-col gap-8">
-								<Link href="/locuri-de-munca">Leasing de personal</Link>
+								<Link href="/jobs">Leasing de personal</Link>
 								<Link href="/plasare">Recrutare si selectie</Link>
 								<Link href="/cerere-oferta">Payroll si administrare</Link>
 							</div>
@@ -42,7 +42,7 @@ const Footer = () => {
 							<h6 className="font-[500]">INFORMATII</h6>
 							<hr className="h-2 w-full" />
 							<div className="flex flex-col gap-8">
-								<Link href="/despre-noi">Politica si confidentialitate</Link>
+								<Link href="/about">Politica si confidentialitate</Link>
 								<Link href="/blog">Termeni si conditii de utilizare</Link>
 								<Link href="/contact">Politica privind Cookie-urile</Link>
 							</div>

@@ -168,7 +168,7 @@ export const DropdownServicii = ({
 						pathname={pathname}
 						params={params}
 						handleCloseMenu={handleCloseMenu}
-						href={`/servicii/#sectiune-servicii-1`}
+						href={`/services/#sectiune-servicii-1`}
 						label={t("serviciiLeasing")}
 					/>
 				</MenuItem>
@@ -177,7 +177,7 @@ export const DropdownServicii = ({
 						pathname={pathname}
 						params={params}
 						handleCloseMenu={handleCloseMenu}
-						href={`/servicii/#sectiune-servicii-2`}
+						href={`/services/#sectiune-servicii-2`}
 						label={t("serviciiRecrutare")}
 					/>
 				</MenuItem>
@@ -186,7 +186,7 @@ export const DropdownServicii = ({
 						pathname={pathname}
 						params={params}
 						handleCloseMenu={handleCloseMenu}
-						href={`/servicii/#sectiune-servicii-3`}
+						href={`/services/#sectiune-servicii-3`}
 						label={t("serviciiPayroll")}
 					/>
 				</MenuItem>
@@ -210,18 +210,12 @@ export function NavList({
 				pathname={pathname}
 				handleCloseMenu={handleCloseMenu}
 				params={params}
-				href={`despre-noi`}
+				href={`about`}
 				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-ignore
 				label={t("despre")}
 			/>
-			<NavItem
-				pathname={pathname}
-				handleCloseMenu={handleCloseMenu}
-				params={params}
-				href={`locuri-de-munca`}
-				label={t("munca")}
-			/>
+			<NavItem pathname={pathname} handleCloseMenu={handleCloseMenu} params={params} href={`jobs`} label={t("munca")} />
 			<NavItem
 				pathname={pathname}
 				handleCloseMenu={handleCloseMenu}
@@ -229,7 +223,7 @@ export function NavList({
 				href={`contact`}
 				label={t("contact")}
 			/>
-			<DropdownServicii href={`servicii`} pathname={pathname} params={params} handleCloseMenu={handleCloseMenu} t={t} />
+			<DropdownServicii href={`services`} pathname={pathname} params={params} handleCloseMenu={handleCloseMenu} t={t} />
 			{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
             // @ts-ignore */}
 			<NavItem pathname={pathname} handleCloseMenu={handleCloseMenu} params={params} href={`blog`} label={t("blog")} />

@@ -127,7 +127,7 @@ const onSubmit: SubmitHandler<Inputs> = ({
 				},
 			},
 		});
-		isSubmitted && router.push(`/${params.lang}/locuri-de-munca?domeniu=medical&subDomeniu=${domeniu}`);
+		isSubmitted && router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}`);
 		
 	} catch (error) {
 		console.log(error);

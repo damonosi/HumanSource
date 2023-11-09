@@ -50,7 +50,7 @@ const SearchBar = ({ params }: Iparams) => {
 					))}
 				</Select>
 				<button
-					onClick={() => router.push(`/${params.lang}/locuri-de-munca?domeniu=${domeniu}&location=${locatie}`)}
+					onClick={() => router.push(`/${params.lang}/jobs?domeniu=${domeniu}&location=${locatie}`)}
 					className="rounded-2xl bg-gri-deschis-bg py-2 px-4 text-sm text-gri-brand"
 				>
 					Cauta

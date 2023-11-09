@@ -36,10 +36,10 @@ const AplicareJob: FC<IpageProps> = ({ params }) => {
 						<Link className="text-gri-brand" href={`/${params.lang}`}>
 							Home
 						</Link>
-						<Link className="text-gri-brand" href={`/${params.lang}/locuri-de-munca`}>
+						<Link className="text-gri-brand" href={`/${params.lang}/jobs`}>
 							Locuri de munca
 						</Link>
-						<Link className="text-gri-brand" href={`/${params.lang}/locuri-de-munca`}>
+						<Link className="text-gri-brand" href={`/${params.lang}/jobs`}>
 							{title}
 						</Link>
 					</Breadcrumbs>

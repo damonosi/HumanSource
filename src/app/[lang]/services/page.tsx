@@ -37,7 +37,7 @@ const ServiciiPage = ({ params }: { params: { lang: string; country: string } })
 					<Link className="text-gri-brand" href={`/${params.lang}`}>
 						Home
 					</Link>
-					<Link className="text-red-600" href={`/${params.lang}/servicii`}>
+					<Link className="text-red-600" href={`/${params.lang}/services`}>
 						Servicii
 					</Link>
 				</Breadcrumbs>

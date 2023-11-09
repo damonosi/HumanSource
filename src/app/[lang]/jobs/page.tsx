@@ -52,7 +52,7 @@ return (
 				<Link className="" href={`/${params.lang}`}>
 					Home
 				</Link>
-				<Link className="" href={`/${params.lang}/locuri-de-munca`}>
+				<Link className="" href={`/${params.lang}/jobs`}>
 					Locuri de munca
 				</Link>
 			</Breadcrumbs>

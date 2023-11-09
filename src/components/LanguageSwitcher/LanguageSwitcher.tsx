@@ -27,8 +27,8 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 			return segments.join("/");
 		} else {
 			segments[1] = locale;
-			if (segments[2] === "locuri-de-munca") {
-				segments[2] = "locuri-de-munca";
+			if (segments[2] === "jobs") {
+				segments[2] = "jobs";
 				segments[3] = "";
 				return segments.join("/");
 			} else if (segments[2] === "blog") {

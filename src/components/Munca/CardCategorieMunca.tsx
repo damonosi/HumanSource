@@ -20,7 +20,7 @@ const CardCategorieMunca = ({ src, domeniu }: ICardCategorie) => {
 
 	return (
 		<Link
-			href={`/locuri-de-munca/${domeniu}`}
+			href={`/jobs/${domeniu}`}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			className="relative flex h-[30rem] w-full max-w-[28rem] cursor-pointer flex-col items-end justify-center overflow-hidden rounded-xl bg-white text-center"
