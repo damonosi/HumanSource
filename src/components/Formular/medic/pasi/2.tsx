@@ -8,7 +8,7 @@ import SpitalAlb from "../../../../../public/imagini/formular/medic/alb/spital.s
 
 import Azil from "../../../../../public/imagini/formular/medic/negru/azil.svg";
 import AzilAlb from "../../../../../public/imagini/formular/medic/alb/azil.svg";
-import { MedicalSearchParamsType } from "@/app/[lang]/formular/muncitor/medical/page";
+import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
 
 const Pas2Medical = ({
 	setValue,
