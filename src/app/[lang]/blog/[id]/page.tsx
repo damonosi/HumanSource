@@ -9,12 +9,12 @@ import ContactWays from "@/components/Contact/ContactWays";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { IBlog } from "@/interfaces/blog";
 
-const Blog = ({ params }: { params: { lang: string; slug: string } }) => {
-	const slug = params.slug;
+const Blog = ({ params }: { params: { lang: string; id: string } }) => {
+	const paramsId = params.id;
 
 	const { data }: IBlog = useSuspenseQuery(query, {
 		variables: {
-			where: { slug: slug },
+			where: { id: paramsId },
 		},
 	});
 	if (!data) {

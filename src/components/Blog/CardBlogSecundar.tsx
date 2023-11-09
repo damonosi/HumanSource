@@ -9,8 +9,6 @@ interface ICardBlogSecundar {
 	id: string;
 	title: string;
 
-	slug: string;
-
 	date: string;
 	categories: { name: string }[];
 	photo: {
@@ -26,15 +24,16 @@ interface ICardBlogSecundar {
 	};
 }
 
-const CardBlogSecundar = ({ id, date, title, slug, photo, categories, params }: ICardBlogSecundar) => {
+const CardBlogSecundar = ({ id, date, title, photo, categories, params }: ICardBlogSecundar) => {
 	let altText = !photo ? "nu are alt" : photo.altText;
 	let imageUrl = !photo
 		? "https://res.cloudinary.com/dmm7tnk7s/image/upload/v1698689593/87Af-eFtsR_JPiASGbYk9RpEly4.jpg"
 		: photo.image.publicUrl;
 
 	const titleLength = title.length;
+
 	return (
-		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${slug}`}>
+		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${id}`}>
 			<div
 				className="group flex aspect-square  h-fit flex-col gap-5  rounded-2xl hover:shadow-xl  "
 				id="container-card-blog-secundar"

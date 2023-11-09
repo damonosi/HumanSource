@@ -12,7 +12,7 @@ export type IPaginationData = {
 				document: DocumentProp;
 			};
 			dateCreated: string;
-			slug: string;
+
 			title: string;
 			photo: {
 				altText: string;
@@ -113,7 +113,7 @@ export interface IBlog {
 	data: {
 		blog: {
 			id: string;
-			slug: string;
+
 			dateCreated: string;
 			title: string;
 			content: {

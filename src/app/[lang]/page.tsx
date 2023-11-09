@@ -1,4 +1,3 @@
-"use client";
 import AvantajeSection from "@/components/Home/Avantaje/AvantajeSection";
 import BlogSection from "@/components/Home/Blog/BlogSection";
 import HeroSection from "@/components/Home/Hero/HeroSection";
@@ -9,8 +8,8 @@ import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
 
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-	title: "Home",
-	description: "...",
+	title: "HumanSource - Home",
+	description: "Huma Sourrce Home",
 };
 
 export default function Home({ params }: { params: { lang: string; country: string } }) {

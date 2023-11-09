@@ -1,3 +1,4 @@
+"use client";
 import { Breadcrumbs as MaterialCrumbs } from "@material-tailwind/react";
 interface IBreadProps {
 	children: JSX.Element | JSX.Element[];
