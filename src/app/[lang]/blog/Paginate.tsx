@@ -20,6 +20,7 @@ const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginati
 			{paginatedPosts.map(({ id, dateCreated, title, slug, photo, categories }: IPaginatedData) => {
 				return (
 					<CardBlogSecundar
+						params={params}
 						key={id}
 						id={id}
 						date={dateCreated}
