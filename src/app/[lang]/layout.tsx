@@ -93,7 +93,7 @@ export default function RootLayout({
 				className={`${madera.variable}  m-0 mx-auto flex  items-center justify-center  overflow-x-hidden bg-gri-deschis-bg font-sans text-gri-brand`}
 			>
 				<Providers>
-					<div className="relative grid w-full grid-cols-1  overflow-hidden  " id="site-container">
+					<div className="relative grid min-h-screen w-full grid-cols-1 overflow-hidden  " id="site-container">
 						<Header params={params} />
 
 						<main className=" z-30 mt-14 flex w-full flex-col  ">

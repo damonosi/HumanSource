@@ -27,7 +27,7 @@ const CardAngajator = ({ params }: { params: { lang: string; country: string } }
 			</CardBody>
 			<CardFooter className="flex justify-center p-0 md:pb-5 ">
 				<Button
-					onClick={() => router.push(`${params.lang}/formular/angajator`)}
+					onClick={() => router.push(`${params.lang}/form/employer`)}
 					className="flex gap-1 bg-transparent px-1 normal-case text-rosu-brand shadow-none transition-all duration-[1200ms] hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6 "
 				>
 					Construieste-ti echipa <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />
@@ -62,7 +62,7 @@ const CardMuncitor = ({ params }: { params: { lang: string; country: string } })
 			</CardBody>
 			<CardFooter className="flex justify-center p-0 md:pb-5 ">
 				<Button
-					onClick={() => router.push(`${params.lang}/formular/muncitor`)}
+					onClick={() => router.push(`${params.lang}/form/worker`)}
 					className="flex  gap-1 bg-transparent px-1  normal-case text-rosu-brand shadow-none transition-all duration-[1200ms] hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6"
 				>
 					Locuri de munca <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />

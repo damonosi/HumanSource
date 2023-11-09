@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useMultistepForm } from "@/components/Formular/useMultistepForm";
 import { useState } from "react";
 import Pas1Trasport from "@/components/Formular/sofer/pasi/1";
@@ -127,10 +126,10 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 				<Link className="text-gri-brand" href={`/${params.lang}/`}>
 					Home
 				</Link>
-				<Link className="text-gri-brand" href={`/${params.lang}/formular/muncitor`}>
+				<Link className="text-gri-brand" href={`/${params.lang}/form/worker`}>
 					Formular
 				</Link>
-				<Link className="text-red-600" href={`/${params.lang}/formular/muncitor`}>
+				<Link className="text-red-600" href={`/${params.lang}/form/worker`}>
 					Transport
 				</Link>
 			</Breadcrumbs>

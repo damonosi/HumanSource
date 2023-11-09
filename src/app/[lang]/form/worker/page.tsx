@@ -33,7 +33,7 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 				<Link className="text-gri-brand" href={`/${params.lang}`}>
 					Home
 				</Link>
-				<Link className="text-red-600" href={`/${params.lang}/formular/muncitor`}>
+				<Link className="text-red-600" href={`/${params.lang}/form/worker`}>
 					Formular
 				</Link>
 			</Breadcrumbs>
@@ -72,7 +72,7 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 				</div>
 				<div className="flex w-full items-center justify-center">
 					<button
-						onClick={() => router.push(`/${params.lang}/formular/muncitor/${selectedCategory.toLowerCase()}`)}
+						onClick={() => router.push(`/${params.lang}/form/worker/${selectedCategory.toLowerCase()}`)}
 						disabled={disabled}
 						className={`md:px-5"  flex w-fit items-center justify-center gap-1 rounded-2xl border border-gri-brand px-2 py-2 text-center text-gri-brand md:py-4  ${
 							disabled

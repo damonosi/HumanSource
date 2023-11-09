@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 
 import Link from "next/link";
+import formatDate from "@/utils/formatDate";
 
 interface ICardJob {
 	data: string;
@@ -38,7 +39,7 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) 
 				id="container-text-bloguri"
 			>
 				<Typography variant="paragraph" className="z-20 text-sm font-[350]  opacity-50 ">
-					{data}
+					{formatDate(data)}
 				</Typography>
 				<Typography variant="h5" className="text-[16px] font-bold">
 					{titlu}

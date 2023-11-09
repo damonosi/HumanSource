@@ -98,41 +98,40 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		setDisabled,
 	);
 	const [addMedicalForm] = useMutation(AddMedicalForm);
-const router = useRouter();
-const onSubmit: SubmitHandler<Inputs> = ({
-	absolvire,
-	educatie,
-	bac,
-	curs,
-	experienta,
-	lbItaliana,
-	locatia,
-	domeniu,
-	ultimulSalariu,
-}) => {
-	try {
-		addMedicalForm({
-			variables: {
-				data: {
-					absolvire: absolvire,
-					amg: educatie,
-					bac: bac,
-					cursItaliana: curs,
-					domeniu: "medical",
-					experienta: experienta,
-					experientaLimba: lbItaliana,
-					locatia: locatia,
-					subDomeniu: domeniu,
-					ultimuSalar: ultimulSalariu,
+	const router = useRouter();
+	const onSubmit: SubmitHandler<Inputs> = ({
+		absolvire,
+		educatie,
+		bac,
+		curs,
+		experienta,
+		lbItaliana,
+		locatia,
+		domeniu,
+		ultimulSalariu,
+	}) => {
+		try {
+			addMedicalForm({
+				variables: {
+					data: {
+						absolvire: absolvire,
+						amg: educatie,
+						bac: bac,
+						cursItaliana: curs,
+						domeniu: "medical",
+						experienta: experienta,
+						experientaLimba: lbItaliana,
+						locatia: locatia,
+						subDomeniu: domeniu,
+						ultimuSalar: ultimulSalariu,
+					},
 				},
-			},
-		});
-		isSubmitted && router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}`);
-		
-	} catch (error) {
-		console.log(error);
-	}
-};
+			});
+			isSubmitted && router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}`);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
@@ -140,10 +139,10 @@ const onSubmit: SubmitHandler<Inputs> = ({
 				<Link className="text-gri-brand" href={`/${params.lang}/`}>
 					Home
 				</Link>
-				<Link className="text-gri-brand" href={`/${params.lang}/formular/muncitor`}>
+				<Link className="text-gri-brand" href={`/${params.lang}/form/worker`}>
 					Formular
 				</Link>
-				<Link className="text-red-600" href={`/${params.lang}/formular/muncitor`}>
+				<Link className="text-red-600" href={`/${params.lang}/form/worker`}>
 					Medical
 				</Link>
 			</Breadcrumbs>

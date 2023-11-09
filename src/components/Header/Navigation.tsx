@@ -90,7 +90,7 @@ export const DropdownAplica = ({
 						handleCloseMenu={handleCloseMenu}
 						params={params}
 						pathname={pathname}
-						href={`/formular/muncitor`}
+						href={`/form/worker`}
 						label={t("aplicaMuncitor")}
 					/>
 				</MenuItem>
@@ -99,7 +99,7 @@ export const DropdownAplica = ({
 						params={params}
 						pathname={pathname}
 						handleCloseMenu={handleCloseMenu}
-						href={`/formular/angajator`}
+						href={`/form/employer`}
 						label={t("aplicaAngajator")}
 					/>
 				</MenuItem>
@@ -227,7 +227,7 @@ export function NavList({
 			{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
             // @ts-ignore */}
 			<NavItem pathname={pathname} handleCloseMenu={handleCloseMenu} params={params} href={`blog`} label={t("blog")} />
-			<DropdownAplica href={`formular/`} pathname={pathname} params={params} handleCloseMenu={handleCloseMenu} t={t} />
+			<DropdownAplica href={`form/`} pathname={pathname} params={params} handleCloseMenu={handleCloseMenu} t={t} />
 		</ul>
 	);
 }

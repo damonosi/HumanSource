@@ -7,6 +7,12 @@ import NevoiSection from "@/components/Home/Nevoi/NevoiSection";
 import ParteneriSection from "@/components/Home/Parteneri/ParteneriSection";
 import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
 
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+	title: "Home",
+	description: "...",
+};
+
 export default function Home({ params }: { params: { lang: string; country: string } }) {
 	return (
 		<div className="mb-[-10rem] grid grid-cols-1 items-center justify-center " id="container-home">
