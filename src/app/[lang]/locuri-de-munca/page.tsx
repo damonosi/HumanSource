@@ -58,7 +58,6 @@ return (
 			</Breadcrumbs>
 			<SearchBar params={params} />
 
-			{/* joburi dupa categorie */}
 			<section className="flex flex-col gap-9">
 				<Typography variant="h4" className="text-bold text-left">
 					Cele mai cautate locuri de munca

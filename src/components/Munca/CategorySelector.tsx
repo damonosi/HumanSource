@@ -14,9 +14,9 @@ const SearchBar = ({ params }: Iparams) => {
 	const [locatie, setLocatie] = useState("");
 	const router = useRouter();
 	return (
-		<div className="flex w-1/2 items-center justify-center gap-4">
+		<div className="flex w-full  flex-col items-center justify-center gap-4 md:w-1/2 md:flex-row">
 			<Input label="Cauta" />
-			<div className="flex w-1/3 gap-4">
+			<div className="flex w-full flex-col gap-4  md:w-1/3 md:flex-row">
 				<Select
 					size="md"
 					onChange={(e) => {
