@@ -1,7 +1,7 @@
 import AboutClientPage from "./AboutClientPage";
 
 export const metadata = {
-	title: "About - Human Source",
+	title: "Despre - Human Source",
 	applicationName: "Human Source",
 };
 

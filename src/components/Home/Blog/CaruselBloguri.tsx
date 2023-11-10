@@ -96,7 +96,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 						const paragraph = content.document[0].children[0].text;
 
 						let imageUrl = photo?.image?.publicUrl;
-console.log(imageUrl);
+
 						return (
 							<CardBlog
 								lang={params.lang}

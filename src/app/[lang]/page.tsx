@@ -8,8 +8,8 @@ import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
 
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-	title: "HumanSource - Home",
-	description: "Huma Sourrce Home",
+	title: "Agentie de plasare forta de munca - HumanSource ",
+	description: "Huma Source Home",
 };
 
 export default function Home({ params }: { params: { lang: string; country: string } }) {

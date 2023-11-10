@@ -20,7 +20,7 @@ interface ICardBlog {
 	lang: string;
 }
 
-const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) => {
+const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl, id }: ICardBlog) => {
 	const [hovered, setHovered] = useState(false);
 	const handleMouseEnter = () => {
 		setHovered(true);
@@ -76,7 +76,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 							hovered && "text-alb-site"
 						}`}
 						onClick={() => {
-							router.push(`/${lang}/blog/${slug}`);
+							router.push(`/${lang}/blog/${slug}?id=${id}`);
 						}}
 					>
 						<span className={`${hovered && "text-alb-site"}`}>Citeste mai mult</span>
@@ -90,56 +90,3 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl }: ICardBlog) =
 
 export default CardBlog;
 
-
-		// {
-		// 	!hovered ? (
-		// 		<motion.div
-		// 			key="imagine"
-		// 			layout
-		// 			transition={{
-		// 				layout: {
-		// 					type: "spring",
-		// 					stiffness: 30,
-		// 					duration: 1,
-		// 				},
-		// 			}}
-		// 			id="img-container"
-		// 			className=" relative z-40 flex h-1/2 items-center justify-center  "
-		// 		>
-		// 			<Image fill alt="background" className=" object-cover" src={imageUrl} />
-
-		// 			<motion.div
-		// 				key="mask"
-		// 				transition={{
-		// 					type: "spring",
-		// 					stiffness: 40,
-		// 					duration: 1,
-		// 					delay: 500,
-		// 				}}
-		// 				className="hidden"
-		// 			/>
-		// 		</motion.div>
-		// 	) : (
-		// 		<motion.div
-		// 			key="imagine"
-		// 			layout
-		// 			transition={{
-		// 				layout: { type: "spring", stiffness: 30, duration: 1 },
-		// 			}}
-		// 			id="img-container"
-		// 			className="absolute top-0 bottom-0 left-0 right-0 object-fill"
-		// 		>
-		// 			<Image alt="background" className="relative h-full w-full  transform object-fill" fill src={imageUrl} />{" "}
-		// 			<motion.div
-		// 				key="mask"
-		// 				transition={{
-		// 					type: "spring",
-		// 					stiffness: 40,
-		// 					duration: 1,
-		// 					delay: 500,
-		// 				}}
-		// 				className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden rounded-2xl bg-black bg-fixed opacity-20"
-		// 			/>
-		// 		</motion.div>
-		// 	);
-		// }
