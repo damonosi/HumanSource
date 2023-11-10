@@ -4,7 +4,7 @@ const query = gql`
 		job(where: $where) {
 			date
 			title
-
+			id
 			company
 			description
 			requierments

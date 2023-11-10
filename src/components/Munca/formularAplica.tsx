@@ -22,8 +22,8 @@ const FormularAplica = ({
 	params,
 	title,
 }: {
-	id: RandomUUIDOptions;
-	params: { lang: string; id: RandomUUIDOptions };
+	id: string;
+	params: { lang: string; title: string };
 	title: string;
 }) => {
 	const [addJobApplication, { loading, error }] = useMutation(AddJobApplication);

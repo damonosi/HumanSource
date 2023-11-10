@@ -23,7 +23,7 @@ export interface IJob {
 	data: {
 		job: {
 			description: string;
-
+			id: string;
 			title: string;
 			date: string;
 			jobCategory: { name: string };
