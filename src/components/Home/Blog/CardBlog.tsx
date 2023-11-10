@@ -29,6 +29,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl, id }: ICardBlo
 		setHovered(false);
 	};
 	const titleLength = titlu.length;
+	const paragraphLength = paragraph.length;
 
 	const router = useRouter();
 	const formattedDate = formatDate(data);
@@ -69,7 +70,9 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl, id }: ICardBlo
 						{!hovered ? ` ${titlu.substring(0, 60)}  ${titleLength >= 60 ? "..." : ""} ` : titlu}
 					</Typography>
 					<Typography variant="paragraph" className="max-w-prose text-[14px] font-[350] leading-[22px]  md:text-[16px]">
-						{!hovered ? ` ${paragraph.substring(0, 120)} ....` : `${paragraph.substring(0, 200)} ....`}
+						{!hovered
+							? ` ${paragraph.substring(0, 120)}  ${paragraphLength >= 120 ? "..." : ""}`
+							: `${paragraph.substring(0, 200)} ${paragraphLength >= 200 ? "..." : ""} `}
 					</Typography>
 					<button
 						className={`bg-transparent py-2 text-start text-sm text-gri-bg shadow-none hover:scale-105 hover:shadow-none md:mt-4 md:py-5 md:text-base ${
