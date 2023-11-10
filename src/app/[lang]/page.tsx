@@ -9,7 +9,8 @@ import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Agentie de plasare forta de munca - HumanSource ",
-	description: "Huma Source Home",
+	description:
+		"Human Source ofera servicii complete: leasing personal, recrutare si selectie, administrare dosare de personal si payroll ✔ Flexibilitate",
 };
 
 export default function Home({ params }: { params: { lang: string; country: string } }) {
