@@ -113,7 +113,7 @@ export interface IBlog {
 	data: {
 		blog: {
 			id: string;
-
+			slug: string;
 			dateCreated: string;
 			title: string;
 			content: {

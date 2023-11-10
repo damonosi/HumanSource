@@ -32,9 +32,10 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 		: photo.image.publicUrl;
 
 	const titleLength = title.length;
+	console.log(slug);
 
 	return (
-		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${slug}?id=${id}`}>
+		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${slug}`}>
 			<div
 				className="group flex aspect-square  h-fit flex-col gap-5  rounded-2xl hover:shadow-xl  "
 				id="container-card-blog-secundar"
