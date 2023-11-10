@@ -3,7 +3,6 @@ import ClientJobPage from "./ClientJobPage";
 
 export async function generateMetadata({ params }: { params: { lang: string; id: string } }) {
 	const decodedString = decodeURIComponent(params.id);
-	console.log(params.id);
 
 	return {
 		title: decodedString,

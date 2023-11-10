@@ -15,6 +15,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
 	title: "Human Source",
+
+	icons: {
+		icon: "/imagini/logo-ico.svg",
+		apple: "/imagini/logo-ico.svg",
+	},
 	verification: {
 		google: `${process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CODE}`,
 	},
