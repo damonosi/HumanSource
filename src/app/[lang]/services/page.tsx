@@ -4,8 +4,8 @@ import SectiuniServicii from "@/components/Servicii/SectiuniServicii";
 import Link from "next/link";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-	title: "servicii",
-	description: "Huma Sourrce servicii",
+	title: "Servicii - Human Source",
+	description: "Human Source servicii",
 };
 const ServiciiPage = ({ params }: { params: { lang: string; country: string } }) => {
 	return (
