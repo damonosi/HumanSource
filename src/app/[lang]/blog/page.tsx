@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import ClientBloguriPage from "./ClientBloguriPage";
 export const metadata: Metadata = {
 	title: "Blog - HumanSource ",
+
 	description: "Huma Source Blog",
 };
 const BloguriPage = ({ params }: { params: { lang: string; country: string } }) => {

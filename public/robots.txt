@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://humansource.vercel.app
+
+# Sitemaps
+Sitemap: https://humansource.vercel.app/sitemap.xml

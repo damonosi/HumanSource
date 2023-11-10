@@ -7,6 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
+		"postbuild": "next-sitemap",
 		"format": "prettier --check --ignore-path .gitignore .",
 		"format:fix": "prettier --write --ignore-path .gitignore ."
 	},
@@ -35,6 +36,7 @@
 		"negotiator": "^0.6.3",
 		"next": "^14.0.1",
 		"next-i18next": "^13.2.2",
+		"next-sitemap": "^4.2.3",
 		"react": "^18.2.0",
 		"react-cool-onclickoutside": "^1.7.0",
 		"react-dom": "^18.2.0",

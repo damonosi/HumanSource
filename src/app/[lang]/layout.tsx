@@ -7,6 +7,8 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 
+
+
 export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
