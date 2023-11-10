@@ -2,18 +2,16 @@ import Providers from "@/utils/providers";
 import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import { getLocalePartsFrom, locales } from "../../../i18n";
-import { Viewport } from "next";
+import { Metadata, Viewport } from "next";
 import Footer from "./Footer";
 import Header from "./Header";
-
+import { headers } from "next/headers";
 
 export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
 	maximumScale: 1,
 };
-
-
 
 export const metadata = {
 	title: "Human Source",

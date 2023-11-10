@@ -8,13 +8,14 @@ import TextComponent from "./TextComponent";
 import ContactWays from "@/components/Contact/ContactWays";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { IBlog } from "@/interfaces/blog";
+import { useSearchParams } from "next/navigation";
 
 const Blog = ({ params }: { params: { lang: string; id: string } }) => {
-	const paramsId = params.id;
-
+	const searchParams = useSearchParams();
+	const idBlog = searchParams.get("id");
 	const { data }: IBlog = useSuspenseQuery(query, {
 		variables: {
-			where: { id: paramsId },
+			where: { id: idBlog },
 		},
 	});
 	if (!data) {

@@ -11,6 +11,7 @@ interface ICardJob {
 	data: string;
 	titlu: string;
 	descriere: string;
+
 	src?: StaticImageData;
 
 	id: string;
@@ -48,7 +49,7 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) 
 					{descriere}
 				</Typography>
 				<div className="flex items-center justify-between ">
-					<Link href={`/${params.lang}/jobs/${id.toString()}`}>
+					<Link href={`/${params.lang}/jobs/${id}`}>
 						<Button
 							variant="text"
 							ripple={true}

@@ -6,6 +6,7 @@ export interface IJobs {
 			{
 				salary: string;
 				description: string;
+				slug: string;
 				id: string;
 				title: string;
 				date: string;

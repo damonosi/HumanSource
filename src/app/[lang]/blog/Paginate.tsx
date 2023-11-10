@@ -17,9 +17,10 @@ const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginati
 
 	return (
 		<div className="grid gap-4 md:grid-cols-3">
-			{paginatedPosts.map(({ id, dateCreated, title, photo, categories }: IPaginatedData) => {
+			{paginatedPosts.map(({ id, dateCreated, title, photo, categories, slug }: IPaginatedData) => {
 				return (
 					<CardBlogSecundar
+						slug={slug}
 						params={params}
 						key={id}
 						id={id}
@@ -42,6 +43,7 @@ function PaginatedItems({
 		blogs: [
 			{
 				id: string;
+				slug: string;
 				content: {
 					document: DocumentProp;
 				};
