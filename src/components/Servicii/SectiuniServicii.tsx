@@ -35,7 +35,7 @@ const ButonSolicitaOferta = ({ params }: { params: { lang: string } }) => {
 
 const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 	return (
-		<div className="flex flex-col gap-32" id="sections-container">
+		<div className="flex flex-col gap-12 md:gap-32" id="sections-container">
 			<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row" id="hero-servicii">
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2" id="container-text-servicii">
 					<Typography variant="h3">Serviciile oferite de Human Source</Typography>
