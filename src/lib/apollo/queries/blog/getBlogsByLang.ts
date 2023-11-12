@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const query = gql`
-	query Blogs($where: BlogWhereInput!) {
-		blogs(where: $where) {
+	query Blogs($where: BlogWhereInput!, $orderBy: [BlogOrderByInput!]!) {
+		blogs(where: $where, orderBy: $orderBy) {
 			id
 			slug
 			dateCreated

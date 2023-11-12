@@ -32,7 +32,7 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 		: photo.image.publicUrl;
 
 	const titleLength = title.length;
-	console.log(slug);
+
 
 	return (
 		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${slug}`}>

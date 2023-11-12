@@ -10,7 +10,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { IBlog } from "@/interfaces/blog";
 
 const ClientBlogPage = ({ params }: { params: { lang: string; id: string } }) => {
-	console.log(params.id);
+
 	const { data }: IBlog = useSuspenseQuery(query, {
 		variables: {
 			where: { slug: params.id },
