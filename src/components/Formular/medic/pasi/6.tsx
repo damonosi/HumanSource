@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormWrapper from "../../FormWrapper";
 import Deloc from "../../../../../public/imagini/formular/medic/negru/deloc.svg";
 import DelocAlb from "../../../../../public/imagini/formular/medic/alb/deloc.svg";
@@ -8,11 +8,18 @@ import MediuAlb from "../../../../../public/imagini/formular/medic/alb/mediu.svg
 import Avansat from "../../../../../public/imagini/formular/medic/negru/avansat.svg";
 import AvansatAlb from "../../../../../public/imagini/formular/medic/alb/avansat.svg";
 import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
+import { useCookies } from "next-client-cookies";
 const Pas6Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("medic-experientaLimba")));
 	const clasaCard =
 		"flex  w-1/3 flex-col items-center  max-h-[300px] justify-center rounded-2xl bg-alb-site px-3 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
 	const clasaIconita = "w-12 md:w-full";
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, []);
 	return (
 		<FormWrapper intrebare="Vorbesti limba italiana?">
 			{" "}
@@ -21,6 +28,7 @@ const Pas6Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("lbItaliana", "deloc");
 						setSelected(1);
+						cookies.set("medic-experientaLimba", "1");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							experientaLimba: "deloc",
@@ -39,6 +47,7 @@ const Pas6Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("lbItaliana", "mediu");
 						setSelected(2);
+						cookies.set("medic-experientaLimba", "2");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							experientaLimba: "mediu",
@@ -56,6 +65,7 @@ const Pas6Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("lbItaliana", "avansat");
 						setSelected(3);
+						cookies.set("medic-experientaLimba", "3");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							experientaLimba: "avansat",

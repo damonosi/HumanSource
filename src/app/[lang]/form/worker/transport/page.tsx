@@ -20,6 +20,7 @@ import { useMutation, useSuspenseQuery } from "@apollo/client";
 import NavigatieFormularSofer from "@/components/Formular/NavigatieFormularSofer";
 import AddTransportForm from "@/lib/apollo/mutations/mutateTransportForm";
 import { useRouter } from "next/navigation";
+import { useCookies } from "next-client-cookies";
 
 export type TransportSearchParamsType = {
 	absolvire: string;
@@ -47,6 +48,7 @@ type Inputs = {
 };
 
 const FormularSofer = ({ params }: { params: { lang: string; country: string } }) => {
+	const cookies = useCookies();
 	const {
 		register,
 		handleSubmit,
@@ -55,15 +57,15 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 	} = useForm({
 		mode: "onChange",
 		defaultValues: {
-			tipRemorca: "",
-			vechime: "",
-			regim: "",
-			tahograf: "",
-			echipaj: "",
-			turaNoapte: "",
-			lbItaliana: "",
-			ultimulSalariu: "",
-			salariuDorit: "",
+			tipRemorca: cookies.get("sofer-tip-remorca") || "",
+			vechime: cookies.get("sofer-experienta") || "",
+			regim: cookies.get("sofer-regim") || "",
+			tahograf: cookies.get("sofer-tahograf") || "",
+			echipaj: cookies.get("sofer-echipaj") || "",
+			turaNoapte: cookies.get("sofer-noapte") || "",
+			lbItaliana: cookies.get("sofer-italiana") || "",
+			ultimulSalariu: cookies.get("sofer-ultimul-salariu") || "",
+			salariuDorit: cookies.get("sofer-salariu-dorit") || "",
 			category: "transport",
 		},
 	});
@@ -116,6 +118,15 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 			});
 			isSubmitSuccessful &&
 				router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
+			cookies.remove("sofer-tip-remorca");
+			cookies.remove("sofer-experienta");
+			cookies.remove("sofer-regim");
+			cookies.remove("sofer-tahograf");
+			cookies.remove("sofer-echipaj");
+			cookies.remove("sofer-noapte");
+			cookies.remove("sofer-italiana");
+			cookies.remove("sofer-ultimul-salariu");
+			cookies.remove("sofer-salariu-dorit");
 		} catch (error) {
 			console.log(error);
 		}

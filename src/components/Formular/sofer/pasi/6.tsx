@@ -1,11 +1,18 @@
 import FormWrapper from "../../FormWrapper";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Da from "../../../../../public/imagini/formular/sofer/negru/da.svg";
 import DaAlb from "../../../../../public/imagini/formular/sofer/alb/da.svg";
 import Nu from "../../../../../public/imagini/formular/sofer/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/sofer/alb/nu.svg";
+import { useCookies } from "next-client-cookies";
 const Pas6Trasport = ({ setValue, setDisabled }: any) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("sofer-noapte")));
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, [selected]);
 	const clasaCard =
 		"flex w-1/2 flex-col items-center max-h-[300px]  justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
 	return (
@@ -15,6 +22,7 @@ const Pas6Trasport = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("turaNoapte", "da");
 						setSelected(1);
+						cookies.set("sofer-noapte", "1");
 						setDisabled(false);
 					}}
 					type="button"
@@ -29,6 +37,7 @@ const Pas6Trasport = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("turaNoapte", "nu");
 						setSelected(2);
+						cookies.set("sofer-noapte", "2");
 						setDisabled(false);
 					}}
 					type="button"

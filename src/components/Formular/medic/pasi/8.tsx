@@ -1,8 +1,15 @@
 import { Input } from "@material-tailwind/react";
 import FormWrapper from "../../FormWrapper";
 import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
-
+import { useCookies } from "next-client-cookies";
+import { useEffect } from "react";
 const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
+	const cookies = useCookies();
+	useEffect(() => {
+		if (cookies.get("medic-ultimul-salariu") !== "") {
+			setDisabled(false);
+		}
+	}, []);
 	return (
 		<FormWrapper intrebare="Daca ai mai lucrat in sistemul medica, ne poti spune care a fost ultimul tau salariu?">
 			<div>
@@ -13,6 +20,7 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 					id="ultimulSalariu"
 					onChange={(e) => {
 						setDisabled(false);
+						cookies.set("medic-ultimul-salariu", e.target.value);
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							ultimulSalariu: e.target.value,

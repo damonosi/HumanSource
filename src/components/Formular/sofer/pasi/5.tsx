@@ -1,12 +1,18 @@
 import FormWrapper from "../../FormWrapper";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Singur from "../../../../../public/imagini/formular/sofer/negru/singur.svg";
 import SingurAlb from "../../../../../public/imagini/formular/sofer/alb/singur.svg";
 import Echipaj from "../../../../../public/imagini/formular/sofer/negru/echipaj.svg";
 import EchipajAlb from "../../../../../public/imagini/formular/sofer/alb/echipaj.svg";
-
+import { useCookies } from "next-client-cookies";
 const Pas5Trasport = ({ setValue, setDisabled }: any) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("sofer-echipaj")));
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, [selected]);
 	const clasaCard =
 		"flex w-1/2 flex-col items-center max-h-[300px]  justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
 	return (
@@ -16,6 +22,7 @@ const Pas5Trasport = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("echipaj", "singur");
 						setSelected(1);
+						cookies.set("sofer-echipaj", "1");
 						setDisabled(false);
 					}}
 					type="button"
@@ -30,6 +37,7 @@ const Pas5Trasport = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("echipaj", "echipaj");
 						setSelected(2);
+						cookies.set("sofer-echipaj", "2");
 						setDisabled(false);
 					}}
 					type="button"

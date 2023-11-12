@@ -8,15 +8,18 @@ const Checkbox = ({
 	value,
 	register,
 	setDisabled,
-	checked,
 }: {
 	varianta: string;
 	value: string;
 	register: any;
 	setDisabled: any;
-	checked: boolean;
 }) => {
 	const cookies = useCookies();
+	useEffect(() => {
+		if (cookies.get("sofer-experienta") !== "") {
+			setDisabled(false);
+		}
+	}, []);
 	return (
 		<div className="mb-4 flex items-center">
 			<label className="">
@@ -28,7 +31,7 @@ const Checkbox = ({
 					name="vechime"
 					onChange={(e) => {
 						cookies.set("sofer-experienta", e.target.value);
-						console.log(cookies.get("sofer-experienta"));
+
 						setDisabled(false);
 					}}
 					className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
@@ -55,14 +58,7 @@ const Pas2Trasport = ({ register, setDisabled }: any) => {
 		<FormWrapper intrebare="Ai mai lucrat ca sofer profesionist C+E?">
 			<div className="flex w-full flex-col items-start gap-5">
 				{experienta.map((varianta, index) => (
-					<Checkbox
-						checked={false}
-						setDisabled={setDisabled}
-						key={index}
-						register={register}
-						value={varianta}
-						varianta={varianta}
-					/>
+					<Checkbox setDisabled={setDisabled} key={index} register={register} value={varianta} varianta={varianta} />
 				))}
 			</div>
 		</FormWrapper>

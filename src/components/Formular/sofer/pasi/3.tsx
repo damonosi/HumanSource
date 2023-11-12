@@ -1,17 +1,24 @@
 import FormWrapper from "../../FormWrapper";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Romania from "../../../../../public/imagini/formular/sofer/negru/romania.svg";
 import RomaniaAlb from "../../../../../public/imagini/formular/sofer/alb/romania.svg";
 import Italia from "../../../../../public/imagini/formular/sofer/negru/italia.svg";
 import ItaliaAlb from "../../../../../public/imagini/formular/sofer/alb/italia.svg";
 import International from "../../../../../public/imagini/formular/sofer/negru/international.svg";
 import InternationalAlb from "../../../../../public/imagini/formular/sofer/alb/international.svg";
-
+import { useCookies } from "next-client-cookies";
 const Pas3Trasport = ({ setValue, setDisabled }: any) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("sofer-regim")));
+
 	const clasaCard =
 		"flex w-1/3 flex-col max-h-[300px] items-center  justify-center rounded-2xl bg-alb-site px-1 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
 	const clasaIconita = "w-full";
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, [selected]);
 	return (
 		<FormWrapper intrebare="In ce regim va doriti sa lucrati?">
 			<div className="flex justify-center gap-4  md:gap-5 ">
@@ -19,6 +26,7 @@ const Pas3Trasport = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("regim", "tur-retur");
 						setSelected(1);
+						cookies.set("sofer-regim", "1");
 						setDisabled(false);
 					}}
 					type="button"
@@ -33,6 +41,7 @@ const Pas3Trasport = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("regim", "italia");
 						setSelected(2);
+						cookies.set("sofer-regim", "2");
 						setDisabled(false);
 					}}
 					type="button"
@@ -46,6 +55,7 @@ const Pas3Trasport = ({ setValue, setDisabled }: any) => {
 					onClick={() => {
 						setValue("regim", "international");
 						setSelected(3);
+						cookies.set("sofer-regim", "3");
 						setDisabled(false);
 					}}
 					type="button"

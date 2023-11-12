@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import FormWrapper from "../../FormWrapper";
 
 import Clinica from "../../../../../public/imagini/formular/medic/negru/clinica.svg";
@@ -9,7 +9,7 @@ import SpitalAlb from "../../../../../public/imagini/formular/medic/alb/spital.s
 import Azil from "../../../../../public/imagini/formular/medic/negru/azil.svg";
 import AzilAlb from "../../../../../public/imagini/formular/medic/alb/azil.svg";
 import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
-
+import { useCookies } from "next-client-cookies";
 const Pas2Medical = ({
 	setValue,
 	setDisabled,
@@ -19,10 +19,16 @@ const Pas2Medical = ({
 	setDisabled: (arg0: boolean) => void;
 	setSearchParams: any;
 }) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("medic-subDomeniu")));
 	const clasaCard =
 		"flex w-1/3 flex-col max-h-[300px] items-center  justify-center rounded-2xl bg-alb-site px-1 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
 	const clasaIconita = "w-full";
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, []);
 	return (
 		<FormWrapper intrebare="In ce domeniu vrei sa lucrezi?">
 			<div className="flex justify-center gap-4  md:gap-5 ">
@@ -31,6 +37,7 @@ const Pas2Medical = ({
 						setValue("domeniu", "clinica");
 						setSelected(1);
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({ ...searchParams, subDomeniu: "clinica" }));
+						cookies.set("medic-subDomeniu", "1");
 						setDisabled(false);
 					}}
 					type="button"
@@ -44,7 +51,7 @@ const Pas2Medical = ({
 					className={`${selected == 2 && "bg-gri-brand text-alb-site"} ${clasaCard}`}
 					onClick={() => {
 						setValue("domeniu", "spital");
-
+						cookies.set("medic-subDomeniu", "2");
 						setSelected(2);
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({ ...searchParams, subDomeniu: "spital" }));
 						setDisabled(false);
@@ -60,6 +67,7 @@ const Pas2Medical = ({
 					onClick={() => {
 						setValue("domeniu", "azil");
 						setSelected(3);
+						cookies.set("medic-subDomeniu", "3");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({ ...searchParams, subDomeniu: "azil" }));
 						setDisabled(false);
 					}}

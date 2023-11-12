@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormWrapper from "../../FormWrapper";
 import Da from "../../../../../public/imagini/formular/medic/negru/da.svg";
 import DaAlb from "../../../../../public/imagini/formular/medic/alb/da.svg";
 import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
 import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
+import { useCookies } from "next-client-cookies";
 const Pas3Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("medic-bac")));
 	const clasaCard =
 		"flex w-1/2 flex-col items-center max-h-[300px] justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, []);
 	return (
 		<FormWrapper intrebare="Ai diploma de bac?">
 			<div className="flex justify-center gap-5  ">
@@ -16,6 +23,7 @@ const Pas3Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("bac", "da");
 						setSelected(1);
+						cookies.set("medic-bac", "1");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							bac: "da",
@@ -35,6 +43,7 @@ const Pas3Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("bac", "nu");
 						setSelected(2);
+						cookies.set("medic-bac", "2");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							bac: "nu",

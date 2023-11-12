@@ -20,6 +20,7 @@ import { useMutation } from "@apollo/client";
 import AddMedicalForm from "@/lib/apollo/mutations/mutateMedicForm";
 import { useRouter } from "next/navigation";
 import NavigatieFormularMedic from "@/components/Formular/medic/NavigatieFormularMedic";
+import { useCookies } from "next-client-cookies";
 export type MedicalSearchParamsType = {
 	absolvire: string;
 	amg: string;
@@ -45,6 +46,7 @@ type Inputs = {
 };
 
 const FormularMedic = ({ params }: { params: { lang: string; country: string } }) => {
+	const cookies = useCookies();
 	const [disabled, setDisabled] = useState(true);
 	const [searchParams, setSearchParams] = useState({
 		absolvire: "",
@@ -67,15 +69,15 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 	} = useForm({
 		mode: "onChange",
 		defaultValues: {
-			experienta: "",
-			domeniu: "",
-			bac: "",
-			educatie: "",
-			absolvire: "",
-			lbItaliana: "",
-			ultimulSalariu: "",
-			locatia: "",
-			curs: "",
+			experienta: cookies.get("medic-experienta") || "",
+			domeniu: cookies.get("medic-subDomeniu") || "",
+			bac: cookies.get("medic-bac") || "",
+			educatie: cookies.get("medic-amg") || "",
+			absolvire: cookies.get("medic-absolvire") || "",
+			lbItaliana: cookies.get("medic-experientaLimba") || "",
+			ultimulSalariu: cookies.get("medic-ultimu-salariu") || "",
+			locatia: cookies.get("medic-locatia") || "",
+			curs: cookies.get("medic-cursItaliana") || "",
 		},
 	});
 	const { steps, currentStepIndex, isFirstStep, isLastStep, step, back, next } = useMultistepForm(

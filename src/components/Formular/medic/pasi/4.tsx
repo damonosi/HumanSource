@@ -1,8 +1,5 @@
 import FormWrapper from "../../FormWrapper";
 
-
-
-
 import Postliceala from "../../../../../public/imagini/formular/medic/negru/postliceala.svg";
 import PostlicealaAlb from "../../../../../public/imagini/formular/medic/alb/postliceala.svg";
 import Universitate from "../../../../../public/imagini/formular/medic/negru/universitate.svg";
@@ -12,13 +9,20 @@ import InCursAlb from "../../../../../public/imagini/formular/medic/alb/inCurs.s
 
 import Nu from "../../../../../public/imagini/formular/medic/negru/nu.svg";
 import NuAlb from "../../../../../public/imagini/formular/medic/alb/nu.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MedicalSearchParamsType } from "@/app/[lang]/form/worker/medical/page";
+import { useCookies } from "next-client-cookies";
 const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("medic-amg")));
 	const clasaCard =
 		"flex w-full md:w-1/4 flex-col items-center max-h-[300px] justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
 	const clasaIconita = "w-full";
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, []);
 	return (
 		<FormWrapper intrebare="Unde ai absolvit specializarea de Asistent Medical Generalist?">
 			<div className="grid grid-cols-2  justify-center gap-4 md:flex  md:gap-5 ">
@@ -26,6 +30,7 @@ const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("educatie", "postliceala");
 						setSelected(1);
+						cookies.set("medic-amg", "1");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							amg: "postliceala",
@@ -44,6 +49,7 @@ const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("educatie", "universitate");
 						setSelected(2);
+						cookies.set("medic-amg", "2");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							amg: "universitate",
@@ -61,6 +67,7 @@ const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("educatie", "inCurs");
 						setSelected(3);
+						cookies.set("medic-amg", "3");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							amg: "inCurs",
@@ -78,6 +85,7 @@ const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 					onClick={() => {
 						setValue("educatie", "nu");
 						setSelected(4);
+						cookies.set("medic-amg", "4");
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							amg: "nu",
