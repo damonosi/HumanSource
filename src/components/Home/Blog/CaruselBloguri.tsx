@@ -99,7 +99,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 
 						return (
 							<CardBlog
-								lang={params.lang}
+								params={params}
 								slug={slug}
 								data={dateCreated}
 								titlu={title}

@@ -17,10 +17,10 @@ interface ICardBlog {
 	id: string;
 	slug: string;
 	imageUrl: StaticImageData;
-	lang: string;
+	params: { lang: string };
 }
 
-const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl, id }: ICardBlog) => {
+const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardBlog) => {
 	const [hovered, setHovered] = useState(false);
 	const handleMouseEnter = () => {
 		setHovered(true);
@@ -32,7 +32,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl, id }: ICardBlo
 	const paragraphLength = paragraph.length;
 
 	const router = useRouter();
-	const formattedDate = formatDate(data);
+	const formattedDate = formatDate(data, params);
 	return (
 		<div
 			onMouseLeave={handleMouseLeave}
@@ -79,7 +79,7 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl, id }: ICardBlo
 							hovered && "text-alb-site"
 						}`}
 						onClick={() => {
-							router.push(`/${lang}/blog/${slug}?id=${id}`);
+							router.push(`/${params.lang}/blog/${slug}?id=${id}`);
 						}}
 					>
 						<span className={`${hovered && "text-alb-site"}`}>Citeste mai mult</span>

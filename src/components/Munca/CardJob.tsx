@@ -40,7 +40,7 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) 
 				id="container-text-bloguri"
 			>
 				<Typography variant="paragraph" className="z-20 text-sm font-[350]  opacity-50 ">
-					{formatDate(data)}
+					{formatDate(data, params)}
 				</Typography>
 				<Typography variant="h5" className="text-[16px] font-bold">
 					{titlu}

@@ -45,7 +45,7 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 				</div>
 				<div className="flex h-1/2 flex-col gap-2  px-2 pb-4 leading-10">
 					<Typography variant="small" className="text-start text-gri-brand opacity-50">
-						{formatDate(date)}
+						{formatDate(date, params)}
 					</Typography>
 					<Typography variant="h4" className=" text-2xl font-[500] text-gri-brand">
 						{title}

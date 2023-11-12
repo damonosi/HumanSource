@@ -23,7 +23,7 @@ const ClientBlogPage = ({ params }: { params: { lang: string; id: string } }) =>
 	const blog = data.blog;
 	let { photo, title, id, dateCreated, content, tags, author } = blog;
 
-	const formattedDate = formatDate(dateCreated);
+	const formattedDate = formatDate(dateCreated, params);
 
 	let altText = !photo ? "nu are alt" : photo.altText;
 	let imageUrl = !photo
