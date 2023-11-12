@@ -20,7 +20,7 @@ const HumanSourceMap = () => {
 	});
 
 	return (
-		<div className="relative flex w-full md:w-1/2">
+		<div className="relative flex w-full  rounded-full md:w-1/2">
 			{isLoaded ? (
 				<iframe
 					width={containerStyle.width}
@@ -29,6 +29,7 @@ const HumanSourceMap = () => {
 					referrerPolicy="no-referrer-when-downgrade"
 					src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZWU0iVv-sUARkUpox6A2skg&key=${process.env.NEXT_PUBLIC_GOOGLE_API}`}
 					allowFullScreen
+					className="rounded-2xl"
 				></iframe>
 			) : (
 				<div className="flex h-full w-full items-center justify-center">
