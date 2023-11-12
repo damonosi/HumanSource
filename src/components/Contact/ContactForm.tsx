@@ -5,11 +5,10 @@ import { Checkbox, Input, Textarea } from "@material-tailwind/react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import addContactForm from "@/lib/apollo/mutations/mutateContactForm";
 import { useMutation } from "@apollo/client";
-import { useRouter } from "next/navigation";
+import { useCookies } from "next-client-cookies";
 
 type Inputs = {
 	nume: string;
-
 	email: string;
 	telefon: string;
 	mesaj: string;
@@ -18,7 +17,7 @@ type Inputs = {
 
 const ContactForm = ({ params }: { params: { lang: string; country: string } }) => {
 	const [addContact] = useMutation(addContactForm);
-	const router = useRouter();
+	const cookies = useCookies();
 	const {
 		register,
 		handleSubmit,
@@ -38,6 +37,10 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 				},
 			});
 			reset();
+			cookies.remove("contact-name");
+			cookies.remove("contact-email");
+			cookies.remove("contact-phone");
+			cookies.remove("contact-message");
 		} catch (error) {
 			console.log(error);
 		}
@@ -52,15 +55,29 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 						{...register("nume", { required: true })}
 						id="nume"
 						label="Numele tau complet"
+						defaultValue={cookies.get("contact-name")}
+						onChange={(e) => {
+							cookies.set("contact-name", e.target.value);
+						}}
 						icon={<MdPersonOutline />}
 					/>
 
 					<Input
 						variant="outlined"
 						type="text"
-						{...register("email", { required: true })}
+						{...register("email", {
+							required: true,
+							pattern: {
+								value: /\S+@\S+\.\S+/,
+								message: "Entered value does not match email format",
+							},
+						})}
 						id="email"
 						icon={<AiOutlineMail />}
+						defaultValue={cookies.get("contact-email")}
+						onChange={(e) => {
+							cookies.set("contact-email", e.target.value);
+						}}
 						label="Email"
 					/>
 
@@ -70,6 +87,10 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 						{...register("telefon", { required: true })}
 						id="telefon"
 						icon={<FiPhone />}
+						defaultValue={cookies.get("contact-phone")}
+						onChange={(e) => {
+							cookies.set("contact-phone", e.target.value);
+						}}
 						label="Numar de telefon"
 					/>
 				</div>
@@ -93,11 +114,15 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 					id="telefon"
 					aria-expanded
 					label="Trimite-ne un mesaj"
+					defaultValue={cookies.get("contact-message")}
+					onChange={(e) => {
+						cookies.set("contact-message", e.target.value);
+					}}
 				/>
 				<div className="flex flex-col items-center justify-center gap-2 text-rosu-brand">
 					{errors.nume && <span>Trebuie sa adaugati un nume</span>}
 
-					{errors.email && <span>Trebuie sa adaugati o adresa de email</span>}
+					{errors.email && <span>Trebuie sa adaugati o adresa de email valida</span>}
 					{errors.telefon && <span>Trebuie sa adaugati un numar de telefon</span>}
 					{errors.privacy && <span>Trebuie sa fiti de acord cu politica de confidentialitate</span>}
 				</div>

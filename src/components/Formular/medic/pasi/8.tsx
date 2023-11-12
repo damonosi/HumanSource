@@ -11,7 +11,6 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 					type="text"
 					{...register("ultimulSalariu", { required: true, valueAsNumber: true })}
 					id="ultimulSalariu"
-					className="max-w-xs  !border-t-rosu-brand placeholder-shown:border-rosu-brand focus:border-rosu-brand focus:!border-t-transparent"
 					onChange={(e) => {
 						setDisabled(false);
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
@@ -20,8 +19,10 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 						}));
 					}}
 					label="Raspunsul Dumneavoastra $"
+					className="max-w-xs focus:border-rosu-brand focus:!border-t-transparent"
 					labelProps={{
-						className: "peer-focus:after:!border-rosu-brand !text-rosu-brand  peer-focus:before:!border-rosu-brand",
+						className:
+							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 					}}
 				/>
 			</div>

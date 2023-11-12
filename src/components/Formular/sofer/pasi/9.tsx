@@ -8,13 +8,14 @@ const Pas9Trasport = ({ register, setDisabled }: any) => {
 				<Input
 					variant="outlined"
 					type="text"
-					className="max-w-xs  !border-t-rosu-brand placeholder-shown:border-rosu-brand focus:border-rosu-brand focus:!border-t-transparent"
 					{...register("salariuDorit", { required: true, valueAsNumber: true })}
 					id="salariuDorit"
 					onChange={() => setDisabled(false)}
 					label="Raspunsul Dumneavoastra"
+					className="max-w-xs focus:border-rosu-brand focus:!border-t-transparent"
 					labelProps={{
-						className: "peer-focus:after:!border-rosu-brand !text-rosu-brand  peer-focus:before:!border-rosu-brand",
+						className:
+							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 					}}
 				/>
 			</div>
