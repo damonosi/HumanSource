@@ -49,50 +49,93 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 		<div className="flex justify-end rounded-2xl bg-alb-site p-5">
 			<form className="relative w-full justify-between bg-alb-site" onSubmit={handleSubmit(onSubmit)}>
 				<div className="mb-4 grid grid-cols-1 gap-6 md:grid-cols-2">
-					<Input
+					<div>
+						<Input
+							variant="outlined"
+							type="text"
+							{...register("nume", { required: true })}
+							id="nume"
+							label="Numele tau complet"
+							defaultValue={cookies.get("contact-name")}
+							onChange={(e) => {
+								cookies.set("contact-name", e.target.value);
+							}}
+							icon={<MdPersonOutline />}
+							className=" focus:border-rosu-brand focus:!border-t-transparent"
+							labelProps={{
+								className:
+									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							}}
+						/>
+						{errors.nume && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un nume</span>}
+					</div>
+					<div>
+						<Input
+							variant="outlined"
+							type="text"
+							{...register("email", {
+								required: true,
+								pattern: {
+									value: /\S+@\S+\.\S+/,
+									message: "Entered value does not match email format",
+								},
+							})}
+							id="email"
+							icon={<AiOutlineMail />}
+							defaultValue={cookies.get("contact-email")}
+							onChange={(e) => {
+								cookies.set("contact-email", e.target.value);
+							}}
+							label="Email"
+							className=" focus:border-rosu-brand focus:!border-t-transparent"
+							labelProps={{
+								className:
+									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							}}
+						/>
+						{errors.email && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un email valid</span>}
+					</div>
+					<div>
+						<Input
+							variant="outlined"
+							type="text"
+							{...register("telefon", { required: true })}
+							id="telefon"
+							icon={<FiPhone />}
+							defaultValue={cookies.get("contact-phone")}
+							onChange={(e) => {
+								cookies.set("contact-phone", e.target.value);
+							}}
+							label="Numar de telefon"
+							className=" focus:border-rosu-brand focus:!border-t-transparent"
+							labelProps={{
+								className:
+									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							}}
+						/>
+						{errors.telefon && (
+							<span className="text-sm text-rosu-brand">Trebuie sa adaugati un numar de telefon valid</span>
+						)}
+					</div>
+				</div>
+				<div>
+					<Textarea
 						variant="outlined"
-						type="text"
-						{...register("nume", { required: true })}
-						id="nume"
-						label="Numele tau complet"
-						defaultValue={cookies.get("contact-name")}
-						onChange={(e) => {
-							cookies.set("contact-name", e.target.value);
-						}}
-						icon={<MdPersonOutline />}
-					/>
-
-					<Input
-						variant="outlined"
-						type="text"
-						{...register("email", {
-							required: true,
-							pattern: {
-								value: /\S+@\S+\.\S+/,
-								message: "Entered value does not match email format",
-							},
-						})}
-						id="email"
-						icon={<AiOutlineMail />}
-						defaultValue={cookies.get("contact-email")}
-						onChange={(e) => {
-							cookies.set("contact-email", e.target.value);
-						}}
-						label="Email"
-					/>
-
-					<Input
-						variant="outlined"
-						type="text"
-						{...register("telefon", { required: true })}
+						{...register("mesaj", { required: true })}
 						id="telefon"
-						icon={<FiPhone />}
-						defaultValue={cookies.get("contact-phone")}
+						aria-expanded
+						label="Trimite-ne un mesaj"
+						defaultValue={cookies.get("contact-message")}
 						onChange={(e) => {
-							cookies.set("contact-phone", e.target.value);
+							cookies.set("contact-message", e.target.value);
 						}}
-						label="Numar de telefon"
+						className=" focus:border-rosu-brand focus:!border-t-transparent"
+						labelProps={{
+							className:
+								"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+						}}
 					/>
+					{errors.mesaj && <span className="text-sm text-rosu-brand">Adaugat un scurt mesaj</span>}
 				</div>
 				<Checkbox
 					className="my-4 items-center justify-center"
@@ -108,24 +151,6 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 					}
 				/>
 
-				<Textarea
-					variant="outlined"
-					{...register("mesaj", { required: true })}
-					id="telefon"
-					aria-expanded
-					label="Trimite-ne un mesaj"
-					defaultValue={cookies.get("contact-message")}
-					onChange={(e) => {
-						cookies.set("contact-message", e.target.value);
-					}}
-				/>
-				<div className="flex flex-col items-center justify-center gap-2 text-rosu-brand">
-					{errors.nume && <span>Trebuie sa adaugati un nume</span>}
-
-					{errors.email && <span>Trebuie sa adaugati o adresa de email valida</span>}
-					{errors.telefon && <span>Trebuie sa adaugati un numar de telefon</span>}
-					{errors.privacy && <span>Trebuie sa fiti de acord cu politica de confidentialitate</span>}
-				</div>
 				<div className="flex w-full items-center justify-center">
 					<button className="mt-5 rounded-2xl  bg-gri-brand px-5 py-4 text-alb-site" type="submit">
 						Trimite datele

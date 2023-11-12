@@ -131,6 +131,16 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			});
 			isSubmitSuccessful &&
 				router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}&locatia=${locatia}`);
+				cookies.remove("medic-experienta");
+				cookies.remove("medic-subDomeniu");
+				cookies.remove("medic-bac");
+				cookies.remove("medic-amg");
+				cookies.remove("medic-absolvire");
+				cookies.remove("medic-experientaLimba");
+				cookies.remove("medic-ultimu-salariu");
+				cookies.remove("medic-locatia");
+				cookies.remove("medic-cursItaliana");
+				
 		} catch (error) {
 			console.log(error);
 		}
