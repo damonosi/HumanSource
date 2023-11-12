@@ -114,7 +114,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			isSubmitted && router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}`);
+			isSubmitted && router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
 		} catch (error) {
 			console.log(error);
 		}

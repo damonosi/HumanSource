@@ -127,7 +127,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			isSubmitted && router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}`);
+			isSubmitted && router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}&locatia=${locatia}`);
 		} catch (error) {
 			console.log(error);
 		}
