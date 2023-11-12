@@ -10,6 +10,9 @@ const query = gql`
 			requierments
 			salary
 			whyWork
+			location {
+				name
+			}
 			jobCategory {
 				name
 			}

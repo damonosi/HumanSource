@@ -30,6 +30,7 @@ export interface IJob {
 			company: string;
 			salary: string;
 			requierments: string;
+			location: { name: string };
 			whyWork: string;
 		};
 	};

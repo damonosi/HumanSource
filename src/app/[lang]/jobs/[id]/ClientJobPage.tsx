@@ -29,7 +29,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 			},
 		},
 	});
-	const { description, id, title, date, company, salary, requierments, jobCategory, whyWork } = data.job;
+	const { description, id, title, date, company, salary, requierments, jobCategory, whyWork, location } = data.job;
 
 	return (
 		<div className="container mx-auto grid ">
@@ -65,7 +65,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 								</div>
 								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
 									<TbTicket className="w-5" />
-									<span> Numar job : 203</span>
+									<span> Locatia : {location.name}</span>
 								</div>
 							</div>
 						</div>
