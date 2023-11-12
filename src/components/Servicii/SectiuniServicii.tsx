@@ -9,6 +9,7 @@ import AttachEmailOutlinedIcon from "@mui/icons-material/AttachEmailOutlined";
 import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
 import Groups2OutlinedIcon from "@mui/icons-material/Groups2Outlined";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type Props = { children: JSX.Element | JSX.Element[]; text: string };
 
@@ -20,15 +21,19 @@ const CardHeroServicii = ({ children, text }: Props) => {
 		</div>
 	);
 };
-const ButonSolicitaOferta = () => {
+const ButonSolicitaOferta = ({ params }: { params: { lang: string } }) => {
+	const router = useRouter();
 	return (
-		<button className="flex items-center gap-4 rounded-2xl border border-gri-bg py-4 px-5  font-bold text-gri-brand hover:bg-gri-brand hover:text-alb-site ">
+		<button
+			onClick={() => router.push(`/${params.lang}/form/employer`)}
+			className="flex items-center gap-4 rounded-2xl border border-gri-bg py-4 px-5  font-bold text-gri-brand hover:bg-gri-brand hover:text-alb-site "
+		>
 			<span className="text-sm">Solicita oferta</span>
 		</button>
 	);
 };
 
-const SectiuniServicii = () => {
+const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 	return (
 		<div className="flex flex-col gap-32" id="sections-container">
 			<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row" id="hero-servicii">
@@ -73,7 +78,7 @@ const SectiuniServicii = () => {
 						dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc
 						ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui
 					</Typography>
-					<ButonSolicitaOferta />
+					<ButonSolicitaOferta params={params} />
 				</div>
 			</section>
 			<div className="h-[1px] w-full" id="sectiune-servicii-2"></div>
@@ -86,7 +91,7 @@ const SectiuniServicii = () => {
 						dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc
 						ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui
 					</Typography>
-					<ButonSolicitaOferta />
+					<ButonSolicitaOferta params={params} />
 				</div>
 				<div className="flex items-center justify-center md:w-1/2" id="container-imagine">
 					{" "}
@@ -107,7 +112,7 @@ const SectiuniServicii = () => {
 						dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc
 						ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui
 					</Typography>
-					<ButonSolicitaOferta />
+					<ButonSolicitaOferta params={params} />
 				</div>
 			</section>
 		</div>

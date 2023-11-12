@@ -8,16 +8,19 @@ import ContactForm from "@/components/Contact/ContactForm";
 
 import ContactWays from "@/components/Contact/ContactWays";
 import GoogleMap from "@/components/Contact/GoogleMap";
-
+import { useTranslation } from "@/app/i18n/client";
 const ClientContactPage = ({ params }: { params: { lang: string; country: string } }) => {
+	const { t } = useTranslation(params.lang, "contact");
 	return (
 		<div className="container mx-auto flex flex-col ">
 			<Breadcrumbs>
 				<Link className="text-gri-brand" href={`/${params.lang}/`}>
-					Home
+					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+              	// @ts-ignore */}
+					{t("breadHome")}
 				</Link>
 				<Link className="text-red-600" href={`/${params.lang}/contact`}>
-					Contact
+					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>
 			<div className="flex flex-col-reverse gap-14 py-4 md:flex-row ">

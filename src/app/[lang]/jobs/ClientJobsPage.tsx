@@ -11,7 +11,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobsByCategory";
 
 import SearchBar from "@/components/Munca/CategorySelector";
-
+import { useTranslation } from "@/app/i18n/client";
 const ClientJobsPage = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const upperdParams = params.lang.toUpperCase();
 	const searchParams = useSearchParams();
@@ -40,15 +40,17 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 	});
 
 	const jobs = data.jobs;
-
+	const { t } = useTranslation(params.lang, "jobs");
 	return (
 		<div className="container mx-auto grid grid-cols-1 gap-9">
 			<Breadcrumbs>
 				<Link className="" href={`/${params.lang}`}>
-					Home
+					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+              	// @ts-ignore */}
+					{t("breadHome")}
 				</Link>
 				<Link className="" href={`/${params.lang}/jobs`}>
-					Locuri de munca
+					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>
 			<SearchBar params={params} />

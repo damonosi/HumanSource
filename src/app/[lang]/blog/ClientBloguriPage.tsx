@@ -6,6 +6,9 @@ import BlogsBradcrumbs from "@/components/Blog/BlogsBreadcrumbs";
 import query from "@/lib/apollo/queries/blog/getBlogsByLang";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { IBlogs } from "@/interfaces/blog";
+
+
+
 const ClientBloguriPage = ({ params }: { params: { lang: string; country: string } }) => {
 	const capitalizedParams = params.lang.toLocaleUpperCase();
 
