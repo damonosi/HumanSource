@@ -1,5 +1,5 @@
 import FormWrapper from "../../FormWrapper";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardRemorca from "../CardRemorca";
 import Cisterna from "../../../../../public/imagini/formular/sofer/negru/cisterna.svg";
 import CisternaAlb from "../../../../../public/imagini/formular/sofer/alb/cisterna.svg";
@@ -19,18 +19,26 @@ import Container from "../../../../../public/imagini/formular/sofer/negru/contai
 import ContainerAlb from "../../../../../public/imagini/formular/sofer/alb/container.svg";
 import Agabaritic from "../../../../../public/imagini/formular/sofer/negru/agabaritic.svg";
 import AgabariticAlb from "../../../../../public/imagini/formular/sofer/alb/agabaritic.svg";
-
+import { useCookies } from "next-client-cookies";
 interface IClickProps {
 	cardSelectat: number;
 	valoareFormular: string;
 }
 
 const Pas1Trasport = ({ setValue, setDisabled }: any) => {
-	const [selected, setSelected] = useState(0);
+	const cookies = useCookies();
+	const [selected, setSelected] = useState(Number(cookies.get("sofer-tip-remorca")));
 	const clasaIconite = "w-full";
+	useEffect(() => {
+		if (selected !== 0) {
+			setDisabled(false);
+		}
+	}, [selected]);
 	const handleClick = ({ cardSelectat, valoareFormular }: IClickProps) => {
 		setValue("tipRemorca", valoareFormular);
 		setSelected(cardSelectat);
+		cookies.set("sofer-tip-remorca", cardSelectat.toString());
+
 		setDisabled(false);
 	};
 	return (
