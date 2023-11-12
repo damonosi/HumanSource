@@ -41,13 +41,13 @@ const CardBlog = ({ data, titlu, paragraph, lang, slug, imageUrl, id }: ICardBlo
 		>
 			<div
 				key="mask"
-				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full origin-top -translate-y-72 overflow-hidden rounded-2xl bg-black bg-fixed opacity-0 transition-all duration-700  group-hover:translate-y-0 group-hover:opacity-50 "
+				className="absolute top-0 bottom-0 right-0 left-0 z-20 h-full origin-top -translate-y-72 overflow-hidden rounded-2xl bg-black bg-fixed opacity-0 transition-all duration-500  group-hover:translate-y-0 group-hover:opacity-50 "
 			/>
 			<div className="flex h-1/2 w-full md:h-1/3  ">
 				<Image
 					fill
 					alt="background"
-					className="-hover:absolute z-10  w-full -translate-y-[60%] object-cover transition-transform duration-500 group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
+					className="z-10 w-full  -translate-y-[60%] object-cover transition-transform duration-500 hover:absolute group-hover:top-0 group-hover:bottom-0 group-hover:-translate-y-0"
 					src={imageUrl}
 				/>
 			</div>
