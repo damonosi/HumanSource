@@ -15,7 +15,14 @@ const SearchBar = ({ params }: Iparams) => {
 	const router = useRouter();
 	return (
 		<div className="flex w-full  flex-col items-center justify-center gap-4 md:w-1/2 md:flex-row">
-			<Input label="Cauta" />
+			<Input
+				label="Cauta"
+				className=" focus:border-rosu-brand focus:!border-t-transparent"
+				labelProps={{
+					className:
+						"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+				}}
+			/>
 			<div className="flex w-full flex-col gap-4  md:w-1/3 md:flex-row">
 				<Select
 					size="md"
@@ -26,6 +33,11 @@ const SearchBar = ({ params }: Iparams) => {
 					variant="outlined"
 					defaultValue={domeniu}
 					label="Domeniu"
+					className=" focus:border-rosu-brand focus:!border-t-transparent"
+					labelProps={{
+						className:
+							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+					}}
 				>
 					{categoryData.categories.map(({ name }) => (
 						<Option key={name} value={name}>
@@ -42,6 +54,11 @@ const SearchBar = ({ params }: Iparams) => {
 					variant="outlined"
 					defaultValue={locatie}
 					label="Locatie"
+					className=" focus:border-rosu-brand focus:!border-t-transparent"
+					labelProps={{
+						className:
+							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+					}}
 				>
 					{locationData.locations.map(({ name }) => (
 						<Option key={name} value={name}>
