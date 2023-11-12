@@ -11,11 +11,11 @@ import Pas6Trasport from "@/components/Formular/sofer/pasi/6";
 import Pas7Trasport from "@/components/Formular/sofer/pasi/7";
 import Pas8Trasport from "@/components/Formular/sofer/pasi/8";
 import Pas9Trasport from "@/components/Formular/sofer/pasi/9";
-import query from "@/lib/apollo/queries/job/getJobsByCategory";
+
 import { SubmitHandler, useForm } from "react-hook-form";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
-import { IJobs } from "@/interfaces/job";
+
 import { useMutation, useSuspenseQuery } from "@apollo/client";
 import NavigatieFormularSofer from "@/components/Formular/NavigatieFormularSofer";
 import AddTransportForm from "@/lib/apollo/mutations/mutateTransportForm";
@@ -31,7 +31,7 @@ export type TransportSearchParamsType = {
 	experientaLimba: string;
 	locatia: string;
 	subDomeniu: string;
-	ultimuSalar: number;
+	ultimuSalar: string;
 };
 type Inputs = {
 	tipRemorca: string;
@@ -41,7 +41,7 @@ type Inputs = {
 	echipaj: string;
 	turaNoapte: string;
 	lbItaliana: string;
-	ultimulSalariu: number;
+	ultimulSalariu: string;
 	salariuDorit: string;
 	category: string;
 };
@@ -62,7 +62,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 			echipaj: "",
 			turaNoapte: "",
 			lbItaliana: "",
-			ultimulSalariu: 0,
+			ultimulSalariu: "",
 			salariuDorit: "",
 			category: "transport",
 		},

@@ -30,7 +30,7 @@ export type MedicalSearchParamsType = {
 	experientaLimba: string;
 	locatia: string;
 	subDomeniu: string;
-	ultimuSalar: number;
+	ultimuSalar: string;
 };
 type Inputs = {
 	experienta: string;
@@ -39,7 +39,7 @@ type Inputs = {
 	educatie: string;
 	absolvire: string;
 	lbItaliana: string;
-	ultimulSalariu: number;
+	ultimulSalariu: string;
 	locatia: string;
 	curs: string;
 };
@@ -56,7 +56,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		experientaLimba: "",
 		locatia: "",
 		subDomeniu: "",
-		ultimuSalar: 0,
+		ultimuSalar: "",
 	});
 
 	const {
@@ -73,7 +73,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			educatie: "",
 			absolvire: "",
 			lbItaliana: "",
-			ultimulSalariu: 0,
+			ultimulSalariu: "",
 			locatia: "",
 			curs: "",
 		},
