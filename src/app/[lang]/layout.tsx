@@ -126,7 +126,7 @@ export default function RootLayout({
 								<Analytics />
 							</main>
 
-							<Footer />
+							<Footer params={params} />
 						</div>
 					</Providers>
 				</ClientCookiesProvider>

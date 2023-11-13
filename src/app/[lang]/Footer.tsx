@@ -3,7 +3,7 @@ import { FiFacebook } from "react-icons/fi";
 import { GrInstagram } from "react-icons/gr";
 import { SlSocialTwitter } from "react-icons/sl";
 
-const Footer = () => {
+const Footer = ({ params }: { params: { lang: string } }) => {
 	return (
 		<footer className="relative z-10  w-full overflow-hidden bg-gri-bg pt-12 pb-10 text-white md:mx-auto   md:items-center  md:justify-center">
 			<div className="mx-auto  flex w-full flex-col items-center justify-center  pb-0   md:px-[70px]">
@@ -24,9 +24,9 @@ const Footer = () => {
 
 							<hr className="h-2 w-full" />
 							<div className="flex flex-col gap-8">
-								<Link href="/jobs">Leasing de personal</Link>
-								<Link href="/plasare">Recrutare si selectie</Link>
-								<Link href="/cerere-oferta">Payroll si administrare</Link>
+								<Link href={`/${params.lang}/jobs`}>Leasing de personal</Link>
+								<Link href={`/${params.lang}/services/#sectiune-servicii-2`}>Recrutare si selectie</Link>
+								<Link href={`/${params.lang}/services/#sectiune-servicii-3`}>Payroll si administrare</Link>
 							</div>
 						</div>
 						<div className="flex w-full flex-col items-center justify-center gap-6 text-center md:w-1/4 md:items-start md:text-start">
@@ -42,9 +42,9 @@ const Footer = () => {
 							<h6 className="font-[500]">INFORMATII</h6>
 							<hr className="h-2 w-full" />
 							<div className="flex flex-col gap-8">
-								<Link href="/about">Politica si confidentialitate</Link>
-								<Link href="/blog">Termeni si conditii de utilizare</Link>
-								<Link href="/contact">Politica privind Cookie-urile</Link>
+								<Link href={`/${params.lang}/about`}>Politica si confidentialitate</Link>
+								<Link href={`/${params.lang}/blog`}>Termeni si conditii de utilizare</Link>
+								<Link href={`/${params.lang}/contact`}>Politica privind Cookie-urile</Link>
 							</div>
 						</div>
 					</div>
