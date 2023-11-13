@@ -5,8 +5,10 @@ import IntrebariSection from "@/components/Home/Intrebari/IntrebariSection";
 import NevoiSection from "@/components/Home/Nevoi/NevoiSection";
 import ParteneriSection from "@/components/Home/Parteneri/ParteneriSection";
 import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
+import Spinner from "@/components/Spinner/Spinner";
 
 import type { Metadata } from "next";
+import { Suspense } from "react";
 export const metadata: Metadata = {
 	title: "Agentie de plasare forta de munca - HumanSource ",
 	description:
@@ -48,7 +50,11 @@ export default function Home({ params }: { params: { lang: string; country: stri
 					className="mx-1 flex flex-col items-center justify-center  rounded-b-[10px]  bg-white pb-12  md:mx-2 md:px-16 "
 					id="background"
 				>
-					<BlogSection params={params} /> <ParteneriSection />
+					{" "}
+					<Suspense fallback={<Spinner />}>
+						<BlogSection params={params} />{" "}
+					</Suspense>
+					<ParteneriSection />
 				</div>
 			</div>
 		</div>

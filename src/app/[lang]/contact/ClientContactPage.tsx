@@ -9,6 +9,8 @@ import ContactForm from "@/components/Contact/ContactForm";
 import ContactWays from "@/components/Contact/ContactWays";
 import GoogleMap from "@/components/Contact/GoogleMap";
 import { useTranslation } from "@/app/i18n/client";
+import { Suspense } from "react";
+import Spinner from "@/components/Spinner/Spinner";
 const ClientContactPage = ({ params }: { params: { lang: string; country: string } }) => {
 	const { t } = useTranslation(params.lang, "contact");
 	return (
@@ -23,7 +25,7 @@ const ClientContactPage = ({ params }: { params: { lang: string; country: string
 					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>
-			<div className="flex flex-col-reverse gap-14 py-4 md:flex-row ">
+			<div className="flex flex-col-reverse gap-14 py-4 lg:flex-row ">
 				<div className="flex w-full flex-col  justify-between gap-[60px] md:w-1/2">
 					<div className="flex flex-col gap-8 md:pr-12">
 						<Typography variant="h3" className="text-start font-bold">
@@ -37,8 +39,9 @@ const ClientContactPage = ({ params }: { params: { lang: string; country: string
 					<ContactWays />
 					<ContactForm params={params} />
 				</div>
-
-				<GoogleMap />
+				<Suspense fallback={<Spinner />}>
+					<GoogleMap />
+				</Suspense>
 			</div>
 		</div>
 	);

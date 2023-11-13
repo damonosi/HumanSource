@@ -12,7 +12,7 @@ import { TbTicket } from "react-icons/tb";
 import { IJob } from "@/interfaces/job";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobById";
-import { RandomUUIDOptions } from "crypto";
+
 import { useSearchParams } from "next/navigation";
 
 interface IpageProps {

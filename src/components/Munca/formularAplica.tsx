@@ -1,7 +1,7 @@
 import AddJobApplication from "@/lib/apollo/mutations/mutateJobAplication";
 import { useMutation } from "@apollo/client";
-import { Checkbox, Input, Textarea, Typography } from "@material-tailwind/react";
-import { RandomUUIDOptions } from "crypto";
+import { Input, Textarea, Typography } from "@material-tailwind/react";
+
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineMail } from "react-icons/ai";
@@ -77,6 +77,11 @@ const FormularAplica = ({
 					id="nume"
 					label="Numele tau complet"
 					icon={<MdPersonOutline />}
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					labelProps={{
+						className:
+							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+					}}
 				/>
 
 				<Input
@@ -85,6 +90,11 @@ const FormularAplica = ({
 					{...register("dataNastere", { required: true })}
 					id="dataNastere"
 					label="Data Nastere"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					labelProps={{
+						className:
+							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+					}}
 				/>
 
 				<Input
@@ -94,6 +104,11 @@ const FormularAplica = ({
 					id="email"
 					icon={<AiOutlineMail />}
 					label="Email"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					labelProps={{
+						className:
+							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+					}}
 				/>
 
 				<Input
@@ -103,6 +118,11 @@ const FormularAplica = ({
 					id="telefon"
 					icon={<FiPhone />}
 					label="Numar de telefon"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					labelProps={{
+						className:
+							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+					}}
 				/>
 
 				<Textarea
@@ -111,25 +131,31 @@ const FormularAplica = ({
 					id="telefon"
 					aria-expanded
 					label="Trimite-ne un mesaj"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					labelProps={{
+						className:
+							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+					}}
 				/>
-				<Checkbox
-					className=" "
-					{...register("privacy", { required: true })}
-					label={
-						<Typography color="blue-gray" className="flex text-center text-xs font-medium md:text-lg">
-							*sunt de acord cu
-							<Typography
-								as="a"
-								href="#"
-								color="blue"
-								className="text-xs font-medium transition-colors hover:text-blue-700 md:text-lg"
-							>
-								&nbsp;termenii si conditiile
-							</Typography>
-							.
-						</Typography>
-					}
-				/>
+				<div>
+					<label className="flex items-center py-6">
+						<input
+							id="privacy"
+							type="checkbox"
+							{...register("privacy", { required: true })}
+							name="privacy"
+							className=" mx-4  h-4 w-4 rounded-full  checked:bg-rosu-brand   focus:ring-rosu-brand "
+						/>
+
+						<span className="text-sm font-medium text-gri-brand dark:text-gray-300">
+							*Sunt de acord cu
+							<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
+								Politica de confidentialitate
+							</a>
+							in vederea prelucrarii datelor personale.{" "}
+						</span>
+					</label>
+				</div>
 			</div>
 
 			<div className="flex flex-col items-center justify-center gap-2 text-rosu-brand">

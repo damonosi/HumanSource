@@ -25,7 +25,7 @@ const HumanSourceMap = () => {
 				<iframe
 					width={containerStyle.width}
 					height={containerStyle.height}
-					loading="lazy"
+					loading="eager"
 					referrerPolicy="no-referrer-when-downgrade"
 					src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZWU0iVv-sUARkUpox6A2skg&key=${process.env.NEXT_PUBLIC_GOOGLE_API}`}
 					allowFullScreen
