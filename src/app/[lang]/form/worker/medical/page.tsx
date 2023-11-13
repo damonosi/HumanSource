@@ -130,18 +130,23 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			isLoading && console.log("submitting");
-			isSubmitSuccessful && console.log("success");
-			router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}&locatia=${locatia}`);
-			cookies.remove("medic-experienta");
-			cookies.remove("medic-subDomeniu");
-			cookies.remove("medic-bac");
-			cookies.remove("medic-amg");
-			cookies.remove("medic-absolvire");
-			cookies.remove("medic-experientaLimba");
-			cookies.remove("medic-ultimu-salariu");
-			cookies.remove("medic-locatia");
-			cookies.remove("medic-cursItaliana");
+			if (isLoading) {
+				console.log("submitting");
+			}
+			if (isSubmitSuccessful) {
+				router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}&locatia=${locatia}`);
+				cookies.remove("medic-experienta");
+				cookies.remove("medic-subDomeniu");
+				cookies.remove("medic-bac");
+				cookies.remove("medic-amg");
+				cookies.remove("medic-absolvire");
+				cookies.remove("medic-experientaLimba");
+				cookies.remove("medic-ultimu-salariu");
+				cookies.remove("medic-locatia");
+				cookies.remove("medic-cursItaliana");
+			} else {
+				console.log("error");
+			}
 		} catch (error) {
 			console.log(error);
 		}

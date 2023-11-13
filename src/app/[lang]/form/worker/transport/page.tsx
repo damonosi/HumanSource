@@ -132,7 +132,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 				cookies.remove("sofer-ultimul-salariu");
 				cookies.remove("sofer-salariu-dorit");
 			} else {
-				return <span>error</span>;
+				console.log("error");
 			}
 			
 			
