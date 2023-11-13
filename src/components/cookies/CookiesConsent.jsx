@@ -41,7 +41,7 @@ const CookieConsent = (props) => {
 					>
 						Cookies Settings
 					</button>
-					<div className="flex gap-4">
+					<div className="flex gap-1 md:gap-4">
 						<button
 							className="rounded-xl border border-gri-brand py-2 px-4 text-xs font-medium text-gri-brand hover:bg-gri-brand hover:text-alb-site md:text-sm"
 							onClick={() => acceptCookie()}

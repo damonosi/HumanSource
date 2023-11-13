@@ -23,7 +23,7 @@ const Checkbox = ({
 
 	return (
 		<div className="mb-4 flex items-center">
-			<label className="">
+			<label className="flex items-center">
 				<input
 					id="vechime"
 					type="radio"

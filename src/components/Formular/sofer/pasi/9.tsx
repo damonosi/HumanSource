@@ -11,7 +11,7 @@ const Pas9Trasport = ({ register, setDisabled }: any) => {
 	}, []);
 	return (
 		<FormWrapper intrebare="Ne poti spune ce salariu iti doresti?">
-			<div>
+			<div className="flex w-full items-center justify-center gap-1 justify-self-start md:w-[300px]">
 				<Input
 					variant="outlined"
 					type="text"
