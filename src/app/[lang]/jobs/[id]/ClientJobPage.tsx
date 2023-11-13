@@ -35,13 +35,13 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 		<div className="container mx-auto grid ">
 			<div className="container mx-auto flex flex-col px-5 md:px-0">
 				<Breadcrumbs>
-					<Link className="text-gri-brand" href={`/${params.lang}`}>
+					<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
 						Home
 					</Link>
-					<Link className="text-gri-brand" href={`/${params.lang}/jobs`}>
+					<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/jobs`}>
 						Locuri de munca
 					</Link>
-					<Link className="text-gri-brand" href={`/${params.lang}/jobs`}>
+					<Link className="text-rosu-brand" href={`/${params.lang}/jobs`}>
 						{title}
 					</Link>
 				</Breadcrumbs>

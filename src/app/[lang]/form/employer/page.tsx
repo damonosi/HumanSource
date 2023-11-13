@@ -9,6 +9,9 @@ import { FiPhone } from "react-icons/fi";
 import { MdPersonOutline } from "react-icons/md";
 import query from "@/lib/apollo/queries/categories/categories";
 import { useCookies } from "next-client-cookies";
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
+import Link from "next/link";
+import { useTranslation } from "@/app/i18n/client";
 type Inputs = {
 	codFiscal: string;
 	domeniu: string;
@@ -59,173 +62,187 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 			console.log(error);
 		}
 	};
-
+	const { t } = useTranslation(params.lang, "formularAngajator");
 	return (
-		<form className=" " onSubmit={handleSubmit(onSubmit)}>
-			<div className="relative mx-auto grid w-fit max-w-2xl  grid-cols-1 justify-between gap-8 rounded bg-alb-site p-4 md:my-4">
-				<Typography className="mb-16" variant="h3">
-					Aplicare
-				</Typography>
-				<section className="grid grid-cols-1 gap-5 md:grid-cols-2">
-					<Select
-						size="lg"
-						onChange={(e) => {
-							if (!e) return;
-							cookies.set("employer-form-domeniu", e);
-							setValue("domeniu", e);
-						}}
-						variant="outlined"
-						defaultValue={cookies.get("employer-form-domeniu")}
-						label="Categorie"
-						color="red"
-					>
-						{data.categories.map(({ name }) => (
-							<Option
-								key={name}
-								value={name}
-								onClick={() => {
-									console.log(name);
-									cookies.set("employer-form-domeniu", name);
+		<section className="px-5 pb-[60px] md:px-[70px]">
+			<Breadcrumbs>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
+					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+              	// @ts-ignore */}
+					{t("breadHome")}
+				</Link>
+				<Link className="text-rosu-brand" href={`/${params.lang}/blog`}>
+					{t("breadCurrent")}
+				</Link>
+			</Breadcrumbs>
+			<form className=" " onSubmit={handleSubmit(onSubmit)}>
+				<div className="relative mx-auto grid w-fit max-w-2xl  grid-cols-1 justify-between gap-8 rounded bg-alb-site p-4 md:my-4">
+					<Typography className="mb-16" variant="h3">
+						Aplicare
+					</Typography>
+					<section className="grid grid-cols-1 gap-5 md:grid-cols-2">
+						<Select
+							size="lg"
+							onChange={(e) => {
+								if (!e) return;
+								cookies.set("employer-form-domeniu", e);
+								setValue("domeniu", e);
+							}}
+							variant="outlined"
+							defaultValue={cookies.get("employer-form-domeniu")}
+							label="Categorie"
+							color="red"
+						>
+							{data.categories.map(({ name }) => (
+								<Option
+									key={name}
+									value={name}
+									onClick={() => {
+										console.log(name);
+										cookies.set("employer-form-domeniu", name);
+									}}
+								>
+									{name}
+								</Option>
+							))}
+						</Select>
+						<div>
+							<Input
+								variant="outlined"
+								type="text"
+								{...register("subdomeniu", { required: true })}
+								id="subdomeniu"
+								label="Adaugati un subdomeniu"
+								defaultValue={cookies.get("employer-form-subDomeniu")}
+								onChange={(e) => {
+									cookies.set("employer-form-subDomeniu", e.target.value);
 								}}
-							>
-								{name}
-							</Option>
-						))}
-					</Select>
+								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								labelProps={{
+									className:
+										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+								}}
+							/>
+							{errors.subdomeniu && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un subdomeniu</span>}
+						</div>
+						<div>
+							<Input
+								variant="outlined"
+								type="text"
+								{...register("codFiscal", { required: true })}
+								id="codFiscal"
+								label="Cod fiscal"
+								icon={<MdPersonOutline />}
+								defaultValue={cookies.get("employer-form-fiscal")}
+								onChange={(e) => {
+									cookies.set("employer-form-fiscal", e.target.value);
+								}}
+								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								labelProps={{
+									className:
+										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+								}}
+							/>
+							{errors.codFiscal && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un cod fiscal</span>}{" "}
+						</div>
+						<div>
+							<Input
+								variant="outlined"
+								type="number"
+								{...register("nrPersoane", { required: true })}
+								id="nrPersoane"
+								label="cate persoane doriti sa angajati"
+								defaultValue={cookies.get("employer-form-nrPersoane")}
+								onChange={(e) => {
+									cookies.set("employer-form-nrPersoane", e.target.value);
+								}}
+								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								labelProps={{
+									className:
+										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+								}}
+							/>
+							{errors.nrPersoane && (
+								<span className="text-sm text-rosu-brand">Trebuie sa adaugati un numar de persoane</span>
+							)}{" "}
+						</div>
+						<div>
+							<Input
+								variant="outlined"
+								type="text"
+								{...register("email", {
+									required: true,
+									pattern: {
+										value: /\S+@\S+\.\S+/,
+										message: "Entered value does not match email format",
+									},
+								})}
+								id="email"
+								icon={<AiOutlineMail />}
+								label="Email"
+								defaultValue={cookies.get("employer-form-email")}
+								onChange={(e) => {
+									cookies.set("employer-form-email", e.target.value);
+								}}
+								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								labelProps={{
+									className:
+										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+								}}
+							/>
+							{errors.email && (
+								<span className="text-sm text-rosu-brand">Trebuie sa adaugati o adresa de email valida</span>
+							)}
+						</div>{" "}
+						<div>
+							<Input
+								variant="outlined"
+								type="text"
+								{...register("telefon", { required: true, valueAsNumber: true })}
+								id="telefon"
+								icon={<FiPhone />}
+								label="Numar de telefon"
+								defaultValue={cookies.get("employer-form-telefon")}
+								onChange={(e) => {
+									cookies.set("employer-form-telefon", e.target.value);
+								}}
+								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								labelProps={{
+									className:
+										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+								}}
+							/>
+							{errors.telefon && (
+								<span className="text-sm text-rosu-brand">Trebuie sa adaugati un numar de telefon</span>
+							)}{" "}
+						</div>
+					</section>
 					<div>
-						<Input
-							variant="outlined"
-							type="text"
-							{...register("subdomeniu", { required: true })}
-							id="subdomeniu"
-							label="Adaugati un subdomeniu"
-							defaultValue={cookies.get("employer-form-subDomeniu")}
-							onChange={(e) => {
-								cookies.set("employer-form-subDomeniu", e.target.value);
-							}}
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
-							labelProps={{
-								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
-							}}
+						<Checkbox
+							className="my-4 items-center justify-center"
+							{...register("privacy", { required: true })}
+							label={
+								<span className="text-xs  text-gri-bg">
+									*Sunt de acord cu
+									<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
+										Politica de confidentialitate
+									</a>
+									in vederea prelucrarii datelor personale.
+								</span>
+							}
 						/>
-						{errors.subdomeniu && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un subdomeniu</span>}
-					</div>
-					<div>
-						<Input
-							variant="outlined"
-							type="text"
-							{...register("codFiscal", { required: true })}
-							id="codFiscal"
-							label="Cod fiscal"
-							icon={<MdPersonOutline />}
-							defaultValue={cookies.get("employer-form-fiscal")}
-							onChange={(e) => {
-								cookies.set("employer-form-fiscal", e.target.value);
-							}}
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
-							labelProps={{
-								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
-							}}
-						/>
-						{errors.codFiscal && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un cod fiscal</span>}{" "}
-					</div>
-					<div>
-						<Input
-							variant="outlined"
-							type="number"
-							{...register("nrPersoane", { required: true })}
-							id="nrPersoane"
-							label="cate persoane doriti sa angajati"
-							defaultValue={cookies.get("employer-form-nrPersoane")}
-							onChange={(e) => {
-								cookies.set("employer-form-nrPersoane", e.target.value);
-							}}
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
-							labelProps={{
-								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
-							}}
-						/>
-						{errors.nrPersoane && (
-							<span className="text-sm text-rosu-brand">Trebuie sa adaugati un numar de persoane</span>
-						)}{" "}
-					</div>
-					<div>
-						<Input
-							variant="outlined"
-							type="text"
-							{...register("email", {
-								required: true,
-								pattern: {
-									value: /\S+@\S+\.\S+/,
-									message: "Entered value does not match email format",
-								},
-							})}
-							id="email"
-							icon={<AiOutlineMail />}
-							label="Email"
-							defaultValue={cookies.get("employer-form-email")}
-							onChange={(e) => {
-								cookies.set("employer-form-email", e.target.value);
-							}}
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
-							labelProps={{
-								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
-							}}
-						/>
-						{errors.email && (
-							<span className="text-sm text-rosu-brand">Trebuie sa adaugati o adresa de email valida</span>
+						{errors.privacy && (
+							<span className="text-sm text-rosu-brand">Trebuie sa fit deacord cu politica de confidentialitate</span>
 						)}
-					</div>{" "}
-					<div>
-						<Input
-							variant="outlined"
-							type="text"
-							{...register("telefon", { required: true, valueAsNumber: true })}
-							id="telefon"
-							icon={<FiPhone />}
-							label="Numar de telefon"
-							defaultValue={cookies.get("employer-form-telefon")}
-							onChange={(e) => {
-								cookies.set("employer-form-telefon", e.target.value);
-							}}
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
-							labelProps={{
-								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
-							}}
-						/>
-						{errors.telefon && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un numar de telefon</span>}{" "}
 					</div>
-				</section>
-				<div>
-					<Checkbox
-						className="my-4 items-center justify-center"
-						{...register("privacy", { required: true })}
-						label={
-							<span className="text-xs  text-gri-bg">
-								*Sunt de acord cu
-								<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
-									Politica de confidentialitate
-								</a>
-								in vederea prelucrarii datelor personale.
-							</span>
-						}
-					/>
-					{errors.privacy && (
-						<span className="text-sm text-rosu-brand">Trebuie sa fit deacord cu politica de confidentialitate</span>
-					)}
+					<div className="mt-5 flex w-full items-center justify-center">
+						<button className=" rounded-2xl  bg-gri-brand px-5 py-4 text-alb-site" type="submit">
+							Trimite datele
+						</button>
+					</div>
 				</div>
-				<div className="mt-5 flex w-full items-center justify-center">
-					<button className=" rounded-2xl  bg-gri-brand px-5 py-4 text-alb-site" type="submit">
-						Trimite datele
-					</button>
-				</div>
-			</div>
-		</form>
+			</form>
+		</section>
 	);
 };
 

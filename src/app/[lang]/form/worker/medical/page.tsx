@@ -21,6 +21,7 @@ import AddMedicalForm from "@/lib/apollo/mutations/mutateMedicForm";
 import { useRouter } from "next/navigation";
 import NavigatieFormularMedic from "@/components/Formular/medic/NavigatieFormularMedic";
 import { useCookies } from "next-client-cookies";
+import { useTranslation } from "@/app/i18n/client";
 export type MedicalSearchParamsType = {
 	absolvire: string;
 	amg: string;
@@ -131,32 +132,33 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 			});
 			isSubmitSuccessful &&
 				router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}&locatia=${locatia}`);
-				cookies.remove("medic-experienta");
-				cookies.remove("medic-subDomeniu");
-				cookies.remove("medic-bac");
-				cookies.remove("medic-amg");
-				cookies.remove("medic-absolvire");
-				cookies.remove("medic-experientaLimba");
-				cookies.remove("medic-ultimu-salariu");
-				cookies.remove("medic-locatia");
-				cookies.remove("medic-cursItaliana");
-				
+			cookies.remove("medic-experienta");
+			cookies.remove("medic-subDomeniu");
+			cookies.remove("medic-bac");
+			cookies.remove("medic-amg");
+			cookies.remove("medic-absolvire");
+			cookies.remove("medic-experientaLimba");
+			cookies.remove("medic-ultimu-salariu");
+			cookies.remove("medic-locatia");
+			cookies.remove("medic-cursItaliana");
 		} catch (error) {
 			console.log(error);
 		}
 	};
-
+	const { t } = useTranslation(params.lang, "formularMuncitor");
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
 			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`/${params.lang}/`}>
-					Home
+				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/`}>
+					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+              	// @ts-ignore */}
+					{t("breadHome")}
 				</Link>
-				<Link className="text-gri-brand" href={`/${params.lang}/form/worker`}>
-					Formular
+				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/form/worker`}>
+					{t("breadFormular")}
 				</Link>
 				<Link className="text-red-600" href={`/${params.lang}/form/worker`}>
-					Medical
+					{t("breadMedical")}
 				</Link>
 			</Breadcrumbs>
 			<form onSubmit={handleSubmit(onSubmit)} className="relative  rounded-2xl bg-alb-site px-5 pt-8 ">

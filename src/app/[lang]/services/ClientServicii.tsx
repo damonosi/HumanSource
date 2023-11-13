@@ -8,12 +8,12 @@ const ClientServicii = ({ params }: { params: { lang: string; country: string } 
 	return (
 		<div className="container mx-auto flex flex-col ">
 			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`/${params.lang}`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
               	// @ts-ignore */}
 					{t("breadHome")}
 				</Link>
-				<Link className="text-red-600" href={`/${params.lang}/services`}>
+				<Link className="text-rosu-brand" href={`/${params.lang}/services`}>
 					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>

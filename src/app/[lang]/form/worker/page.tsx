@@ -13,6 +13,7 @@ import IcoMedicalAlb from "../../../../../public/imagini/formular/selectDomeniu/
 
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "@/app/i18n/client";
 
 const Formular = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
@@ -26,15 +27,17 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 	const clasaCard =
 		"flex max-w-[272px] flex-col items-center gap-2 justify-center rounded-2xl bg-alb-site px-2 py-8 w-1/2  md:p-16 shadow-2xl";
 	const clasaIconite = "h-9 w-8 md:h-36 md:w-28";
-
+	const { t } = useTranslation(params.lang, "formularMuncitor");
 	return (
 		<div className="px-5 pb-[60px] md:px-[70px]">
 			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`/${params.lang}`}>
-					Home
+				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
+					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+              	// @ts-ignore */}
+					{t("breadHome")}
 				</Link>
-				<Link className="text-red-600" href={`/${params.lang}/form/worker`}>
-					Formular
+				<Link className="text-rosu-brand" href={`/${params.lang}/form/worker`}>
+					{t("breadFormular")}
 				</Link>
 			</Breadcrumbs>
 			<div

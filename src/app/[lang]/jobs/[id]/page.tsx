@@ -1,4 +1,3 @@
-import { RandomUUIDOptions } from "crypto";
 import ClientJobPage from "./ClientJobPage";
 
 export async function generateMetadata({ params }: { params: { lang: string; id: string } }) {

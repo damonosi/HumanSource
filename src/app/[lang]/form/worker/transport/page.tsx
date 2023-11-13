@@ -16,11 +16,12 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 
-import { useMutation, useSuspenseQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import NavigatieFormularSofer from "@/components/Formular/NavigatieFormularSofer";
 import AddTransportForm from "@/lib/apollo/mutations/mutateTransportForm";
 import { useRouter } from "next/navigation";
 import { useCookies } from "next-client-cookies";
+import { useTranslation } from "@/app/i18n/client";
 
 export type TransportSearchParamsType = {
 	absolvire: string;
@@ -131,18 +132,20 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 			console.log(error);
 		}
 	};
-
+	const { t } = useTranslation(params.lang, "formularMuncitor");
 	return (
 		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
 			<Breadcrumbs>
-				<Link className="text-gri-brand" href={`/${params.lang}/`}>
-					Home
+				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/`}>
+					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+              	// @ts-ignore */}
+					{t("breadHome")}
 				</Link>
-				<Link className="text-gri-brand" href={`/${params.lang}/form/worker`}>
-					Formular
+				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/form/worker`}>
+					{t("breadFormular")}
 				</Link>
-				<Link className="text-red-600" href={`/${params.lang}/form/worker`}>
-					Transport
+				<Link className="text-rosu-brand" href={`/${params.lang}/form/worker`}>
+					{t("breadTransport")}
 				</Link>
 			</Breadcrumbs>
 			<form className="relative  rounded-2xl bg-alb-site px-5 pt-8 " onSubmit={handleSubmit(onSubmit)}>
