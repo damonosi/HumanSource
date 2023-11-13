@@ -117,10 +117,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			if (isLoading) {
-				console.log("submitting");
-			}
-			if (isSubmitSuccessful) {
+		
 				router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
 				cookies.remove("sofer-tip-remorca");
 				cookies.remove("sofer-experienta");
@@ -131,9 +128,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 				cookies.remove("sofer-italiana");
 				cookies.remove("sofer-ultimul-salariu");
 				cookies.remove("sofer-salariu-dorit");
-			} else {
-				console.log("error");
-			}
+			
 			
 			
 			
