@@ -27,7 +27,7 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 						}));
 					}}
 					label="Raspunsul Dumneavoastra $"
-					className="max-w-xs focus:border-rosu-brand focus:!border-t-transparent"
+					className="w-[300px] focus:border-rosu-brand focus:!border-t-transparent"
 					labelProps={{
 						className:
 							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
