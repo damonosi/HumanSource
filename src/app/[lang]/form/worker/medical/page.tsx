@@ -66,7 +66,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		register,
 		handleSubmit,
 		setValue,
-		formState: { isSubmitSuccessful },
+		formState: { isSubmitSuccessful, isLoading },
 	} = useForm({
 		mode: "onChange",
 		defaultValues: {
@@ -130,8 +130,9 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			isSubmitSuccessful &&
-				router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}&locatia=${locatia}`);
+			isLoading && console.log("submitting");
+			isSubmitSuccessful && console.log("success");
+			router.push(`/${params.lang}/jobs?domeniu=medical&subDomeniu=${domeniu}&locatia=${locatia}`);
 			cookies.remove("medic-experienta");
 			cookies.remove("medic-subDomeniu");
 			cookies.remove("medic-bac");

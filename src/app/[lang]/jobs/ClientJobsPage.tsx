@@ -10,7 +10,7 @@ import { useSearchParams } from "next/navigation";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobsByCategory";
 
-import SearchBar from "@/components/Munca/CategorySelector";
+import SearchBar from "@/components/Munca/SearchBar";
 import { useTranslation } from "@/app/i18n/client";
 const ClientJobsPage = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const upperdParams = params.lang.toUpperCase();

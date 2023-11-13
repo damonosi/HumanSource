@@ -23,9 +23,6 @@ module.exports = withMT({
 			},
 
 			colors: {
-				rosu: {
-					brande: "#B82C2F",
-				},
 				"rosu-brand": "#B82C2F",
 				"rosu-butoane": "#B21E23",
 				"rosu-icon": "#B21E23",

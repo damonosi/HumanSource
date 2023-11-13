@@ -54,7 +54,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 		register,
 		handleSubmit,
 		setValue,
-		formState: { isSubmitSuccessful },
+		formState: { isSubmitSuccessful, isLoading },
 	} = useForm({
 		mode: "onChange",
 		defaultValues: {
@@ -117,8 +117,9 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-			isSubmitSuccessful &&
-				router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
+			isLoading && console.log("submitting");
+			isSubmitSuccessful && console.log("success");
+			router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
 			cookies.remove("sofer-tip-remorca");
 			cookies.remove("sofer-experienta");
 			cookies.remove("sofer-regim");
