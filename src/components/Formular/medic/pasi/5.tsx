@@ -19,12 +19,14 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 					{...register("absolvire", { required: true })}
 					id="absolvire"
 					onChange={(e) => {
-						setDisabled(false);
+						
+						const value = e.target.value;
 						cookies.set("medic-absolvire", e.target.value);
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
 							...searchParams,
 							absolvire: e.target.value,
 						}));
+						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
 					label="Raspunsul Dumneavoastra"
 					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"

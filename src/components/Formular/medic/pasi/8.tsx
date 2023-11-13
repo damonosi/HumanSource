@@ -20,11 +20,13 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 					id="ultimulSalariu"
 					onChange={(e) => {
 						setDisabled(false);
-						cookies.set("medic-ultimul-salariu", e.target.value);
-						setSearchParams((searchParams: MedicalSearchParamsType) => ({
-							...searchParams,
-							ultimulSalariu: e.target.value,
-						}));
+							const value = e.target.value;
+							cookies.set("medic-ultimul-salariu", e.target.value);
+							setSearchParams((searchParams: MedicalSearchParamsType) => ({
+								...searchParams,
+								ultimulSalariu: e.target.value,
+							}));
+							!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
 					label="Raspunsul Dumneavoastra"
 					className="w-full  focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"

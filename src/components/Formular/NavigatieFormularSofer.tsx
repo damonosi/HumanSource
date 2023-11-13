@@ -41,7 +41,12 @@ const NavigatieFormularSofer = ({
 			</div>
 
 			{isLastStep ? (
-				<button className={`${stilComunButon} right-0 `} type="submit">
+				<button
+					className={`${stilComunButon}  ${
+						disabled ? "cursor-not-allowed   opacity-10" : "bg-alb-site hover:bg-gri-brand hover:text-alb-site"
+					} right-0 `}
+					type="submit"
+				>
 					<span className="text-sm md:text-lg">Cauta</span>{" "}
 					<ArrowSmallRightIcon strokeWidth={2} className="h-3 w-3 md:h-5 md:w-5" />
 				</button>

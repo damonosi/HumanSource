@@ -18,10 +18,12 @@ const Pas9Trasport = ({ register, setDisabled }: any) => {
 					{...register("salariuDorit", { required: true, valueAsNumber: true })}
 					id="salariuDorit"
 					onChange={(e) => {
-						cookies.set("sofer-salariu-dorit", e.target.value);
+						const value = e.target.value;
+						cookies.set("sofer-salariu-dorit", value);
 						setDisabled(false);
+						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
-					label="Raspunsul Dumneavoastra $"
+					label="Raspunsul Dumneavoastra"
 					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:

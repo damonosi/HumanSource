@@ -19,10 +19,10 @@ const Pas8Trasport = ({ register, setDisabled }: any) => {
 					id="ultimulSalariu"
 					onChange={(e) => {
 						const value = e.target.value;
-						cookies.set("sofer-ultimul-salariu", e.target.value);
+						cookies.set("sofer-ultimul-salariu", value);
 						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
-					label="Raspunsul Dumneavoastra $"
+					label="Raspunsul Dumneavoastra"
 					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:
