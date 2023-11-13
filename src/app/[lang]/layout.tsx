@@ -6,7 +6,7 @@ import { Metadata, Viewport } from "next";
 import Footer from "./Footer";
 import Header from "./Header";
 import { cookies } from "next/headers";
-
+import CookieConsent from "@/components/cookies/CookiesConsent";
 export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
@@ -119,6 +119,7 @@ export default function RootLayout({
 				<ClientCookiesProvider value={cookies().getAll()}>
 					<Providers>
 						<div className="relative grid min-h-screen w-full grid-cols-1 overflow-hidden  " id="site-container">
+							<CookieConsent />
 							<Header params={params} />
 
 							<main className=" z-30 mt-14 flex w-full flex-col  ">
