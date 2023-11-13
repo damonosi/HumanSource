@@ -42,6 +42,7 @@ const Pas1Trasport = ({ setValue, setDisabled }: any) => {
 
 		setDisabled(false);
 	};
+
 	return (
 		<FormWrapper intrebare="Cu ce tip de remorca va doriti sa lucrati?">
 			<div className=" grid w-fit grid-cols-3 place-items-center gap-[10px] md:gap-5 md:gap-x-5">
