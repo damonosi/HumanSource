@@ -119,10 +119,10 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								onChange={(e) => {
 									cookies.set("employer-form-subDomeniu", e.target.value);
 								}}
-								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 								labelProps={{
 									className:
-										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+										"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 								}}
 							/>
 							{errors.subdomeniu && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un subdomeniu</span>}
@@ -139,10 +139,10 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								onChange={(e) => {
 									cookies.set("employer-form-fiscal", e.target.value);
 								}}
-								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 								labelProps={{
 									className:
-										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+										"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 								}}
 							/>
 							{errors.codFiscal && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un cod fiscal</span>}{" "}
@@ -158,10 +158,10 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								onChange={(e) => {
 									cookies.set("employer-form-nrPersoane", e.target.value);
 								}}
-								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 								labelProps={{
 									className:
-										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+										"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 								}}
 							/>
 							{errors.nrPersoane && (
@@ -186,10 +186,10 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								onChange={(e) => {
 									cookies.set("employer-form-email", e.target.value);
 								}}
-								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 								labelProps={{
 									className:
-										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+										"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 								}}
 							/>
 							{errors.email && (
@@ -220,19 +220,23 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 						</div>
 					</section>
 					<div>
-						<Checkbox
-							className="my-4 items-center justify-center"
-							{...register("privacy", { required: true })}
-							label={
-								<span className="text-xs  text-gri-bg">
-									*Sunt de acord cu
-									<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
-										Politica de confidentialitate
-									</a>
-									in vederea prelucrarii datelor personale.
-								</span>
-							}
-						/>
+						<label className="flex items-center py-6">
+							<input
+								id="privacy"
+								type="checkbox"
+								{...register("privacy", { required: true })}
+								name="privacy"
+								className=" mx-4  h-4 w-4 rounded-full  checked:bg-rosu-brand   focus:ring-rosu-brand "
+							/>
+
+							<span className="text-sm font-medium text-gri-brand dark:text-gray-300">
+								*Sunt de acord cu
+								<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
+									Politica de confidentialitate
+								</a>
+								in vederea prelucrarii datelor personale.{" "}
+							</span>
+						</label>
 						{errors.privacy && (
 							<span className="text-sm text-rosu-brand">Trebuie sa fit deacord cu politica de confidentialitate</span>
 						)}

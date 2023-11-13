@@ -61,10 +61,10 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 								cookies.set("contact-name", e.target.value);
 							}}
 							icon={<MdPersonOutline />}
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
+							className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 							labelProps={{
 								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+									"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 							}}
 						/>
 						{errors.nume && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un nume</span>}
@@ -87,10 +87,10 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 								cookies.set("contact-email", e.target.value);
 							}}
 							label="Email"
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
+							className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 							labelProps={{
 								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+									"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 							}}
 						/>
 						{errors.email && <span className="text-sm text-rosu-brand">Trebuie sa adaugati un email valid</span>}
@@ -107,10 +107,10 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 								cookies.set("contact-phone", e.target.value);
 							}}
 							label="Numar de telefon"
-							className=" focus:border-rosu-brand focus:!border-t-transparent"
+							className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 							labelProps={{
 								className:
-									"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+									"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 							}}
 						/>
 						{errors.telefon && (
@@ -129,27 +129,31 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 						onChange={(e) => {
 							cookies.set("contact-message", e.target.value);
 						}}
-						className=" focus:border-rosu-brand focus:!border-t-transparent"
+						className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 						labelProps={{
 							className:
-								"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+								"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 						}}
 					/>
 					{errors.mesaj && <span className="text-sm text-rosu-brand">Adaugat un scurt mesaj</span>}
 				</div>
-				<Checkbox
-					className="my-4 items-center justify-center"
-					{...register("privacy", { required: true })}
-					label={
-						<span className="text-xs  text-gri-bg">
-							*Sunt de acord cu
-							<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
-								Politica de confidentialitate
-							</a>
-							in vederea prelucrarii datelor personale.
-						</span>
-					}
-				/>
+				<label className="flex items-center py-6">
+					<input
+						id="vechime"
+						type="checkbox"
+						{...register("privacy", { required: true })}
+						name="privacy"
+						className=" mx-4  h-4 w-4 rounded-full  checked:bg-rosu-brand   focus:ring-rosu-brand "
+					/>
+
+					<span className="text-sm font-medium text-gri-brand dark:text-gray-300">
+						*Sunt de acord cu
+						<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
+							Politica de confidentialitate
+						</a>
+						in vederea prelucrarii datelor personale.{" "}
+					</span>
+				</label>
 
 				<div className="flex w-full items-center justify-center">
 					<button className="mt-5 rounded-2xl  bg-gri-brand px-5 py-4 text-alb-site" type="submit">

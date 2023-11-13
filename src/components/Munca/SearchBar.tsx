@@ -17,10 +17,10 @@ const SearchBar = ({ params }: Iparams) => {
 		<div className="flex w-full  flex-col items-center justify-center gap-4 md:w-1/2 md:flex-row">
 			<Input
 				label="Cauta"
-				className=" border-rosu-brand focus:border-rosu-brand focus:!border-t-transparent"
+				className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 				labelProps={{
 					className:
-						"peer-focus:after:!border-rosu-brand   peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+						"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 				}}
 			/>
 			<div className="flex w-full flex-col gap-4  md:w-1/3 md:flex-row">
@@ -34,10 +34,10 @@ const SearchBar = ({ params }: Iparams) => {
 					defaultValue={domeniu}
 					color="red"
 					label="Domeniu"
-					className=" focus:border-rosu-brand focus:!border-t-transparent"
+					className="w-full  focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
-							"peer-focus:after:!border-rosu-brand   peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							" peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 					}}
 				>
 					{categoryData.categories.map(({ name }) => (
@@ -56,10 +56,10 @@ const SearchBar = ({ params }: Iparams) => {
 					defaultValue={locatie}
 					label="Locatie"
 					color="red"
-					className=" focus:border-rosu-brand focus:!border-t-transparent"
+					className="w-full focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
-							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							" peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 					}}
 				>
 					{locationData.locations.map(({ name }) => (

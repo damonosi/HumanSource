@@ -24,10 +24,10 @@ const Pas9Trasport = ({ register, setDisabled }: any) => {
 						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
 					label="Raspunsul Dumneavoastra"
-					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:
-							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 					}}
 				/>
 			</div>
