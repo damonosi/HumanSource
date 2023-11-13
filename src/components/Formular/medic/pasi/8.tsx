@@ -12,7 +12,7 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 	}, []);
 	return (
 		<FormWrapper intrebare="Daca ai mai lucrat in sistemul medica, ne poti spune care a fost ultimul tau salariu?">
-			<div className="flex items-center justify-center gap-1 justify-self-start">
+			<div className="flex w-full items-center justify-center gap-1 justify-self-start md:w-[300px]">
 				<Input
 					variant="outlined"
 					type="text"
@@ -26,11 +26,11 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 							ultimulSalariu: e.target.value,
 						}));
 					}}
-					label="Raspunsul Dumneavoastra $"
-					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					label="Raspunsul Dumneavoastra"
+					className="w-full  focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:
-							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							"md:text-sm  peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 					}}
 				/>
 			</div>

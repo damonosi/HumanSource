@@ -12,7 +12,7 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 	}, []);
 	return (
 		<FormWrapper intrebare="In ce an ai absolvit sau urmeaza sa absolvit specialitatea AMG?">
-			<div className="flex items-center justify-center gap-1 justify-self-start">
+			<div className="flex w-full items-center justify-center gap-1 justify-self-start md:w-[300px]">
 				<Input
 					variant="outlined"
 					type="text"
