@@ -22,7 +22,7 @@ const Pas9Trasport = ({ register, setDisabled }: any) => {
 						setDisabled(false);
 					}}
 					label="Raspunsul Dumneavoastra $"
-					className="w-[300px] focus:border-rosu-brand focus:!border-t-transparent"
+					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:
 							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",

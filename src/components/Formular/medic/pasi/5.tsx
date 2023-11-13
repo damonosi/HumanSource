@@ -12,7 +12,7 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 	}, []);
 	return (
 		<FormWrapper intrebare="In ce an ai absolvit sau urmeaza sa absolvit specialitatea AMG?">
-			<div>
+			<div className="flex items-center justify-center gap-1 justify-self-start">
 				<Input
 					variant="outlined"
 					type="text"
@@ -27,7 +27,7 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 						}));
 					}}
 					label="Raspunsul Dumneavoastra"
-					className="w-[300px] focus:border-rosu-brand focus:!border-t-transparent"
+					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:
 							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",

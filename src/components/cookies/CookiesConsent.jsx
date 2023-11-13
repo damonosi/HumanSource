@@ -14,6 +14,10 @@ const CookieConsent = (props) => {
 		setShowConsent(true);
 		setCookie("localConsent", "true", {});
 	};
+	const refuseCookie = () => {
+		setShowConsent(true);
+		setCookie("localConsent", "false", {});
+	};
 
 	if (showConsent) {
 		return null;
