@@ -19,7 +19,6 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 					{...register("absolvire", { required: true })}
 					id="absolvire"
 					onChange={(e) => {
-						
 						const value = e.target.value;
 						cookies.set("medic-absolvire", e.target.value);
 						setSearchParams((searchParams: MedicalSearchParamsType) => ({
@@ -29,10 +28,10 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
 					label="Raspunsul Dumneavoastra"
-					className="w-full focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:
-							"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 					}}
 				/>
 			</div>
