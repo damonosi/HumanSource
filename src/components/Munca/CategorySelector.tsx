@@ -33,6 +33,7 @@ const SearchBar = ({ params }: Iparams) => {
 					variant="outlined"
 					defaultValue={domeniu}
 					label="Domeniu"
+					color="red"
 					className=" focus:border-rosu-brand focus:!border-t-transparent"
 					labelProps={{
 						className:
@@ -54,6 +55,7 @@ const SearchBar = ({ params }: Iparams) => {
 					variant="outlined"
 					defaultValue={locatie}
 					label="Locatie"
+					color="red"
 					className=" focus:border-rosu-brand focus:!border-t-transparent"
 					labelProps={{
 						className:
