@@ -30,10 +30,11 @@ const Pas1Trasport = ({ setValue, setDisabled }: any) => {
 	const [selected, setSelected] = useState(Number(cookies.get("sofer-tip-remorca")));
 	const clasaIconite = "w-full";
 	useEffect(() => {
-		if (selected !== 0) {
+		if (cookies.get("sofer-tip-remorca") !== undefined) {
 			setDisabled(false);
 		}
 	}, [selected]);
+	console.log(cookies.get("sofer-tip-remorca"));
 	const handleClick = ({ cardSelectat, valoareFormular }: IClickProps) => {
 		setValue("tipRemorca", valoareFormular);
 		setSelected(cardSelectat);

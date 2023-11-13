@@ -16,10 +16,11 @@ const Checkbox = ({
 }) => {
 	const cookies = useCookies();
 	useEffect(() => {
-		if (cookies.get("sofer-experienta") !== "") {
+		if (cookies.get("sofer-experienta") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);
+
 	return (
 		<div className="mb-4 flex items-center">
 			<label className="">

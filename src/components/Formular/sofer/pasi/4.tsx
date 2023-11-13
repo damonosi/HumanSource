@@ -10,7 +10,7 @@ const Pas4Trasport = ({ setValue, setDisabled }: any) => {
 	const cookies = useCookies();
 	const [selected, setSelected] = useState(Number(cookies.get("sofer-tahograf")));
 	useEffect(() => {
-		if (selected !== 0) {
+		if (cookies.get("sofer-tahograf") !== undefined) {
 			setDisabled(false);
 		}
 	}, [selected]);

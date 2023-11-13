@@ -14,7 +14,7 @@ const Pas7Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 		"flex w-1/3 flex-col max-h-[300px] items-center  justify-center rounded-2xl bg-alb-site px-1 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
 	const clasaIconita = "w-full";
 	useEffect(() => {
-		if (selected !== 0) {
+		if (cookies.get("medic-locatia") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);

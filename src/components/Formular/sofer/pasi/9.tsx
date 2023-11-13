@@ -5,7 +5,7 @@ import { useCookies } from "next-client-cookies";
 const Pas9Trasport = ({ register, setDisabled }: any) => {
 	const cookies = useCookies();
 	useEffect(() => {
-		if (cookies.get("sofer-salariu-dorit") !== "") {
+		if (cookies.get("sofer-salariu-dorit") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);

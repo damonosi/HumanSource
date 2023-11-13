@@ -19,7 +19,7 @@ const Pas4Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 		"flex w-full md:w-1/4 flex-col items-center max-h-[300px] justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
 	const clasaIconita = "w-full";
 	useEffect(() => {
-		if (selected !== 0) {
+		if (cookies.get("medic-amg") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);

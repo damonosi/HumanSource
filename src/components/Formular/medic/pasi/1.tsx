@@ -19,7 +19,7 @@ const Checkbox = ({
 }) => {
 	const cookies = useCookies();
 	useEffect(() => {
-		if (cookies.get("medic-experienta") !== "") {
+		if (cookies.get("medic-experienta") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);

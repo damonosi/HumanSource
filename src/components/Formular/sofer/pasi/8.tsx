@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const Pas8Trasport = ({ register, setDisabled }: any) => {
 	const cookies = useCookies();
 	useEffect(() => {
-		if (cookies.get("sofer-ultimul-salariu") !== "") {
+		if (cookies.get("sofer-ultimul-salariu") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);

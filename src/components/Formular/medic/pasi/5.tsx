@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 	const cookies = useCookies();
 	useEffect(() => {
-		if (cookies.get("medic-absolvire") !== "") {
+		if (cookies.get("medic-absolvire") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);

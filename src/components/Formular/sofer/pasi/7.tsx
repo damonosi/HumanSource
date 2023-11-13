@@ -17,7 +17,7 @@ const Pas7Trasport = ({ setValue, setDisabled }: any) => {
 		"flex  w-1/3 flex-col items-center  max-h-[300px] justify-center rounded-2xl bg-alb-site px-3 py-8 drop-shadow-xl active:bg-gri-brand   lg:gap-9 lg:py-16 lg:px-6 max-w-[272px]";
 	const clasaIconita = "w-12 md:w-full";
 	useEffect(() => {
-		if (selected !== 0) {
+		if (cookies.get("sofer-italiana") !== undefined) {
 			setDisabled(false);
 		}
 	}, [selected]);

@@ -9,7 +9,7 @@ const Pas6Trasport = ({ setValue, setDisabled }: any) => {
 	const cookies = useCookies();
 	const [selected, setSelected] = useState(Number(cookies.get("sofer-noapte")));
 	useEffect(() => {
-		if (selected !== 0) {
+		if (cookies.get("sofer-noapte") !== undefined) {
 			setDisabled(false);
 		}
 	}, [selected]);

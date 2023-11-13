@@ -12,7 +12,7 @@ const Pas3Medical = ({ setValue, setDisabled, setSearchParams }: any) => {
 	const clasaCard =
 		"flex w-1/2 flex-col items-center max-h-[300px] justify-center gap-9 rounded-2xl py-9 px-3 lg:py-16  shadow-lg  drop-shadow-xl max-w-[272px]";
 	useEffect(() => {
-		if (selected !== 0) {
+		if (cookies.get("medic-bac") !== undefined) {
 			setDisabled(false);
 		}
 	}, []);
