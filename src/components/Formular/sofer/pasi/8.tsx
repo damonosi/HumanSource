@@ -11,7 +11,7 @@ const Pas8Trasport = ({ register, setDisabled }: any) => {
 	}, []);
 	return (
 		<FormWrapper intrebare="Ne poti spune care a fost ultimul tau salariu?">
-			<div className="flex items-center justify-center gap-1 justify-self-start">
+			<div className="flex w-full items-center justify-center gap-1 justify-self-start md:w-[300px]">
 				<Input
 					variant="outlined"
 					type="text"
