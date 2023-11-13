@@ -24,7 +24,7 @@ const Footer = ({ params }: { params: { lang: string } }) => {
 
 							<hr className="h-2 w-full" />
 							<div className="flex flex-col gap-8">
-								<Link href={`/${params.lang}/jobs`}>Leasing de personal</Link>
+								<Link href={`/${params.lang}/services/#sectiune-servicii-1`}>Leasing de personal</Link>
 								<Link href={`/${params.lang}/services/#sectiune-servicii-2`}>Recrutare si selectie</Link>
 								<Link href={`/${params.lang}/services/#sectiune-servicii-3`}>Payroll si administrare</Link>
 							</div>
