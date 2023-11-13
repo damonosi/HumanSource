@@ -24,7 +24,7 @@ const CookieConsent = (props) => {
 	}
 
 	return (
-		<div className="fixed z-50  mt-14 flex h-full w-full items-center justify-center bg-opacity-70 px-20 backdrop-blur-sm">
+		<div className="fixed z-50 -mt-8  flex h-full w-full items-center justify-center bg-opacity-70 px-2 backdrop-blur-sm  md:px-20">
 			<div className="   flex max-w-3xl flex-col items-center justify-between gap-16 rounded-2xl bg-alb-site p-8 md:p-16">
 				<span className="text-dark  text-sm font-[350] md:text-base">
 					Lorem ipsum dolor sit amet consectetur. Tristique pharetra vulputate malesuada dui blandit sem nisi. Maecenas
