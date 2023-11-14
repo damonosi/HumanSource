@@ -7,21 +7,24 @@ import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import formatDate from "@/utils/formatDate";
 import { useTranslation } from "@/app/i18n/client";
-
+import TransportImg from "../../../public/imagini/munca/transport.png";
+import MedicalImg from "../../../public/imagini/munca/medical.png";
 interface ICardJob {
 	data: string;
 	titlu: string;
 	descriere: string;
 
 	src?: StaticImageData;
-
+	category: { name: string };
 	id: string;
 	salary: string;
 	params: { lang: string; country: string };
 }
 
-const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) => {
+const CardJob = ({ params, data, titlu, descriere, id, src, salary, category }: ICardJob) => {
 	const { t } = useTranslation(params.lang, "jobs");
+	const loweredCategory = category.name.toLowerCase();
+	console.log(category.name);
 	return (
 		<div
 			key={id}
@@ -30,8 +33,8 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) 
 			<div id="img-container" className=" relative z-40 flex h-1/3 w-full overflow-hidden ">
 				<Image
 					alt="background"
-					className="aspect-video w-full"
-					src={src ? src : "https://picsum.photos/1200/500"}
+					className="aspect-video w-full object-cover"
+					src={loweredCategory === "medical" ? MedicalImg : TransportImg}
 					width={700}
 					height={500}
 				/>

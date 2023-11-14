@@ -18,12 +18,12 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 	const domeniu = searchParams.get("domeniu");
 	const subDomeniu = searchParams.get("subDomeniu");
 	const title = searchParams.get("titlu");
-	const locatie = searchParams.get("locatie");
+	const locatie = searchParams.get("location");
 	const { data }: IJobs = useSuspenseQuery(query, {
 		variables: {
 			where: {
 				title: { contains: title ? title : "" },
-				location: { name: { contains: locatie ? locatie : "" } },
+				location: { country: { some: { name: { contains: locatie ? locatie : "" } } } },
 				jobCategory: {
 					category: {
 						name: {
@@ -38,7 +38,6 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 						},
 					},
 				},
-				language: { languages: { equals: upperdParams } },
 			},
 		},
 	});
@@ -63,7 +62,7 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 					Cele mai cautate locuri de munca
 				</Typography>
 				<div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3" id="container joburi">
-					{jobs.map(({ title, id, date, description, salary }) => {
+					{jobs.map(({ title, id, date, description, salary, jobCategory }) => {
 						return (
 							<CardJob
 								salary={salary}
@@ -72,6 +71,7 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 								id={id}
 								titlu={title}
 								data={date}
+								category={jobCategory.category}
 								descriere={description}
 							/>
 						);

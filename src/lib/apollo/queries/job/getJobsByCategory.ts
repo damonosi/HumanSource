@@ -10,6 +10,11 @@ const query = gql`
 			salary
 			requierments
 			whyWork
+			jobCategory {
+				category {
+					name
+				}
+			}
 		}
 	}
 `;

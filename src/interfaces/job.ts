@@ -11,6 +11,7 @@ export interface IJobs {
 				title: string;
 				date: string;
 				company: string;
+				jobCategory: { category: { name: string } };
 				category: { name: string };
 				requierments: string;
 				whyWork: string;

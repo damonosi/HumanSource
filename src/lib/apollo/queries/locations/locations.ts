@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 const locationQuery = gql`
-	query Locations {
-		locations {
+	query Countries {
+		countries {
 			name
 		}
 	}

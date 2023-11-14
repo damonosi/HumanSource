@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const SearchBar = ({ params }: Iparams) => {
 	const { data: categoryData }: { data: { categories: [{ name: string }] } } = useSuspenseQuery(query);
-	const { data: locationData }: { data: { locations: [{ name: string }] } } = useSuspenseQuery(locationQuery);
+	const { data: locationData }: { data: { countries: [{ name: string }] } } = useSuspenseQuery(locationQuery);
 	const [search, setSearchText] = useState("");
 	const [domeniu, setDomeniu] = useState("");
 	const [locatie, setLocatie] = useState("");
@@ -70,7 +70,7 @@ const SearchBar = ({ params }: Iparams) => {
 							"peer-aria-expanded:text-rosu-brand   peer-aria-expanded:before:border-rosu-brand peer-aria-expanded:after:border-rosu-brand   ",
 					}}
 				>
-					{locationData.locations.map(({ name }) => (
+					{locationData.countries.map(({ name }) => (
 						<Option key={name} value={name}>
 							{name}
 						</Option>
