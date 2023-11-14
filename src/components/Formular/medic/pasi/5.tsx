@@ -16,7 +16,7 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 				<Input
 					variant="outlined"
 					type="text"
-					{...register("absolvire", { required: true })}
+					{...register("absolvire", { required: true, max: 4 })}
 					id="absolvire"
 					onChange={(e) => {
 						const value = e.target.value;
@@ -26,6 +26,7 @@ const Pas5Medical = ({ register, setDisabled, setSearchParams }: any) => {
 							absolvire: e.target.value,
 						}));
 						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
+						value.length !== 4 && setDisabled(true);
 					}}
 					label="Raspunsul Dumneavoastra"
 					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"

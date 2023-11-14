@@ -30,7 +30,14 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 		},
 	});
 	const { description, id, title, date, company, salary, requierments, jobCategory, whyWork, location } = data.job;
-
+	function formatDate(date: string) {
+		const segments = date.split("-");
+		let zi = segments[2];
+		let luna = segments[1];
+		let an = segments[0];
+		const newDate = `${zi} - ${luna} - ${an}`;
+		return newDate;
+	}
 	return (
 		<div className="container mx-auto grid ">
 			<div className="container mx-auto flex flex-col px-5 md:px-0">
@@ -57,15 +64,15 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 							<div className="flex flex-col gap-2 text-[14px] md:flex-row" id="container butoane titlu">
 								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
 									<FaRegCalendarAlt className="w-5" />
-									<span className=""> Data inceperii : Imediata</span>
+									<span className=""> Data inceperii : {formatDate(date)}</span>
 								</div>
 								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand ">
 									<FiTruck className="w-5" />
-									<span className=" "> Industrie : {jobCategory.name}</span>
+									<span className=" "> Industrie : {jobCategory.category.name}</span>
 								</div>
 								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
 									<TbTicket className="w-5" />
-									<span> Locatia : {location.name}</span>
+									<span> Locatia : {location.zone}</span>
 								</div>
 							</div>
 						</div>

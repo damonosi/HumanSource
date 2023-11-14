@@ -28,7 +28,7 @@ const Pas8Medical = ({ register, setDisabled, setSearchParams }: any) => {
 						}));
 						!isNaN(+value) ? setDisabled(false) : setDisabled(true);
 					}}
-					label="Raspunsul Dumneavoastra"
+					label="Raspunsul Dumneavoastra (EUR)"
 					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
 					labelProps={{
 						className:

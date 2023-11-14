@@ -11,10 +11,12 @@ const query = gql`
 			salary
 			whyWork
 			location {
-				name
+				zone
 			}
 			jobCategory {
-				name
+				category {
+					name
+				}
 			}
 		}
 	}

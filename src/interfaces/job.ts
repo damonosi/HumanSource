@@ -26,11 +26,11 @@ export interface IJob {
 			id: string;
 			title: string;
 			date: string;
-			jobCategory: { name: string };
+			jobCategory: { category: { name: string } };
 			company: string;
 			salary: string;
 			requierments: string;
-			location: { name: string };
+			location: { zone: string };
 			whyWork: string;
 		};
 	};
