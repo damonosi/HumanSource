@@ -41,7 +41,7 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 						},
 					},
 				},
-				language: { languages: { contains: params.lang } },
+				language: { languages: { contains: upperdParams } },
 			},
 		},
 	});
