@@ -1,5 +1,18 @@
 
 {
-    "breadHome":"Acasa",
-    "breadCurrent":"Formular"
+	"breadHome": "Acasa",
+	"breadCurrent": "Formular",
+	"form": {
+		"titlu": "Aplicare",
+		"subdomeniu": "Adaugati un subdomeniu",
+		"fiscal": "Cod fiscal",
+		"nrPersoane": "cate persoane doriti sa angajati",
+		"telefon": "Numar de telefon",
+		"categorie": "Categorie",
+		"politica": {
+			"1": "*Sunt de acord cu",
+			"2": "Politica de confidentialitate",
+			"3": "in vederea prelucrarii datelor personale."
+		}
+	}
 }

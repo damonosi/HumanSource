@@ -1,4 +1,17 @@
 {
-    "breadHome":"Acasa",
-    "breadCurrent":"Contatto"
+	"breadHome": "La casa",
+	"breadCurrent": "Contatto",
+	"titlu": "Contattaci!",
+	"subtitlu": "IT Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. T",
+	"formular": {
+		"nume": "Il tuo nome completo",
+		"telefon": "Numero di telefono",
+		"mesaj": "Mandaci un messaggio",
+		"politica": {
+			"1": "*Sono d'accordo con",
+			"2": "Politica sulla riservatezza",
+			"3": "al fine di trattare i dati personali."
+		},
+		"buton": "Invia i dati"
+	}
 }

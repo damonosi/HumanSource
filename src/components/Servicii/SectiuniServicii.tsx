@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslation } from "@/app/i18n/client";
 import ServiciiCover from "../../../public/imagini/servicii/hero-servicii.png";
 import ImgSec1 from "../../../public/imagini/servicii/img-sec-1.png";
 import ImgSec2 from "../../../public/imagini/servicii/img-sec-2.png";
@@ -23,38 +24,36 @@ const CardHeroServicii = ({ children, text }: Props) => {
 };
 const ButonSolicitaOferta = ({ params }: { params: { lang: string } }) => {
 	const router = useRouter();
+	const { t } = useTranslation(params.lang, "services");
 	return (
 		<button
 			onClick={() => router.push(`/${params.lang}/form/employer`)}
 			className="flex items-center gap-4 rounded-2xl border border-gri-bg py-4 px-5  font-bold text-gri-brand hover:bg-gri-brand hover:text-alb-site "
 		>
-			<span className="text-sm">Solicita oferta</span>
+			<span className="text-sm">{t("buton")}</span>
 		</button>
 	);
 };
 
 const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
+	const { t } = useTranslation(params.lang, "services");
 	return (
 		<div className="flex flex-col gap-12 md:gap-32" id="sections-container">
 			<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row" id="hero-servicii">
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2" id="container-text-servicii">
-					<Typography variant="h3">Serviciile oferite de Human Source</Typography>
+					<Typography variant="h3">{t("hero.titlu")}</Typography>
 					<Typography className="text-gri-brand" variant="h5">
-						Compania noastra de resurse umane oferă servicii de atât pe partea de leasign de personal, recrutare,
-						selecție cât și pe partea de payroll si administrare de personal.
+						{t("hero.subtitlu")}
 					</Typography>
-					<Typography variant="paragraph">
-						Compania noastra de resurse umane oferă servicii de atât pe partea de leasign de personal, recrutare,
-						selecție cât și pe partea de payroll si administrare de personal.
-					</Typography>
+					<Typography variant="paragraph">{t("hero.descriere")}</Typography>
 					<div className="flex w-full flex-col  justify-between gap-y-5 text-sm lg:flex-row">
-						<CardHeroServicii text=" Leasing de personal">
+						<CardHeroServicii text={t("hero.carduri.1")}>
 							<Groups2OutlinedIcon className="text-[15px]" />
 						</CardHeroServicii>
-						<CardHeroServicii text="Payroll si administrare">
+						<CardHeroServicii text={t("hero.carduri.2")}>
 							<AttachEmailOutlinedIcon className="text-[15px]" />
 						</CardHeroServicii>
-						<CardHeroServicii text="Recrutare si selectie">
+						<CardHeroServicii text={t("hero.carduri.3")}>
 							<GroupAddOutlinedIcon className="text-[15px]" />
 						</CardHeroServicii>
 					</div>
@@ -71,26 +70,16 @@ const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 					<Image alt="cover-servicii" placeholder="blur" src={ImgSec1} />{" "}
 				</div>
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2">
-					<Typography variant="h3">Asiguram nevoile de personal</Typography>
-					<Typography variant="paragraph">
-						Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam
-						maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate
-						dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc
-						ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui
-					</Typography>
+					<Typography variant="h3">{t("asiguram.titlu")}</Typography>
+					<Typography variant="paragraph">{t("asiguram.descriere")}</Typography>
 					<ButonSolicitaOferta params={params} />
 				</div>
 			</section>
 			<div className="h-[1px] w-full" id="sectiune-servicii-2"></div>
 			<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row">
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2">
-					<Typography variant="h3">Administram documentatia</Typography>
-					<Typography variant="paragraph">
-						Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam
-						maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate
-						dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc
-						ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui
-					</Typography>
+					<Typography variant="h3">{t("documentatia.titlu")}</Typography>
+					<Typography variant="paragraph">{t("documentatia.descriere")}</Typography>
 					<ButonSolicitaOferta params={params} />
 				</div>
 				<div className="flex items-center justify-center md:w-1/2" id="container-imagine">
@@ -105,13 +94,8 @@ const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 					<Image alt="cover-servicii" placeholder="blur" src={ImgSec3} />{" "}
 				</div>
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2">
-					<Typography variant="h3">Iti construim echipa</Typography>
-					<Typography variant="paragraph">
-						Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam
-						maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate
-						dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc
-						ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui
-					</Typography>
+					<Typography variant="h3">{t("echipa.titlu")}</Typography>
+					<Typography variant="paragraph">{t("echipa.descriere")}</Typography>
 					<ButonSolicitaOferta params={params} />
 				</div>
 			</section>

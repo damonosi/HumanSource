@@ -1,4 +1,5 @@
 "use client";
+import { useTranslation } from "@/app/i18n/client";
 import { Iparams } from "@/interfaces/params";
 import query from "@/lib/apollo/queries/categories/categories";
 import locationQuery from "@/lib/apollo/queries/locations/locations";
@@ -14,10 +15,14 @@ const SearchBar = ({ params }: Iparams) => {
 	const [domeniu, setDomeniu] = useState("");
 	const [locatie, setLocatie] = useState("");
 	const router = useRouter();
+	const { t } = useTranslation(params.lang, "jobs");
+	let searchLabel = t("search.cauta");
+	let domeniuLabel = t("search.domeniu");
+	let locatieLabel = t("search.locatie");
 	return (
 		<div className="flex w-full  flex-col items-center justify-center gap-4 md:w-1/2 md:flex-row">
 			<Input
-				label="Cauta"
+				label={searchLabel}
 				className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 				onChange={(e) => {
 					setSearchText(e.target.value);
@@ -37,7 +42,7 @@ const SearchBar = ({ params }: Iparams) => {
 					}}
 					variant="outlined"
 					defaultValue={domeniu}
-					label="Domeniu"
+					label={domeniuLabel}
 					className="     aria-expanded:!border-rosu-brand aria-expanded:!border-t-transparent"
 					labelProps={{
 						className:
@@ -58,7 +63,7 @@ const SearchBar = ({ params }: Iparams) => {
 					}}
 					variant="outlined"
 					defaultValue={locatie}
-					label="Locatie"
+					label={locatieLabel}
 					className="     aria-expanded:!border-rosu-brand aria-expanded:!border-t-transparent"
 					labelProps={{
 						className:
@@ -75,7 +80,7 @@ const SearchBar = ({ params }: Iparams) => {
 					onClick={() => router.push(`/${params.lang}/jobs?domeniu=${domeniu}&location=${locatie}&titlu=${search}`)}
 					className="rounded-2xl bg-gri-deschis-bg py-2 px-4 text-sm text-gri-brand"
 				>
-					Cauta
+					{t("search.buton")}
 				</button>
 			</div>
 		</div>

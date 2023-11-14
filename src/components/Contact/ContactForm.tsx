@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import addContactForm from "@/lib/apollo/mutations/mutateContactForm";
 import { useMutation } from "@apollo/client";
 import { useCookies } from "next-client-cookies";
+import { useTranslation } from "@/app/i18n/client";
 
 type Inputs = {
 	nume: string;
@@ -45,6 +46,11 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 			console.log(error);
 		}
 	};
+	const { t } = useTranslation(params.lang, "contact");
+	let numeLabel = t("formular.nume");
+
+	let telefonLabel = t("formular.telefon");
+	let mesajLabel = t("formular.mesaj");
 	return (
 		<div className="flex justify-end rounded-2xl bg-alb-site p-5">
 			<form className="relative w-full justify-between bg-alb-site" onSubmit={handleSubmit(onSubmit)}>
@@ -55,7 +61,7 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 							type="text"
 							{...register("nume", { required: true })}
 							id="nume"
-							label="Numele tau complet"
+							label={numeLabel}
 							defaultValue={cookies.get("contact-name")}
 							onChange={(e) => {
 								cookies.set("contact-name", e.target.value);
@@ -106,7 +112,7 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 							onChange={(e) => {
 								cookies.set("contact-phone", e.target.value);
 							}}
-							label="Numar de telefon"
+							label={telefonLabel}
 							className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 							labelProps={{
 								className:
@@ -124,7 +130,7 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 						{...register("mesaj", { required: true })}
 						id="telefon"
 						aria-expanded
-						label="Trimite-ne un mesaj"
+						label={mesajLabel}
 						defaultValue={cookies.get("contact-message")}
 						onChange={(e) => {
 							cookies.set("contact-message", e.target.value);
@@ -147,11 +153,11 @@ const ContactForm = ({ params }: { params: { lang: string; country: string } }) 
 					/>
 
 					<span className="text-sm font-medium text-gri-brand dark:text-gray-300">
-						*Sunt de acord cu
+						{t("formular.politica.1")}
 						<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
-							Politica de confidentialitate
+							{t("formular.politica.2")}
 						</a>
-						in vederea prelucrarii datelor personale.{" "}
+						{t("formular.politica.3")}
 					</span>
 				</label>
 

@@ -1,4 +1,27 @@
 {
-    "breadHome":"La casa",
-    "breadCurrent":"Servizi"
+	"breadHome": "La casa",
+	"breadCurrent": "Servizi",
+	"buton": "Solicita ofertaIT",
+	"hero": {
+		"titlu": "ITServiciile oferite de Human Source",
+		"subtitlu": "ITCompania noastra de resurse umane oferă servicii de atât pe partea de leasign de personal, recrutare, selecție cât și pe partea de payroll si administrare de personal.",
+		"descriere": "ITCompania noastra de resurse umane oferă servicii de atât pe partea de leasign de personal, recrutare, selecție cât și pe partea de payroll si administrare de personal.",
+		"carduri": {
+			"1": "Leasing de personal",
+			"2": "Payroll si administrare",
+			"3": "Recrutare si selectie"
+		}
+	},
+	"asiguram": {
+		"titlu": "Asiguram nevoile de personal",
+		"descriere": "Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui"
+	},
+	"documentatia": {
+		"titlu": "Administram documentatia",
+		"descriere": "Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui"
+	},
+	"echipa": {
+		"titlu": "Iti construim echipa",
+		"descriere": "Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui"
+	}
 }

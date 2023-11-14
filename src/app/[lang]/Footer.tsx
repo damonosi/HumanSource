@@ -7,17 +7,7 @@ import { GrInstagram } from "react-icons/gr";
 import { SlSocialTwitter } from "react-icons/sl";
 import { useTranslation } from "../i18n/client";
 
-const FooterNavItem = ({
-	params,
-	href,
-
-	label,
-}: {
-	params: { lang: string };
-	href: string;
-
-	label: string;
-}) => (
+const FooterNavItem = ({ params, href, label }: { params: { lang: string }; href: string; label: string }) => (
 	<Link className=" flex  items-start" href={`/${params.lang}/${href}`}>
 		<Typography
 			variant="small"
@@ -33,6 +23,7 @@ const FooterNavItem = ({
 
 const Footer = ({ params }: { params: { lang: string } }) => {
 	const { t } = useTranslation(params.lang, "footer");
+
 	return (
 		<footer className="relative z-50  w-full overflow-hidden bg-gri-bg pt-12 pb-10 text-white md:mx-auto   md:items-center  md:justify-center">
 			<div className="mx-auto  flex w-full flex-col items-center justify-center  pb-0   md:px-[70px]">

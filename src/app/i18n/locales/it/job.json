@@ -1,0 +1,21 @@
+{
+	"breadHome": "La casa",
+	"breadCurrent": "Lavori",
+	"cards": { "data": "Data d'inizio", "industrie": "Industria", "locatie": "La posizione" },
+	"descriere": "Descrizione",
+	"cerinte": "Requisiti",
+	"dece": "Perchè lavorare con noi?",
+	"indemn": "Candidati ora e uno dei nostri agenti di reclutamento ti contatterà il prima possibile!",
+	"form": {
+		"nume": "Il tuo nome completo",
+		"dataNastere": "Data di nascita",
+		"telefon": "Numero di telefono",
+		"mesaj": "Mandaci un messaggio",
+		"politica": {
+			"1": "*Sono d'accordo con",
+			"2": "Politica sulla riservatezza",
+			"3": "al fine di trattare i dati personali."
+		},
+		"buton": "Invia i dati"
+	}
+}

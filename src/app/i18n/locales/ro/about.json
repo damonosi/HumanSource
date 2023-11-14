@@ -1,4 +1,31 @@
 {
-    "breadHome":"Acasa",
-    "breadCurrent":"Despre Noi"
+	"breadHome": "Acasa",
+	"breadCurrent": "Despre Noi",
+	"hero": {
+		"titlu": "Despre noi",
+		"subtitlu": "Companie de resurse umane ce oferă servicii de atât pe partea de leasign de personal, recrutare, selecție cât și pe partea de payroll si administrare de personal.",
+		"descriere": "Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. Tellus libero massa laoreet consequat porta id orci tempus. Dapibus quis curabitur vitae egestas sit feugiat tristique enim id. Enim lacus enim donec eget elementum. Mi imperdiet viverra tellus adipiscing amet vel risus. Nulla libero pulvinar nullam posuere blandit dignissim viverra eu magna. Blandit euismod risus vel leo."
+	},
+	"cardSection": {
+		"titlu": "Valorile Companiei",
+		"carduri": {
+			"1": {
+				"titlu": "Orientarea fata de client",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			},
+			"2": {
+				"titlu": "Flexibilitatea",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			},
+			"3": {
+				"titlu": "Transparenta",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			},
+			"4": {
+				"titlu": "Pregatirea",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			}
+		}
+	},
+	"echipa": "Echipa noastra"
 }

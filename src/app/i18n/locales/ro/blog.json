@@ -1,4 +1,7 @@
 {
-    "breadHome":"Acasa",
-    "breadCurrent":"Blog"
+	"breadHome": "Acasa",
+	"breadCurrent": "Blog",
+	"titlu": "Blogul nostru",
+	"subtitlu": "Et semper nulla sit quis feugiat.",
+	"descriere": "Lorem ipsum dolor sit amet consectetur. Duis faucibus erat adipiscing elit ultrices in libero. Tincidunt commodo augue consectetur suspendisse ornare elementum. Maecenas hac arcu."
 }

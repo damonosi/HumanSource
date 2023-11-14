@@ -29,8 +29,6 @@ const ClientContactPage = ({ params }: { params: { lang: string; country: string
 		<div className="container mx-auto flex flex-col ">
 			<Breadcrumbs>
 				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/`}>
-					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-              	// @ts-ignore */}
 					{t("breadHome")}
 				</Link>
 				<Link className="text-rosu-brand" href={`/${params.lang}/contact`}>
@@ -41,12 +39,9 @@ const ClientContactPage = ({ params }: { params: { lang: string; country: string
 				<div className="flex w-full flex-col  justify-between gap-[60px] md:w-1/2">
 					<div className="flex flex-col gap-8 md:pr-12">
 						<Typography variant="h3" className="text-start font-bold">
-							Contacteaza-ne!
+							{t("titlu")}
 						</Typography>
-						<p>
-							Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi
-							lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. T
-						</p>
+						<p>{t("subtitlu")}</p>
 					</div>
 					<ContactWays />
 					<ContactForm params={params} />

@@ -1,4 +1,31 @@
 {
-    "breadHome":"La casa",
-    "breadCurrent":"Chi siamo"
+	"breadHome": "La casa",
+	"breadCurrent": "Chi siamo",
+	"hero": {
+		"titlu": "Chi siamo",
+		"subtitlu": "Società di risorse umane che offre servizi sia nella parte di somministrazione, reclutamento, selezione che nella parte di gestione paghe e amministrazione del personale.",
+		"descriere": "IT Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. Tellus libero massa laoreet consequat porta id orci tempus. Dapibus quis curabitur vitae egestas sit feugiat tristique enim id. Enim lacus enim donec eget elementum. Mi imperdiet viverra tellus adipiscing amet vel risus. Nulla libero pulvinar nullam posuere blandit dignissim viverra eu magna. Blandit euismod risus vel leo."
+	},
+	"cardSection": {
+		"titlu": "Valori dell'azienda",
+		"carduri": {
+			"1": {
+				"titlu": "Orientamento alla clientela",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			},
+			"2": {
+				"titlu": "Flessibilità",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			},
+			"3": {
+				"titlu": "Trasparenza",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			},
+			"4": {
+				"titlu": "Preparazione",
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+			}
+		}
+	},
+	"echipa": "La nostra squadra"
 }

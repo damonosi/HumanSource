@@ -65,12 +65,16 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 		}
 	};
 	const { t } = useTranslation(params.lang, "formularAngajator");
+	let labelCategorie = t("form.categorie");
+	let labelSubdomeniu = t("form.subdomeniu");
+	let labelFiscal = t("form.fiscal");
+	let labelNrPersoane = t("form.nrPersoane");
+	let labelTelefon = t("form.telefon");
+
 	return (
 		<section className="px-5 pb-[60px] md:px-[70px]">
 			<Breadcrumbs>
 				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
-					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-              	// @ts-ignore */}
 					{t("breadHome")}
 				</Link>
 				<Link className="text-rosu-brand" href={`/${params.lang}/blog`}>
@@ -80,7 +84,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 			<form className=" " onSubmit={handleSubmit(onSubmit)}>
 				<div className="relative mx-auto grid w-fit max-w-2xl  grid-cols-1 justify-between gap-8 rounded bg-alb-site p-4 md:my-4">
 					<Typography className="mb-16" variant="h3">
-						Aplicare
+						{t("form.titlu")}
 					</Typography>
 					<section className="grid grid-cols-1 gap-5 md:grid-cols-2">
 						<Select
@@ -92,7 +96,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 							}}
 							variant="outlined"
 							defaultValue={cookies.get("employer-form-domeniu")}
-							label="Categorie"
+							label={labelCategorie}
 							className="     aria-expanded:!border-rosu-brand aria-expanded:!border-t-transparent"
 							labelProps={{
 								className:
@@ -117,7 +121,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								type="text"
 								{...register("subdomeniu", { required: true })}
 								id="subdomeniu"
-								label="Adaugati un subdomeniu"
+								label={labelSubdomeniu}
 								defaultValue={cookies.get("employer-form-subDomeniu")}
 								onChange={(e) => {
 									cookies.set("employer-form-subDomeniu", e.target.value);
@@ -136,7 +140,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								type="text"
 								{...register("codFiscal", { required: true })}
 								id="codFiscal"
-								label="Cod fiscal"
+								label={labelFiscal}
 								icon={<MdPersonOutline />}
 								defaultValue={cookies.get("employer-form-fiscal")}
 								onChange={(e) => {
@@ -156,7 +160,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								type="number"
 								{...register("nrPersoane", { required: true })}
 								id="nrPersoane"
-								label="cate persoane doriti sa angajati"
+								label={labelNrPersoane}
 								defaultValue={cookies.get("employer-form-nrPersoane")}
 								onChange={(e) => {
 									cookies.set("employer-form-nrPersoane", e.target.value);
@@ -206,7 +210,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								{...register("telefon", { required: true, valueAsNumber: true })}
 								id="telefon"
 								icon={<FiPhone />}
-								label="Numar de telefon"
+								label={labelTelefon}
 								defaultValue={cookies.get("employer-form-telefon")}
 								onChange={(e) => {
 									cookies.set("employer-form-telefon", e.target.value);
@@ -233,11 +237,11 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 							/>
 
 							<span className="text-sm font-medium text-gri-brand dark:text-gray-300">
-								*Sunt de acord cu
+								{t("form.politica.1")}
 								<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
-									Politica de confidentialitate
+									{t("form.politica.2")}
 								</a>
-								in vederea prelucrarii datelor personale.{" "}
+								{t("form.politica.3")}
 							</span>
 						</label>
 						{errors.privacy && (
@@ -246,7 +250,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 					</div>
 					<div className="mt-5 flex w-full items-center justify-center">
 						<button className=" rounded-2xl  bg-gri-brand px-5 py-4 text-alb-site" type="submit">
-							Trimite datele
+							{t("form.buton")}
 						</button>
 					</div>
 				</div>

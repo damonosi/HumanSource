@@ -14,6 +14,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobById";
 
 import { useSearchParams } from "next/navigation";
+import { useTranslation } from "@/app/i18n/client";
 
 interface IpageProps {
 	params: { lang: string; title: string };
@@ -38,15 +39,16 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 		const newDate = `${zi} - ${luna} - ${an}`;
 		return newDate;
 	}
+	const { t } = useTranslation(params.lang, "job");
 	return (
 		<div className="container mx-auto grid ">
 			<div className="container mx-auto flex flex-col px-5 md:px-0">
 				<Breadcrumbs>
 					<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
-						Home
+						{t("breadHome")}
 					</Link>
 					<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/jobs`}>
-						Locuri de munca
+						{t("breadCurrent")}
 					</Link>
 					<Link className="text-rosu-brand" href={`/${params.lang}/jobs`}>
 						{title}
@@ -64,22 +66,29 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 							<div className="flex flex-col gap-2 text-[14px] md:flex-row" id="container butoane titlu">
 								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
 									<FaRegCalendarAlt className="w-5" />
-									<span className=""> Data inceperii : {formatDate(date)}</span>
+									<span className="">
+										{t("cards.data")} : {formatDate(date)}
+									</span>
 								</div>
 								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand ">
 									<FiTruck className="w-5" />
-									<span className=" "> Industrie : {jobCategory.category.name}</span>
+									<span className=" ">
+										{t("cards.industrie")} : {jobCategory.category.name}
+									</span>
 								</div>
 								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
 									<TbTicket className="w-5" />
-									<span> Locatia : {location.zone}</span>
+									<span>
+										{" "}
+										{t("cards.locatie")} : {location.zone}
+									</span>
 								</div>
 							</div>
 						</div>
 						<div className="flex flex-col gap-2" id="container-descriere">
 							{" "}
 							<Typography className="text-[20px] font-bold text-gri-brand " variant="h5">
-								Descriere
+								{t("descriere")}
 							</Typography>
 							<ol className="ml-5 flex list-disc flex-col gap-2 md:ml-0 ">
 								<li>
@@ -92,7 +101,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 						</div>
 						<div className="flex flex-col gap-2" id="container-cerinte">
 							<Typography className="text-[20px] font-bold text-gri-brand " variant="h5">
-								Cerinte
+								{t("cerinte")}
 							</Typography>
 							<ol className="ml-5 flex list-disc flex-col gap-2 md:ml-0">
 								<li>
@@ -105,7 +114,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 						</div>
 						<div className="flex flex-col gap-2" id="container-lucrezi-cu-noi">
 							<Typography className="text-[20px] font-bold text-gri-brand " variant="h5">
-								De ce sa lucrezi cu noi?
+								{t("dece")}
 							</Typography>
 							<ol className="ml-5 flex list-disc flex-col gap-2 md:ml-0">
 								<li>
@@ -117,7 +126,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 							</ol>
 						</div>
 						<Typography className="py-5 text-lg font-bold text-gri-brand md:text-[20px]" variant="h5">
-							Aplica acum iar unul dintre agentii nostrii de recrutare te va contacta in cel mai scurt timp!
+							{t("indemn")}
 						</Typography>
 					</div>
 					<div className="flex rounded-2xl bg-alb-site p-5 md:w-1/2 md:p-10">

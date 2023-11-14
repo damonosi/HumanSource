@@ -6,6 +6,7 @@ import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 
 import Link from "next/link";
 import formatDate from "@/utils/formatDate";
+import { useTranslation } from "@/app/i18n/client";
 
 interface ICardJob {
 	data: string;
@@ -20,6 +21,7 @@ interface ICardJob {
 }
 
 const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) => {
+	const { t } = useTranslation(params.lang, "jobs");
 	return (
 		<div
 			key={id}
@@ -55,7 +57,7 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary }: ICardJob) 
 							ripple={true}
 							className={`flex w-full items-center gap-2  px-0 capitalize  text-[#B21E23] hover:bg-transparent active:bg-transparent md:text-left `}
 						>
-							Aplica acum
+							{t("buton")}
 							<ArrowSmallRightIcon strokeWidth={1} className=" ml-1 h-5 w-5 " />
 						</Button>
 					</Link>

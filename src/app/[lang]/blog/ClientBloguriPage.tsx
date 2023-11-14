@@ -27,7 +27,7 @@ const ClientBloguriPage = ({ params }: { params: { lang: string; country: string
 	return (
 		<div className="container mx-auto flex flex-col  gap-16 ">
 			<BlogsBradcrumbs params={params} />
-			<DescriereBlog />
+			<DescriereBlog params={params} />
 			<div className="" id="scrollTo"></div>
 			<div id="container-bloguri">
 				<PaginatedItems data={data} params={params} />

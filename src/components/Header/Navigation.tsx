@@ -85,15 +85,17 @@ export const DropdownAplica = ({
 				</div>
 			</MenuHandler>
 			<MenuList className=" w-full md:w-fit" {...triggers}>
-				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
-					<NavItem
-						handleCloseMenu={handleCloseMenu}
-						params={params}
-						pathname={pathname}
-						href={`/form/worker`}
-						label={t("aplicaMuncitor")}
-					/>
-				</MenuItem>
+				{params.lang === "ro" && (
+					<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
+						<NavItem
+							handleCloseMenu={handleCloseMenu}
+							params={params}
+							pathname={pathname}
+							href={`/form/worker`}
+							label={t("aplicaMuncitor")}
+						/>
+					</MenuItem>
+				)}
 				<MenuItem className="hover:bg-transparent hover:bg-opacity-100 focus:bg-transparent">
 					<NavItem
 						params={params}

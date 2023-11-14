@@ -1,4 +1,18 @@
 {
-    "breadHome":"La casa",
-    "breadCurrent":"Modulo"
+	"breadHome": "La casa",
+	"breadCurrent": "Modulo",
+	"form": {
+		"titlu": "Applicazione",
+		"subdomeniu": "Aggiungi un sottodominio",
+		"fiscal": "codice fiscale",
+		"nrPersoane": "quante persone vuoi assumere",
+		"telefon": "Numero di telefono",
+		"categorie": "Categoria",
+		"politica": {
+			"1": "*Sono d'accordo con",
+			"2": "Politica sulla riservatezza",
+			"3": "al fine di trattare i dati personali."
+		},
+		"buton": "Invia i dati"
+	}
 }

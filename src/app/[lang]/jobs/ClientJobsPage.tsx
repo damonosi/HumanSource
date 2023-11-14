@@ -50,8 +50,6 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 		<div className="container mx-auto grid grid-cols-1 gap-9">
 			<Breadcrumbs>
 				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
-					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-              	// @ts-ignore */}
 					{t("breadHome")}
 				</Link>
 				<Link className="text-rosu-brand" href={`/${params.lang}/jobs`}>

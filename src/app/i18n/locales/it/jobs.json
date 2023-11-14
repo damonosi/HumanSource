@@ -1,4 +1,11 @@
 {
-    "breadHome":"La casa",
-    "breadCurrent":"Lavori"
+	"breadHome": "La casa",
+	"breadCurrent": "Lavori",
+	"search": {
+		"cauta": "Cercare",
+		"domeniu": "Campo",
+		"locatie": "Posizione",
+		"buton": "Cercare"
+	},
+	"buton": "Applica ora"
 }

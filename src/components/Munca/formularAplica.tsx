@@ -1,3 +1,4 @@
+import { useTranslation } from "@/app/i18n/client";
 import AddJobApplication from "@/lib/apollo/mutations/mutateJobAplication";
 import { useMutation } from "@apollo/client";
 import { Input, Textarea, Typography } from "@material-tailwind/react";
@@ -64,6 +65,12 @@ const FormularAplica = ({
 	if (error) {
 		return <span> `Submission error! ${error.message}`</span>;
 	}
+	const { t } = useTranslation(params.lang, "job");
+	let numeLabel = t("form.nume");
+	let nastereLabel = t("form.dataNastere");
+	let telefonLabel = t("form.telefon");
+	let mesajLabel = t("form.mesaj");
+
 	return (
 		<form className="relative w-full justify-between  " onSubmit={handleSubmit(onSubmit)}>
 			<div className="mb-4 grid grid-cols-1 gap-8 ">
@@ -75,7 +82,7 @@ const FormularAplica = ({
 					type="text"
 					{...register("nume", { required: true })}
 					id="nume"
-					label="Numele tau complet"
+					label={numeLabel}
 					icon={<MdPersonOutline />}
 					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
@@ -89,7 +96,7 @@ const FormularAplica = ({
 					type="date"
 					{...register("dataNastere", { required: true })}
 					id="dataNastere"
-					label="Data Nastere"
+					label={nastereLabel}
 					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
@@ -117,7 +124,7 @@ const FormularAplica = ({
 					{...register("telefon", { required: true })}
 					id="telefon"
 					icon={<FiPhone />}
-					label="Numar de telefon"
+					label={telefonLabel}
 					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
@@ -130,7 +137,7 @@ const FormularAplica = ({
 					{...register("mesaj", { required: true })}
 					id="telefon"
 					aria-expanded
-					label="Trimite-ne un mesaj"
+					label={mesajLabel}
 					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent"
 					labelProps={{
 						className:
@@ -148,11 +155,11 @@ const FormularAplica = ({
 						/>
 
 						<span className="text-sm font-medium text-gri-brand dark:text-gray-300">
-							*Sunt de acord cu
+							{t("form.politica.1")}
 							<a href="politica-confidentialitate" className=" mx-2 my-4 text-gri-bg underline underline-offset-4">
-								Politica de confidentialitate
+								{t("form.politica.2")}
 							</a>
-							in vederea prelucrarii datelor personale.{" "}
+							{t("form.politica.3")}
 						</span>
 					</label>
 				</div>
@@ -167,7 +174,7 @@ const FormularAplica = ({
 			</div>
 			<div className="mt-16 flex w-full items-center justify-center">
 				<button className=" rounded-2xl bg-gri-brand  px-5 py-4 text-alb-site " type="submit">
-					Trimite datele
+					{t("form.buton")}
 				</button>
 			</div>
 		</form>

@@ -9,6 +9,7 @@ import Ro from "../../../public/imagini/header/ro.svg";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useTranslation } from "@/app/i18n/client";
 
 interface Iclass {
 	className?: string;
@@ -38,16 +39,13 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 			}
 			return segments.join("/");
 		}
-	
-		
-		
 	};
 
 	const ref = useOnclickOutside(() => {
 		setOpened(!open && false);
 	});
 
-
+	const { t } = useTranslation(params.lang, "languageSwitcher");
 
 	return (
 		<div ref={ref} className={`${className}  relative z-50 flex  w-72 flex-col items-start justify-center`}>
@@ -69,7 +67,7 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 						className={`${language === "ro" && "font-bold"} linkUnderline relative flex items-center gap-4`}
 					>
 						<Ro className="h-5 w-5 " />
-						<span>Romana</span>
+						<span>{t("romana")}</span>
 					</Link>
 					<Link
 						href={redirectedPathName("it")}
@@ -80,7 +78,7 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 						}}
 						className={`${language === "it" && "font-bold "} linkUnderline relative flex items-center gap-4`}
 					>
-						<It className="h-5 w-5 " /> <span>Italiana</span>
+						<It className="h-5 w-5 " /> <span>{t("italiana")}</span>
 					</Link>
 				</div>
 			)}
