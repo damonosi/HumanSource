@@ -26,7 +26,6 @@ const SearchBar = ({ params }: Iparams) => {
 				className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 				onChange={(e) => {
 					setSearchText(e.target.value);
-					console.log(search);
 				}}
 				labelProps={{
 					className:

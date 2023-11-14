@@ -24,7 +24,7 @@ interface ICardJob {
 const CardJob = ({ params, data, titlu, descriere, id, src, salary, category }: ICardJob) => {
 	const { t } = useTranslation(params.lang, "jobs");
 	const loweredCategory = category.name.toLowerCase();
-	console.log(category.name);
+
 	return (
 		<div
 			key={id}
