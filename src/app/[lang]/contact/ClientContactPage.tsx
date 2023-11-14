@@ -7,12 +7,24 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import ContactForm from "@/components/Contact/ContactForm";
 
 import ContactWays from "@/components/Contact/ContactWays";
-import GoogleMap from "@/components/Contact/GoogleMap";
+
 import { useTranslation } from "@/app/i18n/client";
-import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
 import Spinner from "@/components/Spinner/Spinner";
+
+const LazyLoadedGoogleIframe = dynamic(() => import("@/components/Contact/GoogleMap"), {
+	loading: () => (
+		<div className="relative flex w-full items-center justify-center rounded-full md:w-1/2">
+			<Spinner />
+		</div>
+	),
+	ssr: false,
+});
+
 const ClientContactPage = ({ params }: { params: { lang: string; country: string } }) => {
 	const { t } = useTranslation(params.lang, "contact");
+
 	return (
 		<div className="container mx-auto flex flex-col ">
 			<Breadcrumbs>
@@ -39,9 +51,7 @@ const ClientContactPage = ({ params }: { params: { lang: string; country: string
 					<ContactWays />
 					<ContactForm params={params} />
 				</div>
-				<Suspense fallback={<Spinner />}>
-					<GoogleMap />
-				</Suspense>
+				<LazyLoadedGoogleIframe />
 			</div>
 		</div>
 	);

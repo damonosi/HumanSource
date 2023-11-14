@@ -6,7 +6,6 @@ const CookieConsent = (props) => {
 	const [showConsent, setShowConsent] = React.useState(true);
 
 	React.useEffect(() => {
-		console.log("exists");
 		setShowConsent(hasCookie("localConsent"));
 	}, []);
 
