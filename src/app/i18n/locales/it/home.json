@@ -52,5 +52,38 @@
 			"continut": "Servizio offerto sia a tempo determinato che indeterminato. in tutti i campi di attività, per qualsiasi tipo di qualifica e qualsiasi livello di esperienza",
 			"buton": "Reclutamento e selezione"
 		}
-	}
+	},
+	"intrebari": {
+		"titlu": "Domande frequenti da parte dei clienti",
+		"continuare": "Human Source",
+		"1": {
+			"intrebare": "Cosa comporta il processo di reclutamento e selezione personale?",
+			"raspuns": "Il Servizio di Reclutamento e Selezione è prestato sia a tempo determinato che indeterminato, in tutti i campi di attività, per qualsiasi tipologia di qualifica e per qualsiasi livello di esperienza (entry level, specialistico, middle management o top management).Offre costantemente in percentuale applicata nella retribuzione lorda o in un compenso fisso. Entrambi vengono determinati tenendo conto della difficoltà e dello sforzo necessari per trovare i candidati giusti, i requisiti lavorativi e la retribuzione lorda."
+		},
+		"2": {
+			"intrebare": "Cos'è il contratto individuale di lavoro?",
+			"raspuns": "Il Servizio di Reclutamento e Selezione è prestato sia a tempo determinato che indeterminato, in tutti i campi di attività, per qualsiasi tipologia di qualifica e per qualsiasi livello di esperienza (entry level, specialistico, middle management o top management).Offre costantemente in percentuale applicata nella retribuzione lorda o in un compenso fisso. Entrambi vengono determinati tenendo conto della difficoltà e dello sforzo necessari per trovare i candidati giusti, i requisiti lavorativi e la retribuzione lorda."
+		},
+		"3": {
+			"intrebare": "Che cos'è il personale in leasing?",
+			"raspuns": "Il Servizio di Reclutamento e Selezione è prestato sia a tempo determinato che indeterminato, in tutti i campi di attività, per qualsiasi tipologia di qualifica e per qualsiasi livello di esperienza (entry level, specialistico, middle management o top management).Offre costantemente in percentuale applicata nella retribuzione lorda o in un compenso fisso. Entrambi vengono determinati tenendo conto della difficoltà e dello sforzo necessari per trovare i candidati giusti, i requisiti lavorativi e la retribuzione lorda."
+		},
+		"4": {
+			"intrebare": "Che cos'è il personale in leasing?",
+			"raspuns": "Il Servizio di Reclutamento e Selezione è prestato sia a tempo determinato che indeterminato, in tutti i campi di attività, per qualsiasi tipologia di qualifica e per qualsiasi livello di esperienza (entry level, specialistico, middle management o top management).Offre costantemente in percentuale applicata nella retribuzione lorda o in un compenso fisso. Entrambi vengono determinati tenendo conto della difficoltà e dello sforzo necessari per trovare i candidati giusti, i requisiti lavorativi e la retribuzione lorda."
+		},
+		"5": {
+			"intrebare": "Quali sono i vantaggi del Leasing Personale?",
+			"raspuns": "Il Servizio di Reclutamento e Selezione è prestato sia a tempo determinato che indeterminato, in tutti i campi di attività, per qualsiasi tipologia di qualifica e per qualsiasi livello di esperienza (entry level, specialistico, middle management o top management).Offre costantemente in percentuale applicata nella retribuzione lorda o in un compenso fisso. Entrambi vengono determinati tenendo conto della difficoltà e dello sforzo necessari per trovare i candidati giusti, i requisiti lavorativi e la retribuzione lorda."
+		},
+		"6": {
+			"intrebare": "Cos'è un lavoratore temporaneo?",
+			"raspuns": "Il Servizio di Reclutamento e Selezione è prestato sia a tempo determinato che indeterminato, in tutti i campi di attività, per qualsiasi tipologia di qualifica e per qualsiasi livello di esperienza (entry level, specialistico, middle management o top management).Offre costantemente in percentuale applicata nella retribuzione lorda o in un compenso fisso. Entrambi vengono determinati tenendo conto della difficoltà e dello sforzo necessari per trovare i candidati giusti, i requisiti lavorativi e la retribuzione lorda."
+		},
+		"7": {
+			"intrebare": "Che cos'è un contratto di lavoro temporaneo?",
+			"raspuns": "Il Servizio di Reclutamento e Selezione è prestato sia a tempo determinato che indeterminato, in tutti i campi di attività, per qualsiasi tipologia di qualifica e per qualsiasi livello di esperienza (entry level, specialistico, middle management o top management).Offre costantemente in percentuale applicata nella retribuzione lorda o in un compenso fisso. Entrambi vengono determinati tenendo conto della difficoltà e dello sforzo necessari per trovare i candidati giusti, i requisiti lavorativi e la retribuzione lorda."
+		}
+	},
+	"blog": { "titlu": "Articoli più recenti sul blog", "buton": "Per saperne di più" }
 }

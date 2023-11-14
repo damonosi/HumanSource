@@ -9,6 +9,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import formatDate from "@/utils/formatDate";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "@/app/i18n/client";
 
 interface ICardBlog {
 	data: string;
@@ -33,6 +34,7 @@ const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardB
 
 	const router = useRouter();
 	const formattedDate = formatDate(data, params);
+	const { t } = useTranslation(params.lang, "home");
 	return (
 		<div
 			onMouseLeave={handleMouseLeave}
@@ -82,7 +84,7 @@ const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardB
 							router.push(`/${params.lang}/blog/${slug}?id=${id}`);
 						}}
 					>
-						<span className={`${hovered && "text-alb-site"}`}>Citeste mai mult</span>
+						<span className={`${hovered && "text-alb-site"}`}>{t("blog.buton")}</span>
 						{hovered && <ArrowForwardIcon className="ml-2 text-alb-site" />}
 					</button>
 				</motion.div>

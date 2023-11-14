@@ -52,5 +52,38 @@
 			"continut": "Serviciu oferit atat pe perioada determinata, cat si nedeterminata. in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta",
 			"buton": "Recrutare si selectie"
 		}
-	}
+	},
+	"intrebari": {
+		"titlu": "Intrebari frecvente adresate de clientii",
+		"continuare": "Human Source",
+		"1": {
+			"intrebare": "Ce presupune procesul de recrutare si selectie personal?",
+			"raspuns": "Serviciul de Recrutare si Selectie este  furnizat atat pe perioada determinata, cat si nedeterminata, in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta (entry level, specialist, middle management sau top management).Ofera constant intr-un procent aplicat salariului brut sau intr-o taxa fixa. Ambele sunt stabilite luand in considerare dificultatea si efortul depus in gasirea candidatilor potriviti, cerintele postului si salariul brut."
+		},
+		"2": {
+			"intrebare": "Ce este contractul individual de munca?",
+			"raspuns": "Serviciul de Recrutare si Selectie este  furnizat atat pe perioada determinata, cat si nedeterminata, in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta (entry level, specialist, middle management sau top management).Ofera constant intr-un procent aplicat salariului brut sau intr-o taxa fixa. Ambele sunt stabilite luand in considerare dificultatea si efortul depus in gasirea candidatilor potriviti, cerintele postului si salariul brut."
+		},
+		"3": {
+			"intrebare": "Ce este leasing-ul de personal?",
+			"raspuns": "Serviciul de Recrutare si Selectie este  furnizat atat pe perioada determinata, cat si nedeterminata, in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta (entry level, specialist, middle management sau top management).Ofera constant intr-un procent aplicat salariului brut sau intr-o taxa fixa. Ambele sunt stabilite luand in considerare dificultatea si efortul depus in gasirea candidatilor potriviti, cerintele postului si salariul brut."
+		},
+		"4": {
+			"intrebare": "Cand trebuie sa utilizati Leasingul de Personal?",
+			"raspuns": "Serviciul de Recrutare si Selectie este  furnizat atat pe perioada determinata, cat si nedeterminata, in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta (entry level, specialist, middle management sau top management).Ofera constant intr-un procent aplicat salariului brut sau intr-o taxa fixa. Ambele sunt stabilite luand in considerare dificultatea si efortul depus in gasirea candidatilor potriviti, cerintele postului si salariul brut."
+		},
+		"5": {
+			"intrebare": "Care sunt avantajele Leasingului de Personal?",
+			"raspuns": "Serviciul de Recrutare si Selectie este  furnizat atat pe perioada determinata, cat si nedeterminata, in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta (entry level, specialist, middle management sau top management).Ofera constant intr-un procent aplicat salariului brut sau intr-o taxa fixa. Ambele sunt stabilite luand in considerare dificultatea si efortul depus in gasirea candidatilor potriviti, cerintele postului si salariul brut."
+		},
+		"6": {
+			"intrebare": "Ce este un angajat temporar?",
+			"raspuns": "Serviciul de Recrutare si Selectie este  furnizat atat pe perioada determinata, cat si nedeterminata, in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta (entry level, specialist, middle management sau top management).Ofera constant intr-un procent aplicat salariului brut sau intr-o taxa fixa. Ambele sunt stabilite luand in considerare dificultatea si efortul depus in gasirea candidatilor potriviti, cerintele postului si salariul brut."
+		},
+		"7": {
+			"intrebare": "Ce este contractul de munca temporar?",
+			"raspuns": "Serviciul de Recrutare si Selectie este  furnizat atat pe perioada determinata, cat si nedeterminata, in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta (entry level, specialist, middle management sau top management).Ofera constant intr-un procent aplicat salariului brut sau intr-o taxa fixa. Ambele sunt stabilite luand in considerare dificultatea si efortul depus in gasirea candidatilor potriviti, cerintele postului si salariul brut."
+		}
+	},
+	"blog": { "titlu": "Cele mai noi articole de pe blog", "buton": "Citeste mai mult" }
 }

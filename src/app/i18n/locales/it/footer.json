@@ -1,0 +1,28 @@
+{
+	"1": {
+		"titlu": "HUMAN SOURCE",
+		"despre": "Chi siamo",
+		"angajatori": "Dipendente",
+		"candidati": "Candidato",
+		"munca": "Lavori"
+	},
+	"2": {
+		"titlu": "SERVIZI",
+		"leasing": "PERSONALE",
+		"recrutare": "RECLUTAMENTO E SELEZIONE",
+		"payroll": "PAGAMENTI E AMMINISTRAZIONE"
+	},
+	"3": {
+		"titlu": "CONTACT",
+		"registrul": "Numero aziendale registrato : J40/17607/20",
+		"cod": "Codice identificativo univoco : 38366948",
+		"telefon": "Telefono : 0040743096465",
+		"email": "Email : office@humansource.ro"
+	},
+	"4": {
+		"titlu": "INFORMAZIONE",
+		"politica": "Politica sulla riservatezza",
+		"termeni": "Termini e condizioni d'uso",
+		"cookies": "Gestione dei Cookie"
+	}
+}
