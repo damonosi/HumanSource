@@ -10,6 +10,7 @@ import { useState } from "react";
 const SearchBar = ({ params }: Iparams) => {
 	const { data: categoryData }: { data: { categories: [{ name: string }] } } = useSuspenseQuery(query);
 	const { data: locationData }: { data: { locations: [{ name: string }] } } = useSuspenseQuery(locationQuery);
+	const [search, setSearchText] = useState("");
 	const [domeniu, setDomeniu] = useState("");
 	const [locatie, setLocatie] = useState("");
 	const router = useRouter();
@@ -18,6 +19,10 @@ const SearchBar = ({ params }: Iparams) => {
 			<Input
 				label="Cauta"
 				className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
+				onChange={(e) => {
+					setSearchText(e.target.value);
+					console.log(search);
+				}}
 				labelProps={{
 					className:
 						"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
@@ -32,7 +37,6 @@ const SearchBar = ({ params }: Iparams) => {
 					}}
 					variant="outlined"
 					defaultValue={domeniu}
-					color="red"
 					label="Domeniu"
 					className="w-full  focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
@@ -55,7 +59,6 @@ const SearchBar = ({ params }: Iparams) => {
 					variant="outlined"
 					defaultValue={locatie}
 					label="Locatie"
-					color="red"
 					className="w-full focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
@@ -69,7 +72,7 @@ const SearchBar = ({ params }: Iparams) => {
 					))}
 				</Select>
 				<button
-					onClick={() => router.push(`/${params.lang}/jobs?domeniu=${domeniu}&location=${locatie}`)}
+					onClick={() => router.push(`/${params.lang}/jobs?domeniu=${domeniu}&location=${locatie}&titlu=${search}`)}
 					className="rounded-2xl bg-gri-deschis-bg py-2 px-4 text-sm text-gri-brand"
 				>
 					Cauta

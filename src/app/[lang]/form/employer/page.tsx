@@ -93,14 +93,12 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 							variant="outlined"
 							defaultValue={cookies.get("employer-form-domeniu")}
 							label="Categorie"
-							color="red"
 						>
 							{data.categories.map(({ name }) => (
 								<Option
 									key={name}
 									value={name}
 									onClick={() => {
-										console.log(name);
 										cookies.set("employer-form-domeniu", name);
 									}}
 								>

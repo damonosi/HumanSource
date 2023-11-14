@@ -17,9 +17,11 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 	const searchParams = useSearchParams();
 	const domeniu = searchParams.get("domeniu");
 	const subDomeniu = searchParams.get("subDomeniu");
+	const title = searchParams.get("titlu");
 	const { data }: IJobs = useSuspenseQuery(query, {
 		variables: {
 			where: {
+				title: { contains: title ? title : "" },
 				jobCategory: {
 					category: {
 						name: {
