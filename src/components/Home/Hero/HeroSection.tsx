@@ -7,7 +7,7 @@ import { useTranslation } from "./../../../app/i18n/client";
 import { HartaHeroDesktop, HartaHeroMobil } from "./HartaHero";
 
 const HeroSection = ({ params }: { params: { lang: string; country: string } }) => {
-	const { t } = useTranslation(params.lang, "home-hero");
+	const { t } = useTranslation(params.lang, "home");
 
 	return (
 		<section
@@ -29,15 +29,13 @@ const HeroSection = ({ params }: { params: { lang: string; country: string } }) 
 				>
 					<div className=" flex  w-full flex-col gap-6 pt-6 text-start text-alb-site  lg:pb-16" id="container-text">
 						<Typography variant="small" className="uppercase opacity-80">
-							{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-              				// @ts-ignore */}
-							{t("titlu")}
+							{t("hero.titlu")}
 						</Typography>
 						<Typography variant="h1" className="text-start text-3xl font-bold text-alb-site md:text-5xl  ">
-							{t("subtitlu")}
+							{t("hero.subtitlu")}
 						</Typography>
 						<Typography variant="paragraph" className="font-[350]  opacity-80">
-							{t("indemn")}
+							{t("hero.indemn")}
 						</Typography>
 					</div>
 				</div>{" "}

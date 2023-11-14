@@ -1,0 +1,56 @@
+{
+	"hero": {
+		"titlu": "AGENTIE DE PLASARE FORȚĂ DE MUNCĂ",
+		"subtitlu": "Construiește-ți viitorul  alături de noi",
+		"indemn": "HumanSource - alege să colaborezi cu noi pentru job-ul tau de vis sau pentru gasirea candidatului potrivit.",
+		"card1": {
+			"titlu": "Angajator",
+			"continut": "Firma care are nevoie de serviciile noastre",
+			"buton": "Construeste-ti echipa"
+		},
+		"card2": { "titlu": "Muncitor", "continut": "Iti cauti un loc de munca?", "buton": "Locuri de munca" }
+	},
+	"avantaje": {
+		"titlu": "Firma de recrutare strainatate - Avantajele serviciilor Human Source",
+		"subtitlu": "Avantajele Human Source",
+		"card1": { "titlu": "Zero costuri administrative", "continut": "Nu veti avea costuri administrative interne" },
+		"card2": {
+			"titlu": "Lucratori din toate tarile UE",
+			"continut": "Portofoliu larg si constant updatat de lucratori"
+		},
+		"card3": {
+			"titlu": "Manageri dedicati pe fiecare proiect",
+			"continut": "Care asigura un flux continuu de angajati"
+		},
+		"card4": {
+			"titlu": "Suport si expertiza pe legislatia muncii",
+			"titluMobil": "Suport si expertiza",
+			"continut": "Prin avocati si personalul nostru specializat"
+		}
+	},
+	"nevoi": {
+		"titlu": "In ce situatii ai nevoie de noi?",
+		"1": "Am o companie intr-o alta tara si am nevoie de specialisti romani, insa nu doresc sa imi deschid o filiala in romania",
+		"2": "Una dintre angajatele tale de baza intra in curand in concediu de maternitate. Cine ii va face treaba la fel de bine ?",
+		"3": "Cum pot angaja un numar mare de oameni, in perioada aceasta foarte aglomerata, daca nu am departament de HR?"
+	},
+	"servicii": {
+		"titlu": "Serviciile Human Source",
+
+		"card1": {
+			"titlu": "Asiguram nevoile de personal",
+			"continut": "Oferim o solutie flexibila si eficienta pentru a acoperi nevoia de personal in perioade de varf ale activitatii sau pentru inlocuirea temporara a unor angajati",
+			"buton": "Leasing de personal"
+		},
+		"card2": {
+			"titlu": "Administram documentatia",
+			"continut": "Administram toate serviciile de salarizare intr-un mod transparent si sigur.Te scapam de grija birocratiei si avem grija ca angajatii tai sa fie fericiti",
+			"buton": "Payroll si administrare"
+		},
+		"card3": {
+			"titlu": "Iti construim echipa",
+			"continut": "Serviciu oferit atat pe perioada determinata, cat si nedeterminata. in toate domeniile de activitate, pentru orice tip de calificari si orice nivel de experienta",
+			"buton": "Recrutare si selectie"
+		}
+	}
+}

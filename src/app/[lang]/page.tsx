@@ -25,13 +25,13 @@ export default function Home({ params }: { params: { lang: string; country: stri
 					className="mx-1 flex  flex-col items-center justify-center rounded-t-[10px] bg-alb-site px-4   py-[50px]   md:mx-2 md:py-[100px] "
 					id="background"
 				>
-					<AvantajeSection />
+					<AvantajeSection params={params} />
 				</div>
 				<div
 					className="mx-1 flex flex-col items-center justify-center bg-gri-bg  px-4  md:mx-2 md:px-16  "
 					id="background"
 				>
-					<NevoiSection />
+					<NevoiSection params={params} />
 				</div>
 				<div
 					className="mx-1 flex flex-col items-center  justify-center bg-alb-site pb-[80px] pt-[50px] md:mx-2 md:px-16 md:pb-36 md:pt-[100px]  "

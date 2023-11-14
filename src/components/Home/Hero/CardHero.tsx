@@ -1,11 +1,13 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "@/app/i18n/client";
 
 const CardAngajator = ({ params }: { params: { lang: string; country: string } }) => {
 	const router = useRouter();
+	const { t } = useTranslation(params.lang, "home");
 	return (
-		<Card className="mt-6 h-44 w-1/2 justify-between md:h-56 md:w-60">
+		<Card className="mt-6  h-56 w-1/2 justify-between md:w-60">
 			<CardHeader className="flex justify-center overflow-visible bg-transparent shadow-none">
 				<div className="relative flex w-fit items-center justify-center justify-self-center rounded-full bg-rosu-brand p-2 shadow-lg ">
 					<svg width="30" height="30" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,18 +21,18 @@ const CardAngajator = ({ params }: { params: { lang: string; country: string } }
 			</CardHeader>
 			<CardBody className="flex flex-col items-center justify-center gap-3 p-0  px-2 text-center md:p-6">
 				<Typography variant="paragraph" className="text-brand-gri font-bold  uppercase md:text-xl md:capitalize  ">
-					Angajator
+					{t("hero.card1.titlu")}
 				</Typography>
 				<Typography variant="small" className="text-sm font-[350] md:text-base">
-					Firma care are nevoie de serviciile noastre
+					{t("hero.card1.continut")}
 				</Typography>
 			</CardBody>
 			<CardFooter className="flex justify-center p-0 md:pb-5 ">
 				<Button
 					onClick={() => router.push(`${params.lang}/form/employer`)}
-					className="flex gap-1 bg-transparent px-1 normal-case text-rosu-brand shadow-none transition-all duration-[1200ms] hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6 "
+					className="flex  bg-transparent px-1 normal-case text-rosu-brand shadow-none transition-all duration-[1200ms] hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6 "
 				>
-					Construieste-ti echipa <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />
+					{t("hero.card1.buton")} <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />
 				</Button>
 			</CardFooter>
 		</Card>
@@ -38,8 +40,9 @@ const CardAngajator = ({ params }: { params: { lang: string; country: string } }
 };
 const CardMuncitor = ({ params }: { params: { lang: string; country: string } }) => {
 	const router = useRouter();
+	const { t } = useTranslation(params.lang, "home");
 	return (
-		<Card className="mt-6  h-44 w-1/2 justify-between md:h-56 md:w-60 ">
+		<Card className="mt-6  h-56 w-1/2  justify-between md:w-60 ">
 			<CardHeader className="flex justify-center overflow-visible bg-transparent shadow-none">
 				<div className=" relative flex w-fit items-center justify-center justify-self-center  rounded-full bg-rosu-brand p-2 shadow-lg ">
 					<svg width="30" height="30" viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,10 +57,10 @@ const CardMuncitor = ({ params }: { params: { lang: string; country: string } })
 
 			<CardBody className="flex flex-col items-center justify-center gap-3 p-0  px-2 text-center md:p-6">
 				<Typography variant="paragraph" className="text-brand-gri font-bold  uppercase md:text-xl md:capitalize  ">
-					Muncitor
+					{t("hero.card2.titlu")}
 				</Typography>
 				<Typography variant="small" className=" text-sm font-[350] md:text-base">
-					Iti cauti un loc de munca?
+					{t("hero.card2.continut")}
 				</Typography>
 			</CardBody>
 			<CardFooter className="flex justify-center p-0 md:pb-5 ">
@@ -65,7 +68,7 @@ const CardMuncitor = ({ params }: { params: { lang: string; country: string } })
 					onClick={() => router.push(`${params.lang}/form/worker`)}
 					className="flex  gap-1 bg-transparent px-1  normal-case text-rosu-brand shadow-none transition-all duration-[1200ms] hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6"
 				>
-					Locuri de munca <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />
+					{t("hero.card2.buton")} <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />
 				</Button>
 			</CardFooter>
 		</Card>

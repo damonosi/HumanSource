@@ -45,6 +45,7 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 
 	const jobs = data.jobs;
 	const { t } = useTranslation(params.lang, "jobs");
+
 	return (
 		<div className="container mx-auto grid grid-cols-1 gap-9">
 			<Breadcrumbs>

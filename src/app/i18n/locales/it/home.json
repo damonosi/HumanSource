@@ -1,0 +1,56 @@
+{
+	"hero": {
+		"titlu": "AGENZIA DI COLLOCAMENTO LAVORATIVO",
+		"subtitlu": "Costruisci il tuo futuro con noi",
+		"indemn": "HumanSource - scegli di collaborare con noi per il lavoro dei tuoi sogni o per trovare il candidato giusto.",
+		"card1": {
+			"titlu": "Datore di lavoro",
+			"continut": "L'azienda che ha bisogno dei nostri servizi",
+			"buton": "Costruisci la tua squadra"
+		},
+		"card2": { "titlu": "Lavoratore", "continut": "Stai cercando un lavoro ?", "buton": "Lavori" }
+	},
+	"avantaje": {
+		"titlu": "Società di reclutamento straniera - I vantaggi dei servizi Human Source",
+		"subtitlu": "I vantaggi dei servizi Human Source",
+		"card1": { "titlu": "Zero costi amministrativi", "continut": "Non avrai costi amministrativi interni" },
+		"card2": {
+			"titlu": "Lavoratori provenienti da tutti i paesi dell'UE",
+			"continut": "Portafoglio ampio e costantemente aggiornato dai lavoratori"
+		},
+		"card3": {
+			"titlu": "Manager dedicati su ogni progetto",
+			"continut": "Ciò garantisce un flusso continuo di dipendenti"
+		},
+		"card4": {
+			"titlu": "Supporto e consulenza sulla legislazione del lavoro",
+			"titluMobil": "Supporto e consulenza ",
+			"continut": "Attraverso avvocati e nostro personale specializzato"
+		}
+	},
+	"nevoi": {
+		"titlu": "In quali situazioni hai bisogno di noi?",
+		"1": "Ho un'azienda in un altro paese e ho bisogno di specialisti rumeni, ma non voglio aprire una filiale in Romania",
+		"2": "Uno dei tuoi dipendenti principali andrà presto in congedo di maternità. Chi farà anche il lavoro?",
+		"3": "Come posso assumere un gran numero di persone, in questo periodo così impegnativo, se non dispongo di un reparto Risorse umane?"
+	},
+	"servicii": {
+		"titlu": "Servizi Human Source",
+
+		"card1": {
+			"titlu": "Forniamo esigenze di personale",
+			"continut": "Offriamo una soluzione flessibile ed efficiente per coprire il fabbisogno di personale nei periodi di punta di attività o per la sostituzione temporanea di alcuni dipendenti",
+			"buton": "Personale"
+		},
+		"card2": {
+			"titlu": "Gestiamo la documentazione",
+			"continut": "Gestiamo tutti i servizi paghe in modo trasparente e sicuro, ti salviamo dalla burocrazia e ci assicuriamo che i tuoi dipendenti siano felici",
+			"buton": "Buste paga e amministrazione"
+		},
+		"card3": {
+			"titlu": "Costruiamo la tua squadra",
+			"continut": "Servizio offerto sia a tempo determinato che indeterminato. in tutti i campi di attività, per qualsiasi tipo di qualifica e qualsiasi livello di esperienza",
+			"buton": "Reclutamento e selezione"
+		}
+	}
+}
