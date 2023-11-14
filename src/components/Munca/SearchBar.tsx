@@ -38,10 +38,10 @@ const SearchBar = ({ params }: Iparams) => {
 					variant="outlined"
 					defaultValue={domeniu}
 					label="Domeniu"
-					className="w-full  focus:border-rosu-brand focus:!border-t-transparent "
+					className="     aria-expanded:!border-rosu-brand aria-expanded:!border-t-transparent"
 					labelProps={{
 						className:
-							" peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							"peer-aria-expanded:text-rosu-brand   peer-aria-expanded:before:border-rosu-brand peer-aria-expanded:after:border-rosu-brand   ",
 					}}
 				>
 					{categoryData.categories.map(({ name }) => (
@@ -59,10 +59,10 @@ const SearchBar = ({ params }: Iparams) => {
 					variant="outlined"
 					defaultValue={locatie}
 					label="Locatie"
-					className="w-full focus:border-rosu-brand focus:!border-t-transparent "
+					className="     aria-expanded:!border-rosu-brand aria-expanded:!border-t-transparent"
 					labelProps={{
 						className:
-							" peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+							"peer-aria-expanded:text-rosu-brand   peer-aria-expanded:before:border-rosu-brand peer-aria-expanded:after:border-rosu-brand   ",
 					}}
 				>
 					{locationData.locations.map(({ name }) => (

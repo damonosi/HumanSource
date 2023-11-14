@@ -84,7 +84,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 					</Typography>
 					<section className="grid grid-cols-1 gap-5 md:grid-cols-2">
 						<Select
-							size="lg"
+							size="md"
 							onChange={(e) => {
 								if (!e) return;
 								cookies.set("employer-form-domeniu", e);
@@ -93,6 +93,11 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 							variant="outlined"
 							defaultValue={cookies.get("employer-form-domeniu")}
 							label="Categorie"
+							className="     aria-expanded:!border-rosu-brand aria-expanded:!border-t-transparent"
+							labelProps={{
+								className:
+									"peer-aria-expanded:text-rosu-brand   peer-aria-expanded:before:border-rosu-brand peer-aria-expanded:after:border-rosu-brand   ",
+							}}
 						>
 							{data.categories.map(({ name }) => (
 								<Option
@@ -206,10 +211,10 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 								onChange={(e) => {
 									cookies.set("employer-form-telefon", e.target.value);
 								}}
-								className=" focus:border-rosu-brand focus:!border-t-transparent"
+								className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 								labelProps={{
 									className:
-										"peer-focus:after:!border-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
+										"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
 								}}
 							/>
 							{errors.telefon && (

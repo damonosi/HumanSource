@@ -77,7 +77,7 @@ const FormularAplica = ({
 					id="nume"
 					label="Numele tau complet"
 					icon={<MdPersonOutline />}
-					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
 							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
@@ -90,7 +90,7 @@ const FormularAplica = ({
 					{...register("dataNastere", { required: true })}
 					id="dataNastere"
 					label="Data Nastere"
-					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
 							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
@@ -104,7 +104,7 @@ const FormularAplica = ({
 					id="email"
 					icon={<AiOutlineMail />}
 					label="Email"
-					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
 							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
@@ -118,7 +118,7 @@ const FormularAplica = ({
 					id="telefon"
 					icon={<FiPhone />}
 					label="Numar de telefon"
-					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent "
 					labelProps={{
 						className:
 							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
@@ -131,7 +131,7 @@ const FormularAplica = ({
 					id="telefon"
 					aria-expanded
 					label="Trimite-ne un mesaj"
-					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent md:w-[300px]"
+					className="w-full ring-0 focus:border-rosu-brand focus:!border-t-transparent"
 					labelProps={{
 						className:
 							"text-xs peer-focus:text-xs peer-focus:after:!border-rosu-brand peer-focus:!text-rosu-brand  peer-focus:!text-rosu-brand  peer-focus:before:!border-rosu-brand",
