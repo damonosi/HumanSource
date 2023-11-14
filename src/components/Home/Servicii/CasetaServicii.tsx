@@ -19,7 +19,7 @@ const CasetaServicii = ({ titlu, descriere, textButon, icon, href, params }: ICa
 	const router = useRouter();
 	return (
 		<div
-			className="group container flex h-fit min-h-[335px] w-full  max-w-[500px] flex-col items-center justify-between gap-4 rounded-[10px] bg-alb-site px-4  py-8 text-center transition-all duration-700 hover:drop-shadow-xl  "
+			className="group container flex h-fit min-h-[335px] w-full  max-w-[500px] flex-col items-center justify-between gap-4 rounded-[10px] bg-alb-site px-4  py-8 text-center transition-all duration-300 hover:drop-shadow-xl  "
 			id="caseta-servicii"
 		>
 			<div className="flex w-full items-center justify-center text-rosu-brand">
@@ -36,7 +36,7 @@ const CasetaServicii = ({ titlu, descriere, textButon, icon, href, params }: ICa
 			<div>
 				<Button
 					onClick={() => router.push(`${params.lang}/${href}`)}
-					className="rounded-[8px] border border-alb-site bg-transparent px-6 py-4 text-[#B21E23] shadow-none transition-all  delay-700 duration-500 
+					className="rounded-[8px] border border-alb-site bg-transparent px-6 py-4 text-[#B21E23] shadow-none transition-all   duration-500 
 					  hover:shadow-none group-hover:border-rosu-brand
 			"
 				>
