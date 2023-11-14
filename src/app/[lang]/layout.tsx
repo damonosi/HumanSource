@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 
 	icons: {
 		icon: "/imagini/logo-ico.svg",
-		apple: "/imagini/icoApple.ico",
+
+		apple: "/imagini/apple-touch-icon.png",
 	},
 	verification: {
 		google: `${process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CODE}`,
