@@ -8,6 +8,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 const CookieConsent = ({ params }: { params: { lang: string } }) => {
 	const [showConsent, setShowConsent] = useState(true);
 	const [checked, setChecked] = useState(true);
+	const [analyticsConsent, setAnalyticsConsent] = useState(false);
 	const [showSettingsPage, setShowSettingsPage] = useState(false);
 	const cookies = useCookies();
 
@@ -18,6 +19,13 @@ const CookieConsent = ({ params }: { params: { lang: string } }) => {
 	const acceptCookie = () => {
 		setShowConsent(true);
 		cookies.set("localConsent", "true", { sameSite: "none" });
+	};
+	const acceptSelectedCookies = () => {
+		analyticsConsent === true
+			? cookies.set("analytics", "true", { sameSite: "none" })
+			: cookies.set("analytics", "false", { sameSite: "none" });
+		cookies.set("localConsent", "true", { sameSite: "none" });
+		setShowConsent(true);
 	};
 	const refuseCookie = () => {
 		setShowConsent(true);
@@ -54,14 +62,20 @@ const CookieConsent = ({ params }: { params: { lang: string } }) => {
 									value={"checked"}
 									onChange={() => {
 										setChecked((prevCheck) => !prevCheck);
-										checked === true
-											? cookies.set("analytics", "true", { sameSite: "none" })
-											: cookies.set("analytics", "false", { sameSite: "none" });
+										checked === true ? setAnalyticsConsent(true) : setAnalyticsConsent(false);
 										console.log(cookies.get("analytics"));
 									}}
 								/>
 							</div>
 							<span>{t("settingsPage.switch2.descriere")}</span>{" "}
+						</div>
+						<div className="flex w-full items-center justify-center">
+							<button
+								className="max-w-sm rounded-xl border border-gri-brand py-2 px-4 text-xs font-medium text-gri-brand hover:bg-gri-brand hover:text-alb-site md:text-sm"
+								onClick={acceptSelectedCookies}
+							>
+								{t("settingsPage.butonAcceptaSelectie")}
+							</button>
 						</div>
 					</div>
 				) : (

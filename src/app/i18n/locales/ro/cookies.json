@@ -6,12 +6,13 @@
 	"accepta": "Accepta tot",
 	"settingsPage": {
 		"switch1": {
-			"denumire": "NecesareIt",
+			"denumire": "Necesare",
 			"descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nam a maiores blanditiis dicta dolor! Amet dolor eveniet at. Voluptatibus et adipisci aliquid obcaecati"
 		},
 		"switch2": {
 			"denumire": "Analytics",
 			"descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nam a maiores blanditiis dicta dolor! Amet dolor eveniet at. Voluptatibus et adipisci aliquid obcaecati"
-		}
+		},
+		"butonAcceptaSelectie": "Accepta selectia IT"
 	}
 }
