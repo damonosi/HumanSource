@@ -1,13 +1,13 @@
 {
-	"breadHome": "La casa",
+	"breadHome": "Acasa",
 	"breadCurrent": "Contact",
 	"titlu": "Contacteaza-ne!",
 	"subtitlu": "Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. T",
 	"formular": {
-		"nume": "Il tuo nome completo",
+		"nume": "Numele tau complet",
 
-		"telefon": "Numero di telefono",
-		"mesaj": "Mandaci un messaggio",
+		"telefon": "Numarul de telefon",
+		"mesaj": "Lasa-ne un mesaj",
 		"politica": {
 			"1": "*Sono d'accordo con",
 			"2": "Politica sulla riservatezza",
