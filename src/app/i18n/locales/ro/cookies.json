@@ -3,5 +3,15 @@
 	"text": "Lorem ipsum dolor sit amet consectetur. Tristique pharetra vulputate malesuada dui blandit sem nisi. Maecenas nulla ultricies posuere iaculis ut cum. Hac felis quis nullam suspendisse eget. Maecenas auctor dignissim nunc erat proin. Purus odio curabitur blandit eu tortor fames ullamcorper in et. Volutpat est nullam varius nibh commodo ut. Viverra tellus cursus hendrerit lacus diam et donec nunc proin. Morbi aliquet metus imperd  porttitor at accumsan maecenas dolor. Tincidunt urna dolor ac",
 	"settings": "Setari Cookies",
 	"strict": "Strict necesar",
-	"accepta": "Accepta tot"
+	"accepta": "Accepta tot",
+	"settingsPage": {
+		"switch1": {
+			"denumire": "NecesareIt",
+			"descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nam a maiores blanditiis dicta dolor! Amet dolor eveniet at. Voluptatibus et adipisci aliquid obcaecati"
+		},
+		"switch2": {
+			"denumire": "Analytics",
+			"descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, nam a maiores blanditiis dicta dolor! Amet dolor eveniet at. Voluptatibus et adipisci aliquid obcaecati"
+		}
+	}
 }
