@@ -14,11 +14,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://humansource.vercel.app"),
 	title: "Human Source",
 	icons: "/favicons/favicon.ico",
-
 	verification: {
 		google: `${process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CODE}`,
+	},
+	twitter: {
+		title: "Human Source",
+		description:
+			"Human Source ofera servicii complete: leasing personal, recrutare si selectie, administrare dosare de personal si payroll ✔ Flexibilitate",
+
+		images: "/imagini/openGraph.png",
+	},
+	openGraph: {
+		type: "website",
+		url: "https://humansource.vercel.app",
+		title: "Human Source",
+		description:
+			"Human Source ofera servicii complete: leasing personal, recrutare si selectie, administrare dosare de personal si payroll ✔ Flexibilitate",
+		siteName: "Human Source",
+		images: "/imagini/openGraph.png",
 	},
 	description:
 		"Human Source ofera servicii complete: leasing personal, recrutare si selectie, administrare dosare de personal si payroll ✔ Flexibilitate",
