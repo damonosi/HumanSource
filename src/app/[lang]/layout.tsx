@@ -15,6 +15,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
 	title: "Human Source",
+	icons: [
+		{ rel: "icon", url: "/favicons/favicon.ico" },
+		{ rel: "apple-touch-icon", url: "/favicons/apple-touch-icon.png" },
+		{ rel: "apple-icon", url: "/favicons/favicon.ico" },
+	],
 
 	verification: {
 		google: `${process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CODE}`,
