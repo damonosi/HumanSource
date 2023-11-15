@@ -18,7 +18,7 @@ export type IPaginationData = {
 				altText: string;
 
 				image: {
-					publicUrl: StaticImageData;
+					publicUrlTransformed: StaticImageData;
 				};
 			};
 		},
@@ -40,7 +40,7 @@ export interface IPaginatedData {
 		altText: string;
 		id: string;
 		image: {
-			publicUrl: StaticImageData;
+			publicUrlTransformed: StaticImageData;
 		};
 	};
 }
@@ -102,7 +102,7 @@ export interface IlastBlogs {
 					altText: string;
 					id: string;
 					image: {
-						publicUrl: StaticImageData;
+						publicUrlTransformed: StaticImageData;
 					};
 				};
 			},
@@ -126,7 +126,7 @@ export interface IBlog {
 				altText: string;
 				id: string;
 				image: {
-					publicUrl: StaticImageData;
+					publicUrlTransformed: StaticImageData;
 				};
 			};
 		};
@@ -150,7 +150,7 @@ export interface IBlogs {
 					altText: string;
 					id: string;
 					image: {
-						publicUrl: StaticImageData;
+						publicUrlTransformed: StaticImageData;
 					};
 				};
 			},

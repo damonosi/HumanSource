@@ -16,7 +16,7 @@ interface ICardBlogSecundar {
 		altText: string;
 		id: string;
 		image: {
-			publicUrl: StaticImageData;
+			publicUrlTransformed: StaticImageData;
 		};
 	};
 	params: {
@@ -29,10 +29,9 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 	let altText = !photo ? "nu are alt" : photo.altText;
 	let imageUrl = !photo
 		? "https://res.cloudinary.com/dmm7tnk7s/image/upload/v1698689593/87Af-eFtsR_JPiASGbYk9RpEly4.jpg"
-		: photo.image.publicUrl;
+		: photo.image.publicUrlTransformed;
 
 	const titleLength = title.length;
-
 
 	return (
 		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${slug}`}>

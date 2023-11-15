@@ -35,6 +35,7 @@ const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardB
 	const router = useRouter();
 	const formattedDate = formatDate(data, params);
 	const { t } = useTranslation(params.lang, "home");
+
 	return (
 		<div
 			onMouseLeave={handleMouseLeave}

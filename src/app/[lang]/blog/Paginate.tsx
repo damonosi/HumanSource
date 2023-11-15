@@ -54,7 +54,7 @@ function PaginatedItems({
 					altText: string;
 					id: string;
 					image: {
-						publicUrl: StaticImageData;
+						publicUrlTransformed: StaticImageData;
 					};
 				};
 			},
@@ -95,7 +95,7 @@ function PaginatedItems({
 			setPageSize(9);
 		}
 	}, []);
-
+	dateBloguri.map((blog) => console.log(blog.photo.image.publicUrlTransformed));
 	return (
 		<>
 			<ContentPagination params={params} pageSize={pageSize} currentPage={currentPage} bloguri={dateBloguri} />

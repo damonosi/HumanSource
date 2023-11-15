@@ -8,10 +8,10 @@ import HomeIco from "@/components/error/HomeIco";
 export default function Error({ error, reset, params }: { error: Error; reset: () => void; params: { lang: string } }) {
 	const router = useRouter();
 	useEffect(() => {
-		// Log the error to an error reporting service
+
 		console.error(error);
 	}, [error]);
-
+console.log(params);
 	return (
 		<div className="flex min-h-screen flex-col md:flex-row">
 			<div className="mt-5 flex flex-col items-center justify-center gap-7 px-5 md:w-1/2">

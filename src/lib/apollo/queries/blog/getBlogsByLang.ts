@@ -25,7 +25,7 @@ const query = gql`
 				filename
 				id
 				image {
-					publicUrl
+					publicUrlTransformed
 				}
 			}
 		}

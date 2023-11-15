@@ -95,7 +95,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 					.map(({ id, dateCreated, title, content, slug, photo }, index) => {
 						const paragraph = content.document[0].children[0].text;
 
-						let imageUrl = photo?.image?.publicUrl;
+						let imageUrl = photo?.image?.publicUrlTransformed;
 
 						return (
 							<CardBlog

@@ -14,7 +14,7 @@ const query = gql`
 			photo {
 				altText
 				image {
-					publicUrl
+					publicUrlTransformed
 				}
 			}
 		}
