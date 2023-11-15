@@ -8,7 +8,7 @@ import FormularAplica from "@/components/Munca/formularAplica";
 import { Typography } from "@material-tailwind/react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FiTruck } from "react-icons/fi";
-import { TbTicket } from "react-icons/tb";
+import { CiLocationOn } from "react-icons/ci";
 import { IJob } from "@/interfaces/job";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import query from "@/lib/apollo/queries/job/getJobById";
@@ -54,7 +54,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 						{title}
 					</Link>
 				</Breadcrumbs>
-				<div className="container flex w-full flex-col  md:flex-row">
+				<div className="container flex w-full flex-col gap-5 md:flex-row">
 					<div className="flex flex-col gap-[30px]  text-gri-brand md:w-1/2 md:px-0 ">
 						<div className="flex flex-col gap-3" id="container info titlu">
 							<Typography variant="h3" className="text-[28px] font-bold  ">
@@ -63,20 +63,11 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 							<Typography variant="h5" className="text- font-bold  ">
 								{company}
 							</Typography>
-							<div className="flex flex-col gap-2 text-[14px] md:flex-row" id="container butoane titlu">
-								<div className="flex w-fit flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
-									<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
-										{" "}
-										<FaRegCalendarAlt className="h-5 w-5" />
-									</div>
-									<div className="flex flex-col items-center">
-										<span className="font-bold ">{t("cards.data")}</span>
-									</div>
-									<div className="flex flex-col items-center">
-										<span> {formatDate(date)}</span>
-									</div>
-								</div>
-								<div className="flex w-fit flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ">
+							<div
+								className="grid grid-cols-1 items-center gap-5 pr-6  text-[14px] md:grid-cols-3 "
+								id="container butoane titlu"
+							>
+								<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ">
 									<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
 										{" "}
 										<FiTruck className="h-5 w-5" />
@@ -89,17 +80,29 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 										<span> {jobCategory.category.name}</span>
 									</div>
 								</div>
-								<div className="flex w-fit flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
+								<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
 									<div className="justify-self-start rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
-										<TbTicket className="h-5 w-5" />
+										<CiLocationOn className="h-5 w-5" />
 									</div>{" "}
 									<div className="flex flex-col items-center">
 										<span className="font-bold "> {t("cards.locatie")} </span>
 									</div>
 									<div className="flex flex-col items-center">
-										{location.country.map(({ name }) => (
-											<span>{name}</span>
+										{location.country.map(({ name }, index) => (
+											<span key={index}>{name}</span>
 										))}
+									</div>
+								</div>
+								<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
+									<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
+										{" "}
+										<FaRegCalendarAlt className="h-5 w-5" />
+									</div>
+									<div className="flex flex-col items-center">
+										<span className="font-bold ">{t("cards.data")}</span>
+									</div>
+									<div className="flex flex-col items-center">
+										<span> {formatDate(date)}</span>
 									</div>
 								</div>
 							</div>
