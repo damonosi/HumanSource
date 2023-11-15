@@ -3,6 +3,7 @@ const locationQuery = gql`
 	query Countries {
 		countries {
 			name
+			nameIT
 		}
 	}
 `;

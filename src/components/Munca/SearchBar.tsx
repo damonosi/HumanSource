@@ -9,8 +9,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const SearchBar = ({ params }: Iparams) => {
-	const { data: categoryData }: { data: { categories: [{ name: string }] } } = useSuspenseQuery(query);
-	const { data: locationData }: { data: { countries: [{ name: string }] } } = useSuspenseQuery(locationQuery);
+	const { data: categoryData }: { data: { categories: [{ name: string; nameIT: string }] } } = useSuspenseQuery(query);
+	const { data: locationData }: { data: { countries: [{ name: string; nameIT: string }] } } =
+		useSuspenseQuery(locationQuery);
 	const [search, setSearchText] = useState("");
 	const [domeniu, setDomeniu] = useState("");
 	const [locatie, setLocatie] = useState("");
@@ -19,6 +20,7 @@ const SearchBar = ({ params }: Iparams) => {
 	let searchLabel = t("search.cauta");
 	let domeniuLabel = t("search.domeniu");
 	let locatieLabel = t("search.locatie");
+
 	return (
 		<div className="flex w-full  flex-col items-center justify-center gap-4 md:w-1/2 md:flex-row">
 			<Input
@@ -48,9 +50,9 @@ const SearchBar = ({ params }: Iparams) => {
 							"peer-aria-expanded:text-rosu-brand   peer-aria-expanded:before:border-rosu-brand peer-aria-expanded:after:border-rosu-brand   ",
 					}}
 				>
-					{categoryData.categories.map(({ name }) => (
+					{categoryData.categories.map(({ name, nameIT }) => (
 						<Option key={name} value={name}>
-							{name}
+							{params.lang === "ro" ? name : nameIT}
 						</Option>
 					))}
 				</Select>
@@ -69,9 +71,9 @@ const SearchBar = ({ params }: Iparams) => {
 							"peer-aria-expanded:text-rosu-brand   peer-aria-expanded:before:border-rosu-brand peer-aria-expanded:after:border-rosu-brand   ",
 					}}
 				>
-					{locationData.countries.map(({ name }) => (
+					{locationData.countries.map(({ name, nameIT }) => (
 						<Option key={name} value={name}>
-							{name}
+							{params.lang === "ro" ? name : nameIT}
 						</Option>
 					))}
 				</Select>

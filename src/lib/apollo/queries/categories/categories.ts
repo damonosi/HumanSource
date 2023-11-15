@@ -3,6 +3,7 @@ const query = gql`
 	query Categories {
 		categories {
 			name
+			nameIT
 		}
 	}
 `;
