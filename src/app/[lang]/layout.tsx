@@ -27,6 +27,20 @@ export const metadata: Metadata = {
 
 		images: "/imagini/openGraph.png",
 	},
+	robots: {
+		index: false,
+		follow: true,
+		nocache: true,
+		googleBot: {
+			index: true,
+			follow: false,
+			noimageindex: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
+
 	openGraph: {
 		type: "website",
 		url: "https://humansource.vercel.app",
@@ -42,13 +56,6 @@ export const metadata: Metadata = {
 	other: {
 		["fb:app_id"]: `${process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}`,
 		["facebook-domain-verification"]: `${process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_ID}`,
-		["twitter:title"]: `Human Source`,
-		["twitter:image"]: `/img/share-fja.png`,
-		["twitter:card"]: `summary_large_image`,
-		["twitter:site"]: `@`,
-		["twitter:description"]: `Construieste-ti viitorul alaturi de`,
-		["og:site_name"]: `Human Source`,
-		["og:image"]: `/img/share-fja.png`,
 	},
 };
 const madera = localFont({
