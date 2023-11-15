@@ -86,8 +86,11 @@ export function Header({ params }: { params: { lang: string; country: string } }
 						</button>
 					</div>
 				</div>
-				<MobileNav className="bg-alb-site  px-4 py-4 text-center lg:hidden" open={open}>
-					<NavList params={params} handleCloseMenu={handleCloseMenu} />
+
+				<MobileNav className={`bg-alb-site  px-4 text-center md:hidden  `} open={open}>
+					<div className="py-4">
+						<NavList params={params} handleCloseMenu={handleCloseMenu} />
+					</div>
 				</MobileNav>
 			</Navbar>
 		</header>
