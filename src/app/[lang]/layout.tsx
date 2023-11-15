@@ -104,7 +104,7 @@ const madera = localFont({
 			style: "italic",
 		},
 	],
-
+	preload: true,
 	display: "swap",
 	variable: "--font-madera",
 });
