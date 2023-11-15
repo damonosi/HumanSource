@@ -29,7 +29,7 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 	const clasaIconite = "h-9 w-8 md:h-36 md:w-28";
 	const { t } = useTranslation(params.lang, "formularMuncitor");
 	return (
-		<div className="px-5 pb-[60px] md:px-[70px]">
+		<div className="px-5 pb-[60px] md:px-[70px] lg:px-[110px]">
 			<Breadcrumbs>
 				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 

@@ -148,7 +148,7 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 	};
 	const { t } = useTranslation(params.lang, "formularMuncitor");
 	return (
-		<div className="flex flex-col px-5 pb-9 md:px-[70px] ">
+		<div className="container mx-auto flex flex-col px-5 pb-9 lg:px-0">
 			<Breadcrumbs>
 				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/`}>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
