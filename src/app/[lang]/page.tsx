@@ -5,7 +5,8 @@ import IntrebariSection from "@/components/Home/Intrebari/IntrebariSection";
 import NevoiSection from "@/components/Home/Nevoi/NevoiSection";
 import ParteneriSection from "@/components/Home/Parteneri/ParteneriSection";
 import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
-import Spinner from "@/components/Spinner/Spinner";
+
+import CookieConsent from "@/components/cookies/CookiesConsent";
 
 import type { Metadata } from "next";
 
