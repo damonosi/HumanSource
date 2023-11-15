@@ -20,6 +20,36 @@ interface IpageProps {
 	params: { lang: string; title: string };
 }
 
+
+const CardJob = ({
+	jobCategory,
+	params,
+	translateName,
+	isDateCard,
+	children,
+}: {
+	jobCategory: { category: { name: string } };
+	params: { lang: string };
+	translateName: string;
+	isDateCard: boolean;
+	children: React.ReactNode;
+}) => {
+	const { t } = useTranslation(params.lang, "job");
+	<div
+		className={`flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ${
+			isDateCard && ""
+		}`}
+	>
+		<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">{children}</div>
+		<div className="flex flex-col items-center">
+			<span className="font-bold ">{t(translateName)}</span>
+		</div>
+		<div className="flex flex-col items-center">
+			<span> {jobCategory.category.name}</span>
+		</div>
+	</div>;
+};
+
 const ClientJobPage: FC<IpageProps> = ({ params }) => {
 	const searchParams = useSearchParams();
 	const idJob = searchParams.get("id");
@@ -68,7 +98,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 									className="grid  grid-cols-2 items-center gap-5 pr-6 text-[14px]  md:w-full md:grid-cols-3 "
 									id="container butoane titlu"
 								>
-									<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ">
+									<div className="flex h-40 flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ">
 										<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
 											{" "}
 											<FiTruck className="h-5 w-5" />
@@ -81,7 +111,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 											<span> {jobCategory.category.name}</span>
 										</div>
 									</div>
-									<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
+									<div className="flex h-40 flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
 										<div className="justify-self-start rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
 											<CiLocationOn className="h-5 w-5" />
 										</div>{" "}
@@ -94,7 +124,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 											))}
 										</div>
 									</div>
-									<div className="col-span-2 flex flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand md:col-span-1">
+									<div className="col-span-2 flex h-40 flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand md:col-span-1">
 										<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
 											{" "}
 											<FaRegCalendarAlt className="h-5 w-5" />

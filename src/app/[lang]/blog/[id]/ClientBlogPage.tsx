@@ -28,7 +28,7 @@ const ClientBlogPage = ({ params }: { params: { lang: string; id: string } }) =>
 	let imageUrl = !photo
 		? "https://res.cloudinary.com/dmm7tnk7s/image/upload/v1698689593/87Af-eFtsR_JPiASGbYk9RpEly4.jpg"
 		: photo.image.publicUrlTransformed;
-	console.log(photo);
+
 	return (
 		<>
 			{!data ? (

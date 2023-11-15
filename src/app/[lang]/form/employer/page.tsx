@@ -51,8 +51,6 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 				},
 			});
 
-			isLoading && console.log("submitting");
-			isSubmitSuccessful && console.log("success");
 			router.push(`/${params.lang}/multumim?categorie=${data.domeniu}`);
 			cookies.remove("employer-form-domeniu");
 			cookies.remove("employer-form-subDomeniu");

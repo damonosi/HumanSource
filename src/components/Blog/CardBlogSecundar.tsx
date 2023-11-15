@@ -31,7 +31,7 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 		? "https://res.cloudinary.com/dmm7tnk7s/image/upload/v1698689593/87Af-eFtsR_JPiASGbYk9RpEly4.jpg"
 		: photo.image.publicUrlTransformed;
 
-	const titleLength = title.length;
+
 
 	return (
 		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${slug}`}>
@@ -40,7 +40,7 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 				id="container-card-blog-secundar"
 			>
 				<div className="relative flex h-1/2 w-full flex-col overflow-hidden rounded-b-2xl rounded-t-2xl transition-all duration-700  group-hover:drop-shadow-2xl">
-					<Image alt={altText} src={imageUrl} className="object-cover" sizes="" />
+					<Image fill alt={altText} sizes="" src={imageUrl} className="object-cover" />
 				</div>
 				<div className="flex h-1/2 flex-col gap-2  px-2 pb-4 leading-10">
 					<Typography variant="small" className="text-start text-gri-brand opacity-50">
