@@ -50,7 +50,7 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 	const { t } = useTranslation(params.lang, "jobs");
 
 	return (
-		<div className="container mx-auto grid grid-cols-1 gap-9">
+		<div className="container mx-auto grid  grid-cols-1 gap-9">
 			<Breadcrumbs>
 				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
 					{t("breadHome")}
@@ -61,7 +61,7 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 			</Breadcrumbs>
 			<SearchBar params={params} />
 
-			<section className="flex flex-col gap-9">
+			<section className="flex min-h-[50vh] flex-col gap-9">
 				<Typography variant="h4" className="text-bold text-left">
 					{t("titlu")}
 				</Typography>

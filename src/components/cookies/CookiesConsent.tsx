@@ -7,7 +7,7 @@ const CookieConsent = ({ params }: { params: { lang: string } }) => {
 	const [showConsent, setShowConsent] = React.useState(true);
 	const cookies = useCookies();
 	React.useEffect(() => {
-		console.log(cookies.get("localConsent"));
+
 		cookies.get("localConsent") === undefined && setShowConsent(false);
 	}, []);
 
@@ -17,7 +17,7 @@ const CookieConsent = ({ params }: { params: { lang: string } }) => {
 	};
 	const refuseCookie = () => {
 		setShowConsent(true);
-		cookies.set("localConsent", "false", {});
+		cookies.set("localConsent", "false", { sameSite: "none" });
 	};
 
 	const { t } = useTranslation(params.lang, "cookies");
