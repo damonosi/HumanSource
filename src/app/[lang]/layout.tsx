@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
 	metadataBase: new URL("https://humansource.vercel.app"),
 	title: "Human Source",
-	icons: "/favicons/favicon.ico",
+	icons: "/favicons/favicon.png",
 	verification: {
 		google: `${process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CODE}`,
 	},
