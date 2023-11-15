@@ -63,49 +63,51 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 							<Typography variant="h5" className="text- font-bold  ">
 								{company}
 							</Typography>
-							<div
-								className="grid grid-cols-1 items-center gap-5 pr-6  text-[14px] md:grid-cols-3 "
-								id="container butoane titlu"
-							>
-								<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ">
-									<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
-										{" "}
-										<FiTruck className="h-5 w-5" />
-									</div>{" "}
-									<div className="flex flex-col items-center">
-										<span className="font-bold ">{t("cards.industrie")}</span>
+							<section className="my-4 flex w-full items-center justify-center">
+								<div
+									className="grid w-2/3 grid-cols-1 items-center gap-5 pr-6 text-[14px]  md:w-full md:grid-cols-3 "
+									id="container butoane titlu"
+								>
+									<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ">
+										<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
+											{" "}
+											<FiTruck className="h-5 w-5" />
+										</div>{" "}
+										<div className="flex flex-col items-center">
+											<span className="font-bold ">{t("cards.industrie")}</span>
+										</div>
+										<div className="flex flex-col items-center">
+											{" "}
+											<span> {jobCategory.category.name}</span>
+										</div>
 									</div>
-									<div className="flex flex-col items-center">
-										{" "}
-										<span> {jobCategory.category.name}</span>
+									<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
+										<div className="justify-self-start rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
+											<CiLocationOn className="h-5 w-5" />
+										</div>{" "}
+										<div className="flex flex-col items-center">
+											<span className="font-bold "> {t("cards.locatie")} </span>
+										</div>
+										<div className="flex flex-col items-center">
+											{location.country.map(({ name }, index) => (
+												<span key={index}>{name}</span>
+											))}
+										</div>
+									</div>
+									<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
+										<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
+											{" "}
+											<FaRegCalendarAlt className="h-5 w-5" />
+										</div>
+										<div className="flex flex-col items-center">
+											<span className="font-bold ">{t("cards.data")}</span>
+										</div>
+										<div className="flex flex-col items-center">
+											<span> {formatDate(date)}</span>
+										</div>
 									</div>
 								</div>
-								<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
-									<div className="justify-self-start rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
-										<CiLocationOn className="h-5 w-5" />
-									</div>{" "}
-									<div className="flex flex-col items-center">
-										<span className="font-bold "> {t("cards.locatie")} </span>
-									</div>
-									<div className="flex flex-col items-center">
-										{location.country.map(({ name }, index) => (
-											<span key={index}>{name}</span>
-										))}
-									</div>
-								</div>
-								<div className="flex  flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
-									<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
-										{" "}
-										<FaRegCalendarAlt className="h-5 w-5" />
-									</div>
-									<div className="flex flex-col items-center">
-										<span className="font-bold ">{t("cards.data")}</span>
-									</div>
-									<div className="flex flex-col items-center">
-										<span> {formatDate(date)}</span>
-									</div>
-								</div>
-							</div>
+							</section>
 						</div>
 						<div className="flex flex-col gap-2" id="container-descriere">
 							{" "}
