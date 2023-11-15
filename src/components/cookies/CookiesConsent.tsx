@@ -27,7 +27,7 @@ const CookieConsent = ({ params }: { params: { lang: string } }) => {
 			<div className="   flex max-w-3xl flex-col items-center justify-between gap-16 rounded-2xl bg-alb-site p-8 md:p-16">
 				<span className="text-dark  text-sm font-[350] md:text-base">
 					{t("text")}
-					<span className="text-rosu-brand"> Cookie Policy </span>.
+					<span className="text-rosu-brand"> {t("politica")}</span>.
 				</span>
 				<div className="flex w-full justify-between">
 					<button

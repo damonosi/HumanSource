@@ -119,7 +119,7 @@ export default function RootLayout({
 				<ClientCookiesProvider value={cookies().getAll()}>
 					<Providers>
 						<div className="relative grid min-h-screen w-full grid-cols-1 overflow-hidden  " id="site-container">
-							<CookieConsent />
+							<CookieConsent params={params} />
 							<Header params={params} />
 
 							<main className=" z-30 mt-14 flex w-full flex-col  ">
