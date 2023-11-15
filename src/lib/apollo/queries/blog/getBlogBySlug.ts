@@ -19,7 +19,7 @@ const query = gql`
 				altText
 
 				image {
-					publicUrl
+					publicUrlTransformed
 				}
 			}
 		}
