@@ -72,7 +72,7 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 	let labelTelefon = t("form.telefon");
 
 	return (
-		<section className="px-5 pb-[60px] md:px-[70px]">
+		<section className="container mx-auto flex flex-col px-5 pb-9 lg:px-0">
 			<Breadcrumbs>
 				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
 					{t("breadHome")}
@@ -81,9 +81,12 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>
-			<form className=" " onSubmit={handleSubmit(onSubmit)}>
-				<div className="relative mx-auto grid w-fit max-w-2xl  grid-cols-1 justify-between gap-8 rounded bg-alb-site p-4 md:my-4">
-					<Typography className="mb-16" variant="h3">
+			<form
+				className="relative flex  w-full items-center justify-center  rounded-2xl bg-alb-site p-4 px-9 md:my-4 md:px-24"
+				onSubmit={handleSubmit(onSubmit)}
+			>
+				<div className="grid  max-w-xl grid-cols-1 justify-between gap-8 pt-6 text-center">
+					<Typography className="mb-8" variant="h3">
 						{t("form.titlu")}
 					</Typography>
 					<section className="grid grid-cols-1 gap-5 md:grid-cols-2">
