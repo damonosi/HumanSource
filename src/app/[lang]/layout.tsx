@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
 	title: "Human Source",
-	icons: [{ rel: "icon", url: "/favicons/favicon.ico" }],
+	icons: "/favicons/favicon.ico",
 
 	verification: {
 		google: `${process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CODE}`,
@@ -94,7 +94,7 @@ const madera = localFont({
 			style: "italic",
 		},
 	],
-	preload: true,
+
 	display: "swap",
 	variable: "--font-madera",
 });

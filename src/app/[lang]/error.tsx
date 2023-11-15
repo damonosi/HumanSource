@@ -14,7 +14,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
 	}, [error]);
 	const params = useParams();
 	const language: lang = params.lang as string;
-	console.log(language);
+
 	const { t } = useTranslation(language, "error");
 	return (
 		<div className="flex min-h-screen flex-col md:flex-row">
