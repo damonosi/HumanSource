@@ -157,7 +157,7 @@ export const HartaHeroMobil = () => {
 		<Fragment>
 			<div className="relative mb-9 flex w-full">
 				<AnimatePresence>
-					<Image src={HartaMobil} className="relative z-10 w-full " priority alt="imagine-harta" />
+					<Image src={HartaMobil} className="relative z-10 w-full " alt="imagine-harta" />
 					<PinuriMobil
 						key="pinuriMobil"
 						className="absolute z-10 w-4/5  translate-x-2 translate-y-2 "
