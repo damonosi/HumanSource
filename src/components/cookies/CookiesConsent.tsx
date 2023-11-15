@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { hasCookie, setCookie } from "cookies-next";
-
-const CookieConsent = (props) => {
+import { useTranslation } from "@/app/i18n/client";
+const CookieConsent = ({ params }: { params: { lang: string } }) => {
 	const [showConsent, setShowConsent] = React.useState(true);
 
 	React.useEffect(() => {
@@ -21,16 +21,12 @@ const CookieConsent = (props) => {
 	if (showConsent) {
 		return null;
 	}
-
+	const { t } = useTranslation(params.lang, "cookies");
 	return (
 		<div className="fixed z-50 -mt-8  flex h-full w-full items-center justify-center bg-opacity-70 px-2 backdrop-blur-sm  md:px-20">
 			<div className="   flex max-w-3xl flex-col items-center justify-between gap-16 rounded-2xl bg-alb-site p-8 md:p-16">
 				<span className="text-dark  text-sm font-[350] md:text-base">
-					Lorem ipsum dolor sit amet consectetur. Tristique pharetra vulputate malesuada dui blandit sem nisi. Maecenas
-					nulla ultricies posuere iaculis ut cum. Hac felis quis nullam suspendisse eget. Maecenas auctor dignissim nunc
-					erat proin. Purus odio curabitur blandit eu tortor fames ullamcorper in et. Volutpat est nullam varius nibh
-					commodo ut. Viverra tellus cursus hendrerit lacus diam et donec nunc proin. Morbi aliquet metus imperdiet
-					porttitor at accumsan maecenas dolor. Tincidunt urna dolor ac{" "}
+					{t("text")}
 					<span className="text-rosu-brand"> Cookie Policy </span>.
 				</span>
 				<div className="flex w-full justify-between">
@@ -38,20 +34,20 @@ const CookieConsent = (props) => {
 						className="text-sm font-[400] text-rosu-brand underline hover:text-gri-brand md:text-base"
 						onClick={() => acceptCookie()}
 					>
-						Cookies Settings
+						{t("settings")}
 					</button>
 					<div className="flex gap-1 md:gap-4">
 						<button
 							className="rounded-xl border border-gri-brand py-2 px-4 text-xs font-medium text-gri-brand hover:bg-gri-brand hover:text-alb-site md:text-sm"
 							onClick={() => acceptCookie()}
 						>
-							Strict necesar
+							{t("strict")}
 						</button>
 						<button
 							className="rounded-xl border border-gri-brand py-2 px-4 text-xs font-medium text-gri-brand hover:bg-gri-brand hover:text-alb-site md:text-sm"
 							onClick={() => acceptCookie()}
 						>
-							Accepta tot
+							{t("accepta")}
 						</button>
 					</div>
 				</div>

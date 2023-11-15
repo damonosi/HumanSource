@@ -63,7 +63,7 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 
 			<section className="flex flex-col gap-9">
 				<Typography variant="h4" className="text-bold text-left">
-					Cele mai cautate locuri de munca
+					{t("titlu")}
 				</Typography>
 				<div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3" id="container joburi">
 					{jobs.map(({ title, id, date, description, salary, jobCategory }) => {

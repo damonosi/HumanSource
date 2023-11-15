@@ -11,7 +11,7 @@ export default function Error({ error, reset, params }: { error: Error; reset: (
 
 		console.error(error);
 	}, [error]);
-console.log(params);
+
 	return (
 		<div className="flex min-h-screen flex-col md:flex-row">
 			<div className="mt-5 flex flex-col items-center justify-center gap-7 px-5 md:w-1/2">
