@@ -31,7 +31,7 @@ export interface IJob {
 			company: string;
 			salary: string;
 			requierments: string;
-			location: { zone: string };
+			location: { country: [{ name: string }] };
 			whyWork: string;
 		};
 	};

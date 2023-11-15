@@ -64,24 +64,43 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 								{company}
 							</Typography>
 							<div className="flex flex-col gap-2 text-[14px] md:flex-row" id="container butoane titlu">
-								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
-									<FaRegCalendarAlt className="w-5" />
-									<span className="">
-										{t("cards.data")} : {formatDate(date)}
-									</span>
-								</div>
-								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand ">
-									<FiTruck className="w-5" />
-									<span className=" ">
-										{t("cards.industrie")} : {jobCategory.category.name}
-									</span>
-								</div>
-								<div className="flex w-fit items-center justify-center gap-2 rounded-2xl bg-alb-site px-3 py-2 text-gri-brand">
-									<TbTicket className="w-5" />
-									<span>
+								<div className="flex w-fit flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
+									<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
 										{" "}
-										{t("cards.locatie")} : {location.zone}
-									</span>
+										<FaRegCalendarAlt className="h-5 w-5" />
+									</div>
+									<div className="flex flex-col items-center">
+										<span className="font-bold ">{t("cards.data")}</span>
+									</div>
+									<div className="flex flex-col items-center">
+										<span> {formatDate(date)}</span>
+									</div>
+								</div>
+								<div className="flex w-fit flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand ">
+									<div className="rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
+										{" "}
+										<FiTruck className="h-5 w-5" />
+									</div>{" "}
+									<div className="flex flex-col items-center">
+										<span className="font-bold ">{t("cards.industrie")}</span>
+									</div>
+									<div className="flex flex-col items-center">
+										{" "}
+										<span> {jobCategory.category.name}</span>
+									</div>
+								</div>
+								<div className="flex w-fit flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
+									<div className="justify-self-start rounded-full border-2 border-x-0 border-b-0  border-gri-brand p-2">
+										<TbTicket className="h-5 w-5" />
+									</div>{" "}
+									<div className="flex flex-col items-center">
+										<span className="font-bold "> {t("cards.locatie")} </span>
+									</div>
+									<div className="flex flex-col items-center">
+										{location.country.map(({ name }) => (
+											<span>{name}</span>
+										))}
+									</div>
 								</div>
 							</div>
 						</div>

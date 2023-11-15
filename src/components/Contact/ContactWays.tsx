@@ -30,7 +30,7 @@ const ContactWays = () => {
 					unmount: { scale: 0, y: 0 },
 				}}
 			>
-				<Link href="http://api.whatsapp.com/send?phone=0209764893">
+				<Link href="http://api.whatsapp.com/send?phone=400744889886">
 					<div className="rounded-full border bg-white py-2 px-3">
 						<PhoneIcon /> <span className="ml-3"> +40209764893</span>
 					</div>
