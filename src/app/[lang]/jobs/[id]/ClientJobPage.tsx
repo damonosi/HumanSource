@@ -108,7 +108,7 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 										</div>
 										<div className="flex flex-col items-center">
 											{" "}
-											<span> {jobCategory.category.name}</span>
+											<span> {params.lang === "ro" ? jobCategory.category.name : jobCategory.category.nameIT}</span>
 										</div>
 									</div>
 									<div className="flex h-40 flex-col items-center justify-between gap-2 rounded-2xl bg-alb-site px-5 py-4 text-gri-brand">
@@ -119,8 +119,8 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 											<span className="font-bold "> {t("cards.locatie")} </span>
 										</div>
 										<div className="flex flex-col items-center">
-											{location.country.map(({ name }, index) => (
-												<span key={index}>{name}</span>
+											{location.country.map(({ name, nameIT }, index) => (
+												<span key={index}>{params.lang === "ro" ? name : nameIT}</span>
 											))}
 										</div>
 									</div>

@@ -13,10 +13,12 @@ const query = gql`
 			location {
 				country {
 					name
+					nameIT
 				}
 			}
 			jobCategory {
 				category {
+					nameIT
 					name
 				}
 			}
