@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://humansource.vercel.app"),
+	metadataBase: new URL(`${process.env.NEXT_PUBLIC_SITE_URL}`),
 	title: "Human Source",
 	icons: [
 		{ rel: "icon", url: "/favicons/favicon.ico" },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 
 	openGraph: {
 		type: "website",
-		url: "https://humansource.vercel.app",
+		url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
 		title: "Human Source",
 		description:
 			"Human Source ofera servicii complete: leasing personal, recrutare si selectie, administrare dosare de personal si payroll ✔ Flexibilitate",
