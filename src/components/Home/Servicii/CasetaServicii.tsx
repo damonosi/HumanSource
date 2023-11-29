@@ -19,21 +19,21 @@ const CasetaServicii = ({ titlu, descriere, textButon, icon, href, params }: ICa
 	const router = useRouter();
 	return (
 		<div
-			className="group container flex h-fit min-h-[335px] w-full  max-w-[500px] flex-col items-center justify-between gap-4 rounded-[10px] bg-alb-site px-4  py-8 text-center transition-all duration-300 hover:drop-shadow-xl  "
+			className="group container flex  w-full max-w-[500px]  flex-col items-center justify-between gap-4 rounded-[10px] bg-alb-site px-4 py-8  text-center transition-all duration-300 hover:drop-shadow-xl md:h-[335px]  "
 			id="caseta-servicii"
 		>
-			<div className="flex w-full items-center justify-center text-rosu-brand">
+			<div className="flex h-1/6 w-full items-center justify-center text-rosu-brand">
 				{icon === "leasing" && <HiOutlineUserGroup className="h-8 w-8" />}
 				{icon === "payroll" && <IoDocumentAttachOutline className="h-8 w-8" />}
 				{icon === "recrutare" && <AiOutlineUsergroupAdd className="h-8 w-8" />}
 			</div>
-			<Typography variant="h5" className=" font-normal   text-gri-brand">
+			<Typography variant="h5" className=" h-1/6  font-normal text-gri-brand">
 				{titlu}
 			</Typography>
-			<Typography variant="paragraph" className=" font-light text-gri-brand opacity-60">
+			<Typography variant="paragraph" className=" h-3/6 font-light text-gri-brand opacity-60">
 				{descriere}
 			</Typography>
-			<div>
+			<div className="h-1/6">
 				<Button
 					onClick={() => router.push(`${params.lang}/${href}`)}
 					className="rounded-[8px] border border-alb-site bg-transparent px-6 py-4 text-[#B21E23] shadow-none transition-all   duration-500 

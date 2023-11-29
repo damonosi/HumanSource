@@ -52,9 +52,10 @@ const CaruselBloguri = ({ params }: Iparams) => {
 			orderBy: [{ dateCreated: "desc" }],
 		},
 	});
-	if (!data) return <h1>No data...</h1>;
-	const blogs = data.blogs;
+console.log(data.error);
+if (!data) return <h1>No data...</h1>;
 
+const blogs = data.blogs;
 
 	return (
 		<div className="relative flex w-full md:px-6">
