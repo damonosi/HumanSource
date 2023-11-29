@@ -1,16 +1,17 @@
-import AvantajeSection from "@/components/Home/Avantaje/AvantajeSection";
-import BlogSection from "@/components/Home/Blog/BlogSection";
+import dynamic from "next/dynamic";
+
 import HeroSection from "@/components/Home/Hero/HeroSection";
-import IntrebariSection from "@/components/Home/Intrebari/IntrebariSection";
-import NevoiSection from "@/components/Home/Nevoi/NevoiSection";
-import ParteneriSection from "@/components/Home/Parteneri/ParteneriSection";
-import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
+
 import Spinner from "@/components/Spinner/Spinner";
 
-import CookieConsent from "@/components/cookies/CookiesConsent";
-
+const AvantajeSection = dynamic(() => import("@/components/Home/Avantaje/AvantajeSection"));
+const BlogSection = dynamic(() => import("@/components/Home/Blog/BlogSection"));
+const IntrebariSection = dynamic(() => import("@/components/Home/Intrebari/IntrebariSection"));
+const NevoiSection = dynamic(() => import("@/components/Home/Nevoi/NevoiSection"));
+const ParteneriSection = dynamic(() => import("@/components/Home/Parteneri/ParteneriSection"));
+const ServiciiSection = dynamic(() => import("@/components/Home/Servicii/ServiciiSection"));
 import type { Metadata } from "next";
-import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
