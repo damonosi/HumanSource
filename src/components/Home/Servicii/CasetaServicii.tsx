@@ -27,7 +27,7 @@ const CasetaServicii = ({ titlu, descriere, textButon, icon, href, params }: ICa
 				{icon === "payroll" && <IoDocumentAttachOutline className="h-8 w-8" />}
 				{icon === "recrutare" && <AiOutlineUsergroupAdd className="h-8 w-8" />}
 			</div>
-			<Typography variant="h5" className=" font-normal   text-gri-brand">
+			<Typography variant="h3" className=" font-normal   text-gri-brand">
 				{titlu}
 			</Typography>
 			<Typography variant="paragraph" className=" font-light text-gri-brand opacity-60">

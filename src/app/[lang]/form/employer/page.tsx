@@ -12,6 +12,14 @@ import { useCookies } from "next-client-cookies";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 import { useTranslation } from "@/app/i18n/client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Formular de cerere oferta pentru companii - Humansource.ro ",
+
+	description: "Ai nevoie de personal pentru desfasurarea activitatii tale? Completeaza formularul si cere o oferta pentru a te putea ajuta! ✔️ Flexibilitate ✔️ Transparenta",
+};
+
 type Inputs = {
 	codFiscal: string;
 	domeniu: string;

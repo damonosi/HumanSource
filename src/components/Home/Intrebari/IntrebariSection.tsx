@@ -15,7 +15,7 @@ const IntrebariSection = ({ params }: { params: { lang: string } }) => {
 				<Image className=" w-full translate-y-[-8%]" alt="imagine-intrebari" placeholder="blur" src={ImgIntrebari} />
 			</div>
 			<div className="relative flex flex-col gap-6  pt-[30px] sm:w-full md:pt-[60px] lg:w-1/2   ">
-				<Typography variant="h5" className=" text-start font-bold text-alb-site  md:text-2xl">
+				<Typography variant="h2" className=" text-start font-bold text-alb-site  md:text-2xl">
 					{t("intrebari.titlu")} <br /> {t("intrebari.continuare")}
 				</Typography>
 
