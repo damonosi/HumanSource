@@ -1,8 +1,9 @@
 {
 	"hero": {
 		"titlu": "AGENTIE DE PLASARE FORȚĂ DE MUNCĂ",
-		"subtitlu": "Construiește-ți viitorul  alături de noi",
-		"indemn": "HumanSource - alege să colaborezi cu noi pentru job-ul tau de vis sau pentru gasirea candidatului potrivit.",
+		"subtitlu": "Construiește-ți viitorul  alături de ",
+		"subtitlu_h2":"Human Source",
+		"indemn": "Alege să colaborezi cu noi pentru job-ul tau de vis sau pentru gasirea candidatului potrivit.",
 		"card1": {
 			"titlu": "Angajator",
 			"continut": "Firma care are nevoie de serviciile noastre",

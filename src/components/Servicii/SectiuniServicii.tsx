@@ -42,10 +42,23 @@ const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 			<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row" id="hero-servicii">
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2" id="container-text-servicii">
 					<Typography variant="h3">{t("hero.titlu")}</Typography>
+					
 					<Typography className="text-gri-brand" variant="h5">
 						{t("hero.subtitlu")}
 					</Typography>
-					<Typography variant="paragraph">{t("hero.descriere")}</Typography>
+					<div>
+					<Typography variant="h6">{t("hero.descriere")}</Typography>
+					<ul>
+						<li>{t("hero.list.1")}</li>
+						<li>{t("hero.list.2")}</li>
+						<li>{t("hero.list.3")}</li>
+						<li>{t("hero.list.4")}</li>
+						<li>{t("hero.list.5")}</li>
+						<li>{t("hero.list.6")}</li>
+						<li>{t("hero.list.7")}</li>
+
+					</ul>
+					</div>
 					<div className="flex w-full flex-col  justify-between gap-y-5 text-sm lg:flex-row">
 						<CardHeroServicii text={t("hero.carduri.1")}>
 							<Groups2OutlinedIcon className="text-[15px]" />
@@ -71,7 +84,15 @@ const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 				</div>
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2">
 					<Typography variant="h3">{t("asiguram.titlu")}</Typography>
+					
 					<Typography variant="paragraph">{t("asiguram.descriere")}</Typography>
+					<div>
+					<Typography variant="paragraph">{t("asiguram.descriere2")}</Typography>
+					<ul>
+						<li>{t("asiguram.contract_1")}</li>
+						<li>{t("asiguram.contract_2")}</li>
+					</ul>
+					</div>
 					<ButonSolicitaOferta params={params} />
 				</div>
 			</section>
@@ -79,7 +100,30 @@ const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 			<section className="flex w-full flex-col-reverse items-center gap-8 md:flex-row">
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2">
 					<Typography variant="h3">{t("documentatia.titlu")}</Typography>
-					<Typography variant="paragraph">{t("documentatia.descriere")}</Typography>
+					<div>
+						<Typography variant="paragraph">{t("documentatia.descriere_1")}</Typography>
+						<ul>
+							<li>{t("documentatia.descriere_list_1.1")}</li>
+							<li>{t("documentatia.descriere_list_1.2")}</li>
+							<li>{t("documentatia.descriere_list_1.3")}</li>
+							<li>{t("documentatia.descriere_list_1.4")}</li>
+							<li>{t("documentatia.descriere_list_1.5")}</li>
+							<li>{t("documentatia.descriere_list_1.6")}</li>
+							<li>{t("documentatia.descriere_list_1.7")}</li>
+							<li>{t("documentatia.descriere_list_1.8")}</li>
+						</ul>
+					</div>
+					<div>
+						<Typography variant="paragraph">{t("documentatia.descriere_2")}</Typography>
+						<ul>
+							<li>{t("documentatia.descriere_list_2.1")}</li>
+							<li>{t("documentatia.descriere_list_2.2")}</li>
+							<li>{t("documentatia.descriere_list_2.3")}</li>
+							<li>{t("documentatia.descriere_list_2.4")}</li>
+							<li>{t("documentatia.descriere_list_2.5")}</li>
+						</ul>
+					</div>
+					
 					<ButonSolicitaOferta params={params} />
 				</div>
 				<div className="flex items-center justify-center md:w-1/2" id="container-imagine">
@@ -95,7 +139,12 @@ const SectiuniServicii = ({ params }: { params: { lang: string } }) => {
 				</div>
 				<div className="flex h-full flex-col items-start gap-12 md:w-1/2">
 					<Typography variant="h3">{t("echipa.titlu")}</Typography>
+					<div>
 					<Typography variant="paragraph">{t("echipa.descriere")}</Typography>
+					<Typography variant="paragraph">{t("echipa.descriere2")}</Typography>
+					<Typography variant="paragraph">{t("echipa.descriere3")}</Typography>
+					<Typography variant="paragraph">{t("echipa.descriere4")}</Typography>
+					</div>
 					<ButonSolicitaOferta params={params} />
 				</div>
 			</section>

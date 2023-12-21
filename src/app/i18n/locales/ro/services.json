@@ -5,7 +5,16 @@
 	"hero": {
 		"titlu": "Serviciile oferite de Human Source",
 		"subtitlu": "Compania noastra de resurse umane oferă servicii de atât pe partea de leasign de personal, recrutare, selecție cât și pe partea de payroll si administrare de personal.",
-		"descriere": "Compania noastra de resurse umane oferă servicii de atât pe partea de leasign de personal, recrutare, selecție cât și pe partea de payroll si administrare de personal.",
+		"descriere": "Avantajele colaborarii cu Human Source:",
+		"list": {
+			"1": "  -Zero costuri administrative",
+			"2": "  -Economisire garantată a costurilor de personal in cazul detasarii transnationale",
+			"3": "  -Costuri predictibile si transparente",
+			"4": "  -Accesul rapid la forta de munca preselectata si calificata, reducerea costurilor si a timpului pentru gasirea oamenilor potriviti",
+			"5":"  -Accesul la servicii de consultanta fiscala si dreptul muncii",
+			"6":"  -Evidenta si administrarea personalului, asigurarea documentatiei si a procedurilor administrative",
+			"7":"  -Calcularea, plata salariilor si a concediilor (medicale, de odihna etc.), declaratiile lunare catre asigurarile sociale"
+		},
 		"carduri": {
 			"1": "Leasing de personal",
 			"2": "Payroll si administrare",
@@ -14,14 +23,39 @@
 	},
 	"asiguram": {
 		"titlu": "Asiguram nevoile de personal",
-		"descriere": "Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui"
+		"descriere": "Leasing-ul de personal este o solutie flexibila si eficienta pentru a acoperi nevoia de personal. Acesta se refera la furnizarea fortei de munca de catre societatea noastra catre un beneficiar.",
+		"descriere2":"Contractul de PUNERE LA DISPOZITIE DE PERSONAL prevede implicarea a trei părţi: agenţia de administrare, societatea utilizatoare şi muncitorul, urmând a fi stipulate două contracte:",
+		"contract_1":"- Contractul comercial, între angajator (agenţia de administrare) şi utilizator (societatea utilizatoare);",
+		"contract_2":"- Contractul de muncă în sine, între angajator (agenţia de administrare) şi muncitor."
 	},
 	"documentatia": {
 		"titlu": "Administram documentatia",
-		"descriere": "Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui"
+		"descriere_1": "Servicii lunare recurente:",
+		"descriere_list_1":{
+			"1":"- Prelucrarea pontajelor;",
+			"2":"- Intocmirea si depunerea declaratiilor lunare catre autoritatile locale;",
+			"3":"- Intocmirea fluturasilor de salariu individuali;",
+			"4":"- Calculul taxelor si contributiilor;",
+			"5":"- Mentinerea relatiei cu autoritatile si obtinerea dosarelor de A1 pentru lucratorii detasati",
+			"6":"- Calculul diunelor deductibile la nivel national si European",
+			"7":"- Intocmirea de rapoarte specifice.",
+			"8":"- Intocmirea centralizatorului de salarii si a multi-cash-ului pentru banca;"
+		},
+		"descriere_2":"Administrarea dosarelor de personal:",
+		"descriere_list_2":{
+			"1":"- Inregistrarea documentelor legale",
+			"2":"- Operare si transmitere Revisal in conformitate cu legislatia in vigoare",
+			"3":"- Negociere, intocmire si depunere Contracte Colective de Munca",
+			"4":"- Elaborare regulament de ordine interna, stat de functii, organigrama si proceduri interne specifice.",
+			"5":"- Consultanta privind legislatia muncii atat la nivel de Romania cat si la nivel European"
+
+		}
 	},
 	"echipa": {
 		"titlu": "Iti construim echipa",
-		"descriere": "Lorem ipsum dolor sit amet consectetur. Orci elementum lorem consectetur neque semper et. Urna aliquam maecenas in facilisi orci pulvinar aliquam in diam. Varius eu nunc elit mi volutpat tellus arcu. Vulputate dolor massa lectus consectetur diam. Lobortis sed nisl fermentum justo accumsan arcu.Gravida amet et nunc ipsum urna. Nisi eget elementum elementum et dui ut id turpis. Dui"
+		"descriere": "-Procedura de selectare a CV-urilor",
+		"descriere2":"-Selectia preliminara a candidatilor",
+		"descriere3":"-Identificarea potentialilor candidati",
+		"descriere4":"-Testarea competentelor personale si profesionale"
 	}
 }

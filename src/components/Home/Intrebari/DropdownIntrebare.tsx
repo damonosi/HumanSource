@@ -20,7 +20,7 @@ const DropdownIntrebare = ({ intrebare, raspuns }: IDropdownInfo) => {
 	return (
 		<div ref={ref} className="group mb-5 flex flex-col gap-5" id="container-dd">
 			<button onClick={handleClick} className="flex items-center justify-between text-start">
-				<Typography variant="h6" className=" text-start font-[500] text-alb-site md:text-xl ">
+				<Typography variant="paragraph" className=" text-start font-[500] text-alb-site md:text-xl ">
 					{intrebare}
 				</Typography>
 

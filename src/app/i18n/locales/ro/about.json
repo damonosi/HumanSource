@@ -2,28 +2,28 @@
 	"breadHome": "Acasa",
 	"breadCurrent": "Despre Noi",
 	"hero": {
-		"titlu": "Despre noi",
-		"subtitlu": "Companie de resurse umane ce oferă servicii de atât pe partea de leasign de personal, recrutare, selecție cât și pe partea de payroll si administrare de personal.",
-		"descriere": "Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. Tellus libero massa laoreet consequat porta id orci tempus. Dapibus quis curabitur vitae egestas sit feugiat tristique enim id. Enim lacus enim donec eget elementum. Mi imperdiet viverra tellus adipiscing amet vel risus. Nulla libero pulvinar nullam posuere blandit dignissim viverra eu magna. Blandit euismod risus vel leo."
+		"titlu": "Human Source",
+		"subtitlu": "Despre Human Source",
+		"descriere": "Specializata in angajarea de muncitori calificati.Societatea este mereu la curent cu legislatia muncii nationale si international si in particular cu legislatia privind munca temporara. Obiectivul nostru este sa oferim partenerilor nostri strategii, si idei inovatoare pentru problemele ce pot aparea in domeniul resurselor umane."
 	},
 	"cardSection": {
 		"titlu": "Valorile Companiei",
 		"carduri": {
 			"1": {
 				"titlu": "Orientarea fata de client",
-				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+				"descriere": "Societatea este mereu la curent cu legislatia muncii nationale si international si in particular cu legislatia privind munca temporara. "
 			},
 			"2": {
 				"titlu": "Flexibilitatea",
-				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+				"descriere": "Obiectivul nostru este sa oferim partenerilor nostri strategii, si idei inovatoare pentru problemele ce pot aparea in domeniul resurselor umane."
 			},
 			"3": {
 				"titlu": "Transparenta",
-				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+				"descriere": "Credem si ne-am bazat pe ascensiunea, ceea ce permite ca Human Source sa fie si sa ramana o alegere pe termen lung in afaceri."
 			},
 			"4": {
 				"titlu": "Pregatirea",
-				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
+				"descriere": "Avantajul de a colabora cu Human Source consta in faptul ca noi cunoastem in profunzime domeniul in care activam, cadrul si tendintele socio-economice, atat la nivel local, cat si international."
 			}
 		}
 	},

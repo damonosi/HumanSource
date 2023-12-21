@@ -5,30 +5,37 @@ import React from "react";
 import { ReactNode } from "react";
 
 type PropsImg = {
-	color: string;
 	padding: number;
 	border: number;
-	imageSrc: string;
+	imageCld: {
+		data:{
+			image:{
+				publicUrlTransformed: string;
+			}
+		}
+	},
 	width: number;
 };
 
-export function ImageBlock({ color, imageSrc, padding = 0, border = 0, width = 500 }: PropsImg) {
+export function ImageBlock({imageCld, padding = 0, border = 0, width = 500, }: PropsImg) {
 	return (
 		<figure
 			style={{
 				margin: "0",
-				width: width + "px",
+				width: width + "%",
 				padding: padding + "px",
+				height: "auto",
 				border: `solid lightgrey ${String(border)}px`,
 				marginInline: "auto",
 			}}
 		>
 			<img
-				src={imageSrc}
+				src={imageCld.data.image.publicUrlTransformed}
 				className={`image block`}
 				style={{
 					width: "100%",
-					objectFit: "cover",
+					height: "100%",
+					objectFit: "contain",
 					display: "block",
 				}}
 			/>

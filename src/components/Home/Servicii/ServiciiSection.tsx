@@ -8,7 +8,7 @@ const ServiciiSection = ({ params }: { params: { lang: string; country: string }
 	const { t } = useTranslation(params.lang, "home");
 	return (
 		<section className="container flex w-full flex-col items-center  px-6 text-center md:gap-8 md:px-0 lg:mx-0  ">
-			<Typography variant="h5" className="pb-[30px] font-bold text-gri-brand md:pb-[60px] md:text-3xl ">
+			<Typography variant="h2" className="pb-[30px] font-bold text-gri-brand md:pb-[60px] md:text-3xl ">
 				{t("servicii.titlu")}
 			</Typography>
 			<div className="flex w-full flex-col items-center justify-between gap-y-16 gap-x-5 lg:flex-row">
