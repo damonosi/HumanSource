@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+ul{
+   list-style: disc;
+   padding-left: 1%;
+}
 
 .linkUnderline {
    @apply before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
