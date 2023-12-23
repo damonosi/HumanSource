@@ -64,6 +64,7 @@ const defaultElementRenderers: CustomRendererProps["renderers"] = {
 		bold: ({ children }) => {
 			return <strong>{children}</strong>;
 		},
+
 		link: ({ children }) => {
 			return <a className="cursor-pointer text-blue-700 underline underline-offset-2">{children}</a>;
 		},
