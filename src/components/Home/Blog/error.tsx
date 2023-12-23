@@ -10,7 +10,7 @@ type lang = string;
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {
 	const router = useRouter();
 	useEffect(() => {
-		console.error(error);
+		console.error("error", error);
 	}, [error]);
 	const params = useParams();
 	const language: lang = params.lang as string;

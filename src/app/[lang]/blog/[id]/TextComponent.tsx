@@ -23,7 +23,7 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				<span className="text-xs font-[350] opacity-50">{formattedDate}</span>
 				<h1 className="max-w-[40ch] text-2xl font-[500]">{title}</h1>
 			</div>
-			<div className="flex flex-col ">
+			<div className="flex w-full flex-col overflow-hidden">
 				<BlockRenderer document={textData} />
 			</div>
 			<div className="flex w-full items-center justify-center">

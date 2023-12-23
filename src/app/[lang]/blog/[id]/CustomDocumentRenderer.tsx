@@ -42,7 +42,7 @@ type Props = {
 
 function BlockLayout({ children, layout }: Props) {
 	return (
-		<div className="maxwidth">
+		<div className="flex">
 			<div className="grid">
 				{children.map((child, i) => (
 					<div key={i}> {child} </div>

@@ -43,8 +43,10 @@ const FormularAplica = ({
 						birthDate: data.dataNastere,
 						email: data.email,
 						name: data.nume,
+
 						message: data.mesaj,
 						phone: data.telefon,
+
 						job: {
 							connect: {
 								id: id,

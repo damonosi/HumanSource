@@ -100,7 +100,11 @@ const FormularMedic = ({ params }: { params: { lang: string; country: string } }
 		],
 		setDisabled,
 	);
-	const [addMedicalForm] = useMutation(AddMedicalForm);
+	const [addMedicalForm] = useMutation(AddMedicalForm, {
+		onCompleted(data) {
+			cookies.set("medicalFormId", data.createMedicalForm.id);
+		},
+	});
 	const router = useRouter();
 	const onSubmit: SubmitHandler<Inputs> = ({
 		absolvire,

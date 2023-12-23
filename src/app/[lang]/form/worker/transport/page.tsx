@@ -87,7 +87,12 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 		setDisabled,
 	);
 	const router = useRouter();
-	const [addTransportForm] = useMutation(AddTransportForm);
+	const [addTransportForm] = useMutation(AddTransportForm, {
+		onCompleted(data) {
+			cookies.set("transportFormId", data.createTransportForm.id);
+			console.log(data.createTransportForm.id);
+		},
+	});
 	const onSubmit: SubmitHandler<Inputs> = ({
 		tipRemorca,
 		vechime,
@@ -117,25 +122,23 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-		
-				router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
-				cookies.remove("sofer-tip-remorca");
-				cookies.remove("sofer-experienta");
-				cookies.remove("sofer-regim");
-				cookies.remove("sofer-tahograf");
-				cookies.remove("sofer-echipaj");
-				cookies.remove("sofer-noapte");
-				cookies.remove("sofer-italiana");
-				cookies.remove("sofer-ultimul-salariu");
-				cookies.remove("sofer-salariu-dorit");
-			
-			
-			
-			
+
+			router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
+
+			cookies.remove("sofer-tip-remorca");
+			cookies.remove("sofer-experienta");
+			cookies.remove("sofer-regim");
+			cookies.remove("sofer-tahograf");
+			cookies.remove("sofer-echipaj");
+			cookies.remove("sofer-noapte");
+			cookies.remove("sofer-italiana");
+			cookies.remove("sofer-ultimul-salariu");
+			cookies.remove("sofer-salariu-dorit");
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
 	const { t } = useTranslation(params.lang, "formularMuncitor");
 	return (
 		<div className="container mx-auto flex flex-col px-5 pb-9 lg:px-0">

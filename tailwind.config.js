@@ -34,6 +34,7 @@ module.exports = withMT({
 		},
 	},
 	plugins: [
+		require("@tailwindcss/line-clamp"),
 		require("@tailwindcss/forms"),
 		function ({ addVariant }) {
 			addVariant("child", "& > *");

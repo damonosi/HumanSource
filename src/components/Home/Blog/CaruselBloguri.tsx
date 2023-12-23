@@ -9,6 +9,7 @@ import query from "@/lib/apollo/queries/blog/getTopBlogs";
 
 import { Iparams } from "@/interfaces/params";
 import { IlastBlogs } from "@/interfaces/blog";
+import dateBlog from "./dateBlog";
 
 const responsive = {
 	superLargeDesktop: {
@@ -52,10 +53,9 @@ const CaruselBloguri = ({ params }: Iparams) => {
 			orderBy: [{ dateCreated: "desc" }],
 		},
 	});
-console.log(data.error);
-if (!data) return <h1>No data...</h1>;
 
-const blogs = data.blogs;
+	const blogs = data.blogs;
+	console.log("blogs", blogs);
 
 	return (
 		<div className="relative flex w-full md:px-6">
