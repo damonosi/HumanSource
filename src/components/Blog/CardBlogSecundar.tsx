@@ -39,7 +39,7 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 				className="group flex aspect-square  h-fit flex-col gap-5  rounded-2xl hover:shadow-xl  "
 				id="container-card-blog-secundar"
 			>
-				<div className="relative flex h-1/2 w-full flex-col overflow-hidden rounded-b-2xl rounded-t-2xl transition-all duration-700  group-hover:drop-shadow-2xl">
+				<div className="relative flex h-1/2 w-full flex-col overflow-hidden rounded-b-2xl rounded-t-2xl transition-all duration-700  ">
 					<Image fill alt={altText} sizes="" src={imageUrl} className="object-cover" />
 				</div>
 				<div className="flex h-1/2 flex-col gap-2  px-2 pb-4 leading-10">
