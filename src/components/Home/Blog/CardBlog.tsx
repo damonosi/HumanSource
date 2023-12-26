@@ -14,14 +14,24 @@ import { useTranslation } from "@/app/i18n/client";
 interface ICardBlog {
 	data: string;
 	titlu: string;
-	paragraph: string;
+	content: {
+		document: {
+			type: string;
+			children: [
+				{
+					text: string;
+				},
+			];
+		}[];
+	};
+
 	id: string;
 	slug: string;
 	imageUrl: StaticImageData;
 	params: { lang: string };
 }
 
-const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardBlog) => {
+const CardBlog = ({ data, titlu, slug, imageUrl, id, params, content }: ICardBlog) => {
 	const [hovered, setHovered] = useState(false);
 	const handleMouseEnter = () => {
 		setHovered(true);
@@ -29,6 +39,8 @@ const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardB
 	const handleMouseLeave = () => {
 		setHovered(false);
 	};
+	const filteredDoc = content.document.filter((doc) => doc.type === "paragraph");
+	const paragraph = filteredDoc[0].children[0].text;
 	const titleLength = titlu.length;
 	const paragraphLength = paragraph.length;
 
