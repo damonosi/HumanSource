@@ -2,28 +2,28 @@
 	"breadHome": "La casa",
 	"breadCurrent": "Chi siamo",
 	"hero": {
-		"titlu": "Human Source",
-		"subtitlu": "Chi siamo",
-		"descriere": "L’azienda è sempre al corrente con la normativa nazioanle ed internazionale del lavoro e, in particolare, con la normativa sul lavoro temporaneo. Il nostro obiettivo è quello di offrire ai nostri partener delle nuove strategie ed idee novatrici per i problemi che potrebbero insorgere nel settore delle risorse umane."
+		"titlu": "Chi siamo",
+		"subtitlu": "Società di risorse umane che offre servizi sia nella parte di somministrazione, reclutamento, selezione che nella parte di gestione paghe e amministrazione del personale.",
+		"descriere": "IT Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. Tellus libero massa laoreet consequat porta id orci tempus. Dapibus quis curabitur vitae egestas sit feugiat tristique enim id. Enim lacus enim donec eget elementum. Mi imperdiet viverra tellus adipiscing amet vel risus. Nulla libero pulvinar nullam posuere blandit dignissim viverra eu magna. Blandit euismod risus vel leo."
 	},
 	"cardSection": {
 		"titlu": "Valori dell'azienda",
 		"carduri": {
 			"1": {
 				"titlu": "Orientamento alla clientela",
-				"descriere": "L'azienda è sempre aggiornata sulla normativa del lavoro nazionale ed internazionale, ed in particolare sulla normativa in materia di lavoro interinale."
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
 			},
 			"2": {
 				"titlu": "Flessibilità",
-				"descriere": "Il nostro obiettivo è offrire ai nostri partner strategie e idee innovative per i problemi che possono sorgere nel campo delle risorse umane."
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
 			},
 			"3": {
 				"titlu": "Trasparenza",
-				"descriere": "Crediamo e abbiamo fatto affidamento sulla crescita, che consente a Human Source di essere e rimanere una scelta a lungo termine nel mondo degli affari."
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
 			},
 			"4": {
 				"titlu": "Preparazione",
-				"descriere": "Il vantaggio di collaborare con Human Source risiede nel fatto che conosciamo approfonditamente il settore in cui operiamo, il contesto e le tendenze socio-economiche, sia a livello locale che internazionale."
+				"descriere": "Lorem ipsum dolor sit amet consectetur. Massa tortor aliquam venenatis mauris sodales enim vel. Dui nec sed nec augu"
 			}
 		}
 	},

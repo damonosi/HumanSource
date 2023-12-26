@@ -1,5 +1,7 @@
 {
 	"typescript.tsdk": "node_modules\\typescript\\lib",
 	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"editor.codeActionsOnSave": { "source.organizeImports": false }
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "never"
+	}
 }

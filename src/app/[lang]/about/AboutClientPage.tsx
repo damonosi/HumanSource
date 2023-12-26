@@ -74,7 +74,7 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 					/>
 				</div>
 			</section>
-			<section className="flex w-full flex-col items-center" id="container echipa">
+			<section className="flex w-full flex-col items-center " id="container echipa">
 				<div className=" text-center">
 					<Typography variant="h3" className="pb-[60px] font-bold  text-gri-brand">
 						{t("echipa")}

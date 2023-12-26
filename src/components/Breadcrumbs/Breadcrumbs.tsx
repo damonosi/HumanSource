@@ -6,7 +6,7 @@ interface IBreadProps {
 
 const Breadcrumbs = ({ children }: IBreadProps) => {
 	return (
-		<MaterialCrumbs className="mx-0 my-4 bg-transparent px-0 md:my-6" fullWidth separator=">">
+		<MaterialCrumbs fullWidth className="mx-0 my-4 flex w-full flex-row  bg-transparent px-0  md:my-6 " separator=">">
 			{children}
 		</MaterialCrumbs>
 	);

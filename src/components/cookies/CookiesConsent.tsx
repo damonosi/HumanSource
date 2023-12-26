@@ -63,7 +63,6 @@ const CookieConsent = ({ params }: { params: { lang: string } }) => {
 									onChange={() => {
 										setChecked((prevCheck) => !prevCheck);
 										checked === true ? setAnalyticsConsent(true) : setAnalyticsConsent(false);
-										console.log(cookies.get("analytics"));
 									}}
 								/>
 							</div>

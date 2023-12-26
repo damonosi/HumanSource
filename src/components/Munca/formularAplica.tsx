@@ -2,6 +2,7 @@ import { useTranslation } from "@/app/i18n/client";
 import AddJobApplication from "@/lib/apollo/mutations/mutateJobAplication";
 import { useMutation } from "@apollo/client";
 import { Input, Textarea, Typography } from "@material-tailwind/react";
+import { useCookies } from "next-client-cookies";
 
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -22,10 +23,12 @@ const FormularAplica = ({
 	id,
 	params,
 	title,
+	category,
 }: {
 	id: string;
 	params: { lang: string; title: string };
 	title: string;
+	category: string;
 }) => {
 	const [addJobApplication, { loading, error }] = useMutation(AddJobApplication);
 	const router = useRouter();
@@ -35,36 +38,92 @@ const FormularAplica = ({
 		handleSubmit,
 		formState: { errors, isSubmitted },
 	} = useForm<Inputs>();
-	const onSubmit: SubmitHandler<Inputs> = (data) => {
-		try {
-			addJobApplication({
-				variables: {
-					data: {
-						birthDate: data.dataNastere,
-						email: data.email,
-						name: data.nume,
-						message: data.mesaj,
-						phone: data.telefon,
-						job: {
-							connect: {
-								id: id,
-							},
+	const cookies = useCookies();
+	function callFunctionByCategory(data: any, category: string) {
+		switch (category) {
+			case "Transport":
+				return TransportFormAdd(data);
+
+			case "Medical":
+				return MedicalFormAdd(data);
+
+			default:
+				return DefaultAdd(data);
+		}
+	}
+	const medicalId = cookies.get("medicalFormId") as string;
+	const transportId = cookies.get("transportFormId") as string;
+	function TransportFormAdd(data: any) {
+		addJobApplication({
+			variables: {
+				data: {
+					birthDate: data.dataNastere,
+					email: data.email,
+					name: data.nume,
+					transport: { connect: { id: transportId } },
+					message: data.mesaj,
+					phone: data.telefon,
+
+					job: {
+						connect: {
+							id: id,
 						},
 					},
 				},
-			});
-			isSubmitted && router.push(`/${params.lang}/multumim?title=${title}`);
+			},
+		});
+		isSubmitted && router.push(`/${params.lang}/multumim?title=${title}`);
+	}
+	function MedicalFormAdd(data: any) {
+		addJobApplication({
+			variables: {
+				data: {
+					birthDate: data.dataNastere,
+					email: data.email,
+					name: data.nume,
+					medical: { connect: { id: medicalId } },
+					message: data.mesaj,
+					phone: data.telefon,
+
+					job: {
+						connect: {
+							id: id,
+						},
+					},
+				},
+			},
+		});
+		isSubmitted && router.push(`/${params.lang}/multumim?title=${title}`);
+	}
+	function DefaultAdd(data: any) {
+		addJobApplication({
+			variables: {
+				data: {
+					birthDate: data.dataNastere,
+					email: data.email,
+					name: data.nume,
+
+					message: data.mesaj,
+					phone: data.telefon,
+
+					job: {
+						connect: {
+							id: id,
+						},
+					},
+				},
+			},
+		});
+		isSubmitted && router.push(`/${params.lang}/multumim?title=${title}`);
+	}
+	const onSubmit: SubmitHandler<Inputs> = (data) => {
+		try {
+			callFunctionByCategory(data, category);
 		} catch (error) {
 			console.log(error);
 		}
 	};
-	if (loading) {
-		return <span> "Submitting..."</span>;
-	}
 
-	if (error) {
-		return <span> `Submission error! ${error.message}`</span>;
-	}
 	const { t } = useTranslation(params.lang, "job");
 	let numeLabel = t("form.nume");
 	let nastereLabel = t("form.dataNastere");

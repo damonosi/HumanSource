@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import ClientBloguriPage from "./ClientBloguriPage";
 export const metadata: Metadata = {
-	title: "Blog - Human Source ",
+	title: "Blog - HumanSource ",
 
-	description: "Afla tot ce trebuie sa stii despre joburi, angajari si locurile de munca din strainatate! ✔️ Articole informative ✔️ Tips & Tricks bine de stiut!",
+	description: "Huma Source Blog",
 };
 const BloguriPage = ({ params }: { params: { lang: string; country: string } }) => {
 	return (

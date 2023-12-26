@@ -1,14 +1,18 @@
-import AvantajeSection from "@/components/Home/Avantaje/AvantajeSection";
-import BlogSection from "@/components/Home/Blog/BlogSection";
+import dynamic from "next/dynamic";
+
 import HeroSection from "@/components/Home/Hero/HeroSection";
-import IntrebariSection from "@/components/Home/Intrebari/IntrebariSection";
-import NevoiSection from "@/components/Home/Nevoi/NevoiSection";
-import ParteneriSection from "@/components/Home/Parteneri/ParteneriSection";
-import ServiciiSection from "@/components/Home/Servicii/ServiciiSection";
 
-import CookieConsent from "@/components/cookies/CookiesConsent";
+import Spinner from "@/components/Spinner/Spinner";
 
+const AvantajeSection = dynamic(() => import("@/components/Home/Avantaje/AvantajeSection"));
+const BlogSection = dynamic(() => import("@/components/Home/Blog/BlogSection"));
+const IntrebariSection = dynamic(() => import("@/components/Home/Intrebari/IntrebariSection"));
+const NevoiSection = dynamic(() => import("@/components/Home/Nevoi/NevoiSection"));
+const ParteneriSection = dynamic(() => import("@/components/Home/Parteneri/ParteneriSection"));
+const ServiciiSection = dynamic(() => import("@/components/Home/Servicii/ServiciiSection"));
 import type { Metadata } from "next";
+
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
 	title: "Agentie de plasare forta de munca - HumanSource ",
@@ -17,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home({ params }: { params: { lang: string; country: string } }) {
+	console.log("params", params.lang);
 	return (
 		<div className="mb-[-10rem] grid grid-cols-1 items-center justify-center " id="container-home">
 			<HeroSection params={params} />
@@ -50,7 +55,9 @@ export default function Home({ params }: { params: { lang: string; country: stri
 					className="mx-1 flex flex-col items-center justify-center  rounded-b-[10px]  bg-white pb-12  md:mx-2 md:px-16 "
 					id="background"
 				>
-					<BlogSection params={params} />
+					<Suspense fallback={<Spinner />}>
+						<BlogSection params={params} />
+					</Suspense>
 
 					<ParteneriSection />
 				</div>

@@ -2,16 +2,16 @@
 	"breadHome": "Acasa",
 	"breadCurrent": "Contact",
 	"titlu": "Contacteaza-ne!",
-	"subtitlu": "",
+	"subtitlu": "Lorem ipsum dolor sit amet consectetur. Cras felis tristique pharetra magna. Orci quis dui viverra mi lacus amet pulvinar quis. Eu auctor ullamcorper imperdiet ultricies amet elementum quam. T",
 	"formular": {
 		"nume": "Numele tau complet",
 
 		"telefon": "Numarul de telefon",
 		"mesaj": "Lasa-ne un mesaj",
 		"politica": {
-			"1": "*Sunt de acord cu",
-			"2": "Politica de confidentialitate",
-			"3": "in vederea prelucrarii datelor personale."
+			"1": "*Sono d'accordo con",
+			"2": "Politica sulla riservatezza",
+			"3": "al fine di trattare i dati personali."
 		},
 		"buton": "Invia i dati"
 	}

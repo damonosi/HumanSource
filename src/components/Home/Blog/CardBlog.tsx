@@ -70,7 +70,7 @@ const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardB
 					<Typography variant="paragraph" className="z-20 text-sm font-[350] opacity-50   md:text-base ">
 						{formattedDate}
 					</Typography>
-					<Typography variant="h2" className="text-base font-medium leading-8 md:text-[1.4rem]">
+					<Typography variant="h4" className="text-base font-medium leading-8 md:text-[1.4rem]">
 						{!hovered ? ` ${titlu.substring(0, 60)}  ${titleLength >= 60 ? "..." : ""} ` : titlu}
 					</Typography>
 					<Typography variant="paragraph" className="max-w-prose text-[14px] font-[350] leading-[22px]  md:text-[16px]">

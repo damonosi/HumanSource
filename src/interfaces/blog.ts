@@ -89,6 +89,7 @@ export interface IdataBlog {
 
 export interface IlastBlogs {
 	data: {
+		error: ApolloError | undefined;
 		blogs: [
 			{
 				id: string;

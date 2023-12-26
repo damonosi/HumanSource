@@ -28,12 +28,12 @@ const HeroSection = ({ params }: { params: { lang: string; country: string } }) 
 					id="container-text-carduri"
 				>
 					<div className=" flex  w-full flex-col gap-6 pt-6 text-start text-alb-site  lg:pb-16" id="container-text">
-						<Typography variant="h1" className="text-sm uppercase opacity-80">
+						<Typography variant="small" className="uppercase opacity-80">
 							{t("hero.titlu")}
 						</Typography>
-						<div  className="text-start text-3xl font-bold text-alb-site md:text-5xl md:leading-normal ">
-							{t("hero.subtitlu")}<Typography variant="h2" className=" text-start text-3xl font-bold text-alb-site md:text-5xl inline ">{t("hero.subtitlu_h2")}</Typography>
-						</div>
+						<Typography variant="h1" className="text-start text-3xl font-bold text-alb-site md:text-5xl  ">
+							{t("hero.subtitlu")}
+						</Typography>
 						<Typography variant="paragraph" className="font-[350]  opacity-80">
 							{t("hero.indemn")}
 						</Typography>
@@ -43,7 +43,6 @@ const HeroSection = ({ params }: { params: { lang: string; country: string } }) 
 			<div className="flex px-5">
 				<CarduriHero params={params} />
 			</div>
-			<div><Typography variant="h2">Agentie munca temporara,recruteaza pentru firma ta la cele mai inalte standarde</Typography></div>
 		</section>
 	);
 };
