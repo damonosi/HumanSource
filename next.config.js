@@ -67,23 +67,6 @@ const nextConfig = {
 
 		return config;
 	},
-	async redirects() {
-		return [
-			{
-				source: "/blocks/react",
-				destination: "/",
-				permanent: true,
-			},
-		];
-	},
-	async rewrites() {
-		return [
-			{
-				source: "/",
-				destination: "/ro",
-			},
-		];
-	},
 };
 
 module.exports = nextConfig;

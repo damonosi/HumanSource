@@ -23,7 +23,7 @@ const ClientBloguriPage = ({ params }: { params: { lang: string; country: string
 			orderBy: [{ dateCreated: "desc" }],
 		},
 	});
-console.log(data);
+
 	return (
 		<div className="container mx-auto flex flex-col  gap-16 ">
 			<BlogsBradcrumbs params={params} />

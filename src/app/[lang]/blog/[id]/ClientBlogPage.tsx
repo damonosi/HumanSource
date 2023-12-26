@@ -21,7 +21,7 @@ const ClientBlogPage = ({ params }: { params: { lang: string; id: string } }) =>
 
 	const blog = data.blog;
 	let { photo, title, id, dateCreated, content, tags, author } = blog;
-console.log(content);
+
 const formattedDate = formatDate(dateCreated, params);
 
 let altText = !photo ? "nu are alt" : photo.altText;

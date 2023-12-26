@@ -29,10 +29,10 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 			</Breadcrumbs>
 			<div className="container mt-[30px] flex w-full flex-col-reverse gap-6 pb-[100px] md:mt-14  lg:flex-row ">
 				<div className="grid w-full  items-start gap-6 text-left lg:w-1/2" id="text-about">
-					<Typography variant="h3" className=" text-bold text-left text-gri-brand ">
+					<Typography variant="h1" className=" text-bold text-left text-gri-brand ">
 						{t("hero.titlu")}
 					</Typography>
-					<Typography variant="h5" className="max-w-[33rem] text-left font-bold leading-[30px] text-gri-brand ">
+					<Typography variant="h2" className="max-w-[33rem] text-left font-bold leading-[30px] text-gri-brand ">
 						{t("hero.subtitlu")}
 					</Typography>
 					<Typography variant="paragraph" className="text-left font-normal text-gri-brand  opacity-80 ">
@@ -74,7 +74,7 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 					/>
 				</div>
 			</section>
-			<section className="flex w-full flex-col items-center   " id="container echipa">
+			<section className="flex w-full flex-col items-center " id="container echipa">
 				<div className=" text-center">
 					<Typography variant="h3" className="pb-[60px] font-bold  text-gri-brand">
 						{t("echipa")}

@@ -1,5 +1,6 @@
 import { useTranslation } from "@/app/i18n/client";
 import { Menu, MenuHandler, MenuItem, MenuList, Typography } from "@material-tailwind/react";
+import { i18n } from "i18n.config";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -12,11 +13,10 @@ interface INavItem {
 	handleCloseMenu: () => void;
 }
 export function NavItem({ label, href, params, handleCloseMenu, pathname }: INavItem) {
+	const isDefaultLang = params.lang === i18n.defaultLocale;
+	const path = isDefaultLang ? href : `/${params.lang}/${href}`;
 	return (
-		<Link
-			className=" flex items-center  visited:text-red-600 md:h-[60px] md:justify-center"
-			href={`/${params.lang}/${href}`}
-		>
+		<Link className=" flex items-center  visited:text-red-600 md:h-[60px] md:justify-center" href={path}>
 			<Typography
 				variant="small"
 				className={` relative  flex  items-center p-1 font-[350]    text-gri-brand  ${

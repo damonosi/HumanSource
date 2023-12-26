@@ -13,7 +13,7 @@ const query = gql`
 				name
 			}
 			content {
-				document
+				document(hydrateRelationships: true)
 			}
 			photo {
 				altText

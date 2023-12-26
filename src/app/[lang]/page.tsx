@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home({ params }: { params: { lang: string; country: string } }) {
+	console.log("params", params.lang);
 	return (
 		<div className="mb-[-10rem] grid grid-cols-1 items-center justify-center " id="container-home">
 			<HeroSection params={params} />
