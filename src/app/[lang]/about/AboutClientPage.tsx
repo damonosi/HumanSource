@@ -32,7 +32,10 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 					<Typography variant="h1" className=" text-bold text-left text-gri-brand ">
 						{t("hero.titlu")}
 					</Typography>
-					<Typography variant="h2" className="max-w-[33rem] text-left font-bold leading-[30px] text-gri-brand ">
+					<Typography
+						variant="h2"
+						className="max-w-[33rem] text-left text-2xl font-bold leading-[30px] text-gri-brand "
+					>
 						{t("hero.subtitlu")}
 					</Typography>
 					<Typography variant="paragraph" className="text-left font-normal text-gri-brand  opacity-80 ">
