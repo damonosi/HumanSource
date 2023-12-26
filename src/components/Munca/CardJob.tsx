@@ -54,7 +54,7 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary, category }: 
 					{descriere}
 				</Typography>
 				<div className="flex items-center justify-between ">
-					<Link href={`/${params.lang}/jobs/${titlu}?id=${id}`}>
+					<Link href={`/${params.lang}/jobs/${titlu}?id=${id}&category=${category.name}`}>
 						<Button
 							variant="text"
 							ripple={true}
