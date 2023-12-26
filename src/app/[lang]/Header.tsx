@@ -6,6 +6,8 @@ import { useState } from "react";
 
 import { NavList } from "@/components/Header/Navigation";
 import { i18n } from "i18n.config";
+import isDefaultLang from "@/utils/isDefaultLang";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 export function Header({ params }: { params: { lang: string; country: string } }) {
 	const [open, setOpen] = useState(false);
@@ -36,8 +38,7 @@ export function Header({ params }: { params: { lang: string; country: string } }
 			<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
 		</svg>
 	);
-	const isDefaultLang = params.lang === i18n.defaultLocale;
-	const path = isDefaultLang ? "/" : `/${params.lang}/`;
+
 	return (
 		<header>
 			<Navbar
@@ -48,7 +49,7 @@ export function Header({ params }: { params: { lang: string; country: string } }
 					<div className="flex w-1/3 ">
 						<Typography
 							as="a"
-							href={path}
+							href={CheckIfDefaulthLang(params, "/")}
 							variant="small"
 							color="black"
 							className="mr-4 cursor-pointer py-1.5 font-bold hover:scale-105 active:scale-105"

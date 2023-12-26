@@ -6,13 +6,12 @@ import { FiFacebook } from "react-icons/fi";
 import { GrInstagram } from "react-icons/gr";
 import { SlSocialTwitter } from "react-icons/sl";
 import { useTranslation } from "../i18n/client";
-import { i18n } from "i18n.config";
+
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 const FooterNavItem = ({ params, href, label }: { params: { lang: string }; href: string; label: string }) => {
-	const isDefaultLang = params.lang === i18n.defaultLocale;
-	const path = isDefaultLang ? "/" : `/${params.lang}/`;
 	return (
-		<Link className=" flex items-center md:items-start" href={path}>
+		<Link className=" flex items-center md:items-start" href={CheckIfDefaulthLang(params, href)}>
 			<Typography
 				variant="small"
 				className={` relative flex  items-center  p-1 font-[350] text-alb-site    before:absolute before:-bottom-1 before:left-0 before:block before:h-[2px] 
