@@ -1,11 +1,13 @@
 "use client";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
-import { MobileNav, Navbar, Typography } from "@material-tailwind/react";
+import { Collapse, MobileNav, Navbar, Typography } from "@material-tailwind/react";
 
 import { useState } from "react";
 
-
 import { NavList } from "@/components/Header/Navigation";
+import { i18n } from "i18n.config";
+import isDefaultLang from "@/utils/isDefaultLang";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 export function Header({ params }: { params: { lang: string; country: string } }) {
 	const [open, setOpen] = useState(false);
@@ -47,7 +49,7 @@ export function Header({ params }: { params: { lang: string; country: string } }
 					<div className="flex w-1/3 ">
 						<Typography
 							as="a"
-							href={`/${params.lang}`}
+							href={CheckIfDefaulthLang(params, "/")}
 							variant="small"
 							color="black"
 							className="mr-4 cursor-pointer py-1.5 font-bold hover:scale-105 active:scale-105"
@@ -87,11 +89,11 @@ export function Header({ params }: { params: { lang: string; country: string } }
 					</div>
 				</div>
 
-				<MobileNav className={`bg-alb-site  px-4 text-center md:hidden  `} open={open}>
+				<Collapse className={`bg-alb-site  px-4 text-center md:hidden  `} open={open}>
 					<div className="py-4">
 						<NavList params={params} handleCloseMenu={handleCloseMenu} />
 					</div>
-				</MobileNav>
+				</Collapse>
 			</Navbar>
 		</header>
 	);

@@ -2,9 +2,9 @@
 
 import { DocumentProp } from "@/interfaces/blog";
 import { BlockRenderer } from "./CustomDocumentRenderer";
-import { Typography } from "@material-tailwind/react";
+
 import { Chip } from "@material-tailwind/react";
-import { ComponentProps, Fragment } from "react";
+
 import React from "react";
 interface ITextComponent {
 	formattedDate: string;
@@ -15,7 +15,6 @@ interface ITextComponent {
 }
 
 const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextComponent) => {
-	
 	return (
 		<div className="mt-7 flex flex-col gap-12 text-start">
 			<div className="flex flex-col gap-6" id="titleSection">
@@ -23,7 +22,9 @@ const TextComponent = ({ formattedDate, textData, title, tags, author }: ITextCo
 				<span className="text-xs font-[350] opacity-50">{formattedDate}</span>
 				<h1 className="w-full text-2xl font-[500]">{title}</h1>
 			</div>
-			<div className="flex w-full flex-col overflow-hidden">
+
+			<div className="flex w-full flex-col gap-4 overflow-hidden [&>ul]:ml-4 [&>ul]:list-disc ">
+
 				<BlockRenderer document={textData} />
 			</div>
 			<div className="flex w-full items-center justify-center">

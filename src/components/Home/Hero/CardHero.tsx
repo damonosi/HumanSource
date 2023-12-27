@@ -65,7 +65,9 @@ const CardMuncitor = ({ params }: { params: { lang: string; country: string } })
 			</CardBody>
 			<CardFooter className="flex justify-center p-0 md:pb-5 ">
 				<Button
-					onClick={() => router.push(`${params.lang}/form/worker`)}
+					onClick={() =>
+						params.lang === "ro" ? router.push(`${params.lang}/form/worker`) : router.push(`${params.lang}/jobs`)
+					}
 					className="flex  gap-1 bg-transparent px-1  normal-case text-rosu-brand shadow-none transition-all duration-[1200ms] hover:bg-rosu-brand hover:text-alb-site hover:shadow-none md:px-6"
 				>
 					{t("hero.card2.buton")} <ArrowSmallRightIcon strokeWidth={2} className="h-5 w-5" />

@@ -14,14 +14,24 @@ import { useTranslation } from "@/app/i18n/client";
 interface ICardBlog {
 	data: string;
 	titlu: string;
-	paragraph: string;
+	content: {
+		document: {
+			type: string;
+			children: [
+				{
+					text: string;
+				},
+			];
+		}[];
+	};
+
 	id: string;
 	slug: string;
 	imageUrl: StaticImageData;
 	params: { lang: string };
 }
 
-const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardBlog) => {
+const CardBlog = ({ data, titlu, slug, imageUrl, id, params, content }: ICardBlog) => {
 	const [hovered, setHovered] = useState(false);
 	const handleMouseEnter = () => {
 		setHovered(true);
@@ -29,6 +39,8 @@ const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardB
 	const handleMouseLeave = () => {
 		setHovered(false);
 	};
+	const filteredDoc = content.document.filter((doc) => doc.type === "paragraph");
+	const paragraph = filteredDoc[0].children[0].text;
 	const titleLength = titlu.length;
 	const paragraphLength = paragraph.length;
 
@@ -67,28 +79,33 @@ const CardBlog = ({ data, titlu, paragraph, slug, imageUrl, id, params }: ICardB
 					} `}
 					id="container-text-bloguri"
 				>
-					<Typography variant="paragraph" className="z-20 text-sm font-[350] opacity-50   md:text-base ">
-						{formattedDate}
-					</Typography>
-					<Typography variant="h2" className="text-base font-medium leading-8 md:text-[1.4rem]">
-						{!hovered ? ` ${titlu.substring(0, 60)}  ${titleLength >= 60 ? "..." : ""} ` : titlu}
-					</Typography>
-					<Typography variant="paragraph" className="max-w-prose text-[14px] font-[350] leading-[22px]  md:text-[16px]">
-						{!hovered
-							? ` ${paragraph.substring(0, 120)}  ${paragraphLength >= 120 ? "..." : ""}`
-							: `${paragraph.substring(0, 200)} ${paragraphLength >= 200 ? "..." : ""} `}
-					</Typography>
-					<button
-						className={`bg-transparent py-2 text-start text-sm text-gri-bg shadow-none hover:scale-95 hover:shadow-none md:mt-4 md:py-5 md:text-base ${
-							hovered && "text-alb-site"
-						}`}
-						onClick={() => {
-							router.push(`/${params.lang}/blog/${slug}`);
-						}}
-					>
-						<span className={`${hovered && "text-alb-site"}`}>{t("blog.buton")}</span>
-						{hovered && <ArrowForwardIcon className="ml-2 text-alb-site" />}
-					</button>
+					<div className="flex h-full flex-col">
+						<Typography variant="paragraph" className="z-20 h-[10%] text-sm font-[350] opacity-50   md:text-base ">
+							{formattedDate}
+						</Typography>
+						<Typography variant="h2" className="h-[40%] text-base font-medium leading-8 md:text-[1.4rem]">
+							{!hovered ? ` ${titlu.substring(0, 45)}  ${titleLength >= 60 ? "..." : ""} ` : titlu}
+						</Typography>
+						<Typography
+							variant="paragraph"
+							className="h-[40%] max-w-prose text-[14px] font-[350] leading-[22px]  md:text-[16px]"
+						>
+							{!hovered
+								? ` ${paragraph.substring(0, 120)}  ${paragraphLength >= 120 ? "..." : ""}`
+								: `${paragraph.substring(0, 200)} ${paragraphLength >= 200 ? "..." : ""} `}
+						</Typography>
+						<button
+							className={`mb-4 h-[10%] bg-transparent py-2 text-start text-sm text-gri-bg shadow-none hover:scale-95 hover:shadow-none md:mb-8 md:mt-4 md:py-5 md:text-base ${
+								hovered && "text-alb-site"
+							}`}
+							onClick={() => {
+								router.push(`/${params.lang}/blog/${slug}`);
+							}}
+						>
+							<span className={`${hovered && "text-alb-site"}`}>{t("blog.buton")}</span>
+							{hovered && <ArrowForwardIcon className="ml-2 text-alb-site" />}
+						</button>
+					</div>
 				</motion.div>
 			</AnimatePresence>
 		</div>

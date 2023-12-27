@@ -32,7 +32,9 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 					<Typography variant="h1" className=" text-bold text-left text-gri-brand ">
 						{t("hero.titlu")}
 					</Typography>
+
 					<Typography variant="h2" className="max-w-[33rem] text-left font-bold leading-[30px] text-gri-brand ">
+
 						{t("hero.subtitlu")}
 					</Typography>
 					<Typography variant="paragraph" className="text-left font-normal text-gri-brand  opacity-80 ">
@@ -74,7 +76,9 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 					/>
 				</div>
 			</section>
+
 			<section className="flex w-full flex-col items-center" id="container echipa">
+
 				<div className=" text-center">
 					<Typography variant="h3" className="pb-[60px] font-bold  text-gri-brand">
 						{t("echipa")}

@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslation } from "@/app/i18n/client";
+import { i18n } from "i18n.config";
 
 interface Iclass {
 	className?: string;
@@ -22,21 +23,26 @@ const LanguageSwitcher = ({ className, params }: Iclass) => {
 	const pathName = usePathname();
 	const redirectedPathName = (locale: string) => {
 		if (!pathName) return "/";
-		const segments = pathName.split("/");
-		if (segments[3] === undefined) {
-			segments[1] = locale;
-			return segments.join("/");
+
+		const pathnameIsMissingLocale = i18n.locales.every(
+			(locale) => !pathName.startsWith(`/${locale}/`) && pathName !== `/${locale}`,
+		);
+
+		if (pathnameIsMissingLocale) {
+			if (locale === i18n.defaultLocale) return pathName;
+			return `/${locale}${pathName}`;
 		} else {
-			segments[1] = locale;
-			if (segments[2] === "jobs") {
-				segments[2] = "jobs";
-				segments[3] = "";
-				return segments.join("/");
-			} else if (segments[2] === "blog") {
-				segments[2] = "blog";
-				segments[3] = "";
+			if (locale === i18n.defaultLocale) {
+				const segments = pathName.split("/");
+				const isHome = segments.length === 2;
+				if (isHome) return "/";
+
+				segments.splice(1, 1);
 				return segments.join("/");
 			}
+
+			const segments = pathName.split("/");
+			segments[1] = locale;
 			return segments.join("/");
 		}
 	};

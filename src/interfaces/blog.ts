@@ -97,7 +97,7 @@ export interface IlastBlogs {
 				dateCreated: string;
 				title: string;
 				content: {
-					document: { children: [{ text: string }] }[];
+					document: { type: string; children: [{ text: string }] }[];
 				};
 				photo: {
 					altText: string;

@@ -55,7 +55,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 	});
 
 	const blogs = data.blogs;
-	console.log("blogs", blogs);
+	//console.log("blogs", blogs);
 
 	return (
 		<div className="relative flex w-full md:px-6">
@@ -94,7 +94,9 @@ const CaruselBloguri = ({ params }: Iparams) => {
 				{blogs
 					.filter(({}, index) => index <= 5)
 					.map(({ id, dateCreated, title, content, slug, photo }, index) => {
-						const paragraph = content.document[0].children[0].text;
+					
+				
+						
 
 						let imageUrl = photo?.image?.publicUrlTransformed;
 
@@ -104,7 +106,7 @@ const CaruselBloguri = ({ params }: Iparams) => {
 								slug={slug}
 								data={dateCreated}
 								titlu={title}
-								paragraph={paragraph}
+								content={content}
 								imageUrl={imageUrl}
 								id={id}
 								key={id}

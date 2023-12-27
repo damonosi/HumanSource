@@ -90,7 +90,8 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 	const [addTransportForm] = useMutation(AddTransportForm, {
 		onCompleted(data) {
 			cookies.set("transportFormId", data.createTransportForm.id);
-			console.log(data.createTransportForm.id);
+
+
 		},
 	});
 	const onSubmit: SubmitHandler<Inputs> = ({

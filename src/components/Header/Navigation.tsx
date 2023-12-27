@@ -1,5 +1,7 @@
 import { useTranslation } from "@/app/i18n/client";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 import { Menu, MenuHandler, MenuItem, MenuList, Typography } from "@material-tailwind/react";
+import { i18n } from "i18n.config";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -15,7 +17,7 @@ export function NavItem({ label, href, params, handleCloseMenu, pathname }: INav
 	return (
 		<Link
 			className=" flex items-center  visited:text-red-600 md:h-[60px] md:justify-center"
-			href={`/${params.lang}/${href}`}
+			href={CheckIfDefaulthLang(params, href)}
 		>
 			<Typography
 				variant="small"

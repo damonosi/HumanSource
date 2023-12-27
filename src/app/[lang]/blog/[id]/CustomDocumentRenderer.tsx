@@ -63,10 +63,12 @@ type CustomRendererProps = ComponentProps<typeof DocumentRenderer>;
 const defaultElementRenderers: CustomRendererProps["renderers"] = {
 	block: {
 		block: React.Fragment,
+
 		layout: (props) => {
 			return <BlockLayout {...props} />;
 		},
 	},
+
 	inline: {
 		bold: ({ children }) => {
 			return <strong>{children}</strong>;
@@ -75,6 +77,7 @@ const defaultElementRenderers: CustomRendererProps["renderers"] = {
 		link: ({ children }) => {
 			return <a className="cursor-pointer text-blue-700 underline underline-offset-2">{children}</a>;
 		},
+
 		// inline code ` `
 		code: ({ children }) => {
 			return <code className={`code`}>{children}</code>;
@@ -86,6 +89,9 @@ const defaultElementRenderers: CustomRendererProps["renderers"] = {
 const customComponentRenderers: CustomRendererProps["componentBlocks"] = {
 	image: (props) => {
 		return <ImageBlock {...props} />;
+	},
+	"unordered-list": () => {
+		return <ul className="p-6"></ul>;
 	},
 };
 

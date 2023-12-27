@@ -7,19 +7,23 @@ import { GrInstagram } from "react-icons/gr";
 import { SlSocialTwitter } from "react-icons/sl";
 import { useTranslation } from "../i18n/client";
 
-const FooterNavItem = ({ params, href, label }: { params: { lang: string }; href: string; label: string }) => (
-	<Link className=" flex items-center md:items-start" href={`/${params.lang}/${href}`}>
-		<Typography
-			variant="small"
-			className={` relative flex  items-center  p-1 font-[350] text-alb-site    before:absolute before:-bottom-1 before:left-0 before:block before:h-[2px] 
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
+
+const FooterNavItem = ({ params, href, label }: { params: { lang: string }; href: string; label: string }) => {
+	return (
+		<Link className=" flex items-center md:items-start" href={CheckIfDefaulthLang(params, href)}>
+			<Typography
+				variant="small"
+				className={` relative flex  items-center  p-1 font-[350] text-alb-site    before:absolute before:-bottom-1 before:left-0 before:block before:h-[2px] 
               before:w-full before:origin-top-left before:scale-x-0
               before:bg-rosu-brand before:transition before:duration-300
               before:ease-in-out before:content-[''] before:hover:scale-x-100  `}
-		>
-			{label}
-		</Typography>
-	</Link>
-);
+			>
+				{label}
+			</Typography>
+		</Link>
+	);
+};
 
 const Footer = ({ params }: { params: { lang: string } }) => {
 	const { t } = useTranslation(params.lang, "footer");
