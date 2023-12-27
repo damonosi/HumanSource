@@ -8,10 +8,8 @@ const AvantajeSection = ({ params }: { params: { lang: string } }) => {
 	const { t } = useTranslation(params.lang, "home");
 	return (
 		<section className="container flex flex-col items-center pb-[100px] text-center md:pb-0">
-			<Typography variant="h2" className="mb-[30px] hidden px-2 md:mb-[60px]   md:block ">
+			<Typography variant="h2" className="mb-[30px] px-2 text-2xl md:mb-[60px] md:block   md:text-3xl ">
 				{t("avantaje.titlu")}
-			</Typography>
-			<Typography variant="h2" className="my-[30px] px-2 md:my-[60px] md:hidden ">
 			</Typography>
 
 			<div className="mb-20 grid w-full grid-cols-2 place-items-center gap-x-5 gap-y-10 2xl:grid-cols-4    ">
