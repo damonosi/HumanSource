@@ -2,24 +2,24 @@
 
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 
+import FormularAplica from "@/components/Munca/formularAplica";
+import { IJob } from "@/interfaces/job";
+import query from "@/lib/apollo/queries/job/getJobById";
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { Typography } from "@material-tailwind/react";
 import Link from "next/link";
 import { FC } from "react";
-import FormularAplica from "@/components/Munca/formularAplica";
-import { Typography } from "@material-tailwind/react";
+import { CiLocationOn } from "react-icons/ci";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FiTruck } from "react-icons/fi";
-import { CiLocationOn } from "react-icons/ci";
-import { IJob } from "@/interfaces/job";
-import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import query from "@/lib/apollo/queries/job/getJobById";
 
-import { useSearchParams } from "next/navigation";
 import { useTranslation } from "@/app/i18n/client";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
+import { useSearchParams } from "next/navigation";
 
 interface IpageProps {
 	params: { lang: string; title: string };
 }
-
 
 const CardJob = ({
 	jobCategory,
@@ -76,13 +76,13 @@ const ClientJobPage: FC<IpageProps> = ({ params }) => {
 		<div className="container mx-auto grid ">
 			<div className="container mx-auto flex flex-col px-5 md:px-0">
 				<Breadcrumbs>
-					<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
+					<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 						{t("breadHome")}
 					</Link>
-					<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/jobs`}>
+					<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/jobs")}>
 						{t("breadCurrent")}
 					</Link>
-					<Link className="text-rosu-brand" href={`/${params.lang}/jobs`}>
+					<Link className="flex  text-rosu-brand " href={CheckIfDefaulthLang(params, "/jobs")}>
 						{title}
 					</Link>
 				</Breadcrumbs>

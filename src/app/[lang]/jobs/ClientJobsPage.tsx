@@ -3,15 +3,16 @@
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import CardJob from "@/components/Munca/CardJob";
 
-import { Typography } from "@material-tailwind/react";
 import { IJobs } from "@/interfaces/job";
+import query from "@/lib/apollo/queries/job/getJobsByCategory";
+import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { Typography } from "@material-tailwind/react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import query from "@/lib/apollo/queries/job/getJobsByCategory";
 
-import SearchBar from "@/components/Munca/SearchBar";
 import { useTranslation } from "@/app/i18n/client";
+import SearchBar from "@/components/Munca/SearchBar";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 const ClientJobsPage = ({ params }: { params: { lang: string; country: string; category: string } }) => {
 	const upperdParams = params.lang.toUpperCase();
 	const searchParams = useSearchParams();
@@ -52,10 +53,10 @@ const ClientJobsPage = ({ params }: { params: { lang: string; country: string; c
 	return (
 		<div className="container mx-auto grid  grid-cols-1 gap-9">
 			<Breadcrumbs>
-				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 					{t("breadHome")}
 				</Link>
-				<Link className="text-rosu-brand" href={`/${params.lang}/jobs`}>
+				<Link className="text-rosu-brand" href={CheckIfDefaulthLang(params, "/jobs")}>
 					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>

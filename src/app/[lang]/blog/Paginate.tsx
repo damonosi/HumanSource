@@ -1,6 +1,5 @@
 "use client";
 
-
 import CardBlogSecundar from "@/components/Blog/CardBlogSecundar";
 
 import { useEffect, useState } from "react";
@@ -9,8 +8,8 @@ import NavigationPagination from "@/utils/pagination/NavigationPagination";
 import { paginate } from "@/utils/pagination/paginate";
 
 import { DocumentProp, IPaginatedData, IPaginationData } from "@/interfaces/blog";
-import { StaticImageData } from "next/image";
 import { scrollToTop } from "@/utils/scrollToTop";
+import { StaticImageData } from "next/image";
 
 const ContentPagination = ({ currentPage, bloguri, pageSize, params }: IPaginationData) => {
 	const paginatedPosts = paginate(bloguri, currentPage, pageSize);
@@ -67,7 +66,7 @@ function PaginatedItems({
 	const dateBloguri = data.blogs;
 
 	const dataLength = dateBloguri.length;
-
+	const lungime = dateBloguri.length as number;
 	const numberOfPages = Math.ceil(dataLength / pageSize);
 
 	const onNextPage = () => {
@@ -98,13 +97,17 @@ function PaginatedItems({
 
 	return (
 		<>
-			<ContentPagination params={params} pageSize={pageSize} currentPage={currentPage} bloguri={dateBloguri} />
-			<NavigationPagination
-				currentPage={currentPage}
-				onNextPage={onNextPage}
-				onPrevPage={onPrevPage}
-				dataLength={numberOfPages}
-			/>
+			{lungime === 0 ? null : (
+				<div>
+					<ContentPagination params={params} pageSize={pageSize} currentPage={currentPage} bloguri={dateBloguri} />
+					<NavigationPagination
+						currentPage={currentPage}
+						onNextPage={onNextPage}
+						onPrevPage={onPrevPage}
+						dataLength={numberOfPages}
+					/>
+				</div>
+			)}
 		</>
 	);
 }
