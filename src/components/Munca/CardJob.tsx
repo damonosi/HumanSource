@@ -9,6 +9,7 @@ import formatDate from "@/utils/formatDate";
 import { useTranslation } from "@/app/i18n/client";
 import TransportImg from "../../../public/imagini/munca/transport.png";
 import MedicalImg from "../../../public/imagini/munca/medical.png";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 interface ICardJob {
 	data: string;
 	titlu: string;
@@ -41,7 +42,7 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary, category }: 
 			</div>
 			<div
 				key="container-text"
-				className="z-20 flex  h-2/3 flex-col justify-center gap-5 py-2 px-4 text-start  "
+				className="z-20 flex  h-2/3 flex-col justify-center gap-5 px-4 py-2 text-start  "
 				id="container-text-bloguri"
 			>
 				<Typography variant="paragraph" className="z-20 text-sm font-[350]  opacity-50 ">
@@ -54,7 +55,7 @@ const CardJob = ({ params, data, titlu, descriere, id, src, salary, category }: 
 					{descriere}
 				</Typography>
 				<div className="flex items-center justify-between ">
-					<Link href={`/${params.lang}/jobs/${titlu}?id=${id}&category=${category.name}`}>
+					<Link href={CheckIfDefaulthLang(params, `/jobs/${titlu}?id=${id}&category=${category.name}`)}>
 						<Button
 							variant="text"
 							ripple={true}

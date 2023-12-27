@@ -10,6 +10,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import formatDate from "@/utils/formatDate";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "@/app/i18n/client";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 interface ICardBlog {
 	data: string;
@@ -99,7 +100,7 @@ const CardBlog = ({ data, titlu, slug, imageUrl, id, params, content }: ICardBlo
 								hovered && "text-alb-site"
 							}`}
 							onClick={() => {
-								router.push(`/${params.lang}/blog/${slug}`);
+								router.push(CheckIfDefaulthLang(params, `/blog/${slug}`));
 							}}
 						>
 							<span className={`${hovered && "text-alb-site"}`}>{t("blog.buton")}</span>
