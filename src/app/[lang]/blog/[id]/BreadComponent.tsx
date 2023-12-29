@@ -35,9 +35,10 @@ const BreadComponent = ({ params, title }: { params: { lang: string; id: string 
 			<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 				{t("breadHome")}
 			</Link>
-			<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/blog`}>
+			<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/blog")}>
 				{t("breadCurrent")}
 			</Link>
+
 			<Link className="flex  text-rosu-brand " href={CheckIfDefaulthLang(params, `/blog/${params.id}`)}>
 				{size.width < 960 ? ` ${title.substring(0, 20)}  ...` : title}
 			</Link>

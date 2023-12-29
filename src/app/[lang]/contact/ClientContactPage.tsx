@@ -12,6 +12,7 @@ import { useTranslation } from "@/app/i18n/client";
 import dynamic from "next/dynamic";
 
 import Spinner from "@/components/Spinner/Spinner";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 const LazyLoadedGoogleIframe = dynamic(() => import("@/components/Contact/GoogleMap"), {
 	loading: () => (
@@ -28,10 +29,10 @@ const ClientContactPage = ({ params }: { params: { lang: string; country: string
 	return (
 		<div className="container mx-auto flex flex-col ">
 			<Breadcrumbs>
-				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 					{t("breadHome")}
 				</Link>
-				<Link className="text-rosu-brand" href={`/${params.lang}/contact`}>
+				<Link className="text-rosu-brand" href={CheckIfDefaulthLang(params, "/contact")}>
 					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>

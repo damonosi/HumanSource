@@ -12,18 +12,19 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import { CardEchipa, CardValori } from "./CarduriAbout";
 import { dateEchipa, dateValori } from "./dateCarduriAbout";
 import { useTranslation } from "@/app/i18n/client";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 const AboutClientPage = ({ params }: { params: { lang: string; country: string } }) => {
 	const { t } = useTranslation(params.lang, "about");
 	return (
 		<div className="container mx-auto flex flex-col">
 			<Breadcrumbs>
-				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
               	// @ts-ignore */}
 					{t("breadHome")}
 				</Link>
-				<Link className="text-rosu-brand" href={`/${params.lang}/about`}>
+				<Link className="text-rosu-brand" href={CheckIfDefaulthLang(params, "/about")}>
 					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>
@@ -34,7 +35,6 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 					</Typography>
 
 					<Typography variant="h2" className="max-w-[33rem] text-left font-bold leading-[30px] text-gri-brand ">
-
 						{t("hero.subtitlu")}
 					</Typography>
 					<Typography variant="paragraph" className="text-left font-normal text-gri-brand  opacity-80 ">
@@ -78,7 +78,6 @@ const AboutClientPage = ({ params }: { params: { lang: string; country: string }
 			</section>
 
 			<section className="flex w-full flex-col items-center" id="container echipa">
-
 				<div className=" text-center">
 					<Typography variant="h3" className="pb-[60px] font-bold  text-gri-brand">
 						{t("echipa")}

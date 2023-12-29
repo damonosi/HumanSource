@@ -1,5 +1,6 @@
 import { Iparams } from "@/interfaces/params";
 import formatDate from "@/utils/formatDate";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 import { Typography } from "@material-tailwind/react";
 
 import Image, { StaticImageData } from "next/image";
@@ -31,10 +32,8 @@ const CardBlogSecundar = ({ id, date, title, photo, categories, params, slug }: 
 		? "https://res.cloudinary.com/dmm7tnk7s/image/upload/v1698689593/87Af-eFtsR_JPiASGbYk9RpEly4.jpg"
 		: photo.image.publicUrlTransformed;
 
-
-
 	return (
-		<Link className=" cursor-pointer " id={id} href={`/${params.lang}/blog/${slug}`}>
+		<Link className=" cursor-pointer " id={id} href={CheckIfDefaulthLang(params, `/blog/${slug}`)}>
 			<div
 				className="group flex aspect-square  h-fit flex-col gap-5  rounded-2xl hover:shadow-xl  "
 				id="container-card-blog-secundar"

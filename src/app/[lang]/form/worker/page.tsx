@@ -14,6 +14,7 @@ import IcoMedicalAlb from "../../../../../public/imagini/formular/selectDomeniu/
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "@/app/i18n/client";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 const Formular = ({ params }: { params: { lang: string; country: string } }) => {
 	const [disabled, setDisabled] = useState(true);
@@ -31,17 +32,17 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 	return (
 		<div className="container mx-auto flex flex-col px-5 pb-9 lg:px-0">
 			<Breadcrumbs>
-				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
               	// @ts-ignore */}
 					{t("breadHome")}
 				</Link>
-				<Link className="text-rosu-brand" href={`/${params.lang}/form/worker`}>
+				<Link className="text-rosu-brand" href={CheckIfDefaulthLang(params, "/form/worker")}>
 					{t("breadFormular")}
 				</Link>
 			</Breadcrumbs>
 			<div
-				className="flex flex-col   gap-9 rounded-2xl bg-alb-site py-9 px-3 text-start md:px-16"
+				className="flex flex-col   gap-9 rounded-2xl bg-alb-site px-3 py-9 text-start md:px-16"
 				id="container-alege-domeniu-titlu"
 			>
 				<Typography className="text-start text-xl font-bold md:text-3xl" variant="h3">
@@ -75,7 +76,7 @@ const Formular = ({ params }: { params: { lang: string; country: string } }) => 
 				</div>
 				<div className="flex w-full items-center justify-center">
 					<button
-						onClick={() => router.push(`/${params.lang}/form/worker/${selectedCategory.toLowerCase()}`)}
+						onClick={() => router.push(CheckIfDefaulthLang(params, `/form/worker/${selectedCategory.toLowerCase()}`))}
 						disabled={disabled}
 						className={`md:px-5"  flex w-fit items-center justify-center gap-1 rounded-2xl border border-gri-brand px-2 py-2 text-center text-gri-brand md:py-4  ${
 							disabled

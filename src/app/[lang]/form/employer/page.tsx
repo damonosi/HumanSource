@@ -12,13 +12,8 @@ import { useCookies } from "next-client-cookies";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 import { useTranslation } from "@/app/i18n/client";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-	title: "Formular de cerere oferta pentru companii - Humansource.ro ",
-
-	description: "Ai nevoie de personal pentru desfasurarea activitatii tale? Completeaza formularul si cere o oferta pentru a te putea ajuta! ✔️ Flexibilitate ✔️ Transparenta",
-};
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 type Inputs = {
 	codFiscal: string;
@@ -80,10 +75,10 @@ const FormularAngajator = ({ params }: { params: { lang: string; country: string
 	return (
 		<section className="container mx-auto flex flex-col px-5 pb-9 lg:px-0">
 			<Breadcrumbs>
-				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 					{t("breadHome")}
 				</Link>
-				<Link className="text-rosu-brand" href={`/${params.lang}/blog`}>
+				<Link className="text-rosu-brand" href={CheckIfDefaulthLang(params, "/blog")}>
 					{t("breadCurrent")}
 				</Link>
 			</Breadcrumbs>

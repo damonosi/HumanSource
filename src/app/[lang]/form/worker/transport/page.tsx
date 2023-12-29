@@ -22,6 +22,7 @@ import AddTransportForm from "@/lib/apollo/mutations/mutateTransportForm";
 import { useRouter } from "next/navigation";
 import { useCookies } from "next-client-cookies";
 import { useTranslation } from "@/app/i18n/client";
+import CheckIfDefaulthLang from "@/utils/isDefaultLang";
 
 export type TransportSearchParamsType = {
 	absolvire: string;
@@ -90,8 +91,6 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 	const [addTransportForm] = useMutation(AddTransportForm, {
 		onCompleted(data) {
 			cookies.set("transportFormId", data.createTransportForm.id);
-
-
 		},
 	});
 	const onSubmit: SubmitHandler<Inputs> = ({
@@ -123,8 +122,7 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 					},
 				},
 			});
-
-			router.push(`/${params.lang}/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`);
+			router.push(CheckIfDefaulthLang(params, `/jobs?domeniu=transport&subDomeniu=${tipRemorca}&locatia=${regim}`));
 
 			cookies.remove("sofer-tip-remorca");
 			cookies.remove("sofer-experienta");
@@ -144,15 +142,15 @@ const FormularSofer = ({ params }: { params: { lang: string; country: string } }
 	return (
 		<div className="container mx-auto flex flex-col px-5 pb-9 lg:px-0">
 			<Breadcrumbs>
-				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/")}>
 					{/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment 
               	// @ts-ignore */}
 					{t("breadHome")}
 				</Link>
-				<Link className="text-gri-brand hover:text-rosu-brand" href={`/${params.lang}/form/worker`}>
+				<Link className="text-gri-brand hover:text-rosu-brand" href={CheckIfDefaulthLang(params, "/form/worker")}>
 					{t("breadFormular")}
 				</Link>
-				<Link className="text-rosu-brand" href={`/${params.lang}/form/worker`}>
+				<Link className="text-rosu-brand" href={CheckIfDefaulthLang(params, "/form/worker")}>
 					{t("breadTransport")}
 				</Link>
 			</Breadcrumbs>
