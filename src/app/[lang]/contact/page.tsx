@@ -1,7 +1,9 @@
+import { Metadata } from "next";
 import ClientContactPage from "./ClientContactPage";
-export const metadata = {
-	title: "Contact - Human Source",
-	description: "Human Source Contact Page",
+export const metadata: Metadata = {
+	title: "Formular de cerere oferta pentru companii - Humansource.ro ",
+	description:
+		"Ai nevoie de personal pentru desfasurarea activitatii tale? Completeaza formularul si cere o oferta pentru a te putea ajuta! ✔️ Flexibilitate ✔️ Transparenta",
 };
 
 const Contact = ({ params }: { params: { lang: string; country: string } }) => {
