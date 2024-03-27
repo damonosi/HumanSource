@@ -75,28 +75,28 @@ const CardBlog = ({ data, titlu, slug, imageUrl, id, params, content }: ICardBlo
 					transition={{
 						layout: { type: "spring", stiffness: 30 },
 					}}
-					className={`relative z-20 flex h-[55%] flex-col justify-end gap-2 px-4 py-2 text-start  md:justify-between ${
-						hovered ? "mt-auto h-[75%]  gap-5 text-alb-site" : "text-gri-brand"
+					className={`relative z-20 flex h-[59%] flex-col justify-end gap-2 px-4 py-2 text-start  md:justify-between ${
+						hovered ? "mt-auto h-[88%]  gap-5 text-alb-site" : "text-gri-brand"
 					} `}
 					id="container-text-bloguri"
 				>
-					<div className="flex h-full flex-col">
+					<div className="flex h-full flex-col gap-3">
 						<Typography variant="paragraph" className="z-20 h-[10%] text-sm font-[350]  opacity-50   md:text-base ">
 							{formattedDate}
 						</Typography>
-						<Typography variant="h4" className="h-[40%] text-base font-medium md:text-[1.1rem] md:leading-8">
-							{!hovered ? ` ${titlu.substring(0, 45)}  ${titleLength >= 60 ? "..." : ""} ` : titlu}
+						<Typography variant="h4" className="h-[40%]  text-base font-medium md:text-[1.1rem] md:leading-8">
+							{!hovered ? ` ${titlu.substring(0, 45)}  ${titleLength >= 45 ? "..." : ""} ` : titlu}
 						</Typography>
 						<Typography
 							variant="paragraph"
-							className="h-[40%] max-w-prose overflow-hidden text-[14px] font-[350] leading-[22px]  md:text-[16px]"
+							className=" h-[40%] overflow-ellipsis    text-[14px] font-[350] leading-[22px]  md:text-[16px]"
 						>
 							{!hovered
-								? ` ${paragraph.substring(0, 120)}  ${paragraphLength >= 120 ? "..." : ""}`
-								: `${paragraph.substring(0, 200)} ${paragraphLength >= 200 ? "..." : ""} `}
+								? ` ${paragraph.substring(0, 90)}  ${paragraphLength >= 90 ? "..." : ""}`
+								: `${paragraph.substring(0, 160)} ${paragraphLength >= 160 ? "..." : ""} `}
 						</Typography>
 						<button
-							className={`mb-4 h-[10%] bg-transparent py-2 text-start text-sm text-gri-bg shadow-none hover:scale-95 hover:shadow-none md:mb-8 md:mt-4 md:py-5 md:text-base ${
+							className={`z-50 mb-4 h-[10%] bg-transparent py-2 text-start text-sm text-gri-bg shadow-none hover:scale-95 hover:shadow-none md:mb-8 md:mt-4 md:py-5 md:text-base ${
 								hovered && "text-alb-site"
 							}`}
 							onClick={() => {
