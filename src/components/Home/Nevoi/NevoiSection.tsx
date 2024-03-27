@@ -9,19 +9,19 @@ const NevoiSection = ({ params }: { params: { lang: string } }) => {
 		<section className="container relative flex w-full items-start justify-start bg-[#506673] px-2 pb-[100px] md:pb-0       ">
 			<div className="flex w-full flex-col-reverse items-center lg:flex-row ">
 				<div className="flex  max-w-[606px] flex-col justify-center gap-12   text-alb-site md:w-full md:pr-2" id="text">
-					<Typography variant="h2" className="text-start font-bold   ">
+					<Typography variant="h2" className="text-start text-3xl font-bold   ">
 						{t("nevoi.titlu")}
 					</Typography>
 
-					<Typography variant="h3" className=" text-start font-[500]  md:text-xl">
+					<Typography variant="h3" className=" text-start  text-xl font-[500]">
 						&#x2713; &nbsp; {t("nevoi.1")}
 					</Typography>
 
-					<Typography variant="h3" className="text-start  font-[500] md:text-xl ">
+					<Typography variant="h3" className="text-start  text-xl font-[500] ">
 						&#x2713; &nbsp; {t("nevoi.2")}
 					</Typography>
 
-					<Typography variant="h3" className="text-start  font-[500]  md:text-xl">
+					<Typography variant="h3" className="text-start  text-xl  font-[500]">
 						&#x2713; &nbsp; {t("nevoi.3")}
 					</Typography>
 				</div>

@@ -19,18 +19,18 @@ const CasetaServicii = ({ titlu, descriere, textButon, icon, href, params }: ICa
 	const router = useRouter();
 	return (
 		<div
-			className="group container flex  w-full max-w-[500px]  flex-col items-center justify-between gap-4 rounded-[10px] bg-alb-site px-4 py-8  text-center transition-all duration-300 hover:drop-shadow-xl md:h-[335px]  "
+			className="justify-betweengap-5 group container flex w-full max-w-[500px] flex-col  items-center rounded-[10px] bg-alb-site px-4 py-8 text-center  text-gri-brand transition-all duration-300 hover:drop-shadow-xl md:h-[355px]  "
 			id="caseta-servicii"
 		>
-			<div className="flex h-1/6 w-full items-center justify-center text-rosu-brand">
+			<div className="flex h-1/6 w-full items-center justify-center  text-rosu-brand">
 				{icon === "leasing" && <HiOutlineUserGroup className="h-8 w-8" />}
 				{icon === "payroll" && <IoDocumentAttachOutline className="h-8 w-8" />}
 				{icon === "recrutare" && <AiOutlineUsergroupAdd className="h-8 w-8" />}
 			</div>
-			<Typography variant="h3" className=" h-1/6  font-normal text-gri-brand">
+			<Typography variant="h3" className=" h-2/6  font-normal ">
 				{titlu}
 			</Typography>
-			<Typography variant="paragraph" className=" h-3/6 font-light text-gri-brand opacity-60">
+			<Typography variant="paragraph" className=" mt-2 h-3/6 text-balance font-light  opacity-60">
 				{descriere}
 			</Typography>
 			<div className="h-1/6">
