@@ -1,0 +1,31 @@
+{
+	"breadHome": "La casa",
+	"breadCurrent": "Chi siamo",
+	"hero": {
+		"titlu": "Human Source",
+		"subtitlu": "Chi siamo",
+		"descriere": "L’azienda è sempre al corrente con la normativa nazioanle ed internazionale del lavoro e, in particolare, con la normativa sul lavoro temporaneo. Il nostro obiettivo è quello di offrire ai nostri partener delle nuove strategie ed idee novatrici per i problemi che potrebbero insorgere nel settore delle risorse umane."
+	},
+	"cardSection": {
+		"titlu": "Valori dell'azienda",
+		"carduri": {
+			"1": {
+				"titlu": "Orientamento alla clientela",
+				"descriere": "L'azienda è sempre aggiornata sulla normativa del lavoro nazionale ed internazionale, ed in particolare sulla normativa in materia di lavoro interinale."
+			},
+			"2": {
+				"titlu": "Flessibilità",
+				"descriere": "Il nostro obiettivo è offrire ai nostri partner strategie e idee innovative per i problemi che possono sorgere nel campo delle risorse umane."
+			},
+			"3": {
+				"titlu": "Trasparenza",
+				"descriere": "Crediamo e abbiamo fatto affidamento sulla crescita, che consente a Human Source di essere e rimanere una scelta a lungo termine nel mondo degli affari."
+			},
+			"4": {
+				"titlu": "Preparazione",
+				"descriere": "Il vantaggio di collaborare con Human Source risiede nel fatto che conosciamo approfonditamente il settore in cui operiamo, il contesto e le tendenze socio-economiche, sia a livello locale che internazionale."
+			}
+		}
+	},
+	"echipa": "La nostra squadra"
+}

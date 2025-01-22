@@ -1,0 +1,61 @@
+{
+	"breadHome": "La casa",
+	"breadCurrent": "Servizi",
+	"buton": "Richiedi l'offerta",
+	"hero": {
+		"titlu": "I servizi offerti da Human Source",
+		"subtitlu": "La nostra società di risorse umane offre servizi sia nella parte di assunzione, reclutamento, selezione del personale, sia nella parte di buste paga e amministrazione del personale.",
+		"descriere": "I vantaggi della collaborazione con Human Source:",
+		"list": {
+			"1": "  - Zero costi amministrativi",
+			"2": "  -Risparmio garantito sui costi del personale in caso di distacco transnazionale",
+			"3": "  -Costi prevedibili e trasparenti",
+			"4": "  - Accesso rapido a forza lavoro preselezionata e qualificata, riducendo costi e tempi per trovare le persone giuste",
+			"5":"  - Accesso ai servizi di consulenza fiscale e giuslavoristica",
+			"6":"  - Registrazione e amministrazione del personale, garantendo la documentazione e le procedure amministrative",
+			"7":"  - Calcolo, pagamento degli stipendi e delle ferie (mediche, riposo, ecc.), dichiarazioni mensili all'assicurazione sociale"
+		},
+		"carduri": {
+			"1": "Leasing di personale",
+			"2": "Gestione della forza di lavoro e stipendi",
+			"3": "Reclutamento e selezione"
+		}
+	},
+	"asiguram": {
+		"titlu": "Forniamo esigenze di personale",
+		"descriere": "La somministrazione a tempo determinato del personale rappresenta una soluzione flessibile ed efficiente per soddisfare le esigenze di personale. Questo si riferisce alla fornitura di manodopera da parte della nostra azienda ad un beneficiario.",
+		"descriere2":"Il contratto di MESSA A DISPOSIZIONE DI PERSONALE prevede il conivolgimento di tre parti: agenzia per il lavoro, l’impresa utilizzatrice e il lavoratore, dovendo essere stipulati due contratti:",
+		"contract_1":"Contratto commerciale, tra il datore di lavoro (agenzia per il lavoro) e l’utilizzatore (impresa utilizzatrice);",
+		"contract_2":"- Il contratto di lavoro effettivo, tra il datore di lavoro (agenzia per il lavoro) e il lavoratore."
+	},
+	"documentatia": {
+		"titlu": "Gestiamo la documentazione",
+		"descriere_1": "Servizi mensili ricorrenti:",
+		"descriere_list_1":{
+			"1":"- Gestione dei fogli di presenza;",
+			"2":"- Redazione e presentazione delle dichiarazioni mensili verso enti locali;",
+			"3":"- Calcolo degli stipendi e il rilascio dei cedolini",
+			"4":"- Calcolo delle imposte e dei contributi;",
+			"5":"- Mantenere rapporti con le autorità e ottenere il formulario A1 per i lavoratori distaccati",
+			"6":"- Calcolo delle trasferte deducibili a livello nazionale ed europeo",
+			"7":"- Elaborazione di rapporti specifici",
+			"8":"- L'elaborazione del centralizzatore degli stipendi e del multi-cash per la banca;"
+		},
+		"descriere_2":"Amministrazione dei fascicoli del personale:",
+		"descriere_list_2":{
+			"1":"- Registrazione dei documenti previsti per legge",
+			"2":"- Trasmissione Revisal secondo la normativa in vigore",
+			"3":"- Negoziazione, elaborazione e presentazione di accordi collettivi di lavoro",
+			"4":"- Elaborazione del regolamento interno, statuto delle mestieri, organigramma e procedure specifiche interne.",
+			"5":"- Consulenza sulla legislazione del lavoro sia a livello della Romania che a livello europeo"
+
+		}
+	},
+	"echipa": {
+		"titlu": "Costruiamo la tua squadra",
+		"descriere": "-Procedura di selezione dei CV",
+		"descriere2":"-Selezione preliminare dei candidati",
+		"descriere3":"-Individuazione dei possibili candidati",
+		"descriere4":"-Test sulle competenze personali e professionali"
+	}
+}

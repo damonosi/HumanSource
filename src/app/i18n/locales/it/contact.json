@@ -1,0 +1,17 @@
+{
+	"breadHome": "La casa",
+	"breadCurrent": "Contatto",
+	"titlu": "Contattaci!",
+	"subtitlu": "",
+	"formular": {
+		"nume": "Il tuo nome completo",
+		"telefon": "Numero di telefono",
+		"mesaj": "Mandaci un messaggio",
+		"politica": {
+			"1": "*Sono d'accordo con",
+			"2": "Politica sulla riservatezza",
+			"3": "al fine di trattare i dati personali."
+		},
+		"buton": "Invia i dati"
+	}
+}

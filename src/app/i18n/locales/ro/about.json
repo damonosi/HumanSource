@@ -1,0 +1,31 @@
+{
+	"breadHome": "Acasa",
+	"breadCurrent": "Despre Noi",
+	"hero": {
+		"titlu": "Human Source",
+		"subtitlu": "Despre Human Source",
+		"descriere": "Specializata in angajarea de muncitori calificati.Societatea este mereu la curent cu legislatia muncii nationale si international si in particular cu legislatia privind munca temporara. Obiectivul nostru este sa oferim partenerilor nostri strategii, si idei inovatoare pentru problemele ce pot aparea in domeniul resurselor umane."
+	},
+	"cardSection": {
+		"titlu": "Valorile Companiei",
+		"carduri": {
+			"1": {
+				"titlu": "Orientarea fata de client",
+				"descriere": "Societatea este mereu la curent cu legislatia muncii nationale si international si in particular cu legislatia privind munca temporara. "
+			},
+			"2": {
+				"titlu": "Flexibilitatea",
+				"descriere": "Obiectivul nostru este sa oferim partenerilor nostri strategii, si idei inovatoare pentru problemele ce pot aparea in domeniul resurselor umane."
+			},
+			"3": {
+				"titlu": "Transparenta",
+				"descriere": "Credem si ne-am bazat pe ascensiunea, ceea ce permite ca Human Source sa fie si sa ramana o alegere pe termen lung in afaceri."
+			},
+			"4": {
+				"titlu": "Pregatirea",
+				"descriere": "Avantajul de a colabora cu Human Source consta in faptul ca noi cunoastem in profunzime domeniul in care activam, cadrul si tendintele socio-economice, atat la nivel local, cat si international."
+			}
+		}
+	},
+	"echipa": "Echipa noastra"
+}

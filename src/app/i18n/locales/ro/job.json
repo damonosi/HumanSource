@@ -1,0 +1,22 @@
+{
+	"breadHome": "Acasa",
+	"breadCurrent": "Locuri de munca",
+	"cards": { "data": "Data inceperii", "industrie": "Industrie", "locatie": "Locatia" },
+	"descriere": "Descriere",
+	"cerinte": "Cerinte",
+	"dece": "De ce sa lucrezi cu noi?",
+	"indemn": "Aplica acum iar unul dintre agentii nostrii de recrutare te va contacta in cel mai scurt timp!",
+	"form": {
+		"nume": "Numele tau complet",
+		"dataNastere": "Data Nastere",
+		"telefon": "Numar de telefon",
+		"mesaj": "Trimite-ne un mesaj",
+		"politica": {
+			"1": "*Sunt de acord cu",
+			"2": "Politica de confidentialitate",
+			"3": "in vederea prelucrarii datelor personale."
+		},
+
+		"buton": "Trimite datele"
+	}
+}

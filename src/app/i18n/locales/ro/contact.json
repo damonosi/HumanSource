@@ -1,0 +1,18 @@
+{
+	"breadHome": "Acasa",
+	"breadCurrent": "Contact",
+	"titlu": "Contacteaza-ne!",
+	"subtitlu": "",
+	"formular": {
+		"nume": "Numele tau complet",
+
+		"telefon": "Numarul de telefon",
+		"mesaj": "Lasa-ne un mesaj",
+		"politica": {
+			"1": "*Sunt de acord cu",
+			"2": "Politica de confidentialitate",
+			"3": "in vederea prelucrarii datelor personale."
+		},
+		"buton": "Invia i dati"
+	}
+}

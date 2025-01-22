@@ -1,0 +1,13 @@
+const HomeIco = () => (
+	<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g id="material-symbols:home-outline-sharp">
+			<path
+				id="Vector"
+				d="M4.9987 15.8333H7.4987V10.8333H12.4987V15.8333H14.9987V8.33333L9.9987 4.58333L4.9987 8.33333V15.8333ZM3.33203 17.5V7.5L9.9987 2.5L16.6654 7.5V17.5H10.832V12.5H9.16536V17.5H3.33203Z"
+				fill="#FCFEFF"
+			/>
+		</g>
+	</svg>
+);
+
+export default HomeIco;
